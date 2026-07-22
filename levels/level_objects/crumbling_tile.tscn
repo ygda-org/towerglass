@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bn4m4aljk32wv"]
+
+[ext_resource type="Script" path="res://levels/level_objects/crumbling_tile.gd" id="1_w8fke"]
+[ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="2_dce2v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}],
+"loop": 0,
+"name": &"crumbling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dce2v")
+}],
+"loop": 0,
+"name": &"regenerate",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0u0i"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+size = Vector2(16, 4)
+
+[node name="CrumblingTile" type="StaticBody2D" unique_id=1109916686]
+script = ExtResource("1_w8fke")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713537414]
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_0es7p")
+animation = &"crumbling"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205369307]
+shape = SubResource("RectangleShape2D_y0u0i")
+
+[node name="Timer" type="Timer" parent="." unique_id=897639255]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1676578458]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1459099013]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_0es7p")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
