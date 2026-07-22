@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 GameState="*uid://m81nunoede32"
 SceneSwitcher="*uid://2lelnjjcybvv"
+SFX="*uid://d1mff478o3ug3"
 
 [display]
 
