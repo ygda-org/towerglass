@@ -8,8 +8,9 @@ func _ready() -> void:
 	$Timer.start()
 
 func _physics_process(delta: float) -> void:
-	if $Timer.time_left > $Timer.wait_time / 2:
-		$PathFollow2D.progress_ratio = $Timer.wait_time / 2 - ($Timer.time_left - $Timer.wait_time / 2) 
+	var timer_ratio = clamp(1 - ($Timer.time_left / $Timer.wait_time), 0, 1)
+	if timer_ratio > 0.5:
+		$PathFollow2D.progress_ratio = (1 - timer_ratio) * 2
 	else:
-		$PathFollow2D.progress_ratio = $Timer.time_left
+		$PathFollow2D.progress_ratio = timer_ratio * 2
 	$AnimatableBody2D.position = $PathFollow2D.position
