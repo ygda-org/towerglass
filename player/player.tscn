@@ -22,3 +22,9 @@ texture = ExtResource("2_rkbax")
 shape = SubResource("RectangleShape2D_i50wy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1558066759]
+
+[node name="Placeholder" type="Label" parent="." unique_id=197115182]
+offset_left = -18.0
+offset_top = -47.0
+offset_right = 22.0
+offset_bottom = -24.0
