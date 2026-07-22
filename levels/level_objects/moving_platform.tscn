@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
 size = Vector2(64, 16)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m53i5"]
+size = Vector2(64, 16)
+
 [node name="MovingPlatform" type="Path2D" unique_id=767670818]
 script = ExtResource("1_ljke0")
 
@@ -14,6 +17,7 @@ script = ExtResource("1_ljke0")
 shape = SubResource("RectangleShape2D_0es7p")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1882284300]
+texture = SubResource("PlaceholderTexture2D_m53i5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=231407704]
 
