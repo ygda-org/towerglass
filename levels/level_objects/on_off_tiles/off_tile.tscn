@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c4fyx3j4wo0g5"]
+
+[ext_resource type="Script" uid="uid://biqixaburqtf2" path="res://levels/level_objects/on_off_tiles/on_off_tile.gd" id="1_wnqih"]
+
+[sub_resource type="Gradient" id="Gradient_ydero"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wnqih"]
+gradient = SubResource("Gradient_ydero")
+width = 16
+height = 16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvh5f"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnqih"]
+size = Vector2(18, 18)
+
+[node name="OffTile" type="StaticBody2D" unique_id=1057289622]
+script = ExtResource("1_wnqih")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1918320200]
+texture = SubResource("GradientTexture2D_wnqih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1073068597]
+shape = SubResource("RectangleShape2D_kvh5f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1221634330]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=793072444]
+shape = SubResource("RectangleShape2D_wnqih")

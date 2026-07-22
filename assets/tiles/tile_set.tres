@@ -1,6 +1,8 @@
 [gd_resource type="TileSet" format=3 uid="uid://2861upndp1vw"]
 
 [ext_resource type="Texture2D" uid="uid://csxvxvl2dpibo" path="res://assets/tiles/ground_tiles.png" id="1_vl7tc"]
+[ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="2_62pk5"]
+[ext_resource type="PackedScene" uid="uid://c4fyx3j4wo0g5" path="res://levels/level_objects/on_off_tiles/off_tile.tscn" id="3_0hpsc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy046"]
 texture = ExtResource("1_vl7tc")
@@ -55,6 +57,11 @@ separation = Vector2i(1, 1)
 4:4/0 = 0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k8n7d"]
+scenes/1/scene = ExtResource("2_62pk5")
+scenes/2/scene = ExtResource("3_0hpsc")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hy046")
+sources/1 = SubResource("TileSetScenesCollectionSource_k8n7d")

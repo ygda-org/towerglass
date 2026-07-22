@@ -18,6 +18,8 @@ const AIR_FRICTION = 0.99
 const AIR_CONTROL = 500
 @export var aerial_acceleration_curve: Curve
 
+signal jumped
+
 func _ready() -> void:
 	GameState.player = self
 
@@ -31,6 +33,7 @@ func _physics_process(delta: float):
 			velocity.y = MAX_JUMP * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 			jump_charge = 0.0
 			flip()
+			GameState.player_jumped.emit()
 	else:
 		var dir = Input.get_axis("left", "right")
 		if dir * velocity.x <= 0:
