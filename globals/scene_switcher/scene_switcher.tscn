@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://2lelnjjcybvv"]
+
+[ext_resource type="Script" uid="uid://cbh54jr706dql" path="res://globals/scene_switcher/scene_switcher.gd" id="1_md10r"]
+
+[sub_resource type="Animation" id="Animation_tt4p4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_38nkg"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_riwp2"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tt4p4"]
+_data = {
+&"RESET": SubResource("Animation_tt4p4"),
+&"fade_in": SubResource("Animation_38nkg"),
+&"fade_out": SubResource("Animation_riwp2")
+}
+
+[node name="SceneSwitcher" type="CanvasLayer" unique_id=1167378060]
+script = ExtResource("1_md10r")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1126976165]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.45882353, 0.7529412, 0.41568628, 0)
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=1104405572]
+libraries/ = SubResource("AnimationLibrary_tt4p4")

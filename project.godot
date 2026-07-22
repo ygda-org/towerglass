@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 GameState="*uid://m81nunoede32"
+SceneSwitcher="*uid://2lelnjjcybvv"
 
 [display]
 
