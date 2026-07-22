@@ -22,6 +22,7 @@ signal jumped
 
 func _ready() -> void:
 	GameState.player = self
+	GameState.last_location = global_position
 
 func _physics_process(delta: float):
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
@@ -62,3 +63,4 @@ func die() -> void:
 	if not died:
 		died = true
 		print('i am become dead')
+		position = GameState.last_location
