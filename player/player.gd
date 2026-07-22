@@ -4,9 +4,16 @@ const GRAVITY = 450
 
 const MAX_JUMP = -300
 const MAX_JUMP_CHARGE = 0.5
-var sand_in_bottom: float = 1.0
-var total_sand: float = 7.0
+var sand_in_bottom: float = 1.0:
+	set(new_sand_in_bottom):
+		sand_in_bottom = max(new_sand_in_bottom, 0)
+		if sand_in_bottom >= total_sand:
+			die()
+	get():
+		return sand_in_bottom
+var total_sand: float = 6.0
 var jump_charge = 0.0
+var died = false
 @export var jump_charge_curve: Curve
 
 const MAX_SPEED = 150
@@ -31,3 +38,12 @@ func _physics_process(delta: float):
 	move_and_slide()
 	
 	sand_in_bottom += delta
+
+func damage(dmg: int) -> void:
+	total_sand -= dmg
+	sand_in_bottom = min(sand_in_bottom, total_sand)
+	
+func die() -> void:
+	if not died:
+		died = true
+		print('i am become dead')
