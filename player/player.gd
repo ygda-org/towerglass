@@ -4,13 +4,7 @@ const GRAVITY = 450
 
 const MAX_JUMP = -300
 const MAX_JUMP_CHARGE = 0.5
-var sand_in_bottom: float = 1.0:
-	set(new_sand_in_bottom):
-		sand_in_bottom = max(new_sand_in_bottom, 0)
-		if sand_in_bottom >= total_sand:
-			die()
-	get():
-		return sand_in_bottom
+var sand_in_bottom: float = 0.0
 var total_sand: float = 6.0
 var jump_charge = 0.0
 var died = false
@@ -29,8 +23,8 @@ func _physics_process(delta: float):
 			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
 		elif Input.is_action_just_released("jump"):
 			velocity.y = MAX_JUMP * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
-			sand_in_bottom = total_sand - sand_in_bottom
 			jump_charge = 0.0
+			flip()
 	else:
 		var dir = Input.get_axis("left", "right")
 		velocity.x = MAX_SPEED * dir
@@ -38,6 +32,11 @@ func _physics_process(delta: float):
 	move_and_slide()
 	
 	sand_in_bottom += delta
+	if sand_in_bottom >= total_sand:
+		die()
+
+func flip():
+	sand_in_bottom = total_sand - sand_in_bottom
 
 func damage(dmg: int) -> void:
 	total_sand -= dmg
