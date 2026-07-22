@@ -17,7 +17,7 @@ offset_top = 460.0
 offset_right = 426.0
 offset_bottom = 508.0
 number = 1
-target = "res://levels/level_1.tscn"
+target = "res://levels/tutorial.tscn"
 
 [node name="SelectButton2" parent="." unique_id=1273816794 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
