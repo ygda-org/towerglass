@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://b41kxe2xuryqi"]
 
-[ext_resource type="PackedScene" uid="uid://dd8wki2lbrr5r" path="res://levels/test_block.tscn" id="1_jirdo"]
-[ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_bt44k"]
+[ext_resource type="PackedScene" uid="uid://dd8wki2lbrr5r" path="res://levels/level_objects/test_block.tscn" id="1_84ig8"]
+[ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_7lf0s"]
 
 [node name="Level1" type="Node2D" unique_id=1819327553]
 
-[node name="TestBlock" parent="." unique_id=78915269 instance=ExtResource("1_jirdo")]
+[node name="TestBlock" parent="." unique_id=78915269 instance=ExtResource("1_84ig8")]
 position = Vector2(220, 348)
 
-[node name="TestBlock2" parent="." unique_id=1443411749 instance=ExtResource("1_jirdo")]
+[node name="TestBlock2" parent="." unique_id=1443411749 instance=ExtResource("1_84ig8")]
 position = Vector2(364, 353)
 
-[node name="TestBlock3" parent="." unique_id=1716039483 instance=ExtResource("1_jirdo")]
+[node name="TestBlock3" parent="." unique_id=1716039483 instance=ExtResource("1_84ig8")]
 position = Vector2(523, 338)
 
-[node name="TestBlock4" parent="." unique_id=1468267371 instance=ExtResource("1_jirdo")]
+[node name="TestBlock4" parent="." unique_id=1468267371 instance=ExtResource("1_84ig8")]
 position = Vector2(670, 229)
 
-[node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_bt44k")]
+[node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_7lf0s")]
 position = Vector2(215, 248)

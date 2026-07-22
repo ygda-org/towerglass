@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://261b3pvw2i0a"]
 
-[ext_resource type="PackedScene" uid="uid://dd8wki2lbrr5r" path="res://levels/test_block.tscn" id="1_hldmh"]
-[ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_gew73"]
+[ext_resource type="PackedScene" uid="uid://dd8wki2lbrr5r" path="res://levels/level_objects/test_block.tscn" id="1_r56kv"]
+[ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_yvw6e"]
 
 [node name="Level3" type="Node2D" unique_id=2047266858]
 
-[node name="TestBlock" parent="." unique_id=78915269 instance=ExtResource("1_hldmh")]
+[node name="TestBlock" parent="." unique_id=78915269 instance=ExtResource("1_r56kv")]
 position = Vector2(87, 352)
 
-[node name="TestBlock2" parent="." unique_id=336419199 instance=ExtResource("1_hldmh")]
+[node name="TestBlock2" parent="." unique_id=336419199 instance=ExtResource("1_r56kv")]
 position = Vector2(267, 422)
 
-[node name="TestBlock3" parent="." unique_id=2035123609 instance=ExtResource("1_hldmh")]
+[node name="TestBlock3" parent="." unique_id=2035123609 instance=ExtResource("1_r56kv")]
 position = Vector2(482, 438)
 
-[node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_gew73")]
+[node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_yvw6e")]
 position = Vector2(472, 282)
