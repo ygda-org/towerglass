@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nqj1gawkl4gn"]
 
-[ext_resource type="Script" path="res://levels/level_objects/crumbling_platform.gd" id="1_1xvr8"]
+[ext_resource type="Script" uid="uid://nq8mu2jd5hav" path="res://levels/level_objects/crumbling_platform.gd" id="1_1xvr8"]
 
 [node name="CrumblingPlatform" type="Node2D" unique_id=1073924045]
 script = ExtResource("1_1xvr8")

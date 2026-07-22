@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bn4m4aljk32wv"]
 
-[ext_resource type="Script" path="res://levels/level_objects/crumbling_tile.gd" id="1_w8fke"]
+[ext_resource type="Script" uid="uid://db5cychog4x3h" path="res://levels/level_objects/crumbling_tile.gd" id="1_w8fke"]
 [ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="2_dce2v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
@@ -81,6 +81,9 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
 size = Vector2(16, 4)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3lui"]
+size = Vector2(16, 16)
+
 [node name="CrumblingTile" type="StaticBody2D" unique_id=1109916686]
 script = ExtResource("1_w8fke")
 
@@ -94,15 +97,23 @@ autoplay = "default"
 shape = SubResource("RectangleShape2D_y0u0i")
 
 [node name="Timer" type="Timer" parent="." unique_id=897639255]
+wait_time = 2.0
+one_shot = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1676578458]
+[node name="CrumbleArea" type="Area2D" parent="." unique_id=1676578458]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1459099013]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumbleArea" unique_id=1459099013]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_0es7p")
 
+[node name="CollisionArea" type="Area2D" parent="." unique_id=967508513]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1859014016]
+shape = SubResource("RectangleShape2D_o3lui")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="CrumbleArea" to="." method="_on_crumble_area_body_entered"]
+[connection signal="body_entered" from="CrumbleArea" to="." method="_on_area_2d_body_entered"]
