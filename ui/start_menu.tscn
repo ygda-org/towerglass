@@ -102,4 +102,4 @@ offset_right = 240.0
 offset_bottom = 209.0
 text = "Start :D"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

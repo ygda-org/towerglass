@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bn6f701wdg7wr"]
 
+[ext_resource type="PackedScene" uid="uid://c7u6ehfby38rj" path="res://ui/select_button.tscn" id="1_o7pgs"]
+
 [node name="LevelSelect" type="Control" unique_id=1948940972]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SelectButton" parent="." unique_id=911375310 instance=ExtResource("1_o7pgs")]
+layout_mode = 1
+offset_left = 431.0
+offset_top = 440.0
+offset_right = 431.0
+offset_bottom = 440.0
+number = 1

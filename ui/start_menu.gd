@@ -22,4 +22,4 @@ func _ready():
 
 
 func _on_start_button_pressed():
-	pass # Replace with function body.
+	SceneSwitcher.go_to_scene("res://ui/level_select.tscn")
