@@ -3,8 +3,20 @@
 [ext_resource type="Script" uid="uid://dkn1f6xxho7w1" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="2_rkbax"]
 
+[sub_resource type="Curve" id="Curve_qjkh3"]
+_data = [Vector2(0, 0.4545455), 0.0, -0.1595681, 0, 0, Vector2(1, 0.099173546), -1.2676758, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g6k8r"]
+_data = [Vector2(0, 0.25619835), 0.0, 2.4777322, 0, 0, Vector2(0.26693225, 1), 0.94828826, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_rkbax"]
 _data = [Vector2(0, 0.23140502), 0.0, 1.6076446, 0, 0, Vector2(1, 1), 0.028416228, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g1dw6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.57024795), -1.281234, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i50wy"]
@@ -12,7 +24,10 @@ size = Vector2(16, 48)
 
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
 script = ExtResource("1_oul6g")
+gravity_curve_asc = SubResource("Curve_qjkh3")
+gravity_curve_dec = SubResource("Curve_g6k8r")
 jump_charge_curve = SubResource("Curve_rkbax")
+aerial_acceleration_curve = SubResource("Curve_g1dw6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1371412027]
 scale = Vector2(0.125, 0.375)

@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 const GRAVITY = 450
+@export var gravity_curve_asc: Curve
+@export var gravity_curve_dec: Curve
+const MAX_FALL_SPEED = 500
 
 const MAX_JUMP = -300
 const MAX_JUMP_CHARGE = 0.5
@@ -11,6 +14,9 @@ var died = false
 @export var jump_charge_curve: Curve
 
 const MAX_SPEED = 150
+const AIR_FRICTION = 0.99
+const AIR_CONTROL = 500
+@export var aerial_acceleration_curve: Curve
 
 func _ready() -> void:
 	GameState.player = self
@@ -27,7 +33,14 @@ func _physics_process(delta: float):
 			flip()
 	else:
 		var dir = Input.get_axis("left", "right")
-		velocity.x = MAX_SPEED * dir
+		if dir * velocity.x <= 0:
+			velocity.x *= AIR_FRICTION
+		velocity.x = move_toward(velocity.x, MAX_SPEED * dir, AIR_CONTROL * delta * aerial_acceleration_curve.sample(abs(velocity.x/MAX_SPEED)))
+		var grav_mult
+		if velocity.y > 0:
+			grav_mult = gravity_curve_dec.sample(velocity.y/MAX_FALL_SPEED)
+		else:
+			grav_mult = gravity_curve_asc.sample(velocity.y/MAX_JUMP)
 		velocity.y += GRAVITY * delta # add curve later
 	move_and_slide()
 	
