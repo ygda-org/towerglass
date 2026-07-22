@@ -2,25 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="1_rpem4"]
 
-[sub_resource type="GDScript" id="GDScript_rpem4"]
-script/source = "extends StaticBody2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_850wk"]
 size = Vector2(129, 128)
 
 [node name="StickyBlock" type="StaticBody2D" unique_id=1067173021]
-script = SubResource("GDScript_rpem4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=830345270]
 texture = ExtResource("1_rpem4")
