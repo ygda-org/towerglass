@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const GRAVITY = 350
+const GRAVITY = 450
 
-const MAX_JUMP = -200
+const MAX_JUMP = -300
 const MAX_JUMP_CHARGE = 0.5
 var jump_charge = 0.0
 
