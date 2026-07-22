@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="2_rkbax"]
 
 [sub_resource type="Curve" id="Curve_qjkh3"]
-_data = [Vector2(0, 0.4545455), 0.0, -0.1595681, 0, 0, Vector2(1, 0.099173546), -1.2676758, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, -0.1595681, 0, 0, Vector2(1, 0.8016529), -0.56181103, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_g6k8r"]
-_data = [Vector2(0, 0.25619835), 0.0, 2.4777322, 0, 0, Vector2(0.26693225, 1), 0.94828826, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0.6280992), 0.0, 2.4777322, 0, 0, Vector2(0.26693225, 1), 0.94828826, 0.0, 0, 0, Vector2(1, 0.71900827), -0.8396305, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Curve" id="Curve_rkbax"]
 _data = [Vector2(0, 0.23140502), 0.0, 1.6076446, 0, 0, Vector2(1, 1), 0.028416228, 0.0, 0, 0]

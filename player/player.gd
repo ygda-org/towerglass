@@ -41,7 +41,7 @@ func _physics_process(delta: float):
 			grav_mult = gravity_curve_dec.sample(velocity.y/MAX_FALL_SPEED)
 		else:
 			grav_mult = gravity_curve_asc.sample(velocity.y/MAX_JUMP)
-		velocity.y += GRAVITY * delta # add curve later
+		velocity.y = move_toward(velocity.y, MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
 	move_and_slide()
 	
 	sand_in_bottom += delta
