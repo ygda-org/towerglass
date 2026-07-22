@@ -9,6 +9,9 @@ var jump_charge = 0.0
 
 const MAX_SPEED = 150
 
+func _ready() -> void:
+	GameState.player = self
+
 func _physics_process(delta: float):
 	if is_on_floor():
 		velocity.x = 0
