@@ -3,11 +3,16 @@
 [ext_resource type="Script" uid="uid://dkn1f6xxho7w1" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="2_rkbax"]
 
+[sub_resource type="Curve" id="Curve_rkbax"]
+_data = [Vector2(0, 0.23140502), 0.0, 1.6076446, 0, 0, Vector2(1, 1), 0.028416228, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i50wy"]
 size = Vector2(16, 48)
 
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
 script = ExtResource("1_oul6g")
+jump_charge_curve = SubResource("Curve_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1371412027]
 scale = Vector2(0.125, 0.375)
