@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cp7kql7qpqvxm"]
+
+[ext_resource type="Script" uid="uid://c43r0mtwi3cfj" path="res://levels/level_objects/moving_platform.gd" id="1_ljke0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+size = Vector2(64, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v8mm4"]
+size = Vector2(64, 16)
+
+[node name="MovingPlatform" type="Path2D" unique_id=767670818]
+script = ExtResource("1_ljke0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=231407704]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="PathFollow2D" unique_id=704319597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/AnimatableBody2D" unique_id=2097366852]
+shape = SubResource("RectangleShape2D_0es7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/AnimatableBody2D" unique_id=1882284300]
+texture = SubResource("PlaceholderTexture2D_v8mm4")
+
+[node name="Timer" type="Timer" parent="." unique_id=426582632]
