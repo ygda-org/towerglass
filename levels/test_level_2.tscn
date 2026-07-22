@@ -2,6 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dd8wki2lbrr5r" path="res://levels/level_objects/test_block.tscn" id="1_djtih"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_rp2j6"]
+[ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moving_platform.tscn" id="3_rp2j6"]
+
+[sub_resource type="Curve2D" id="Curve2D_ljke0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 600, 400, 0, 0, 0, 0, 700, 400)
+}
+point_count = 2
 
 [node name="Level2" type="Node2D" unique_id=1804884248]
 
@@ -16,3 +23,7 @@ position = Vector2(469, 439)
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_rp2j6")]
 position = Vector2(314, 295)
+
+[node name="MovingPlatform" parent="." unique_id=767670818 instance=ExtResource("3_rp2j6")]
+curve = SubResource("Curve2D_ljke0")
+time = 1
