@@ -14,7 +14,7 @@ func _physics_process(delta: float):
 		velocity.x = 0
 		if Input.is_action_pressed("jump"):
 			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
-		if Input.is_action_just_released("jump"):
+		elif Input.is_action_just_released("jump"):
 			velocity.y = MAX_JUMP * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 			jump_charge = 0.0
 	else:
