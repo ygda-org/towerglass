@@ -1,18 +1,13 @@
 [gd_scene format=3 uid="uid://c7u6ehfby38rj"]
 
 [ext_resource type="Texture2D" uid="uid://0nuajb3y3bx2" path="res://assets/programmer_art/select_button.png" id="1_qsgvl"]
-[ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="2_ou62g"]
+[ext_resource type="Texture2D" uid="uid://dkar4od3oia7e" path="res://assets/programmer_art/select_button_hover.png" id="2_ld75t"]
 [ext_resource type="Script" uid="uid://cskh6avysdse8" path="res://ui/select_button.gd" id="3_ld75t"]
-
-[sub_resource type="Gradient" id="Gradient_ou62g"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ld75t"]
-gradient = SubResource("Gradient_ou62g")
 
 [node name="SelectButton" type="TextureButton" unique_id=1273816794]
 texture_normal = ExtResource("1_qsgvl")
-texture_pressed = SubResource("GradientTexture1D_ld75t")
-texture_hover = ExtResource("2_ou62g")
+texture_pressed = ExtResource("1_qsgvl")
+texture_hover = ExtResource("2_ld75t")
 script = ExtResource("3_ld75t")
 
 [node name="Number" type="Label" parent="." unique_id=258695258]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="towerglass"
-run/main_scene="uid://bqyhgkwbrfqhc"
+run/main_scene="uid://bn6f701wdg7wr"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 

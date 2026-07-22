@@ -12,8 +12,27 @@ grow_vertical = 2
 
 [node name="SelectButton" parent="." unique_id=911375310 instance=ExtResource("1_o7pgs")]
 layout_mode = 1
-offset_left = 431.0
-offset_top = 440.0
-offset_right = 431.0
-offset_bottom = 440.0
+offset_left = 378.0
+offset_top = 460.0
+offset_right = 426.0
+offset_bottom = 508.0
 number = 1
+target = "res://levels/test_level_1.tscn"
+
+[node name="SelectButton2" parent="." unique_id=1273816794 instance=ExtResource("1_o7pgs")]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 433.0
+offset_right = 498.0
+offset_bottom = 481.0
+number = 2
+target = "res://levels/test_level_2.tscn"
+
+[node name="SelectButton3" parent="." unique_id=572162557 instance=ExtResource("1_o7pgs")]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 403.0
+offset_right = 567.0
+offset_bottom = 451.0
+number = 3
+target = "res://levels/test_level_3.tscn"
