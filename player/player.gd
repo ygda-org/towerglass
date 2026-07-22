@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 const GRAVITY = 450
 
-const MAX_JUMP = -300
-const MAX_JUMP_CHARGE = 0.5
+var max_jump = -300
+var max_jump_charge = 0.5
 var jump_charge = 0.0
 @export var jump_charge_curve: Curve
 
@@ -16,9 +16,9 @@ func _physics_process(delta: float):
 	if is_on_floor():
 		velocity.x = 0
 		if Input.is_action_pressed("jump"):
-			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
+			jump_charge = move_toward(jump_charge, max_jump_charge, delta)
 		elif Input.is_action_just_released("jump"):
-			velocity.y = MAX_JUMP * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
+			velocity.y = max_jump * jump_charge_curve.sample(jump_charge/max_jump_charge)
 			jump_charge = 0.0
 	else:
 		var dir = Input.get_axis("left", "right")
