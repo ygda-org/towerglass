@@ -94,6 +94,12 @@ func update_sand(delta : float):
 	
 	sand_in_bottom += delta
 	
+	update_sand_visual()
+	
+	if sand_in_bottom >= total_sand:
+		die()
+
+func update_sand_visual():
 	var points : Array[float] = [0,0,0.5,0.5,1.0,1.0]
 	var percent : float = sand_in_bottom / total_sand
 	points[0] = 0.5 * percent
@@ -102,9 +108,6 @@ func update_sand(delta : float):
 	points[5] = 0.5 * (1 - percent) + 0.5
 	
 	mask_grad.offsets = PackedFloat32Array(points)
-	
-	if sand_in_bottom >= total_sand:
-		die()
 
 func poll_floor_type():
 	left_floor = $LeftRay.get_collider()
@@ -123,6 +126,7 @@ func flip():
 	else:
 		sand_bottom_col = "yellow"
 	sand_in_bottom = total_sand - sand_in_bottom
+	update_sand_visual()
 	await sand.animation_finished
 	sand.flip_h = false
 
