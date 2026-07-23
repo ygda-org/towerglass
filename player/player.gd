@@ -27,6 +27,8 @@ signal jumped
 var god_mode = false
 
 @onready var sand : AnimatedSprite2D = $Mask/Sand
+@onready var mask_tex : GradientTexture2D = $Mask.texture
+@onready var mask_grad : Gradient = mask_tex.gradient
 var left_floor : Object = null
 var right_floor : Object = null
 
@@ -59,10 +61,14 @@ func _physics_process(delta: float):
 		$Camera2D.global_position = global_position
 		if Input.is_action_pressed("jump"):
 			$Anim.play("squash")
+			mask_tex.height = 14 - $Anim.frame - 1
+			$Mask.position.y = $Anim.frame + 1
 			sand.play(sand_bottom_col + "_squash")
 			velocity.x = 0
 			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
 		elif Input.is_action_just_released("jump"):
+			mask_tex.height = 14
+			$Mask.position.y = 0
 			velocity.y = (MAX_JUMP + jump_offset) * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 			jump_charge = 0.0
 			flip()
