@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dxleknhn167kn"]
+
+[ext_resource type="Script" uid="uid://bct8x5uoy144b" path="res://levels/level_objects/general_attack.gd" id="1_el5xc"]
+
+[node name="GeneralAttack" type="Node2D" unique_id=539467950]
+script = ExtResource("1_el5xc")
