@@ -9,6 +9,8 @@ const MAX_JUMP = -250
 const MAX_JUMP_CHARGE = 0.5
 var total_sand: float = 6.0
 @onready var sand_in_bottom: float = total_sand/2
+##Either "yellow" or "blue
+var sand_bottom_col : String = "yellow"
 var jump_charge = 0.0
 var died = false
 @export var jump_charge_curve: Curve
@@ -24,12 +26,15 @@ signal jumped
 
 var god_mode = false
 
+@onready var sand : AnimatedSprite2D = $Mask/Sand
 var left_floor : Object = null
 var right_floor : Object = null
 
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
+	$Anim.play("default")
+	sand.play("yellow_idle")
 
 func _physics_process(delta: float):
 	if Input.is_action_just_pressed("god_mode"):
@@ -37,7 +42,7 @@ func _physics_process(delta: float):
 		print("god mode : ", god_mode)
 		sand_in_bottom = 0.0
 		
-	$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
+	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	var dir = Input.get_axis("left", "right")
 	if is_on_floor():
@@ -53,6 +58,8 @@ func _physics_process(delta: float):
 		$Camera2D.position_smoothing_speed = 4.0
 		$Camera2D.global_position = global_position
 		if Input.is_action_pressed("jump"):
+			$Anim.play("squash")
+			sand.play(sand_bottom_col + "_squash")
 			velocity.x = 0
 			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
 		elif Input.is_action_just_released("jump"):
@@ -80,10 +87,24 @@ func _physics_process(delta: float):
 func poll_floor_type():
 	left_floor = $LeftRay.get_collider()
 	right_floor = $RightRay.get_collider()
-	print(str(left_floor) + "\t" + str(right_floor))
 
 func flip():
+	if Input.is_action_pressed("left"):
+		$Anim.flip_h = true
+		sand.flip_h = true
+	else:
+		$Anim.flip_h = false
+		sand.flip_h = false
+	$Anim.play("flip")
+	sand.play(sand_bottom_col + "_flip")
+	if sand_bottom_col == "yellow":
+		sand_bottom_col = "blue"
+	else:
+		sand_bottom_col = "yellow"
 	sand_in_bottom = total_sand - sand_in_bottom
+	await $Anim.animation_finished
+	$Anim.flip_h = false
+	sand.flip_h = false
 
 func damage(dmg: int) -> void:
 	total_sand -= dmg
