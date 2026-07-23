@@ -82,69 +82,66 @@ tile_set = SubResource("TileSet_vl7tc")
 
 [node name="Challenge1" type="Node" parent="." unique_id=448662577]
 
-[node name="GeneralAttack" parent="Challenge1" unique_id=539467950 node_paths=PackedStringArray("hitbox") instance=ExtResource("5_pawmo")]
-hitbox = NodePath("Spikes")
+[node name="GeneralAttack" parent="Challenge1" unique_id=539467950 instance=ExtResource("5_pawmo")]
 
-[node name="Spikes" type="Area2D" parent="Challenge1/GeneralAttack" unique_id=84682861]
+[node name="Killbox1" type="Area2D" parent="Challenge1/GeneralAttack" unique_id=84682861]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge1/GeneralAttack/Spikes" unique_id=372977554]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge1/GeneralAttack/Killbox1" unique_id=372977554]
 position = Vector2(152, 520)
 shape = SubResource("RectangleShape2D_kcxtp")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge1/GeneralAttack/Spikes" unique_id=1280785084]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge1/GeneralAttack/Killbox1" unique_id=1280785084]
 position = Vector2(480, 520)
 shape = SubResource("RectangleShape2D_566q8")
 
 [node name="Challenge2" type="Node" parent="." unique_id=1793201024]
 
-[node name="GeneralAttack" parent="Challenge2" unique_id=1204746986 node_paths=PackedStringArray("hitbox") instance=ExtResource("5_pawmo")]
-hitbox = NodePath("Spikes")
+[node name="GeneralAttack" parent="Challenge2" unique_id=1204746986 instance=ExtResource("5_pawmo")]
 
-[node name="Spikes" type="Area2D" parent="Challenge2/GeneralAttack" unique_id=1283323983]
+[node name="Killbox2" type="Area2D" parent="Challenge2/GeneralAttack" unique_id=1283323983]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=389865532]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=389865532]
 position = Vector2(912, 328)
 shape = SubResource("RectangleShape2D_0th8g")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=2126505271]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=2126505271]
 position = Vector2(848, 248)
 shape = SubResource("RectangleShape2D_d86fu")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=2081891574]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=2081891574]
 position = Vector2(896, 168)
 shape = SubResource("RectangleShape2D_qfa6f")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=1373624316]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=1373624316]
 position = Vector2(928, 88)
 shape = SubResource("RectangleShape2D_n8to2")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=1507005209]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=1507005209]
 position = Vector2(720, 168)
 shape = SubResource("RectangleShape2D_t6a35")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=1415038256]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=1415038256]
 position = Vector2(808, 88)
 shape = SubResource("RectangleShape2D_ajiua")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=873002447]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=873002447]
 position = Vector2(656, 88)
 shape = SubResource("RectangleShape2D_xa8ag")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=97612562]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=97612562]
 position = Vector2(656, 248)
 shape = SubResource("RectangleShape2D_tjsbg")
 
 [node name="Challenge3" type="Node" parent="." unique_id=1710617905]
 
-[node name="GeneralAttack" parent="Challenge3" unique_id=1501071496 node_paths=PackedStringArray("hitbox") instance=ExtResource("5_pawmo")]
-hitbox = NodePath("Spikes")
+[node name="GeneralAttack" parent="Challenge3" unique_id=1501071496 instance=ExtResource("5_pawmo")]
 
-[node name="Spikes" type="Area2D" parent="Challenge3/GeneralAttack" unique_id=311725946]
+[node name="Killbox3" type="Area2D" parent="Challenge3/GeneralAttack" unique_id=311725946]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge3/GeneralAttack/Spikes" unique_id=2006805149]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge3/GeneralAttack/Killbox3" unique_id=2006805149]
 position = Vector2(384, 328)
 shape = SubResource("RectangleShape2D_qo776")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge3/GeneralAttack/Spikes" unique_id=452738432]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge3/GeneralAttack/Killbox3" unique_id=452738432]
 position = Vector2(248, 216)
 shape = SubResource("RectangleShape2D_wqcic")
