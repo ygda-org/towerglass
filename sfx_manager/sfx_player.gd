@@ -38,3 +38,9 @@ func play(label: Labels):
 func force_clear_audios():
 	for node in get_children():
 		node.queue_free()
+
+## remove all playing audio of a specific type
+func clear_audio(label : Labels):
+	for node in get_children():
+		if Labels.keys()[label] in node.name:
+			node.queue_free()
