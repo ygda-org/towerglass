@@ -13,7 +13,6 @@ func _process(_delta):
 		toggle_pause()
 
 func _on_level_select_button_pressed():
-	print("hi")
 	SceneSwitcher.go_to_scene("res://ui/level_select.tscn")
 	toggle_pause()
 
