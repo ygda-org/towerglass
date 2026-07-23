@@ -18,6 +18,8 @@ const AIR_FRICTION = 0.99
 const AIR_CONTROL = 500
 @export var aerial_acceleration_curve: Curve
 
+const DRAG_SPEED = 20
+
 signal jumped
 
 func _ready() -> void:
@@ -27,11 +29,13 @@ func _ready() -> void:
 func _physics_process(delta: float):
 	$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
+	var dir = Input.get_axis("left", "right")
 	if is_on_floor():
+		velocity.x = DRAG_SPEED * dir
 		$Camera2D.position_smoothing_speed = 4.0
 		$Camera2D.global_position = global_position
-		velocity.x = 0
 		if Input.is_action_pressed("jump"):
+			velocity.x = 0
 			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
 		elif Input.is_action_just_released("jump"):
 			velocity.y = MAX_JUMP * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
@@ -40,7 +44,6 @@ func _physics_process(delta: float):
 			GameState.player_jumped.emit()
 	else:
 		$Camera2D.position_smoothing_speed = 1.0
-		var dir = Input.get_axis("left", "right")
 		if dir * velocity.x <= 0:
 			velocity.x *= AIR_FRICTION
 		velocity.x = move_toward(velocity.x, MAX_SPEED * dir, AIR_CONTROL * delta * aerial_acceleration_curve.sample(abs(velocity.x/MAX_SPEED)))
