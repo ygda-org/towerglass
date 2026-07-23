@@ -3,6 +3,9 @@ extends Path2D
 
 @export var time: float = 1.0
 @export var wait_until_player_touches_to_move: bool = false
+@export var go_back: bool = false
+@export var trans_type: Tween.TransitionType = Tween.TRANS_SINE
+@export var ease_type: Tween.EaseType = Tween.EASE_IN_OUT
 var progress: float
 var elapsed_time: float = 0
 var flip = false
@@ -11,7 +14,7 @@ var moving = true
 func _physics_process(delta: float) -> void:
 	if not moving:
 		return
-	var timer_ratio = Tween.interpolate_value(0.0, 1.0, elapsed_time, time, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	var timer_ratio = Tween.interpolate_value(0.0, 1.0, elapsed_time, time, trans_type, ease_type)
 	if flip:
 		$PathFollow2D.progress_ratio = 1 - timer_ratio
 	else:
@@ -21,10 +24,14 @@ func _physics_process(delta: float) -> void:
 			child.position = $PathFollow2D.position
 	elapsed_time += delta * 2
 	if elapsed_time > time:
-		elapsed_time -= time
-		flip = not flip
+		if go_back:
+			elapsed_time = time
+		else:
+			elapsed_time -= time
+			flip = not flip
 
 func _ready() -> void:
+	GameState.player.died.connect(reset)
 	if wait_until_player_touches_to_move:
 		moving = false
 		for child in get_children():
@@ -33,3 +40,17 @@ func _ready() -> void:
 
 func start_move() -> void:
 	moving = true
+
+func reset():
+	print("e")
+	elapsed_time = 0
+	flip = false
+	if wait_until_player_touches_to_move:
+		for child in get_children():
+			if child.name == "MoveablePlatform":
+				child.moving = false
+		moving = false
+	$PathFollow2D.progress_ratio = 0
+	for child in get_children():
+		if child is Node2D:
+			child.position = $PathFollow2D.position

@@ -4,7 +4,5 @@
 
 [node name="MovingStuff" type="Path2D" unique_id=767670818]
 script = ExtResource("1_xsxwo")
-time = null
-wait_until_player_touches_to_move = null
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=231407704]
