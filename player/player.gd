@@ -20,6 +20,8 @@ const AIR_CONTROL = 500
 @export var aerial_acceleration_curve: Curve
 
 const DRAG_SPEED = 20
+const MAX_DRAG_SPEED_BOOST = 6
+var drag_speed_boost = 0
 
 signal jumped
 signal died
@@ -32,6 +34,8 @@ var god_mode = false
 var left_floor : Object = null
 var right_floor : Object = null
 
+var was_on_floor : bool = false
+
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
@@ -39,13 +43,31 @@ func _ready() -> void:
 	sand.play("yellow_idle")
 
 func _physics_process(delta: float):
+	
+	was_on_floor = is_on_floor()
+	
+	if is_on_floor() and velocity.x != 0:
+		SFX.play(SFX.Labels.WALK)
+	else:
+		SFX.clear_audio(SFX.Labels.WALK)
+		
+	if Input.is_action_just_released("jump") and is_on_floor():
+		SFX.play(SFX.Labels.FLIPSANDFALL)
+		SFX.play(SFX.Labels.TOWERCROSSWHOOSH)
+		
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		SFX.play(SFX.Labels.JUMPCHARGE)
+	else:
+		SFX.clear_audio(SFX.Labels.JUMPCHARGE)
+		
 	if Input.is_action_just_pressed("god_mode"):
 		god_mode = not god_mode
-		print("god mode : ", god_mode)
+		print("god mode :", god_mode)
 		sand_in_bottom = 0.0
 		
 	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
+	drag_speed_boost = move_toward(drag_speed_boost, 1.0, delta*2)
 	var dir = Input.get_axis("left", "right")
 	if is_on_floor():
 		poll_floor_type()
@@ -56,7 +78,7 @@ func _physics_process(delta: float):
 			jump_offset = 100
 			walk_offset = 10
 		
-		velocity.x = (DRAG_SPEED - walk_offset) * dir
+		velocity.x = (DRAG_SPEED - walk_offset) * dir * drag_speed_boost
 		$Camera2D.position_smoothing_speed = 4.0
 		$Camera2D.global_position = global_position
 		if Input.is_action_pressed("jump"):
@@ -86,6 +108,9 @@ func _physics_process(delta: float):
 		velocity.y = move_toward(velocity.y, MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
 	move_and_slide()
 	
+	if not was_on_floor and is_on_floor():
+		SFX.play(SFX.Labels.HOURGLASSFALL)
+	
 	update_sand(delta)
 
 func update_sand(delta : float):
@@ -114,6 +139,7 @@ func poll_floor_type():
 	right_floor = $RightRay.get_collider()
 
 func flip():
+	drag_speed_boost = MAX_DRAG_SPEED_BOOST
 	if Input.is_action_pressed("left"):
 		$Anim.play("left_flip")
 		sand.flip_h = true
@@ -135,13 +161,19 @@ func damage(dmg: int) -> void:
 	sand_in_bottom = min(sand_in_bottom, total_sand)
 	
 func die() -> void:
+	if $DeathCooldown.time_left > 0.0:
+		return
+	
 	if god_mode == true:
 		return
-	print('i am become dead')
+		
+	$DeathCooldown.start()
+	
 	position = GameState.last_location
 	total_sand = 6.0
 	sand_in_bottom = total_sand/2
 	died.emit()
 
 func _on_hurtbox_body_entered(body):
+	SFX.play(SFX.Labels.DEATHSPILL)
 	die()
