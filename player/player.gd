@@ -20,6 +20,8 @@ const AIR_CONTROL = 500
 @export var aerial_acceleration_curve: Curve
 
 const DRAG_SPEED = 20
+const MAX_DRAG_SPEED_BOOST = 6
+var drag_speed_boost = 0
 
 signal jumped
 signal died
@@ -51,6 +53,7 @@ func _physics_process(delta: float):
 		
 	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
+	drag_speed_boost = move_toward(drag_speed_boost, 1.0, delta*2)
 	var dir = Input.get_axis("left", "right")
 	if is_on_floor():
 		poll_floor_type()
@@ -61,7 +64,7 @@ func _physics_process(delta: float):
 			jump_offset = 100
 			walk_offset = 10
 		
-		velocity.x = (DRAG_SPEED - walk_offset) * dir
+		velocity.x = (DRAG_SPEED - walk_offset) * dir * drag_speed_boost
 		$Camera2D.position_smoothing_speed = 4.0
 		$Camera2D.global_position = global_position
 		if Input.is_action_pressed("jump"):
@@ -119,6 +122,7 @@ func poll_floor_type():
 	right_floor = $RightRay.get_collider()
 
 func flip():
+	drag_speed_boost = MAX_DRAG_SPEED_BOOST
 	if Input.is_action_pressed("left"):
 		$Anim.play("left_flip")
 		sand.flip_h = true
