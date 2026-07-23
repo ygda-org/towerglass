@@ -34,4 +34,6 @@ func _on_timer_timeout() -> void:
 	crumbling = false
 
 func side_anim(anim_name: String) -> void:
+	if side == "":
+		print("huh")
 	$AnimatedSprite2D.play(side + "_" + anim_name)
