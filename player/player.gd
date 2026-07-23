@@ -39,9 +39,14 @@ func _ready() -> void:
 	sand.play("yellow_idle")
 
 func _physics_process(delta: float):
+	if is_on_floor() and (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+		SFX.play(SFX.Labels.WALK)
+	else
+		SFX.
+	
 	if Input.is_action_just_pressed("god_mode"):
 		god_mode = not god_mode
-		print("god mode : ", god_mode)
+		print("god mode :", god_mode)
 		sand_in_bottom = 0.0
 		
 	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
@@ -135,13 +140,21 @@ func damage(dmg: int) -> void:
 	sand_in_bottom = min(sand_in_bottom, total_sand)
 	
 func die() -> void:
+	print($DeathCooldown.time_left)
+
+	if $DeathCooldown.time_left > 0.0:
+		return
+	
 	if god_mode == true:
 		return
-	print('i am become dead')
+		
+	$DeathCooldown.start()
+	
 	position = GameState.last_location
 	total_sand = 6.0
 	sand_in_bottom = total_sand/2
 	died.emit()
 
 func _on_hurtbox_body_entered(body):
+	SFX.play(SFX.Labels.DEATHSPILL)
 	die()

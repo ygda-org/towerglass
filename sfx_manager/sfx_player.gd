@@ -5,6 +5,8 @@ enum Labels {
 	YGDASTING,
 	BUTTONCLICK,
 	BUTTONHOVER,
+	DEATHSPILL,
+	WALK,
 }
 
 @export var label_to_setting: Dictionary[Labels, SfxSettings]
