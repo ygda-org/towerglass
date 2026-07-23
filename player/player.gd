@@ -64,5 +64,5 @@ func die() -> void:
 	if not died:
 		died = true
 		print('i am become dead')
-		position = GameState.last_location
-		sand_in_bottom = 0
+	position = GameState.last_location
+	sand_in_bottom = 0
