@@ -12,7 +12,6 @@ var total_sand: float = 6.0
 ##Either "yellow" or "blue
 var sand_bottom_col : String = "yellow"
 var jump_charge = 0.0
-var died = false
 @export var jump_charge_curve: Curve
 
 const MAX_SPEED = 150
@@ -23,6 +22,7 @@ const AIR_CONTROL = 500
 const DRAG_SPEED = 20
 
 signal jumped
+signal died
 
 var god_mode = false
 
@@ -117,9 +117,8 @@ func damage(dmg: int) -> void:
 func die() -> void:
 	if god_mode == true:
 		return
-	if not died:
-		died = true
-		print('i am become dead')
+	print('i am become dead')
 	position = GameState.last_location
 	total_sand = 6.0
 	sand_in_bottom = total_sand/2
+	died.emit()
