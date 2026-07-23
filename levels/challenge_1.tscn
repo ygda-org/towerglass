@@ -13,7 +13,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_7ga3b"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 16, 0, 0, 0, 0, -304, -104)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -304, -104)
 }
 point_count = 2
 
@@ -114,7 +114,7 @@ position = Vector2(312, -768)
 [node name="MovingStuff" parent="." unique_id=767670818 instance=ExtResource("5_j22ws")]
 position = Vector2(160, -536)
 curve = SubResource("Curve2D_7ga3b")
-time = 10.0
+time = 7.0
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform" parent="MovingStuff" unique_id=1164924703 instance=ExtResource("6_efrhq")]
