@@ -69,7 +69,7 @@ size = Vector2(80, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
 size = Vector2(80, 4)
 
-[node name="CrumblingTile" type="StaticBody2D" unique_id=1109916686]
+[node name="CrumblingTile" type="AnimatableBody2D" unique_id=74500638]
 script = ExtResource("1_w8fke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713537414]
@@ -101,5 +101,4 @@ shape = SubResource("RectangleShape2D_y0u0i")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="CrumbleArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="CrumbleArea" to="." method="_on_crumble_area_body_entered"]

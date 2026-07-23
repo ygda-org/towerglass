@@ -2,6 +2,7 @@ extends Path2D
 
 
 @export var time: float = 1.0
+@export var wait_until_player_touches_to_move: bool = false
 var progress: float
 var elapsed_time: float = 0
 var flip = false

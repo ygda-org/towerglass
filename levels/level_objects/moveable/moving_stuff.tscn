@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1vjjsky8w2o8"]
 
-[ext_resource type="Script" uid="uid://do2gihkibl5hj" path="res://levels/level_objects/moving_stuff.gd" id="1_xsxwo"]
+[ext_resource type="Script" uid="uid://do2gihkibl5hj" path="res://levels/level_objects/moveable/moving_stuff.gd" id="1_xsxwo"]
 
 [node name="MovingStuff" type="Path2D" unique_id=767670818]
 script = ExtResource("1_xsxwo")

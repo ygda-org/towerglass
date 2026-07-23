@@ -2,6 +2,7 @@ extends Node2D
 
 @export var size: int = 5
 @export var tile: PackedScene
+@export var wait_until_player_touches_to_move: bool = false
 var start_pos: Vector2
 
 func _ready() -> void:
