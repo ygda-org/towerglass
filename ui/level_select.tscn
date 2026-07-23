@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bn6f701wdg7wr"]
 
+[ext_resource type="Texture2D" uid="uid://buvhsy871lo78" path="res://assets/ui/level_select_top.png" id="1_4dsvd"]
 [ext_resource type="PackedScene" uid="uid://c7u6ehfby38rj" path="res://ui/select_button.tscn" id="1_o7pgs"]
+[ext_resource type="Texture2D" uid="uid://bq70ukwbrgxcq" path="res://assets/ui/level_select_bot.png" id="2_hunyx"]
 
 [node name="LevelSelect" type="Control" unique_id=1948940972]
 layout_mode = 3
@@ -10,38 +12,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Background" type="Control" parent="." unique_id=659892312]
+anchors_preset = 0
+offset_left = 330.0
+offset_right = 370.0
+offset_bottom = 40.0
+
+[node name="Top" type="TextureRect" parent="Background" unique_id=922503570]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.563, 0.563)
+texture = ExtResource("1_4dsvd")
+
+[node name="Base" type="TextureRect" parent="Background" unique_id=482608318]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 960.0
+scale = Vector2(0.563, 0.563)
+texture = ExtResource("2_hunyx")
+
 [node name="SelectButton" parent="." unique_id=911375310 instance=ExtResource("1_o7pgs")]
 layout_mode = 1
-offset_left = 378.0
-offset_top = 460.0
-offset_right = 426.0
-offset_bottom = 508.0
+offset_left = 377.0
+offset_top = 481.0
+offset_right = 425.0
+offset_bottom = 529.0
 number = 1
 target = "res://levels/tutorial.tscn"
 
 [node name="SelectButton2" parent="." unique_id=1273816794 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 450.0
-offset_top = 433.0
-offset_right = 498.0
-offset_bottom = 481.0
+offset_left = 452.0
+offset_top = 464.0
+offset_right = 500.0
+offset_bottom = 512.0
 number = 2
 target = "res://levels/level_2.tscn"
 
 [node name="SelectButton3" parent="." unique_id=572162557 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 403.0
-offset_right = 567.0
-offset_bottom = 451.0
+offset_left = 520.0
+offset_top = 444.0
+offset_right = 568.0
+offset_bottom = 492.0
 number = 3
 target = "res://levels/level_3.tscn"
 
 [node name="SelectButton4" parent="." unique_id=157797786 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 365.0
-offset_right = 504.0
-offset_bottom = 413.0
+offset_left = 460.0
+offset_top = 401.0
+offset_right = 508.0
+offset_bottom = 449.0
 number = 4
 target = "res://levels/on_off.tscn"
