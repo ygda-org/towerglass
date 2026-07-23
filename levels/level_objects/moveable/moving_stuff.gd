@@ -3,7 +3,7 @@ extends Path2D
 
 @export var time: float = 1.0
 @export var wait_until_player_touches_to_move: bool = false
-@export var go_back: bool = false
+@export var go_back: bool = true
 @export var trans_type: Tween.TransitionType = Tween.TRANS_SINE
 @export var ease_type: Tween.EaseType = Tween.EASE_IN_OUT
 var progress: float
@@ -25,10 +25,10 @@ func _physics_process(delta: float) -> void:
 	elapsed_time += delta * 2
 	if elapsed_time > time:
 		if go_back:
-			elapsed_time = time
-		else:
 			elapsed_time -= time
 			flip = not flip
+		else:
+			elapsed_time = time
 
 func _ready() -> void:
 	GameState.player.died.connect(reset)
