@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://df1s5stadrv4e"
+path="res://.godot/imported/basic level song 1.ogg-ea178da37d23fb1c7ea61d2898e0a5a4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/basic level song 1.ogg"
+dest_files=["res://.godot/imported/basic level song 1.ogg-ea178da37d23fb1c7ea61d2898e0a5a4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
