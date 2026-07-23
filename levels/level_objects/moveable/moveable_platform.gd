@@ -5,6 +5,7 @@ extends Node2D
 @export var wait_until_player_touches_to_move: bool = false
 var start_pos: Vector2
 var moving: bool = true
+var crumbler: bool = false
 
 signal touched_player
 
@@ -21,6 +22,14 @@ func _ready() -> void:
 				addend.get_node("AnimatedSprite2D").set_animation('right')
 			else:
 				addend.get_node("AnimatedSprite2D").set_animation('middle')
+		elif addend.name == "CrumblingTile":
+			crumbler = true
+			if i == 0:
+				addend.side = "left"
+			elif i == size - 1:
+				addend.side = "right"
+			else:
+				addend.side = "middle"
 		addend.position = Vector2(posx, 0)
 		addend.rotation = rotation
 		posx += 16
@@ -37,3 +46,8 @@ func _physics_process(delta: float) -> void:
 			if GameState.player.left_floor == child or GameState.player.left_floor == child:
 				touched_player.emit()
 				moving = true
+	if crumbler:
+		for child in get_children():
+			if "CrumblingTile" in child.name and (GameState.player.left_floor == child or GameState.player.right_floor == child):
+				for child2 in get_children():
+					child2.crumble()
