@@ -25,6 +25,7 @@ func _ready() -> void:
 	GameState.last_location = global_position
 
 func _physics_process(delta: float):
+	$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	if is_on_floor():
 		velocity.x = 0
@@ -64,3 +65,4 @@ func die() -> void:
 		died = true
 		print('i am become dead')
 		position = GameState.last_location
+		sand_in_bottom = 0
