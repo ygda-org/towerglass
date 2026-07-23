@@ -3,7 +3,8 @@ extends Node
 
 enum Labels {
 	YGDASTING,
-	
+	BUTTONCLICK,
+	BUTTONHOVER,
 }
 
 @export var label_to_setting: Dictionary[Labels, SfxSettings]

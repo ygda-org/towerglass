@@ -136,7 +136,9 @@ offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("10_f2x4c")
 
+[connection signal="mouse_entered" from="ExitButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="LevelSelectButton" to="." method="_on_level_select_button_mouse_entered"]
 [connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="value_changed" from="MasterSlider/MasterHSlider" to="." method="_on_master_h_slider_value_changed"]
 [connection signal="value_changed" from="MusicSlider/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]

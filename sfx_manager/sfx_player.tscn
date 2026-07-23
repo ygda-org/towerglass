@@ -3,15 +3,36 @@
 [ext_resource type="Script" uid="uid://fmnyqc2cx2fw" path="res://sfx_manager/sfx_player.gd" id="1_tglcb"]
 [ext_resource type="Script" uid="uid://c3d63fvkogmx2" path="res://sfx_manager/sfx_settings.gd" id="2_x0386"]
 [ext_resource type="AudioStream" uid="uid://blu35x3fqimqq" path="res://assets/sfx/ui/main_menu/ygda_sting.wav" id="3_lllij"]
+[ext_resource type="AudioStream" uid="uid://drd3gqoikiwvg" path="res://assets/sfx/ui/buttons/button_click.mp3" id="4_t5rts"]
+[ext_resource type="AudioStream" uid="uid://12a6h1bdr3ps" path="res://assets/sfx/ui/buttons/button_hover.wav" id="5_6ok66"]
 
-[sub_resource type="Resource" id="Resource_tglcb"]
+[sub_resource type="Resource" id="Resource_4s6wt"]
 script = ExtResource("2_x0386")
 stream = ExtResource("3_lllij")
+metadata/_custom_type_script = "uid://c3d63fvkogmx2"
+
+[sub_resource type="Resource" id="Resource_rk17e"]
+script = ExtResource("2_x0386")
+stream = ExtResource("4_t5rts")
+volume_variance = 1.5
+pitch_variance = 0.1
+metadata/_custom_type_script = "uid://c3d63fvkogmx2"
+
+[sub_resource type="Resource" id="Resource_50ui6"]
+script = ExtResource("2_x0386")
+stream = ExtResource("5_6ok66")
+volume_variance = 1.5
+pitch_variance = 0.1
+min_delay = 0.1
+metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [node name="SfxPlayer" type="Node" unique_id=1790965844]
+process_mode = 3
 script = ExtResource("1_tglcb")
 label_to_setting = Dictionary[int, ExtResource("2_x0386")]({
-0: SubResource("Resource_tglcb")
+0: SubResource("Resource_4s6wt"),
+1: SubResource("Resource_rk17e"),
+2: SubResource("Resource_50ui6")
 })
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=801555738]
