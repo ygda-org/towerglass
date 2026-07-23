@@ -64,7 +64,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_850wk"]
-size = Vector2(128, 128)
+size = Vector2(64, 64)
 
 [node name="Checkpoint" type="Area2D" unique_id=499865360]
 script = ExtResource("1_mcv34")
@@ -77,6 +77,7 @@ texture = ExtResource("2_mcv34")
 libraries/ = SubResource("AnimationLibrary_7w2q8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=604367030]
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_850wk")
 
 [node name="RespawnPoint" type="Marker2D" parent="." unique_id=1963268920]

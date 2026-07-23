@@ -5,6 +5,11 @@
 [ext_resource type="Script" uid="uid://bct8x5uoy144b" path="res://levels/level_objects/general_attack.gd" id="2_qo776"]
 [ext_resource type="Texture2D" uid="uid://bm1hq55545h10" path="res://assets/tiles/tilemap.png" id="3_gew73"]
 [ext_resource type="PackedScene" uid="uid://dxleknhn167kn" path="res://levels/level_objects/general_attack.tscn" id="5_pawmo"]
+[ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="6_pawmo"]
+[ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="7_6hlxp"]
+[ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="8_gwo7s"]
+[ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="9_gwo7s"]
+[ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="10_p5yq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmgug"]
 texture = ExtResource("3_gew73")
@@ -35,6 +40,12 @@ size = Vector2(80, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_566q8"]
 size = Vector2(416, 16)
+
+[sub_resource type="Curve2D" id="Curve2D_najtb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 376, 488, 0, 0, 0, 0, 600, 488)
+}
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0th8g"]
 size = Vector2(96, 16)
@@ -77,74 +88,105 @@ script = ExtResource("2_qo776")
 position = Vector2(32, 491)
 
 [node name="TileMapTemporaryLayer" type="TileMapLayer" parent="." unique_id=558309551]
-tile_map_data = PackedByteArray("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")
+tile_map_data = PackedByteArray("AAAxABgAAAABAAAAAAAyABgAAAABAAAAAAAzABgAAAABAAAAAAA0ABgAAAABAAAAAAA1ABgAAAABAAAAAAA2ABgAAAABAAAAAAA3ABgAAAABAAAAAAA4ABgAAAABAAAAAAA5ABgAAAABAAAAAAA6ABgAAAABAAAAAAA7ABgAAAABAAAAAAA2ABQAAAABAAQAAAA3ABQAAAABAAQAAAA4ABQAAAABAAQAAAA5ABQAAAABAAQAAAA6ABQAAAABAAQAAAA7ABQAAAABAAQAAAA1AA8AAAABAAQAAAA0AA8AAAABAAQAAAAzAA8AAAABAAQAAAAyAA8AAAABAAQAAAAxAA8AAAABAAQAAAA3AAoAAAABAAQAAAA4AAoAAAABAAQAAAA5AAoAAAABAAQAAAA6AAoAAAABAAQAAAA7AAoAAAABAAQAAAA2AAoAAAABAAQAAAA1AAoAAAABAAQAAAA0AAoAAAABAAQAAAA3AA8AAAABAAQAAAA2AA8AAAABAAQAAAA4AA8AAAABAAQAAAA0AAUAAAABAAQAAAAzAAUAAAABAAQAAAAyAAUAAAABAAQAAAAxAAUAAAABAAQAAAA4AAUAAAABAAQAAAA5AAUAAAABAAQAAAA6AAUAAAABAAQAAAA7AAUAAAABAAQAAAAXAB4AAAABAAAAAAAYAB4AAAABAAIAAAAZAB4AAAABAAAAAAAaAB4AAAABAAIAAAAbAB4AAAABAAAAAAAqAAUAAAABAAQAAAApAAUAAAABAAQAAAAoAAUAAAABAAQAAAAnAAUAAAABAAQAAAAmAAUAAAABAAQAAAArAAUAAAABAAQAAAArAAoAAAABAAQAAAAsAAoAAAABAAQAAAAtAAoAAAABAAQAAAAuAAoAAAABAAQAAAAvAAoAAAABAAQAAAAqAAoAAAABAAQAAAAqAA8AAAABAAQAAAApAA8AAAABAAQAAAAoAA8AAAABAAQAAAAnAA8AAAABAAQAAAAmAA8AAAABAAQAAAArAA8AAAABAAQAAAAtAAUAAAABAAIAAAAuAAUAAAABAAIAAAAvAAUAAAABAAIAAAAoAAoAAAABAAIAAAAnAAoAAAABAAIAAAAmAAoAAAABAAIAAAApAAoAAAABAAIAAAAsAAUAAAABAAIAAAAsAA8AAAABAAIAAAAtAA8AAAABAAIAAAAuAA8AAAABAAIAAAAvAA8AAAABAAIAAAAvABIAAAABAAAAAAAtABIAAAABAAAAAAArABIAAAABAAAAAAAsABIAAAABAAAAAAAuABIAAAABAAAAAAAWAA8AAAABAAAAAAAXAA8AAAABAAIAAAAYAA8AAAABAAAAAAAZAA8AAAABAAIAAAAaAA8AAAABAAAAAAAGAA0AAAABAAQAAAAHAA0AAAABAAQAAAAIAA0AAAABAAQAAAAJAA0AAAABAAQAAAAKAA0AAAABAAQAAAALAA0AAAABAAQAAAAMAA0AAAABAAQAAAANAA0AAAABAAQAAAAOAA0AAAABAAQAAAAPAA0AAAABAAQAAAAQAA0AAAABAAQAAAARAA0AAAABAAQAAAASAA0AAAABAAQAAAATAA0AAAABAAQAAAAUAA0AAAABAAQAAAAVAA0AAAABAAQAAAAWAA0AAAABAAQAAAAXAA0AAAABAAQAAAAYAA0AAAABAAQAAAAGAAsAAAABAAAAAAAFAAsAAAABAAAAAAAHAAsAAAABAAAAAAACAAkAAAABAAAAAAABAAkAAAABAAAAAAAAAAkAAAABAAAAAAANAAgAAAABAAAAAAAOAAgAAAABAAAAAAAPAAgAAAABAAAAAAAQAAgAAAABAAAAAAAZAAcAAAABAAAAAAAaAAcAAAABAAAAAAAbAAcAAAABAAAAAAAcAAcAAAABAAAAAAAdAAcAAAABAAAAAAAlAB4AAAABAAAAAAAmAB4AAAABAAIAAAAnAB4AAAABAAAAAAAoAB4AAAABAAIAAAApAB4AAAABAAAAAAA=")
 tile_set = SubResource("TileSet_vl7tc")
 
 [node name="Challenge1" type="Node" parent="." unique_id=448662577]
 
-[node name="GeneralAttack" parent="Challenge1" unique_id=539467950 node_paths=PackedStringArray("hitbox") instance=ExtResource("5_pawmo")]
-hitbox = NodePath("Spikes")
+[node name="GeneralAttack" parent="Challenge1" unique_id=539467950 instance=ExtResource("5_pawmo")]
 
-[node name="Spikes" type="Area2D" parent="Challenge1/GeneralAttack" unique_id=84682861]
+[node name="Killbox1" type="Area2D" parent="Challenge1/GeneralAttack" unique_id=84682861]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge1/GeneralAttack/Spikes" unique_id=372977554]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge1/GeneralAttack/Killbox1" unique_id=372977554]
 position = Vector2(152, 520)
 shape = SubResource("RectangleShape2D_kcxtp")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge1/GeneralAttack/Spikes" unique_id=1280785084]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge1/GeneralAttack/Killbox1" unique_id=1280785084]
 position = Vector2(480, 520)
 shape = SubResource("RectangleShape2D_566q8")
 
+[node name="CrumblingTile" parent="Challenge1" unique_id=1109916686 instance=ExtResource("6_pawmo")]
+position = Vector2(152, 481)
+
+[node name="CrumblingTile2" parent="Challenge1" unique_id=1744529618 instance=ExtResource("6_pawmo")]
+position = Vector2(312, 481)
+
+[node name="CrumblingTile3" parent="Challenge1" unique_id=1318944902 instance=ExtResource("6_pawmo")]
+position = Vector2(728, 88)
+
+[node name="CrumblingTile4" parent="Challenge1" unique_id=1113101103 instance=ExtResource("6_pawmo")]
+position = Vector2(648, 168)
+
+[node name="CrumblingTile5" parent="Challenge1" unique_id=187812930 instance=ExtResource("6_pawmo")]
+position = Vector2(728, 248)
+
+[node name="CrumblingTile6" parent="Challenge1" unique_id=162892390 instance=ExtResource("6_pawmo")]
+position = Vector2(248, 135)
+
+[node name="CrumblingTile7" parent="Challenge1" unique_id=1788926953 instance=ExtResource("6_pawmo")]
+position = Vector2(440, 120)
+
+[node name="MovingStuff" parent="Challenge1" unique_id=767670818 instance=ExtResource("7_6hlxp")]
+curve = SubResource("Curve2D_najtb")
+time = 5.0
+
+[node name="MovablePlatform" parent="Challenge1/MovingStuff" unique_id=1164924703 instance=ExtResource("8_gwo7s")]
+tile = ExtResource("9_gwo7s")
+
 [node name="Challenge2" type="Node" parent="." unique_id=1793201024]
 
-[node name="GeneralAttack" parent="Challenge2" unique_id=1204746986 node_paths=PackedStringArray("hitbox") instance=ExtResource("5_pawmo")]
-hitbox = NodePath("Spikes")
+[node name="GeneralAttack" parent="Challenge2" unique_id=1204746986 instance=ExtResource("5_pawmo")]
 
-[node name="Spikes" type="Area2D" parent="Challenge2/GeneralAttack" unique_id=1283323983]
+[node name="Killbox2" type="Area2D" parent="Challenge2/GeneralAttack" unique_id=1283323983]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=389865532]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=389865532]
 position = Vector2(912, 328)
 shape = SubResource("RectangleShape2D_0th8g")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=2126505271]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=2126505271]
 position = Vector2(848, 248)
 shape = SubResource("RectangleShape2D_d86fu")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=2081891574]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=2081891574]
 position = Vector2(896, 168)
 shape = SubResource("RectangleShape2D_qfa6f")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=1373624316]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=1373624316]
 position = Vector2(928, 88)
 shape = SubResource("RectangleShape2D_n8to2")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=1507005209]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=1507005209]
 position = Vector2(720, 168)
 shape = SubResource("RectangleShape2D_t6a35")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=1415038256]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=1415038256]
 position = Vector2(808, 88)
 shape = SubResource("RectangleShape2D_ajiua")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=873002447]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=873002447]
 position = Vector2(656, 88)
 shape = SubResource("RectangleShape2D_xa8ag")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Spikes" unique_id=97612562]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Challenge2/GeneralAttack/Killbox2" unique_id=97612562]
 position = Vector2(656, 248)
 shape = SubResource("RectangleShape2D_tjsbg")
 
+[node name="Checkpoint" parent="Challenge2" unique_id=499865360 instance=ExtResource("10_p5yq7")]
+position = Vector2(734, 383)
+
 [node name="Challenge3" type="Node" parent="." unique_id=1710617905]
 
-[node name="GeneralAttack" parent="Challenge3" unique_id=1501071496 node_paths=PackedStringArray("hitbox") instance=ExtResource("5_pawmo")]
-hitbox = NodePath("Spikes")
+[node name="GeneralAttack" parent="Challenge3" unique_id=1501071496 instance=ExtResource("5_pawmo")]
 
-[node name="Spikes" type="Area2D" parent="Challenge3/GeneralAttack" unique_id=311725946]
+[node name="Killbox3" type="Area2D" parent="Challenge3/GeneralAttack" unique_id=311725946]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge3/GeneralAttack/Spikes" unique_id=2006805149]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge3/GeneralAttack/Killbox3" unique_id=2006805149]
 position = Vector2(384, 328)
 shape = SubResource("RectangleShape2D_qo776")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge3/GeneralAttack/Spikes" unique_id=452738432]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge3/GeneralAttack/Killbox3" unique_id=452738432]
 position = Vector2(248, 216)
 shape = SubResource("RectangleShape2D_wqcic")
+
+[node name="Checkpoint" parent="Challenge3" unique_id=852675707 instance=ExtResource("10_p5yq7")]
+position = Vector2(471, 239)
