@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://didrfctbn84l3" path="res://ui/start_menu.gd" id="1_kw4xl"]
 [ext_resource type="Texture2D" uid="uid://cb380qyv8axnq" path="res://assets/start_menu/YGDA Logo.png" id="2_iuit4"]
+[ext_resource type="PackedScene" uid="uid://bg1ofmw7qpb2j" path="res://ui/pause_menu/pause_menu.tscn" id="3_loyqk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_loyqk"]
 atlas = ExtResource("2_iuit4")
@@ -101,5 +102,8 @@ offset_top = 93.0
 offset_right = 240.0
 offset_bottom = 209.0
 text = "Start :D"
+
+[node name="PauseMenu" parent="." unique_id=1246076756 instance=ExtResource("3_loyqk")]
+layout_mode = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

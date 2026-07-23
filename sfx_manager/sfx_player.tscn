@@ -13,3 +13,5 @@ script = ExtResource("1_tglcb")
 label_to_setting = Dictionary[int, ExtResource("2_x0386")]({
 0: SubResource("Resource_tglcb")
 })
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=801555738]
