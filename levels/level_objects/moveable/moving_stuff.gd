@@ -12,8 +12,10 @@ var flip = false
 var moving = true
 
 func _ready() -> void:
+	var points = curve.get_baked_points()
+	$Line2D.points = points
 	for child in get_children():
-		if child is Node2D:
+		if child is Node2D and child is not Line2D:
 			child.position = $PathFollow2D.position
 	GameState.player.died.connect(reset)
 	if wait_until_player_touches_to_move:
@@ -31,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		$PathFollow2D.progress_ratio = timer_ratio
 	for child in get_children():
-		if child is Node2D:
+		if child is Node2D and child is not Line2D:
 			child.position = $PathFollow2D.position
 	elapsed_time += delta * 2
 	if elapsed_time > time:
