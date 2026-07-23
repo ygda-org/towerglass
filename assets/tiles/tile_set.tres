@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://csxvxvl2dpibo" path="res://assets/tiles/ground_tiles.png" id="1_vl7tc"]
 [ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="2_62pk5"]
 [ext_resource type="PackedScene" uid="uid://c4fyx3j4wo0g5" path="res://levels/level_objects/on_off_tiles/off_tile.tscn" id="3_0hpsc"]
+[ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="4_0hpsc"]
+[ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="5_k8n7d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy046"]
 texture = ExtResource("1_vl7tc")
@@ -65,6 +67,8 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k8n7d"]
 scenes/1/scene = ExtResource("2_62pk5")
 scenes/2/scene = ExtResource("3_0hpsc")
+scenes/4/scene = ExtResource("4_0hpsc")
+scenes/5/scene = ExtResource("5_k8n7d")
 
 [resource]
 physics_layer_0/collision_layer = 1

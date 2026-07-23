@@ -1,10 +1,10 @@
 extends StaticBody2D
-
-signal crumble_platform
-# ANIMATED SPRITE SCALE IS 0.125 BECAUSE PLACEHOLDER IS 128x128. REMEMBER TO CHANGE
+#crumble platform functionality removed; no longer tileable
+#signal crumble_platform
 
 func _on_crumble_area_body_entered(body: Node2D) -> void:
-	crumble_platform.emit()
+	#crumble_platform.emit()
+	crumble()
 
 func crumble():
 	$AnimatedSprite2D.play('crumbling')

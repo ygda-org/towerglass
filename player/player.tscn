@@ -24,6 +24,7 @@ radius = 8.0
 height = 24.0
 
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
+collision_layer = 3
 script = ExtResource("1_oul6g")
 gravity_curve_asc = SubResource("Curve_qjkh3")
 gravity_curve_dec = SubResource("Curve_g6k8r")

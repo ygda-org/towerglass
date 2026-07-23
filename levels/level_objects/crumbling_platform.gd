@@ -9,7 +9,7 @@ func _ready() -> void:
 	for i in range(tiles):
 		var tile = CRUMBLING_TILE.instantiate()
 		tile.position.x += posx
-		posx += 16
+		posx += 80
 		tile.crumble_platform.connect(crumble)
 		add_child(tile)
 

@@ -1,28 +1,37 @@
 [gd_scene format=3 uid="uid://bn4m4aljk32wv"]
 
 [ext_resource type="Script" uid="uid://db5cychog4x3h" path="res://levels/level_objects/crumbling_tile.gd" id="1_w8fke"]
-[ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="2_dce2v"]
+[ext_resource type="Texture2D" uid="uid://cr7dwt7hc0l4s" path="res://assets/level_components/crumbling_block/decay/crumbling-block1.png" id="2_wq5lq"]
+[ext_resource type="Texture2D" uid="uid://btfncdj3t63jq" path="res://assets/level_components/crumbling_block/decay/crumbling-block2.png" id="3_pgmmq"]
+[ext_resource type="Texture2D" uid="uid://bugguykuiqkes" path="res://assets/level_components/crumbling_block/decay/crumbling-block3.png" id="4_ra668"]
+[ext_resource type="Texture2D" uid="uid://kfsqpsbqfkqi" path="res://assets/level_components/crumbling_block/decay/crumbling-block4.png" id="5_qfolm"]
+[ext_resource type="Texture2D" uid="uid://50lcthk35jqi" path="res://assets/level_components/crumbling_block/decay/crumbling-block5.png" id="6_rt7v0"]
+[ext_resource type="Texture2D" uid="uid://hs51ljuq3a3n" path="res://assets/level_components/crumbling_block/decay/crumbling-block6.png" id="7_o8r6b"]
+[ext_resource type="Texture2D" uid="uid://dljqovinlp56b" path="res://assets/level_components/crumbling_block/regeneration/uncrumbling_block1.png" id="8_ab5ye"]
+[ext_resource type="Texture2D" uid="uid://c0854mmvfjfel" path="res://assets/level_components/crumbling_block/regeneration/uncrumbling_block2.png" id="9_fp5x6"]
+[ext_resource type="Texture2D" uid="uid://do86e4040cq87" path="res://assets/level_components/crumbling_block/regeneration/uncrumbling_block3.png" id="10_avuvd"]
+[ext_resource type="Texture2D" uid="uid://cwb7bofijtf8e" path="res://assets/level_components/crumbling_block/regeneration/uncrumbling_block4.png" id="11_iwjlr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("2_wq5lq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("3_pgmmq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("4_ra668")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("5_qfolm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("6_rt7v0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("7_o8r6b")
 }],
 "loop": 0,
 "name": &"crumbling",
@@ -30,22 +39,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_dce2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_dce2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_dce2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_dce2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("2_wq5lq")
 }],
 "loop": 0,
 "name": &"default",
@@ -53,22 +47,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("8_ab5ye")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("9_fp5x6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("10_avuvd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dce2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_dce2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_dce2v")
+"texture": ExtResource("11_iwjlr")
 }],
 "loop": 0,
 "name": &"regenerate",
@@ -76,24 +64,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0u0i"]
-size = Vector2(16, 16)
+size = Vector2(80, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
-size = Vector2(16, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3lui"]
-size = Vector2(16, 16)
+size = Vector2(80, 4)
 
 [node name="CrumblingTile" type="StaticBody2D" unique_id=1109916686]
 script = ExtResource("1_w8fke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713537414]
-scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_0es7p")
 animation = &"crumbling"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205369307]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_y0u0i")
 
 [node name="Timer" type="Timer" parent="." unique_id=897639255]
@@ -105,13 +90,14 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrumbleArea" unique_id=1459099013]
-position = Vector2(0, -10)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_0es7p")
 
 [node name="CollisionArea" type="Area2D" parent="." unique_id=967508513]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1859014016]
-shape = SubResource("RectangleShape2D_o3lui")
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_y0u0i")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
