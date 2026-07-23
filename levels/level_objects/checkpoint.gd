@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func activate_checkpoint():
 	activated = true
-	$AnimationPlayer.play("activation")
+	$AnimatedSprite2D.play("claimed")
 	GameState.last_location = $RespawnPoint.global_position
 	GameState.player.total_sand = 6.0
 	GameState.player.sand_in_bottom = GameState.player.total_sand/2

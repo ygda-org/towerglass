@@ -1,83 +1,70 @@
 [gd_scene format=3 uid="uid://legscceb6kci"]
 
 [ext_resource type="Script" uid="uid://dv2ta0pmm2xml" path="res://levels/level_objects/checkpoint.gd" id="1_mcv34"]
-[ext_resource type="Texture2D" uid="uid://b4ap5r2pycbx" path="res://assets/level_components/checkpoint.png" id="2_mcv34"]
+[ext_resource type="Texture2D" uid="uid://c377xk7qvusv5" path="res://assets/level_components/checkpoint/checkpoint_updated1.png" id="2_5qpx8"]
+[ext_resource type="Texture2D" uid="uid://qef4psj4qpcu" path="res://assets/level_components/checkpoint/checkpoint_updated2.png" id="3_6vpyw"]
+[ext_resource type="Texture2D" uid="uid://bb5wa7731ritb" path="res://assets/level_components/checkpoint/checkpoint_updated3.png" id="4_4f4o1"]
+[ext_resource type="Texture2D" uid="uid://crm8vofjfvyjg" path="res://assets/level_components/checkpoint/checkpoint_updated4.png" id="5_cidsf"]
+[ext_resource type="Texture2D" uid="uid://c8i3b15pwc2wn" path="res://assets/level_components/checkpoint/checkpoint_updated5.png" id="6_s4njf"]
+[ext_resource type="Texture2D" uid="uid://dtsn8g3m4vmj6" path="res://assets/level_components/checkpoint/checkpoint_updated6.png" id="7_we520"]
+[ext_resource type="Texture2D" uid="uid://b7f4a3k7mw7cf" path="res://assets/level_components/checkpoint/checkpoint_updated7.png" id="8_vwsbq"]
+[ext_resource type="Texture2D" uid="uid://c71n5umh4xwld" path="res://assets/level_components/checkpoint/checkpoint_updated8.png" id="9_5slgg"]
 
-[sub_resource type="Animation" id="Animation_vf6lx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:self_modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1.0]
-}
-
-[sub_resource type="Animation" id="Animation_ylj58"]
-resource_name = "activation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 196)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:self_modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0, 1.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7w2q8"]
-_data = {
-&"RESET": SubResource("Animation_vf6lx"),
-&"activation": SubResource("Animation_ylj58")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5qpx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6vpyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4f4o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cidsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s4njf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_we520")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vwsbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5slgg")
+}],
+"loop": 1,
+"name": &"claimed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5qpx8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_850wk"]
-size = Vector2(64, 64)
+size = Vector2(16, 46)
 
 [node name="Checkpoint" type="Area2D" unique_id=499865360]
+position = Vector2(0, -40)
 script = ExtResource("1_mcv34")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1578855719]
-scale = Vector2(2, 2)
-texture = ExtResource("2_mcv34")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=508928456]
-libraries/ = SubResource("AnimationLibrary_7w2q8")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=752179101]
+position = Vector2(0, 24)
+sprite_frames = SubResource("SpriteFrames_0es7p")
+autoplay = "default"
+frame_progress = 0.6410115
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=604367030]
-position = Vector2(1, 1)
+position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_850wk")
 
 [node name="RespawnPoint" type="Marker2D" parent="." unique_id=1963268920]
