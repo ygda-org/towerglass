@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://bg1ofmw7qpb2j"]
+
+[ext_resource type="Script" uid="uid://c6xiauef5mkcv" path="res://ui/pause_menu/pause_menu.gd" id="1_b4b0p"]
+[ext_resource type="Texture2D" uid="uid://c3nl0vturoqlf" path="res://assets/ui/pause_menu/bg.png" id="1_mnjdh"]
+[ext_resource type="Texture2D" uid="uid://dwp4ccvk2y3nd" path="res://assets/ui/pause_menu/text.png" id="2_umsyg"]
+[ext_resource type="Texture2D" uid="uid://cibhdujli7tbw" path="res://assets/ui/pause_menu/exit_button.png" id="3_c3jo5"]
+[ext_resource type="Texture2D" uid="uid://cuce0gwe3vn0p" path="res://assets/ui/pause_menu/exit_button_hovered.png" id="4_uraes"]
+[ext_resource type="Texture2D" uid="uid://t8j4hus1uc14" path="res://assets/ui/pause_menu/master_slider_background.png" id="5_c3jo5"]
+[ext_resource type="Texture2D" uid="uid://d1583ss072e6f" path="res://assets/ui/pause_menu/level_select_button_hovered.png" id="6_3qrb2"]
+[ext_resource type="Texture2D" uid="uid://cxtuwwr6olrm1" path="res://assets/ui/pause_menu/level_select_button.png" id="7_b05md"]
+[ext_resource type="Texture2D" uid="uid://5pmcdekaqq" path="res://assets/ui/pause_menu/music_slider_background.png" id="9_b05md"]
+[ext_resource type="Texture2D" uid="uid://spf8wuxm8rkg" path="res://assets/ui/pause_menu/sfx_slider_background.png" id="10_f2x4c"]
+
+[node name="PauseMenu" type="Control" unique_id=1246076756]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b4b0p")
+
+[node name="Text" type="TextureRect" parent="." unique_id=1111207597]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_umsyg")
+
+[node name="Background" type="TextureRect" parent="." unique_id=599051980]
+layout_mode = 0
+texture = ExtResource("1_mnjdh")
+
+[node name="ExitButton" type="TextureButton" parent="." unique_id=785843862]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_c3jo5")
+texture_hover = ExtResource("4_uraes")
+ignore_texture_size = true
+
+[node name="LevelSelectButton" type="TextureButton" parent="." unique_id=1972173389]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("7_b05md")
+texture_hover = ExtResource("6_3qrb2")
+ignore_texture_size = true
+
+[node name="MasterSlider" type="Control" parent="." unique_id=1743899285]
+anchors_preset = 0
+
+[node name="MasterHSlider" type="HSlider" parent="MasterSlider" unique_id=1063591704]
+z_index = 2
+layout_mode = 0
+offset_left = 442.0
+offset_top = 116.0
+offset_right = 812.0
+offset_bottom = 188.0
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="MasterSliderBackground" type="TextureRect" parent="MasterSlider" unique_id=1319312184]
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("5_c3jo5")
+
+[node name="MusicSlider" type="Control" parent="." unique_id=1940813919]
+anchors_preset = 0
+
+[node name="MusicHSlider" type="HSlider" parent="MusicSlider" unique_id=400043905]
+z_index = 2
+layout_mode = 0
+offset_left = 442.0
+offset_top = 204.0
+offset_right = 812.0
+offset_bottom = 276.0
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="MusicSliderBackground" type="TextureRect" parent="MusicSlider" unique_id=1419876401]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("9_b05md")
+
+[node name="SFXSlider" type="Control" parent="." unique_id=1828974031]
+anchors_preset = 0
+
+[node name="SFXHSlider" type="HSlider" parent="SFXSlider" unique_id=1015760383]
+z_index = 2
+layout_mode = 0
+offset_left = 442.0
+offset_top = 291.0
+offset_right = 812.0
+offset_bottom = 363.0
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="SFXSliderBackground" type="TextureRect" parent="SFXSlider" unique_id=1219805518]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("10_f2x4c")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="value_changed" from="MasterSlider/MasterHSlider" to="." method="_on_master_h_slider_value_changed"]
+[connection signal="value_changed" from="MusicSlider/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="SFXSlider/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
