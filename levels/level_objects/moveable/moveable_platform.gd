@@ -48,6 +48,7 @@ func _physics_process(delta: float) -> void:
 				moving = true
 	if crumbler:
 		for child in get_children():
-			if "CrumblingTile" in child.name and (GameState.player.left_floor == child or GameState.player.right_floor == child):
+			if "CrumblingTile" in child.name and not child.crumbling and (GameState.player.left_floor == child or GameState.player.right_floor == child):
 				for child2 in get_children():
 					child2.crumble()
+					child2.crumbling = true

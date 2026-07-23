@@ -68,6 +68,10 @@ region = Rect2(16, 48, 16, 16)
 atlas = ExtResource("2_dce2v")
 region = Rect2(16, 64, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c71u5"]
+atlas = ExtResource("2_dce2v")
+region = Rect2(16, 80, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_avuvd"]
 atlas = ExtResource("2_dce2v")
 region = Rect2(16, 0, 16, 16)
@@ -107,6 +111,10 @@ region = Rect2(32, 48, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysiye"]
 atlas = ExtResource("2_dce2v")
 region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcvle"]
+atlas = ExtResource("2_dce2v")
+region = Rect2(32, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sx8cx"]
 atlas = ExtResource("2_dce2v")
@@ -193,6 +201,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fp5x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c71u5")
 }],
 "loop": 0,
 "name": &"middle_crumbling",
@@ -238,6 +249,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ysiye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcvle")
 }],
 "loop": 0,
 "name": &"right_crumbling",
@@ -277,13 +291,13 @@ script = ExtResource("1_w8fke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713537414]
 sprite_frames = SubResource("SpriteFrames_0es7p")
-animation = &"left_crumbling"
+animation = &"right_crumbling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205369307]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_y0u0i")
 
-[node name="Timer" type="Timer" parent="." unique_id=897639255]
+[node name="RegenerateTimer" type="Timer" parent="." unique_id=897639255]
 wait_time = 2.0
 one_shot = true
 
@@ -295,5 +309,4 @@ collision_mask = 2
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_y0u0i")
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="RegenerateTimer" to="." method="_on_timer_timeout"]
