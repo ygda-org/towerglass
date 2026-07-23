@@ -16,8 +16,10 @@ func _process(_delta):
 			return
 		queue_to_flip = false
 		$CollisionShape2D.disabled = not current_state
-		$Sprite2D.visible = current_state
-
+		if current_state == true:
+			$AnimatedSprite2D.play('on')
+		else:
+			$AnimatedSprite2D.play('off')
 func flip():
-	current_state = current_state == false
+	current_state = not current_state
 	queue_to_flip = true

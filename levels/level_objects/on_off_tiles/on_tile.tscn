@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://b7f8rdl578o7p"]
 
 [ext_resource type="Script" uid="uid://biqixaburqtf2" path="res://levels/level_objects/on_off_tiles/on_off_tile.gd" id="1_ydero"]
+[ext_resource type="Texture2D" uid="uid://dlmkiremghwqa" path="res://assets/level_components/on_off/on.png" id="2_8whe4"]
+[ext_resource type="Texture2D" uid="uid://b6qg7chvfcgql" path="res://assets/level_components/on_off/off.png" id="2_x1e52"]
 
-[sub_resource type="Gradient" id="Gradient_ydero"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5kg8m"]
-gradient = SubResource("Gradient_ydero")
-width = 16
-height = 16
+[sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x1e52")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8whe4")
+}],
+"loop": 0,
+"name": &"on",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydero"]
 size = Vector2(16, 16)
@@ -19,8 +33,9 @@ size = Vector2(18, 18)
 script = ExtResource("1_ydero")
 initial_state = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1251257789]
-texture = SubResource("GradientTexture2D_5kg8m")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1697250723]
+sprite_frames = SubResource("SpriteFrames_0es7p")
+animation = &"on"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1378311262]
 shape = SubResource("RectangleShape2D_ydero")
