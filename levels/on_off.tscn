@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dxleknhn167kn" path="res://levels/level_objects/general_attack.tscn" id="3_etc0n"]
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moving_stuff.tscn" id="3_wf343"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/movable_platform.tscn" id="4_wbeui"]
+[ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/movable_tile.tscn" id="5_khffv"]
+[ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="6_n3dx3"]
 
 [sub_resource type="Curve2D" id="Curve2D_0es7p"]
 _data = {
@@ -33,6 +35,12 @@ size = Vector2(84, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1o26"]
 size = Vector2(84, 15)
 
+[sub_resource type="Curve2D" id="Curve2D_wbeui"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, 0)
+}
+point_count = 2
+
 [node name="OnOff" type="Node2D" unique_id=2118787507]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=188622445]
@@ -40,7 +48,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(1096, -531)
+position = Vector2(1470, -579)
 
 [node name="Challenge1" type="Node" parent="." unique_id=2104367168]
 
@@ -51,6 +59,7 @@ time = 10.0
 
 [node name="MovablePlatform" parent="Challenge1/MovingStuff" unique_id=1164924703 instance=ExtResource("4_wbeui")]
 size = 7
+tile = ExtResource("5_khffv")
 
 [node name="Challenge2" type="Node" parent="." unique_id=1796187974]
 
@@ -104,5 +113,15 @@ shape = SubResource("RectangleShape2D_2gio8")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge2/GeneralAttack3/MovingStuff/Killzone2" unique_id=67598145]
 position = Vector2(-9.5, -7.584522)
 shape = SubResource("RectangleShape2D_e1o26")
+
+[node name="Challenge3" type="Node" parent="." unique_id=1470562670]
+
+[node name="MovingStuff" parent="Challenge3" unique_id=1151602952 instance=ExtResource("3_wf343")]
+position = Vector2(1488, -608)
+curve = SubResource("Curve2D_wbeui")
+time = 6.0
+
+[node name="MovablePlatform" parent="Challenge3/MovingStuff" unique_id=1443166074 instance=ExtResource("4_wbeui")]
+tile = ExtResource("6_n3dx3")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

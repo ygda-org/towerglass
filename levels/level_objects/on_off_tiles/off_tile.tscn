@@ -29,7 +29,8 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnqih"]
 size = Vector2(18, 18)
 
-[node name="OffTile" type="StaticBody2D" unique_id=1057289622]
+[node name="OffTile" type="AnimatableBody2D" unique_id=1453251117]
+collision_mask = 0
 script = ExtResource("1_wnqih")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1096982122]
@@ -38,9 +39,11 @@ animation = &"off"
 autoplay = "off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1073068597]
+visible = false
 shape = SubResource("RectangleShape2D_kvh5f")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1221634330]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=793072444]
 shape = SubResource("RectangleShape2D_wnqih")

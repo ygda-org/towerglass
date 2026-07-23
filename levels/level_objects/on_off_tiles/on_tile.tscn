@@ -29,7 +29,8 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnqih"]
 size = Vector2(18, 18)
 
-[node name="OnTile" type="StaticBody2D" unique_id=589685740]
+[node name="OnTile" type="AnimatableBody2D" unique_id=905601576]
+collision_mask = 0
 script = ExtResource("1_ydero")
 initial_state = true
 
@@ -38,9 +39,11 @@ sprite_frames = SubResource("SpriteFrames_0es7p")
 animation = &"on"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1378311262]
+visible = false
 shape = SubResource("RectangleShape2D_ydero")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2120395026]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1213610563]
 shape = SubResource("RectangleShape2D_wnqih")
