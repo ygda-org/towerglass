@@ -1,4 +1,11 @@
 extends StaticBody2D
+
+enum SIDE{
+	LEFT,
+	MID,
+	RIGHT,
+}
+
 # if you change this node's name it will no longer function in movable platforms
 @export var side: String
 
@@ -11,8 +18,8 @@ func crumble():
 		side_anim('crumbling')
 
 func _physics_process(delta: float) -> void:
-	if $CollisionShape2D.disabled and 'default' in $AnimatedSprite2D.animation and not $CollisionArea.has_overlapping_bodies():
-		$CollisionShape2D.disabled = false
+	if GameState.player.left_floor == self or GameState.player.right_floor == self:
+		$CollisionShape2D.disabled = true
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if 'crumbling' in $AnimatedSprite2D.animation:

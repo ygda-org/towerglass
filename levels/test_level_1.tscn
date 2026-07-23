@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dd8wki2lbrr5r" path="res://levels/level_objects/test_block.tscn" id="1_84ig8"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_7lf0s"]
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="3_7lf0s"]
+[ext_resource type="PackedScene" uid="uid://7tc7yjex5is7" path="res://levels/level_objects/turret/turret.tscn" id="4_ccxi4"]
 
 [node name="Level1" type="Node2D" unique_id=1819327553]
 
@@ -24,3 +25,8 @@ position = Vector2(215, 248)
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1285827367]
 tile_map_data = PackedByteArray("AAAEABIAAQAAAAAAAQADABIAAQAAAAAAAQACABIAAQAAAAAAAQAEABQAAQAAAAAAAgADABQAAQAAAAAAAgACABQAAQAAAAAAAgD//xMAAQAAAAAAAQD+/xMAAQAAAAAAAQD9/xMAAQAAAAAAAQD//xEAAQAAAAAAAgD+/xEAAQAAAAAAAgD9/xEAAQAAAAAAAgD8/xEAAQAAAAAAAgAJAA4AAAACAAAAAAAKAA4AAAACAAAAAAALAA4AAAACAAAAAAAMAA4AAAACAAAAAAANAA4AAAACAAAAAAATABAAAQAAAAAABgAUABAAAQAAAAAABgAVABAAAQAAAAAABgAWABAAAQAAAAAABgAXABAAAQAAAAAABgA=")
 tile_set = ExtResource("3_7lf0s")
+
+[node name="Turret" parent="." unique_id=631227605 instance=ExtResource("4_ccxi4")]
+position = Vector2(353, 240)
+is_one_direction = true
+shot_directions = Array[Vector2]([Vector2(0, -1), Vector2(0, -1)])

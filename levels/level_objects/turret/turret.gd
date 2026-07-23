@@ -2,6 +2,9 @@ extends StaticBody2D
 
 const BULLET = preload("uid://d5m3kp8lwgis")
 
+## If on, the turret will not rotate. Conflicts with harmonic
+## Shot_time will do nothing
+@export var is_one_direction : bool = false
 ## array of vector2 that indicate all directions the turret will shoot at
 @export var shot_directions: Array[Vector2]
 ## if true, turret traverses list backwards after shooting last direction. Otherwise loops back to the start
@@ -20,6 +23,9 @@ func _ready():
 	shoot()
 
 func shoot():
+	if is_one_direction:
+		pause()
+		return
 	if $BarrelPivot.rotation >= 2*PI:
 		$BarrelPivot.rotation -= 2*PI
 	$BarrelPivot.rotation = wrapf($BarrelPivot.rotation, -180, 180)
