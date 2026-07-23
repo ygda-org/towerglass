@@ -30,6 +30,9 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 [sub_resource type="Resource" id="Resource_6ok66"]
 script = ExtResource("2_x0386")
 stream = ExtResource("6_6ok66")
+volume = -3.0
+volume_variance = 1.5
+pitch_variance = 0.1
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_6ok66"]

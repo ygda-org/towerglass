@@ -39,7 +39,10 @@ func _ready() -> void:
 	sand.play("yellow_idle")
 
 func _physics_process(delta: float):
-	#if is_on_floor() and (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+	if is_on_floor() and (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+		SFX.play(SFX.Labels.WALK)
+	else:
+		SFX.clear_audio(SFX.Labels.WALK)
 		
 	if Input.is_action_just_pressed("god_mode"):
 		god_mode = not god_mode
