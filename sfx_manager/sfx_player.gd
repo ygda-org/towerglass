@@ -7,6 +7,10 @@ enum Labels {
 	BUTTONHOVER,
 	DEATHSPILL,
 	WALK,
+	FLIPSANDFALL,
+	HOURGLASSFALL,
+	TOWERCROSSWHOOSH,
+	JUMPCHARGE,
 }
 
 @export var label_to_setting: Dictionary[Labels, SfxSettings]

@@ -34,6 +34,8 @@ var god_mode = false
 var left_floor : Object = null
 var right_floor : Object = null
 
+var was_on_floor : bool = false
+
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
@@ -41,10 +43,22 @@ func _ready() -> void:
 	sand.play("yellow_idle")
 
 func _physics_process(delta: float):
+	
+	was_on_floor = is_on_floor()
+	
 	if is_on_floor() and velocity.x != 0:
 		SFX.play(SFX.Labels.WALK)
 	else:
 		SFX.clear_audio(SFX.Labels.WALK)
+		
+	if Input.is_action_just_released("jump") and is_on_floor():
+		SFX.play(SFX.Labels.FLIPSANDFALL)
+		SFX.play(SFX.Labels.TOWERCROSSWHOOSH)
+		
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		SFX.play(SFX.Labels.JUMPCHARGE)
+	else:
+		SFX.clear_audio(SFX.Labels.JUMPCHARGE)
 		
 	if Input.is_action_just_pressed("god_mode"):
 		god_mode = not god_mode
@@ -93,6 +107,9 @@ func _physics_process(delta: float):
 			grav_mult = gravity_curve_asc.sample(velocity.y/MAX_JUMP)
 		velocity.y = move_toward(velocity.y, MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
 	move_and_slide()
+	
+	if not was_on_floor and is_on_floor():
+		SFX.play(SFX.Labels.HOURGLASSFALL)
 	
 	update_sand(delta)
 
