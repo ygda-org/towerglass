@@ -4,6 +4,7 @@ extends Path2D
 @export var time: float = 1.0
 @export var wait_until_player_touches_to_move: bool = false
 @export var go_back: bool = true
+@export var return_quickly: bool = false
 @export var trans_type: Tween.TransitionType = Tween.TRANS_SINE
 @export var ease_type: Tween.EaseType = Tween.EASE_IN_OUT
 var progress: float
@@ -36,10 +37,18 @@ func _physics_process(delta: float) -> void:
 		if child is Node2D and child is not Line2D:
 			child.position = $PathFollow2D.position
 	elapsed_time += delta * 2
+	if flip and return_quickly:
+		elapsed_time += delta
 	if elapsed_time > time:
 		if go_back:
 			elapsed_time -= time
+			
 			flip = not flip
+			if return_quickly and not flip:
+				moving = false
+				for child in get_children(true):
+					if child.name == "MoveablePlatform":
+						child.moving = false
 		else:
 			elapsed_time = time
 
@@ -50,7 +59,7 @@ func reset():
 	elapsed_time = 0
 	flip = false
 	if wait_until_player_touches_to_move:
-		for child in get_children():
+		for child in get_children(true):
 			if child.name == "MoveablePlatform":
 				child.moving = false
 		moving = false
