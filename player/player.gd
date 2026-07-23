@@ -71,4 +71,5 @@ func die() -> void:
 		died = true
 		print('i am become dead')
 	position = GameState.last_location
+	total_sand = 6.0
 	sand_in_bottom = total_sand/2
