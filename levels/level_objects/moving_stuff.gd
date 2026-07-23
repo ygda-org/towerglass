@@ -13,4 +13,6 @@ func _physics_process(delta: float) -> void:
 		$PathFollow2D.progress_ratio = (1 - timer_ratio) * 2
 	else:
 		$PathFollow2D.progress_ratio = timer_ratio * 2
-	$AnimatableBody2D.position = $PathFollow2D.position
+	for child in get_children():
+		if child is Node2D:
+			child.position = $PathFollow2D.position
