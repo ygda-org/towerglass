@@ -6,5 +6,3 @@
 script = ExtResource("1_xsxwo")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=231407704]
-
-[node name="Timer" type="Timer" parent="." unique_id=426582632]
