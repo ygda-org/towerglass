@@ -2,7 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="1_jehdt"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_ok11k"]
-[ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="2_rbh7r"]
 
 [node name="Level1" type="Node2D" unique_id=1177128531]
 
@@ -12,7 +11,4 @@ tile_map_data = PackedByteArray("AAABAAAAAAACAAEAAAACAAAAAAACAAEAAAAGAAAAAAACAAE
 tile_set = ExtResource("1_jehdt")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_ok11k")]
-position = Vector2(150, -616)
-
-[node name="Checkpoint" parent="." unique_id=499865360 instance=ExtResource("2_rbh7r")]
-position = Vector2(303, -671)
+position = Vector2(-470, -13)
