@@ -7,16 +7,24 @@ enum Labels {
 	BUTTONHOVER,
 	DEATHSPILL,
 	WALK,
+	FLIP,
 	FLIPSANDFALL,
 	HOURGLASSFALL,
 	TOWERCROSSWHOOSH,
 	JUMPCHARGE,
+	CLOCKS,
+	GEARS,
+	INDUSTRYAMBIENCE,
 }
+
+const print_sounds = false
 
 @export var label_to_setting: Dictionary[Labels, SfxSettings]
 
 ## play a sound effect, as defined by label. Intended should be SFX.play(SFX.Labels.NAME)
 func play(label: Labels):
+	if print_sounds:
+		print("playing: ", Labels.keys()[label])
 	if has_node(Labels.keys()[label]):
 		return
 	var audio = AudioStreamPlayer.new()
