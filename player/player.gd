@@ -89,6 +89,9 @@ func _physics_process(delta: float):
 	update_sand(delta)
 
 func update_sand(delta : float):
+	if "flip" in $Anim.animation and $Anim.is_playing():
+		return
+	
 	sand_in_bottom += delta
 	
 	var points : Array[float] = [0,0,0.5,0.5,1.0,1.0]

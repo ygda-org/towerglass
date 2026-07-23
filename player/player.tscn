@@ -400,7 +400,6 @@ sprite_frames = SubResource("SpriteFrames_55d6i")
 shape = SubResource("CapsuleShape2D_jehdt")
 
 [node name="Placeholder" type="Label" parent="." unique_id=197115182]
-visible = false
 offset_left = -18.0
 offset_top = -47.0
 offset_right = 22.0
