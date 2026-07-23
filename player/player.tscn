@@ -19,8 +19,9 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.57024795), -1.281234, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i50wy"]
-size = Vector2(16, 24)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jehdt"]
+radius = 8.0
+height = 24.0
 
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
 script = ExtResource("1_oul6g")
@@ -34,7 +35,7 @@ scale = Vector2(0.125, 0.188)
 texture = ExtResource("2_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1325916624]
-shape = SubResource("RectangleShape2D_i50wy")
+shape = SubResource("CapsuleShape2D_jehdt")
 
 [node name="Placeholder" type="Label" parent="." unique_id=197115182]
 offset_left = -18.0
