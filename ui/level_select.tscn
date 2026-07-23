@@ -76,3 +76,12 @@ offset_right = 457.0
 offset_bottom = 404.0
 number = 5
 target = "res://levels/challenge_1.tscn"
+
+[node name="SelectButton6" parent="." unique_id=329849017 instance=ExtResource("1_o7pgs")]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 323.0
+offset_right = 516.0
+offset_bottom = 371.0
+number = 6
+target = "res://levels/motion_turrets.tscn"
