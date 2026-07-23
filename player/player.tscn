@@ -43,3 +43,6 @@ offset_right = 22.0
 offset_bottom = -24.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1016943244]
+top_level = true
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0

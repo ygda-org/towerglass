@@ -7,8 +7,8 @@ const MAX_FALL_SPEED = 500
 
 const MAX_JUMP = -300
 const MAX_JUMP_CHARGE = 0.5
-var sand_in_bottom: float = 0.0
 var total_sand: float = 6.0
+@onready var sand_in_bottom: float = total_sand/2
 var jump_charge = 0.0
 var died = false
 @export var jump_charge_curve: Curve
@@ -28,6 +28,8 @@ func _physics_process(delta: float):
 	$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	if is_on_floor():
+		$Camera2D.position_smoothing_speed = 1.0
+		$Camera2D.global_position = global_position
 		velocity.x = 0
 		if Input.is_action_pressed("jump"):
 			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
@@ -37,6 +39,7 @@ func _physics_process(delta: float):
 			flip()
 			GameState.player_jumped.emit()
 	else:
+		$Camera2D.position_smoothing_speed = 5.0
 		var dir = Input.get_axis("left", "right")
 		if dir * velocity.x <= 0:
 			velocity.x *= AIR_FRICTION
