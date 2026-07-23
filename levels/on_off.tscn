@@ -143,7 +143,6 @@ position = Vector2(1488, -608)
 curve = SubResource("Curve2D_wbeui")
 time = 6.0
 wait_until_player_touches_to_move = true
-go_back = true
 
 [node name="MoveablePlatform" parent="Challenge3/MovingStuff" unique_id=1443166074 instance=ExtResource("4_wbeui")]
 size = 4
