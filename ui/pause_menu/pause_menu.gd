@@ -13,10 +13,12 @@ func _process(_delta):
 		toggle_pause()
 
 func _on_level_select_button_pressed():
+	SFX.play(SFX.Labels.BUTTONCLICK)
 	SceneSwitcher.go_to_scene("res://ui/level_select.tscn")
 	toggle_pause()
 
 func _on_exit_button_pressed():
+	SFX.play(SFX.Labels.BUTTONCLICK)
 	toggle_pause()
 
 func toggle_pause():
@@ -50,3 +52,10 @@ func create_bitmap(button):
 		# Assign it to the mask
 		button.texture_click_mask = bitmap
 	
+
+
+func _on_exit_button_mouse_entered():
+	SFX.play(SFX.Labels.BUTTONHOVER)
+
+func _on_level_select_button_mouse_entered():
+	SFX.play(SFX.Labels.BUTTONHOVER)
