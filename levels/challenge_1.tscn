@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_nqpd8"]
 [ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="3_gfph8"]
 [ext_resource type="PackedScene" uid="uid://c4fyx3j4wo0g5" path="res://levels/level_objects/on_off_tiles/off_tile.tscn" id="4_nqpd8"]
-[ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moving_stuff.tscn" id="5_j22ws"]
-[ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/movable_platform.tscn" id="6_efrhq"]
-[ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/movable_tile.tscn" id="7_efrhq"]
+[ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="5_j22ws"]
+[ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="6_efrhq"]
+[ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="7_efrhq"]
 [ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="8_7ga3b"]
 [ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="9_1xfl1"]
 [ext_resource type="PackedScene" uid="uid://dxleknhn167kn" path="res://levels/level_objects/general_attack.tscn" id="10_cmxt0"]
@@ -23,6 +23,15 @@ size = Vector2(282, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kva35"]
 size = Vector2(96, 18)
 
+[sub_resource type="Curve2D" id="Curve2D_1xfl1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -976)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2mp6"]
+size = Vector2(625, 18)
+
 [node name="Challenge_1" type="Node2D" unique_id=1937825049]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=660053539]
@@ -30,7 +39,7 @@ tile_map_data = PackedByteArray("AAD5/wAAAAACAAEAAAD6/wAAAAACAAEAAAD7/wAAAAACAAE
 tile_set = ExtResource("1_s6tru")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_nqpd8")]
-position = Vector2(272, -504)
+position = Vector2(-200, -32)
 
 [node name="CrumblingTile" parent="." unique_id=1109916686 instance=ExtResource("3_gfph8")]
 position = Vector2(-120, -64)
@@ -105,29 +114,27 @@ position = Vector2(312, -768)
 [node name="MovingStuff" parent="." unique_id=767670818 instance=ExtResource("5_j22ws")]
 position = Vector2(160, -536)
 curve = SubResource("Curve2D_7ga3b")
-time = 20.0
+time = 10.0
+wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform" parent="MovingStuff" unique_id=1164924703 instance=ExtResource("6_efrhq")]
 tile = ExtResource("7_efrhq")
+wait_until_player_touches_to_move = true
 
 [node name="OnTile" parent="." unique_id=905601576 instance=ExtResource("8_7ga3b")]
-position = Vector2(-232, -696)
+position = Vector2(-232, -704)
 
 [node name="OnTile2" parent="." unique_id=1841657825 instance=ExtResource("8_7ga3b")]
-position = Vector2(-216, -696)
+position = Vector2(-216, -704)
 
-[node name="OffTile16" parent="." unique_id=1993225739 instance=ExtResource("4_nqpd8")]
-position = Vector2(-184, -728)
-
-[node name="OffTile17" parent="." unique_id=1406805001 instance=ExtResource("4_nqpd8")]
-position = Vector2(-168, -728)
+[node name="OnTile3" parent="." unique_id=1723981234 instance=ExtResource("8_7ga3b")]
+position = Vector2(-200, -704)
 
 [node name="Checkpoint" parent="." unique_id=499865360 instance=ExtResource("9_1xfl1")]
 position = Vector2(480, -824)
 
-[node name="GeneralAttack" parent="." unique_id=539467950 node_paths=PackedStringArray("hitbox") instance=ExtResource("10_cmxt0")]
+[node name="GeneralAttack" parent="." unique_id=539467950 instance=ExtResource("10_cmxt0")]
 position = Vector2(24, -40)
-hitbox = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="GeneralAttack" unique_id=946902235]
 
@@ -154,3 +161,28 @@ shape = SubResource("RectangleShape2D_kva35")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="GeneralAttack/Area2D" unique_id=697017428]
 position = Vector2(-88, -656)
 shape = SubResource("RectangleShape2D_kva35")
+
+[node name="MovingStuff2" parent="." unique_id=223114916 instance=ExtResource("5_j22ws")]
+position = Vector2(-240, 72)
+curve = SubResource("Curve2D_1xfl1")
+time = 80.0
+
+[node name="Node2D" type="Node2D" parent="MovingStuff2" unique_id=1834716099]
+
+[node name="GeneralAttack" parent="MovingStuff2/Node2D" unique_id=2036463186 instance=ExtResource("10_cmxt0")]
+
+[node name="Area2D" type="Area2D" parent="MovingStuff2/Node2D/GeneralAttack" unique_id=691194954]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingStuff2/Node2D/GeneralAttack/Area2D" unique_id=1550457589]
+position = Vector2(311.5, -15)
+shape = SubResource("RectangleShape2D_d2mp6")
+
+[node name="MoveablePlatform" parent="MovingStuff2/Node2D" unique_id=834656827 instance=ExtResource("6_efrhq")]
+position = Vector2(8, 0)
+size = 39
+tile = ExtResource("7_efrhq")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="MovingStuff2/Node2D" unique_id=1670098233]
+position = Vector2(0, -8)
+tile_map_data = PackedByteArray("AAAAAP//AgAEAAAAAAABAP//AgACAAAAAAACAP//AgAAAAAAAAADAP//AgACAAIAAAAEAP//AgAEAAAAAAAFAP//AgACAAAAAAAGAP//AgACAAIAABAHAP//AgACAAAAABAIAP//AgAEAAAAABAJAP//AgAAAAIAAAAKAP//AgAEAAAAAAALAP//AgACAAAAAAAMAP//AgACAAIAAAANAP//AgAAAAAAAAAOAP//AgACAAIAAAAPAP//AgACAAAAABAQAP//AgACAAIAABARAP//AgACAAAAAAASAP//AgAAAAIAAAATAP//AgACAAIAAAAUAP//AgACAAAAAAAVAP//AgAEAAIAAAAWAP//AgACAAIAAAAXAP//AgAEAAAAAAAYAP//AgAAAAIAAAAZAP//AgACAAIAAAAaAP//AgAAAAAAAAAbAP//AgAAAAIAAAAcAP//AgACAAAAAAAdAP//AgACAAIAAAAeAP//AgACAAAAAAAfAP//AgAEAAAAAAAgAP//AgAAAAAAABAhAP//AgACAAIAAAAiAP//AgACAAAAAAAjAP//AgAEAAIAAAAkAP//AgAAAAAAAAAlAP//AgAAAAIAAAAmAP//AgAEAAAAAAA=")
+tile_set = ExtResource("1_s6tru")
