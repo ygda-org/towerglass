@@ -24,12 +24,12 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.57024795), -1.281234, 0.0, 
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_g6k8r"]
-offsets = PackedFloat32Array(0.23447362, 0.25815782, 0.61605257, 0.6423684, 0.8002631, 0.82921046)
+offsets = PackedFloat32Array(0.2, 0.2, 0.5, 0.5, 0.8, 0.8)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_boad6"]
 gradient = SubResource("Gradient_g6k8r")
-width = 16
+width = 20
 height = 14
 fill_from = Vector2(1, 1)
 fill_to = Vector2(1, 0.030000022)
@@ -384,18 +384,17 @@ jump_charge_curve = SubResource("Curve_rkbax")
 aerial_acceleration_curve = SubResource("Curve_g1dw6")
 
 [node name="Mask" type="Sprite2D" parent="." unique_id=777311086]
-self_modulate = Color(1, 1, 1, 0)
+clip_children = 1
 texture = SubResource("GradientTexture2D_boad6")
 
 [node name="Sand" type="AnimatedSprite2D" parent="Mask" unique_id=783364992]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_5fofi")
-animation = &"yellow_idle"
+animation = &"blue_idle"
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=531156807]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_55d6i")
-animation = &"left_flip"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1325916624]
 shape = SubResource("CapsuleShape2D_jehdt")

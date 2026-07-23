@@ -12,7 +12,6 @@ var total_sand: float = 6.0
 ##Either "yellow" or "blue
 var sand_bottom_col : String = "yellow"
 var jump_charge = 0.0
-var died = false
 @export var jump_charge_curve: Curve
 
 const MAX_SPEED = 150
@@ -23,10 +22,13 @@ const AIR_CONTROL = 500
 const DRAG_SPEED = 20
 
 signal jumped
+signal died
 
 var god_mode = false
 
 @onready var sand : AnimatedSprite2D = $Mask/Sand
+@onready var mask_tex : GradientTexture2D = $Mask.texture
+@onready var mask_grad : Gradient = mask_tex.gradient
 var left_floor : Object = null
 var right_floor : Object = null
 
@@ -59,10 +61,14 @@ func _physics_process(delta: float):
 		$Camera2D.global_position = global_position
 		if Input.is_action_pressed("jump"):
 			$Anim.play("squash")
+			mask_tex.height = 14 - $Anim.frame - 1
+			$Mask.position.y = $Anim.frame + 1
 			sand.play(sand_bottom_col + "_squash")
 			velocity.x = 0
 			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
 		elif Input.is_action_just_released("jump"):
+			mask_tex.height = 14
+			$Mask.position.y = 0
 			velocity.y = (MAX_JUMP + jump_offset) * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 			jump_charge = 0.0
 			flip()
@@ -80,7 +86,23 @@ func _physics_process(delta: float):
 		velocity.y = move_toward(velocity.y, MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
 	move_and_slide()
 	
+	update_sand(delta)
+
+func update_sand(delta : float):
+	if "flip" in $Anim.animation and $Anim.is_playing():
+		return
+	
 	sand_in_bottom += delta
+	
+	var points : Array[float] = [0,0,0.5,0.5,1.0,1.0]
+	var percent : float = sand_in_bottom / total_sand
+	points[0] = 0.5 * percent
+	points[1] = 0.5 * percent
+	points[4] = 0.5 * (1 - percent) + 0.5
+	points[5] = 0.5 * (1 - percent) + 0.5
+	
+	mask_grad.offsets = PackedFloat32Array(points)
+	
 	if sand_in_bottom >= total_sand:
 		die()
 
@@ -111,9 +133,8 @@ func damage(dmg: int) -> void:
 func die() -> void:
 	if god_mode == true:
 		return
-	if not died:
-		died = true
-		print('i am become dead')
+	print('i am become dead')
 	position = GameState.last_location
 	total_sand = 6.0
 	sand_in_bottom = total_sand/2
+	died.emit()

@@ -165,7 +165,7 @@ shape = SubResource("RectangleShape2D_kva35")
 [node name="MovingStuff2" parent="." unique_id=223114916 instance=ExtResource("5_j22ws")]
 position = Vector2(-240, 72)
 curve = SubResource("Curve2D_1xfl1")
-time = 80.0
+time = 85.0
 
 [node name="Node2D" type="Node2D" parent="MovingStuff2" unique_id=1834716099]
 
