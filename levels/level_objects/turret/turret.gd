@@ -14,6 +14,8 @@ const BULLET = preload("uid://d5m3kp8lwgis")
 ## time paused between shots
 @export var pause_time : float = 1.0
 
+@export var bullet_parent_amount: int = 1
+
 var current_direction_index = 0
 var iter_dir = 1
 
@@ -46,6 +48,9 @@ func pause():
 	var bullet : CharacterBody2D = BULLET.instantiate()
 	bullet.velocity = shot_directions[current_direction_index]
 	bullet.position = $BarrelPivot/BulletSpawn.global_position
-	get_parent().add_child(bullet)
+	var parent = self
+	for i in range(bullet_parent_amount):
+		parent = parent.get_parent()
+	parent.add_child(bullet)
 	await get_tree().create_timer(pause_time/2).timeout
 	shoot()

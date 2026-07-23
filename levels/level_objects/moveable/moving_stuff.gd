@@ -11,6 +11,17 @@ var elapsed_time: float = 0
 var flip = false
 var moving = true
 
+func _ready() -> void:
+	for child in get_children():
+		if child is Node2D:
+			child.position = $PathFollow2D.position
+	GameState.player.died.connect(reset)
+	if wait_until_player_touches_to_move:
+		moving = false
+		for child in get_children():
+			if child.name == "MoveablePlatform":
+				child.touched_player.connect(start_move)
+
 func _physics_process(delta: float) -> void:
 	if not moving:
 		return
@@ -29,14 +40,6 @@ func _physics_process(delta: float) -> void:
 			flip = not flip
 		else:
 			elapsed_time = time
-
-func _ready() -> void:
-	GameState.player.died.connect(reset)
-	if wait_until_player_touches_to_move:
-		moving = false
-		for child in get_children():
-			if child.name == "MoveablePlatform":
-				child.touched_player.connect(start_move)
 
 func start_move() -> void:
 	moving = true
