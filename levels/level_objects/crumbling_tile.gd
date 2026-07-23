@@ -2,6 +2,9 @@ extends StaticBody2D
 #crumble platform functionality removed; no longer tileable
 #signal crumble_platform
 
+func _ready() -> void:
+	name = "CrumblingTile" + str(hash(self))
+
 func _on_crumble_area_body_entered(body: Node2D) -> void:
 	#crumble_platform.emit()
 	crumble()

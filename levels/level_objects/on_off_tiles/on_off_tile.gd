@@ -8,6 +8,7 @@ var queue_to_flip = false
 func _ready():
 	GameState.player_jumped.connect(flip)
 	current_state = current_state == false
+	name = "OnOffBlock" + str(hash(self))
 	flip()
 
 func _process(_delta):

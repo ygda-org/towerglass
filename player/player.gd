@@ -24,12 +24,14 @@ signal jumped
 
 var god_mode = false
 
+var left_floor : Object = null
+var right_floor : Object = null
+
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
 
 func _physics_process(delta: float):
-	
 	if Input.is_action_just_pressed("god_mode"):
 		god_mode = not god_mode
 		print("god mode : ", god_mode)
@@ -39,14 +41,22 @@ func _physics_process(delta: float):
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	var dir = Input.get_axis("left", "right")
 	if is_on_floor():
-		velocity.x = DRAG_SPEED * dir
+		poll_floor_type()
+		#Sticky Platform Check
+		var jump_offset : int = 0
+		var walk_offset : int = 0
+		if (left_floor and "Sticky" in left_floor.name) or (right_floor and "Sticky" in right_floor.name):
+			jump_offset = 100
+			walk_offset = 10
+		
+		velocity.x = (DRAG_SPEED - walk_offset) * dir
 		$Camera2D.position_smoothing_speed = 4.0
 		$Camera2D.global_position = global_position
 		if Input.is_action_pressed("jump"):
 			velocity.x = 0
 			jump_charge = move_toward(jump_charge, MAX_JUMP_CHARGE, delta)
 		elif Input.is_action_just_released("jump"):
-			velocity.y = MAX_JUMP * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
+			velocity.y = (MAX_JUMP + jump_offset) * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 			jump_charge = 0.0
 			flip()
 			GameState.player_jumped.emit()
@@ -66,6 +76,11 @@ func _physics_process(delta: float):
 	sand_in_bottom += delta
 	if sand_in_bottom >= total_sand:
 		die()
+
+func poll_floor_type():
+	left_floor = $LeftRay.get_collider()
+	right_floor = $RightRay.get_collider()
+	print(str(left_floor) + "\t" + str(right_floor))
 
 func flip():
 	sand_in_bottom = total_sand - sand_in_bottom

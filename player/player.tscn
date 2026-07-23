@@ -60,3 +60,11 @@ editor_draw_drag_margin = true
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1246076756 instance=ExtResource("3_g1dw6")]
 visible = false
 theme = null
+
+[node name="LeftRay" type="RayCast2D" parent="." unique_id=441897428]
+position = Vector2(-8, 12)
+target_position = Vector2(0, 8)
+
+[node name="RightRay" type="RayCast2D" parent="." unique_id=716633532]
+position = Vector2(8, 12)
+target_position = Vector2(0, 8)
