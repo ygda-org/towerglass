@@ -17,4 +17,3 @@ func on_hit(character: Node2D) -> void:
 	#subsequently, comment out the next two lines
 	if character.has_method("die"):
 		character.die()
-	

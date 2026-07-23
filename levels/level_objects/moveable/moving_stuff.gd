@@ -28,9 +28,7 @@ func _ready() -> void:
 	if wait_until_player_touches_to_move:
 		moving = false
 		for child in get_children():
-			print(child.name)
 			if child.name == "MoveablePlatform":
-				print(child)
 				child.touched_player.connect(start_move)
 
 func start_move() -> void:

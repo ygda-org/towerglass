@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="3_wf343"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="4_wbeui"]
 [ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="5_khffv"]
+[ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="6_ix7qm"]
 [ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="6_n3dx3"]
 
 [sub_resource type="Curve2D" id="Curve2D_0es7p"]
@@ -65,6 +66,7 @@ position = Vector2(1473, -580)
 position = Vector2(550, -180)
 curve = SubResource("Curve2D_0es7p")
 time = 10.0
+wait_until_player_touches_to_move = false
 
 [node name="MoveablePlatform" parent="Challenge1/MovingStuff" unique_id=1164924703 instance=ExtResource("4_wbeui")]
 size = 7
@@ -117,6 +119,7 @@ position = Vector2(768, -280)
 scale = Vector2(1, 1.0142857)
 curve = SubResource("Curve2D_wf343")
 time = 3.0
+wait_until_player_touches_to_move = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge2/GeneralAttack3/MovingStuff" unique_id=1640600955]
 tile_map_data = PackedByteArray("AAD9////AgAEAAIAAAD+////AgAEAAAAABD/////AgAAAAAAABAAAP//AgAAAAIAAAABAP//AgACAAIAABD9/wAAAAAAAAAAAAD+/wAAAAABAAAAAAD//wAAAAACAAAAAAAAAAAAAAADAAAAAAABAAAAAAAEAAAAAAD0//f/AgAEAAAAABD0//j/AAABAAAAAAD1//f/AgAAAAAAABD1//j/AAACAAAAAAD2//f/AgAAAAIAAAD2//j/AAADAAAAAAD3//f/AgACAAIAABD3//j/AAAEAAAAAADz//f/AgAEAAIAAADz//j/AAAAAAAAAAA=")
@@ -152,9 +155,15 @@ wait_until_player_touches_to_move = true
 position = Vector2(1936, -668)
 curve = SubResource("Curve2D_khffv")
 time = 3.0
+wait_until_player_touches_to_move = false
 
 [node name="MoveablePlatform" parent="Challenge3/MovingStuff2" unique_id=1277162415 instance=ExtResource("4_wbeui")]
 tile = ExtResource("5_khffv")
 metadata/_edit_group_ = true
+
+[node name="MoveablePlatform" parent="." unique_id=1862056735 instance=ExtResource("4_wbeui")]
+position = Vector2(1382, -573)
+size = 2
+tile = ExtResource("6_ix7qm")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

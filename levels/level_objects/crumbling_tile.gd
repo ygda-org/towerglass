@@ -1,30 +1,30 @@
 extends StaticBody2D
-#crumble platform functionality removed; no longer tileable
-#signal crumble_platform
+# if you change this node's name it will no longer function in movable platforms
+@export var side: String
 
 func _ready() -> void:
+	side_anim("default")
 	name = "CrumblingTile" + str(hash(self))
 
-func _on_crumble_area_body_entered(body: Node2D) -> void:
-	#crumble_platform.emit()
-	crumble()
-
 func crumble():
-	$AnimatedSprite2D.play('crumbling')
+	if "default" in $AnimatedSprite2D.animation:
+		side_anim('crumbling')
 
 func _physics_process(delta: float) -> void:
-	if $CollisionShape2D.disabled and $AnimatedSprite2D.animation == 'default' and not $CollisionArea.has_overlapping_bodies():
+	if $CollisionShape2D.disabled and 'default' in $AnimatedSprite2D.animation and not $CollisionArea.has_overlapping_bodies():
 		$CollisionShape2D.disabled = false
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if $AnimatedSprite2D.animation == 'crumbling':
+	if 'crumbling' in $AnimatedSprite2D.animation:
 		visible = false
 		$CollisionShape2D.disabled = true
 		$Timer.start()
-	elif $AnimatedSprite2D.animation == 'regenerate':
-		$AnimatedSprite2D.play('default')
-
+	elif 'regenerate' in $AnimatedSprite2D.animation:
+		side_anim('default')
 
 func _on_timer_timeout() -> void:
 	visible = true
-	$AnimatedSprite2D.play('regenerate')
+	side_anim('regenerate')
+
+func side_anim(anim_name: String) -> void:
+	$AnimatedSprite2D.play(side + "_" + anim_name)
