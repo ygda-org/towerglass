@@ -140,8 +140,6 @@ func damage(dmg: int) -> void:
 	sand_in_bottom = min(sand_in_bottom, total_sand)
 	
 func die() -> void:
-	print($DeathCooldown.time_left)
-
 	if $DeathCooldown.time_left > 0.0:
 		return
 	
