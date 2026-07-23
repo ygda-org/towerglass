@@ -1,15 +1,25 @@
 [gd_scene format=3 uid="uid://cymm2223n3o0c"]
 
-[ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="1_rpem4"]
+[ext_resource type="Script" uid="uid://dj3c02hlpsel0" path="res://levels/level_objects/sticky_block.gd" id="1_ha57i"]
+
+[sub_resource type="Gradient" id="Gradient_rpem4"]
+offsets = PackedFloat32Array(0.10190468, 0.9844444)
+colors = PackedColorArray(0, 0, 1, 1, 1, 0, 0.016666412, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ha57i"]
+gradient = SubResource("Gradient_rpem4")
+width = 16
+height = 16
+fill_from = Vector2(0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_850wk"]
-size = Vector2(129, 128)
+size = Vector2(16, 16)
 
 [node name="StickyBlock" type="StaticBody2D" unique_id=1067173021]
+script = ExtResource("1_ha57i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=830345270]
-texture = ExtResource("1_rpem4")
+texture = SubResource("GradientTexture2D_ha57i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1221807475]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_850wk")

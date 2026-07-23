@@ -24,11 +24,16 @@ signal jumped
 
 var god_mode = false
 
+var left_floor : Object = null
+var right_floor : Object = null
+
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
 
 func _physics_process(delta: float):
+	
+	poll_floor_type()
 	
 	if Input.is_action_just_pressed("god_mode"):
 		god_mode = not god_mode
@@ -66,6 +71,11 @@ func _physics_process(delta: float):
 	sand_in_bottom += delta
 	if sand_in_bottom >= total_sand:
 		die()
+
+func poll_floor_type():
+	left_floor = $LeftRay.get_collider()
+	right_floor = $RightRay.get_collider()
+	print(str(left_floor) + "\t" + str(right_floor))
 
 func flip():
 	sand_in_bottom = total_sand - sand_in_bottom

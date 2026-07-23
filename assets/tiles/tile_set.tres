@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/movable_platform.tscn" id="4_18k7h"]
 [ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="5_k8n7d"]
 [ext_resource type="Texture2D" uid="uid://c326aq62et0wc" path="res://assets/tiles/GMTK26_Cogspikeset.png" id="6_w1ku8"]
+[ext_resource type="PackedScene" uid="uid://cymm2223n3o0c" path="res://levels/level_objects/sticky_block.tscn" id="7_thv03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy046"]
 texture = ExtResource("1_vl7tc")
@@ -151,6 +152,7 @@ scenes/2/scene = ExtResource("3_0hpsc")
 scenes/3/scene = ExtResource("4_18k7h")
 scenes/4/scene = ExtResource("4_0hpsc")
 scenes/5/scene = ExtResource("5_k8n7d")
+scenes/6/scene = ExtResource("7_thv03")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18k7h"]
 texture = ExtResource("6_w1ku8")
