@@ -28,7 +28,7 @@ func _physics_process(delta: float):
 	$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	if is_on_floor():
-		$Camera2D.position_smoothing_speed = 1.0
+		$Camera2D.position_smoothing_speed = 4.0
 		$Camera2D.global_position = global_position
 		velocity.x = 0
 		if Input.is_action_pressed("jump"):
@@ -39,7 +39,7 @@ func _physics_process(delta: float):
 			flip()
 			GameState.player_jumped.emit()
 	else:
-		$Camera2D.position_smoothing_speed = 5.0
+		$Camera2D.position_smoothing_speed = 1.0
 		var dir = Input.get_axis("left", "right")
 		if dir * velocity.x <= 0:
 			velocity.x *= AIR_FRICTION
@@ -68,4 +68,4 @@ func die() -> void:
 		died = true
 		print('i am become dead')
 	position = GameState.last_location
-	sand_in_bottom = 0
+	sand_in_bottom = total_sand/2
