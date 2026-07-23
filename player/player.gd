@@ -22,11 +22,19 @@ const DRAG_SPEED = 20
 
 signal jumped
 
+var god_mode = false
+
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
 
 func _physics_process(delta: float):
+	
+	if Input.is_action_just_pressed("god_mode"):
+		god_mode = not god_mode
+		print("god mode : ", god_mode)
+		sand_in_bottom = 0.0
+		
 	$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	var dir = Input.get_axis("left", "right")
@@ -67,6 +75,8 @@ func damage(dmg: int) -> void:
 	sand_in_bottom = min(sand_in_bottom, total_sand)
 	
 func die() -> void:
+	if god_mode == true:
+		return
 	if not died:
 		died = true
 		print('i am become dead')
