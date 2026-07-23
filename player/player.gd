@@ -5,7 +5,7 @@ const GRAVITY = 450
 @export var gravity_curve_dec: Curve
 const MAX_FALL_SPEED = 500
 
-const MAX_JUMP = -300
+const MAX_JUMP = -250
 const MAX_JUMP_CHARGE = 0.5
 var total_sand: float = 6.0
 @onready var sand_in_bottom: float = total_sand/2
