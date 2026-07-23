@@ -42,7 +42,6 @@ func start_move() -> void:
 	moving = true
 
 func reset():
-	print("e")
 	elapsed_time = 0
 	flip = false
 	if wait_until_player_touches_to_move:
