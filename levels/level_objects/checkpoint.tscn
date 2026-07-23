@@ -64,7 +64,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_850wk"]
-size = Vector2(131, 789)
+size = Vector2(128, 128)
 
 [node name="Checkpoint" type="Area2D" unique_id=499865360]
 script = ExtResource("1_mcv34")

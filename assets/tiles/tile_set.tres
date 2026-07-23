@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4fyx3j4wo0g5" path="res://levels/level_objects/on_off_tiles/off_tile.tscn" id="3_0hpsc"]
 [ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="4_0hpsc"]
 [ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="5_k8n7d"]
+[ext_resource type="Texture2D" uid="uid://c326aq62et0wc" path="res://assets/tiles/GMTK26_Cogspikeset.png" id="6_w1ku8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy046"]
 texture = ExtResource("1_vl7tc")
@@ -138,6 +139,10 @@ separation = Vector2i(1, 1)
 1:5/0 = 0
 0:5/0 = 0
 1:6/0 = 0
+3:6/0 = 0
+2:6/0 = 0
+1:7/0 = 0
+0:6/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k8n7d"]
 scenes/1/scene = ExtResource("2_62pk5")
@@ -145,7 +150,18 @@ scenes/2/scene = ExtResource("3_0hpsc")
 scenes/4/scene = ExtResource("4_0hpsc")
 scenes/5/scene = ExtResource("5_k8n7d")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18k7h"]
+texture = ExtResource("6_w1ku8")
+0:0/0 = 0
+2:0/0 = 0
+2:2/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:0/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hy046")
 sources/1 = SubResource("TileSetScenesCollectionSource_k8n7d")
+sources/2 = SubResource("TileSetAtlasSource_18k7h")
