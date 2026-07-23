@@ -90,20 +90,18 @@ func poll_floor_type():
 
 func flip():
 	if Input.is_action_pressed("left"):
-		$Anim.flip_h = true
+		$Anim.play("left_flip")
 		sand.flip_h = true
 	else:
-		$Anim.flip_h = false
+		$Anim.play("flip")
 		sand.flip_h = false
-	$Anim.play("flip")
 	sand.play(sand_bottom_col + "_flip")
 	if sand_bottom_col == "yellow":
 		sand_bottom_col = "blue"
 	else:
 		sand_bottom_col = "yellow"
 	sand_in_bottom = total_sand - sand_in_bottom
-	await $Anim.animation_finished
-	$Anim.flip_h = false
+	await sand.animation_finished
 	sand.flip_h = false
 
 func damage(dmg: int) -> void:

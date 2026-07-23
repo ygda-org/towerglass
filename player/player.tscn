@@ -234,6 +234,30 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("3_yw30f")
 region = Rect2(240, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge24q"]
+atlas = ExtResource("3_yw30f")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnw6m"]
+atlas = ExtResource("3_yw30f")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1so5t"]
+atlas = ExtResource("3_yw30f")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55jnj"]
+atlas = ExtResource("3_yw30f")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx5ib"]
+atlas = ExtResource("3_yw30f")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2xo5"]
+atlas = ExtResource("3_yw30f")
+region = Rect2(240, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7c3f"]
 atlas = ExtResource("2_g1dw6")
 region = Rect2(96, 0, 48, 48)
@@ -300,6 +324,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ge24q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnw6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1so5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55jnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx5ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2xo5")
+}],
+"loop": 0,
+"name": &"left_flip",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_x7c3f")
 }, {
 "duration": 1.0,
@@ -309,7 +356,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_s7qer")
 }],
 "loop": 2,
-"name": &"new_animation",
+"name": &"look",
 "speed": 2.0
 }, {
 "frames": [{
@@ -348,6 +395,7 @@ animation = &"yellow_idle"
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=531156807]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_55d6i")
+animation = &"left_flip"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1325916624]
 shape = SubResource("CapsuleShape2D_jehdt")
