@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://ct4f3pu1ikrvo"]
-
-[ext_resource type="Script" uid="uid://c43r0mtwi3cfj" path="res://levels/level_objects/moveable/movable_platform.gd" id="1_50tra"]
-
-[node name="MovablePlatform" type="Node2D" unique_id=1164924703]
-script = ExtResource("1_50tra")

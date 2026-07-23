@@ -6,9 +6,11 @@ extends Path2D
 var progress: float
 var elapsed_time: float = 0
 var flip = false
+var moving = true
 
 func _physics_process(delta: float) -> void:
-	
+	if not moving:
+		return
 	var timer_ratio = Tween.interpolate_value(0.0, 1.0, elapsed_time, time, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	if flip:
 		$PathFollow2D.progress_ratio = 1 - timer_ratio
@@ -21,3 +23,15 @@ func _physics_process(delta: float) -> void:
 	if elapsed_time > time:
 		elapsed_time -= time
 		flip = not flip
+
+func _ready() -> void:
+	if wait_until_player_touches_to_move:
+		moving = false
+		for child in get_children():
+			print(child.name)
+			if child.name == "MoveablePlatform":
+				print(child)
+				child.touched_player.connect(start_move)
+
+func start_move() -> void:
+	moving = true
