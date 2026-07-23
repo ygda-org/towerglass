@@ -11,6 +11,7 @@ func activate_checkpoint():
 	activated = true
 	$AnimationPlayer.play("activation")
 	GameState.last_location = $RespawnPoint.global_position
+	GameState.player.sand_in_bottom = 0
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
