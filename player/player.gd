@@ -86,7 +86,20 @@ func _physics_process(delta: float):
 		velocity.y = move_toward(velocity.y, MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
 	move_and_slide()
 	
+	update_sand(delta)
+
+func update_sand(delta : float):
 	sand_in_bottom += delta
+	
+	var points : Array[float] = [0,0,0.5,0.5,1.0,1.0]
+	var percent : float = sand_in_bottom / total_sand
+	points[0] = 0.5 * percent
+	points[1] = 0.5 * percent
+	points[4] = 0.5 * (1 - percent) + 0.5
+	points[5] = 0.5 * (1 - percent) + 0.5
+	
+	mask_grad.offsets = PackedFloat32Array(points)
+	
 	if sand_in_bottom >= total_sand:
 		die()
 
