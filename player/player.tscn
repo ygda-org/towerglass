@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkn1f6xxho7w1" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://bg1ofmw7qpb2j" path="res://ui/pause_menu/pause_menu.tscn" id="3_g1dw6"]
 
 [sub_resource type="Curve" id="Curve_qjkh3"]
 _data = [Vector2(0, 1), 0.0, -0.1595681, 0, 0, Vector2(1, 0.8016529), -0.56181103, 0.0, 0, 0]
@@ -53,3 +54,7 @@ drag_vertical_enabled = true
 drag_left_margin = 0.1
 drag_right_margin = 0.1
 editor_draw_drag_margin = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=664277679]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1246076756 instance=ExtResource("3_g1dw6")]
