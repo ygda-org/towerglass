@@ -35,5 +35,8 @@ shape = SubResource("RectangleShape2D_5kg8m")
 position = Vector2(19, 0)
 texture = SubResource("GradientTexture2D_0o3ad")
 
+[node name="BulletSpawn" type="Marker2D" parent="BarrelPivot" unique_id=832742001]
+position = Vector2(37, 0)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1975081268]
 zoom = Vector2(3, 3)
