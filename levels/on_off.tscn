@@ -51,7 +51,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(1057, -120)
+position = Vector2(1473, -580)
 
 [node name="Challenge1" type="Node" parent="." unique_id=2104367168]
 
@@ -140,6 +140,14 @@ curve = SubResource("Curve2D_wbeui")
 time = 6.0
 
 [node name="MovablePlatform" parent="Challenge3/MovingStuff" unique_id=1443166074 instance=ExtResource("4_wbeui")]
+size = 4
 tile = ExtResource("6_n3dx3")
+
+[node name="MovingStuff2" parent="Challenge3" unique_id=1213146340 instance=ExtResource("3_wf343")]
+position = Vector2(1744, -668)
+
+[node name="MovablePlatform" parent="Challenge3/MovingStuff2" unique_id=1277162415 instance=ExtResource("4_wbeui")]
+tile = ExtResource("5_khffv")
+metadata/_edit_group_ = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
