@@ -34,5 +34,3 @@ label_to_setting = Dictionary[int, ExtResource("2_x0386")]({
 1: SubResource("Resource_rk17e"),
 2: SubResource("Resource_50ui6")
 })
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=801555738]
