@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bm1hq55545h10" path="res://assets/tiles/tilemap.png" id="3_gew73"]
 [ext_resource type="PackedScene" uid="uid://dxleknhn167kn" path="res://levels/level_objects/general_attack.tscn" id="5_pawmo"]
 [ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="6_pawmo"]
-[ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moving_stuff.tscn" id="7_6hlxp"]
-[ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/movable_platform.tscn" id="8_gwo7s"]
-[ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/movable_tile.tscn" id="9_gwo7s"]
+[ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="7_6hlxp"]
+[ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="8_gwo7s"]
+[ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="9_gwo7s"]
 [ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="10_p5yq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmgug"]
