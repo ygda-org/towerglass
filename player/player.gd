@@ -142,3 +142,6 @@ func die() -> void:
 	total_sand = 6.0
 	sand_in_bottom = total_sand/2
 	died.emit()
+
+func _on_hurtbox_body_entered(body):
+	die()

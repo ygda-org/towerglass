@@ -375,6 +375,10 @@ animations = [{
 radius = 8.0
 height = 24.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwd6l"]
+radius = 8.0
+height = 24.0
+
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
 collision_layer = 3
 script = ExtResource("1_oul6g")
@@ -429,3 +433,12 @@ target_position = Vector2(0, 8)
 [node name="RightRay" type="RayCast2D" parent="." unique_id=716633532]
 position = Vector2(8, 12)
 target_position = Vector2(0, 8)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1323448440]
+collision_layer = 0
+collision_mask = 8
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Hurtbox" unique_id=1113504727]
+shape = SubResource("CapsuleShape2D_jwd6l")
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

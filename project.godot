@@ -69,6 +69,7 @@ god_mode={
 
 2d_physics/layer_2="Player Detection"
 2d_physics/layer_3="Camera Bounds"
+2d_physics/layer_4="Damagers"
 
 [physics]
 
