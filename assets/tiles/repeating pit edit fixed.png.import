@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://41rjfuy68n50"
-path="res://.godot/imported/repeating pit edit.png-e120ff2b4968bccaa872b56d5e3ed468.ctex"
+uid="uid://byljcp4s303hk"
+path="res://.godot/imported/repeating pit edit fixed.png-235d2ee01fefb62a4c894e0116e03d17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/repeating pit edit.png"
-dest_files=["res://.godot/imported/repeating pit edit.png-e120ff2b4968bccaa872b56d5e3ed468.ctex"]
+source_file="res://assets/tiles/repeating pit edit fixed.png"
+dest_files=["res://.godot/imported/repeating pit edit fixed.png-235d2ee01fefb62a4c894e0116e03d17.ctex"]
 
 [params]
 

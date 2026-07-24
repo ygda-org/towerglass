@@ -160,6 +160,7 @@ tile_set = SubResource("TileSet_vl7tc")
 [node name="MovingStuff" parent="Challenge1" unique_id=767670818 instance=ExtResource("7_6hlxp")]
 curve = SubResource("Curve2D_najtb")
 time = 10.0
+wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform" parent="Challenge1/MovingStuff" unique_id=1164924703 instance=ExtResource("8_gwo7s")]
 position = Vector2(408, 488)
@@ -216,6 +217,7 @@ trans_type = 0
 position = Vector2(888, 392)
 size = 11
 tile = ExtResource("9_gwo7s")
+wait_until_player_touches_to_move = true
 
 [node name="MovingStuff2" parent="Challenge2" unique_id=1278303264 instance=ExtResource("7_6hlxp")]
 curve = SubResource("Curve2D_fgeik")

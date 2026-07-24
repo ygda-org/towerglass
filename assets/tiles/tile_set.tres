@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c326aq62et0wc" path="res://assets/tiles/GMTK26_Cogspikeset.png" id="6_w1ku8"]
 [ext_resource type="PackedScene" uid="uid://cymm2223n3o0c" path="res://levels/level_objects/sticky_block.tscn" id="7_thv03"]
 [ext_resource type="Texture2D" uid="uid://cr5erpfv7b7qo" path="res://assets/tiles/GMTK2026Goldcogdecor.png" id="9_trb68"]
-[ext_resource type="Texture2D" uid="uid://41rjfuy68n50" path="res://assets/tiles/repeating pit edit.png" id="9_uyjtm"]
 [ext_resource type="Texture2D" uid="uid://d3f4if0w8siwm" path="res://assets/tiles/GMTK2026PIPESET.png" id="10_qpy5e"]
+[ext_resource type="Texture2D" uid="uid://byljcp4s303hk" path="res://assets/tiles/repeating pit edit fixed.png" id="11_trb68"]
 [ext_resource type="Texture2D" uid="uid://dl0xf1lygr2hn" path="res://assets/tiles/GMTK2026Silvercogdecor.png" id="12_iak18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy046"]
@@ -202,24 +202,28 @@ texture = ExtResource("10_qpy5e")
 6:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uyjtm"]
-texture = ExtResource("9_uyjtm")
-margins = Vector2i(7, 1)
-separation = Vector2i(1, 1)
-texture_region_size = Vector2i(16, 15)
+texture = ExtResource("11_trb68")
 0:0/0 = 0
 1:0/0 = 0
 2:1/0 = 0
+2:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+3:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:1/0 = 0
+5:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:1/0 = 0
+6:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 4:0/0 = 0
 3:0/0 = 0
 2:0/0 = 0
 6:0/0 = 0
 1:1/0 = 0
+1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
+0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqwny"]
 texture = ExtResource("12_iak18")
