@@ -2,6 +2,8 @@ extends StaticBody2D
 
 const BULLET = preload("uid://d5m3kp8lwgis")
 
+## MUST be "north", "south", "west", "east"
+@export var orientation : String = "west"
 ## If on, the turret will not rotate. Conflicts with harmonic
 ## Shot_time will do nothing
 @export var is_one_direction : bool = false
@@ -20,6 +22,16 @@ var current_direction_index = 0
 var iter_dir = 1
 
 func _ready():
+	match orientation:
+		"north":
+			pass
+		"south":
+			$Body.region_rect.position.y = 32
+		"east":
+			$Body.region_rect.position.x = 32
+		"west":
+			$Body.region_rect.position.x = 32
+			$Body.region_rect.position.y = 32
 	$BarrelPivot.rotation = shot_directions[0].angle()
 	await get_tree().create_timer(0.5).timeout
 	shoot()
