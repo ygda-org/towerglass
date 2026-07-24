@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var size: int = 5#:
 	#set(new_size):
