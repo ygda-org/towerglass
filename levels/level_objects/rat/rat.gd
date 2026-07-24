@@ -35,17 +35,19 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == GameState.player:
-		biting = true
-		if GameState.player.velocity.y > 200:
-			$AnimatedSprite2D.play("youch")
-			GameState.player.velocity.y -= 250
-		else:
-			$AnimatedSprite2D.play("bite")
-			await $AnimatedSprite2D.animation_finished
-		if $Area2D.overlaps_body(body):
-			GameState.player.velocity.y -= 250
-			GameState.player.flip()
-		await get_tree().create_timer(0.05).timeout
-		GameState.player.velocity.x += (200 * dir)
-		biting = false
+	if body != GameState.player:
+		return
+	
+	biting = true
+	if GameState.player.velocity.y > 200:
+		$AnimatedSprite2D.play("youch")
+		GameState.player.velocity.y -= 250
+	else:
+		$AnimatedSprite2D.play("bite")
+		await $AnimatedSprite2D.animation_finished
+	if $Area2D.overlaps_body(body):
+		GameState.player.velocity.y -= 250
+		GameState.player.flip()
+	await get_tree().create_timer(0.05).timeout
+	GameState.player.velocity.x += (200 * dir)
+	biting = false

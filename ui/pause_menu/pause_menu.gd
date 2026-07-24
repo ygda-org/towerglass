@@ -6,6 +6,11 @@ func _ready():
 	
 	create_bitmap($ExitButton)
 	create_bitmap($LevelSelectButton)
+	
+	$MasterSlider/MasterHSlider.value = GameState.master_volume
+	$MusicSlider/MusicHSlider.value = GameState.music_volume
+	$SFXSlider/SFXHSlider.value = GameState.sfx_volume
+	$AmbienceSlider/AmbienceHSlider.value = GameState.ambience_volume
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -40,6 +45,15 @@ func _on_ambience_h_slider_value_changed(value):
 	change_bus_volume("Ambience", value)
 
 func change_bus_volume(bus, linear_value):
+	if bus == "Master":
+		GameState.master_volume = linear_value
+	if bus == "Music":
+		GameState.music_volume = linear_value
+	if bus == "SFX":
+		GameState.sfx_volume = linear_value
+	if bus == "Ambience":
+		GameState.ambience_volume = linear_value
+	
 	var db_value = linear_to_db(linear_value)
 	var bus_index = AudioServer.get_bus_index(bus)
 	AudioServer.set_bus_volume_db(bus_index, db_value)
@@ -54,8 +68,6 @@ func create_bitmap(button):
 		bitmap.create_from_image_alpha(image)
 		# Assign it to the mask
 		button.texture_click_mask = bitmap
-	
-
 
 func _on_exit_button_mouse_entered():
 	SFX.play(SFX.Labels.BUTTONHOVER)

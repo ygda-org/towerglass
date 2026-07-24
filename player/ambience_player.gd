@@ -6,7 +6,8 @@ func _ready():
 	SFX.play(SFX.Labels.INDUSTRYAMBIENCE)
 	rand_wait(30,60, SFX.Labels.CLOCKS)
 	SFX.play(SFX.Labels.GEARS)
-
+	SFX.play(SFX.Labels.BOILERAMBIENCE)
+	#SFX.play(SFX.Labels.SANDFALLING)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
