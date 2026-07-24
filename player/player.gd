@@ -53,7 +53,7 @@ func _physics_process(delta: float):
 		
 	if Input.is_action_just_released("jump") and is_on_floor():
 		SFX.play(SFX.Labels.TOWERCROSSWHOOSH)
-		SFX.play(SFX.Labels.FLIP)
+		#SFX.play(SFX.Labels.FLIP)
 		SFX.play(SFX.Labels.FLIPSANDFALL)
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
