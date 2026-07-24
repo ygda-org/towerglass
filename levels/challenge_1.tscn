@@ -71,12 +71,18 @@ time = 40.0
 go_back = false
 
 [node name="MoveablePlatform" parent="MovingStuff2" unique_id=1189294733 instance=ExtResource("6_efrhq")]
+position = Vector2(0, 216)
 size = 40
 tile = ExtResource("7_efrhq")
 wait_until_player_touches_to_move = true
 
 [node name="Node2D" type="Node2D" parent="MovingStuff2" unique_id=1339892923]
+position = Vector2(0, 216)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="MovingStuff2/Node2D" unique_id=326353432]
 tile_map_data = PackedByteArray("AAAAAA0AAgAAAAAAAAD//w0AAgAAAAAAAAD+/w0AAgACAAIAAAD9/w0AAgAAAAAAAAD8/w0AAgAAAAIAAAD7/w0AAgAEAAAAAAD6/w0AAgAAAAIAAAD5/w0AAgAAAAAAAAD4/w0AAgAAAAIAAAD3/w0AAgAAAAAAAAD2/w0AAgAEAAIAAAD1/w0AAgACAAAAAAD0/w0AAgAEAAAAAADz/w0AAgAAAAIAAADy/w0AAgACAAAAAADx/w0AAgAEAAAAAADw/w0AAgACAAIAAADv/w0AAgACAAAAAADu/w0AAgACAAAAAADt/w0AAgAAAAIAAADs/w0AAgACAAIAAAABAA0AAgACAAAAAAACAA0AAgAEAAAAAAADAA0AAgAEAAIAAAAEAA0AAgAAAAAAAAAFAA0AAgAEAAAAAAAGAA0AAgAAAAAAAAAHAA0AAgACAAIAAAAIAA0AAgAEAAIAAAAJAA0AAgAAAAIAAAAKAA0AAgAAAAAAAAALAA0AAgAAAAIAAAAMAA0AAgACAAIAAAANAA0AAgAEAAAAAAAOAA0AAgACAAAAAAAPAA0AAgAEAAAAAAAQAA0AAgAAAAAAAAARAA0AAgACAAAAAAASAA0AAgACAAAAAAATAA0AAgAEAAIAAAA=")
+tile_set = ExtResource("1_s6tru")
+
+[node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=144852165]
+z_index = -1
 tile_set = ExtResource("1_s6tru")

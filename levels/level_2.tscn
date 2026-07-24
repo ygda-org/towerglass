@@ -11,3 +11,7 @@ tile_set = ExtResource("1_mi4ay")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_pqqg8")]
 position = Vector2(27, -46)
+
+[node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=464988732]
+z_index = -1
+tile_set = ExtResource("1_mi4ay")

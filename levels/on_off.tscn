@@ -178,6 +178,10 @@ rotation = 1.5707964
 tile_map_data = PackedByteArray("AADV/2v/AAAAAAAAAADW/2v/AAABAAAAAADX/2v/AAACAAAAAADY/2v/AAADAAAAAADZ/2v/AAAEAAAAAAA=")
 tile_set = ExtResource("1_2kv7s")
 
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=138674609]
+z_index = -1
+tile_set = ExtResource("1_2kv7s")
+
+[connection signal="body_entered" from="TileMapLayer/@Area2D@48000" to="TileMapLayer/@Area2D@48000" method="_on_body_entered"]
 [connection signal="body_entered" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_entered"]
 [connection signal="body_exited" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_exited"]
