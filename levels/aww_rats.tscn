@@ -17,7 +17,7 @@ point_count = 6
 [node name="AwwRats" type="Node2D" unique_id=1003027194]
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("5_ni1x5")]
-position = Vector2(2694, -128)
+position = Vector2(-19, -31)
 
 [node name="Turrets" type="Node" parent="." unique_id=1260673441]
 
@@ -131,4 +131,4 @@ tile = ExtResource("3_ua0w8")
 wait_until_player_touches_to_move = true
 
 [connection signal="body_entered" from="DecorationTileMapLayer/Checkpoint" to="DecorationTileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@247159" to="DecorationTileMapLayer/@Area2D@247159" method="_on_body_entered"]
+[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@262086" to="DecorationTileMapLayer/@Area2D@262086" method="_on_body_entered"]
