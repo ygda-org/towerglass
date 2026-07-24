@@ -37,6 +37,7 @@ const print_sounds: bool = false
 func play(label: Labels):
 	if print_sounds:
 		print("playing: ", Labels.keys()[label])
+		
 	if has_node(Labels.keys()[label]):
 		return
 	var audio = AudioStreamPlayer.new()
@@ -62,15 +63,23 @@ func play(label: Labels):
 func force_clear_audios():
 	for node in get_children():
 		node.queue_free()
-		
+
+## Pause all audio nodes
 func force_pause_audios():
 	for node in get_children():
 		if node is AudioStreamPlayer:
 			node.stream_paused = true
-		
+
+## Play all audio nodes
 func force_play_audios():
 	for node in get_children():
 		if node is AudioStreamPlayer:
+			node.stream_paused = false
+			
+## Play all audio nodes of a specific type
+func play_audios(label: Labels):
+	for node in get_children():
+		if Labels.keys()[label] in node.name and node is AudioStreamPlayer:
 			node.stream_paused = false
 
 ## remove all playing audio of a specific type

@@ -16,10 +16,17 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
+	if not visible:
+		return
+	SFX.force_pause_audios()
+	SFX.play_audios(SFX.Labels.BUTTONCLICK)
+	SFX.play_audios(SFX.Labels.BUTTONHOVER)
 
 func _on_level_select_button_pressed():
 	SFX.play(SFX.Labels.BUTTONCLICK)
 	SceneSwitcher.go_to_scene("res://ui/level_select.tscn")
+	if self:
+		SFX.force_clear_audios()
 	toggle_pause()
 
 func _on_exit_button_pressed():
