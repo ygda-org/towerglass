@@ -63,77 +63,81 @@ texture = ExtResource("2_hunyx")
 
 [node name="SelectButton" parent="." unique_id=911375310 instance=ExtResource("1_o7pgs")]
 layout_mode = 1
-offset_left = 377.0
-offset_top = 481.0
-offset_right = 425.0
-offset_bottom = 529.0
+offset_left = 379.0
+offset_top = 486.0
+offset_right = 427.0
+offset_bottom = 534.0
 number = 1
 target = "res://levels/tutorial.tscn"
 
 [node name="SelectButton2" parent="." unique_id=1273816794 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 452.0
-offset_top = 464.0
-offset_right = 500.0
-offset_bottom = 512.0
+offset_left = 456.0
+offset_top = 486.0
+offset_right = 504.0
+offset_bottom = 534.0
 number = 2
 target = "res://levels/moving.tscn"
 
 [node name="SelectButton3" parent="." unique_id=572162557 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 444.0
-offset_right = 568.0
-offset_bottom = 492.0
+offset_left = 530.0
+offset_top = 484.0
+offset_right = 578.0
+offset_bottom = 532.0
 number = 3
 target = "res://levels/crumbling.tscn"
 
 [node name="SelectButton4" parent="." unique_id=157797786 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 460.0
-offset_top = 401.0
-offset_right = 508.0
-offset_bottom = 449.0
+offset_left = 495.0
+offset_top = 427.0
+offset_right = 543.0
+offset_bottom = 475.0
 number = 4
 target = "res://levels/on_off.tscn"
 
 [node name="SelectButton5" parent="." unique_id=676968990 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 409.0
-offset_top = 356.0
-offset_right = 457.0
-offset_bottom = 404.0
+offset_left = 420.0
+offset_top = 406.0
+offset_right = 468.0
+offset_bottom = 454.0
 number = 5
 target = "res://levels/challenge_1.tscn"
 
 [node name="SelectButton6" parent="." unique_id=329849017 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 468.0
-offset_top = 323.0
-offset_right = 516.0
-offset_bottom = 371.0
+offset_left = 487.0
+offset_top = 366.0
+offset_right = 535.0
+offset_bottom = 414.0
 number = 6
 target = "res://levels/motion_turrets.tscn"
 
 [node name="SelectButton7" parent="." unique_id=1130250613 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 419.0
-offset_top = 281.0
-offset_right = 467.0
-offset_bottom = 329.0
+offset_left = 426.0
+offset_top = 339.0
+offset_right = 474.0
+offset_bottom = 387.0
 number = 7
 target = "res://levels/turrets_level.tscn"
 
 [node name="SelectButton8" parent="." unique_id=1954730422 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 247.0
-offset_right = 528.0
-offset_bottom = 295.0
+offset_left = 485.0
+offset_top = 293.0
+offset_right = 533.0
+offset_bottom = 341.0
 number = 8
 target = "res://levels/aww_rats.tscn"
 
 [node name="SelectButton9" parent="." unique_id=1790975249 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
+offset_left = 427.0
+offset_top = 261.0
+offset_right = 475.0
+offset_bottom = 309.0
 number = 9
 target = "res://levels/touch_and_go.tscn"
