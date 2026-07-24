@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="3_wf343"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="4_wbeui"]
 [ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="5_khffv"]
+[ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="6_dqet0"]
 [ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="6_n3dx3"]
 [ext_resource type="Script" uid="uid://disybcl4jiyl7" path="res://levels/camera_up.gd" id="8_ix7qm"]
 
@@ -56,7 +57,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(39, -69)
+position = Vector2(2288, -640)
 
 [node name="Challenge1" type="Node" parent="." unique_id=2104367168]
 
@@ -69,10 +70,13 @@ return_quickly = true
 move_in_editor = null
 
 [node name="MoveablePlatform" parent="Challenge1/MovingStuff" unique_id=1453184382 instance=ExtResource("4_wbeui")]
-collision_layer = 16
 size = 7
 tile = ExtResource("5_khffv")
 wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform2" parent="Challenge1/MovingStuff" unique_id=1189294733 instance=ExtResource("4_wbeui")]
+position = Vector2(1739, -441)
+tile = ExtResource("6_dqet0")
 
 [node name="Challenge2" type="Node" parent="." unique_id=1796187974]
 
@@ -111,7 +115,6 @@ time = 5.0
 move_in_editor = null
 
 [node name="MoveablePlatform" parent="Challenge3/MovingStuff" unique_id=1443166074 instance=ExtResource("4_wbeui")]
-collision_layer = 16
 size = 4
 tile = ExtResource("6_n3dx3")
 
@@ -122,7 +125,6 @@ time = 5.0
 move_in_editor = null
 
 [node name="MoveablePlatform" parent="Challenge3/MovingStuff3" unique_id=528714557 instance=ExtResource("4_wbeui")]
-collision_layer = 16
 size = 4
 tile = ExtResource("3_wbeui")
 
@@ -140,28 +142,24 @@ trans_type = 0
 
 [node name="MoveablePlatform" parent="Challenge4/MovingStuff/Node2D" unique_id=1164924703 instance=ExtResource("4_wbeui")]
 position = Vector2(-48, 0)
-collision_layer = 16
 size = 2
 tile = ExtResource("6_n3dx3")
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform2" parent="Challenge4/MovingStuff/Node2D" unique_id=1793400492 instance=ExtResource("4_wbeui")]
 position = Vector2(64, 0)
-collision_layer = 16
 size = 2
 tile = ExtResource("6_n3dx3")
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform3" parent="Challenge4/MovingStuff/Node2D" unique_id=713888071 instance=ExtResource("4_wbeui")]
 position = Vector2(-16, 0)
-collision_layer = 16
 size = 2
 tile = ExtResource("3_wbeui")
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform4" parent="Challenge4/MovingStuff/Node2D" unique_id=819909770 instance=ExtResource("4_wbeui")]
 position = Vector2(32, 0)
-collision_layer = 16
 size = 2
 tile = ExtResource("3_wbeui")
 wait_until_player_touches_to_move = true
@@ -180,6 +178,6 @@ script = ExtResource("8_ix7qm")
 position = Vector2(2484, -1206)
 shape = SubResource("RectangleShape2D_0es7p")
 
-[connection signal="body_entered" from="TileMapLayer/@Area2D@73990" to="TileMapLayer/@Area2D@73990" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
 [connection signal="body_entered" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_entered"]
 [connection signal="body_exited" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_exited"]
