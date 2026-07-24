@@ -25,8 +25,13 @@ func _ready() -> void:
 	if wait_until_player_touches_to_move:
 		moving = false
 		for child in get_children():
-			if child.name == "MoveablePlatform":
-				child.touched_player.connect(start_move)
+			for child2 in child.get_children():
+				if "MoveablePlatform" in child2.name:
+					child2.touched_player.connect(start_move)
+					child2.moving = false
+			if "MoveablePlatform" in child.name:
+					child.touched_player.connect(start_move)
+					child.moving = false
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint() and not move_in_editor:
@@ -49,25 +54,29 @@ func _physics_process(delta: float) -> void:
 			flip = not flip
 			if return_quickly and not flip:
 				moving = false
-				for child in get_children(true):
+				for child in get_children():
 					if child.name == "MoveablePlatform":
 						child.moving = false
 		else:
 			elapsed_time = time
 
-func start_move() -> void:
-	moving = true
-
 func reset():
 	elapsed_time = 0
 	flip = false
 	if wait_until_player_touches_to_move:
-		for child in get_children(true):
-			if child.name == "MoveablePlatform":
-				child.moving = false
+		for child in get_children():
+			for child2 in child.get_children():
+				if "MoveablePlatform" in child2.name:
+					child2.moving = false
+			if "MoveablePlatform" in child.name:
+					child.moving = false
 		moving = false
 	$PathFollow2D.progress_ratio = 0
 	update_children()
+
+
+func start_move() -> void:
+	moving = true
 
 func update_children() -> void:
 	for child in get_children():
