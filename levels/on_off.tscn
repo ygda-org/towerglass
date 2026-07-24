@@ -60,7 +60,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(2292, -655)
+position = Vector2(63, -69)
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("1_dqet0")]
 visible = false
@@ -194,6 +194,6 @@ tile_set = ExtResource("1_2kv7s")
 z_index = -1
 tile_set = ExtResource("1_2kv7s")
 
-[connection signal="body_entered" from="TileMapLayer/@Area2D@143283" to="TileMapLayer/@Area2D@143283" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
 [connection signal="body_entered" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_entered"]
 [connection signal="body_exited" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_exited"]
