@@ -18,11 +18,13 @@
 
 [sub_resource type="Resource" id="Resource_4s6wt"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("3_lllij")
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_rk17e"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("4_t5rts")
 volume_variance = 1.5
 pitch_variance = 0.1
@@ -30,6 +32,7 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_50ui6"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("5_6ok66")
 volume_variance = 1.5
 pitch_variance = 0.1
@@ -38,6 +41,7 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_6ok66"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("6_6ok66")
 volume = -3.0
 volume_variance = 1.5
@@ -46,12 +50,14 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_vel8a"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("7_ox5es")
 min_delay = 3.78
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_c1r1m"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("8_uedv3")
 volume_variance = 1.5
 pitch_variance = 0.1
@@ -59,6 +65,7 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_kfywt"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("8_nnboj")
 volume_variance = 1.5
 pitch_variance = 0.1
@@ -66,6 +73,7 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_a1kgk"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("9_uedv3")
 volume_variance = 1.5
 pitch_variance = 0.1
@@ -73,6 +81,7 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_ffh7i"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("10_ffh7i")
 volume_variance = 1.5
 pitch_variance = 0.1
@@ -80,21 +89,25 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_rovoo"]
 script = ExtResource("2_x0386")
+bus = "SFX"
 stream = ExtResource("11_uedv3")
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_bblqd"]
 script = ExtResource("2_x0386")
+bus = "Ambience"
 stream = ExtResource("12_kfywt")
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_m8tlo"]
 script = ExtResource("2_x0386")
+bus = "Ambience"
 stream = ExtResource("13_a1kgk")
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_y3ulh"]
 script = ExtResource("2_x0386")
+bus = "Ambience"
 stream = ExtResource("14_rovoo")
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 

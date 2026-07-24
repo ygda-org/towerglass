@@ -5,7 +5,7 @@ extends Node
 func _ready():
 	SFX.play(SFX.Labels.INDUSTRYAMBIENCE)
 	rand_wait(30,60, SFX.Labels.CLOCKS)
-	rand_wait(30,60, SFX.Labels.GEARS)
+	SFX.play(SFX.Labels.GEARS)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,6 +1,8 @@
 extends Resource
 class_name SfxSettings
 
+##The bus for the audio to be played on (SFX/Ambience)
+@export var bus: String
 ## the audio stream to be played
 @export var stream: AudioStream
 ## volume in decibels

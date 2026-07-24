@@ -28,8 +28,8 @@ func play(label: Labels):
 	if has_node(Labels.keys()[label]):
 		return
 	var audio = AudioStreamPlayer.new()
-	audio.bus = "SFX"
 	var setting = label_to_setting[label]
+	audio.bus = setting.bus
 	audio.stream = setting.stream
 	audio.name = Labels.keys()[label] + str(hash(audio))
 	audio.volume_db = setting.volume + randf_range(-1,1) * setting.volume_variance
