@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if not moving and wait_until_player_touches_to_move:
-		if tile_name == "MoveableTile" or "MoveableBrick":
+		if tile_name == "MoveableTile" or tile_name == "MoveableBrick":
 			if GameState.player.left_floor == self or GameState.player.right_floor == self:
 				touched_player.emit()
 				moving = true

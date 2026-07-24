@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="4_0hpsc"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="4_18k7h"]
 [ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="5_k8n7d"]
-[ext_resource type="Texture2D" uid="uid://c326aq62et0wc" path="res://assets/tiles/GMTK26_Cogspikeset.png" id="6_w1ku8"]
 [ext_resource type="PackedScene" uid="uid://cymm2223n3o0c" path="res://levels/level_objects/sticky_block.tscn" id="7_thv03"]
+[ext_resource type="Texture2D" uid="uid://cib7vmfhrskul" path="res://assets/tiles/GMTK26_Cogspikeset(2).png" id="8_qpy5e"]
 [ext_resource type="Texture2D" uid="uid://cr5erpfv7b7qo" path="res://assets/tiles/GMTK2026Goldcogdecor.png" id="9_trb68"]
 [ext_resource type="Texture2D" uid="uid://d3f4if0w8siwm" path="res://assets/tiles/GMTK2026PIPESET.png" id="10_qpy5e"]
 [ext_resource type="Texture2D" uid="uid://byljcp4s303hk" path="res://assets/tiles/repeating pit edit fixed.png" id="11_trb68"]
@@ -180,11 +180,9 @@ texture = ExtResource("1_vl7tc")
 11:4/0 = 0
 11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:4/0 = 0
-12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5.6583557, -8, -5.484251)
-12:4/0/physics_layer_0/polygon_0/one_way = true
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.19819069, -8, -0.099095345)
 13:4/0 = 0
-13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5.6583557, -8, -5.484251)
-13:4/0/physics_layer_0/polygon_0/one_way = true
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.19819069, -8, -0.099095345)
 11:5/0 = 0
 11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5.6583557, -8, -5.484251)
 11:5/0/physics_layer_0/polygon_0/one_way = true
@@ -269,7 +267,7 @@ scenes/5/scene = ExtResource("5_k8n7d")
 scenes/6/scene = ExtResource("7_thv03")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18k7h"]
-texture = ExtResource("6_w1ku8")
+texture = ExtResource("8_qpy5e")
 0:0/0 = 0
 0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-3.7550316, -2.1745472, 3.983717, -1.9444866, 4.2941475, 8, -4.1603994, 8)
 2:0/0 = 0
