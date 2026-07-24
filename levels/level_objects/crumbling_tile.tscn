@@ -291,7 +291,7 @@ script = ExtResource("1_w8fke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713537414]
 sprite_frames = SubResource("SpriteFrames_0es7p")
-animation = &"middle_regenerate"
+animation = &"left_regenerate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205369307]
 position = Vector2(0, 3.5)
