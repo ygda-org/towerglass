@@ -145,6 +145,7 @@ script = ExtResource("1_2rttx")
 position = Vector2(0, 5)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_4s6wt")
+one_way_collision = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1354088171]
 position = Vector2(-10, -10)
