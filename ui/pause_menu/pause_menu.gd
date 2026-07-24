@@ -35,6 +35,9 @@ func _on_music_h_slider_value_changed(value):
 
 func _on_sfxh_slider_value_changed(value):
 	change_bus_volume("SFX", value)
+	
+func _on_ambience_h_slider_value_changed(value):
+	change_bus_volume("Ambience", value)
 
 func change_bus_volume(bus, linear_value):
 	var db_value = linear_to_db(linear_value)

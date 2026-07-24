@@ -136,6 +136,20 @@ offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("10_f2x4c")
 
+[node name="AmbienceSlider" type="Control" parent="." unique_id=2113450118]
+anchors_preset = 0
+
+[node name="AmbienceHSlider" type="HSlider" parent="AmbienceSlider" unique_id=1705408452]
+z_index = 2
+layout_mode = 0
+offset_left = 442.0
+offset_top = 331.0
+offset_right = 804.0
+offset_bottom = 403.0
+max_value = 1.0
+step = 0.05
+value = 0.5
+
 [connection signal="mouse_entered" from="ExitButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="mouse_entered" from="LevelSelectButton" to="." method="_on_level_select_button_mouse_entered"]
@@ -143,3 +157,4 @@ texture = ExtResource("10_f2x4c")
 [connection signal="value_changed" from="MasterSlider/MasterHSlider" to="." method="_on_master_h_slider_value_changed"]
 [connection signal="value_changed" from="MusicSlider/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
 [connection signal="value_changed" from="SFXSlider/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
+[connection signal="value_changed" from="AmbienceSlider/AmbienceHSlider" to="." method="_on_ambience_h_slider_value_changed"]
