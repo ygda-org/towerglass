@@ -186,7 +186,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAADAAUAAAD/////AgAAAAIAAAA=")
 tile_set = ExtResource("1_2kv7s")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge4" unique_id=2132095253]
-position = Vector2(10, 8)
+position = Vector2(10, 7)
 rotation = 1.5707964
 tile_map_data = PackedByteArray("AADW/2v/AAABAAAAAADX/2v/AAABAAAAAADY/2v/AAABAAAAAADZ/2v/AAAEAAAAAADU/2v/AAAAAAAAAADV/2v/AAABAAAAAAA=")
 tile_set = ExtResource("1_2kv7s")
