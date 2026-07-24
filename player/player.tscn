@@ -25,6 +25,9 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.57024795), -1.281234, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+size = Vector2(16, 24)
+
 [sub_resource type="Gradient" id="Gradient_g6k8r"]
 offsets = PackedFloat32Array(0.2, 0.2, 0.5, 0.5, 0.8, 0.8)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
@@ -387,9 +390,6 @@ particles_anim_h_frames = 2
 particles_anim_v_frames = 2
 particles_anim_loop = false
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
-size = Vector2(16, 24)
-
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
 collision_layer = 3
 collision_mask = 17
@@ -398,6 +398,13 @@ gravity_curve_asc = SubResource("Curve_qjkh3")
 gravity_curve_dec = SubResource("Curve_g6k8r")
 jump_charge_curve = SubResource("Curve_rkbax")
 aerial_acceleration_curve = SubResource("Curve_g1dw6")
+
+[node name="CameraOffsetDetection" type="Area2D" parent="." unique_id=1983965224]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetDetection" unique_id=1047584152]
+shape = SubResource("RectangleShape2D_0es7p")
 
 [node name="Mask" type="Sprite2D" parent="." unique_id=777311086]
 clip_children = 1
@@ -478,10 +485,5 @@ angular_velocity_max = 5.0
 damping_min = 2.0
 damping_max = 2.0
 anim_offset_max = 1.0
-
-[node name="CameraOffsetDetection" type="Area2D" parent="." unique_id=1983965224]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetDetection" unique_id=1047584152]
-shape = SubResource("RectangleShape2D_0es7p")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
