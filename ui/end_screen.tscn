@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://jqsb8v3s32k1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ri1ak"]
+font_size = 100
+font_color = Color(0.24705882, 0.70980394, 0.18039216, 1)
+
+[node name="end_screen" type="Control" unique_id=346839068]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=354530351]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 542.0
+color = Color(0.8235294, 0.10980392, 0.95686275, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1288450290]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 169.0
+offset_right = 809.0
+offset_bottom = 331.0
+text = "END SCREEN"
+label_settings = SubResource("LabelSettings_ri1ak")
