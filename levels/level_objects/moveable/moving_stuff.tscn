@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1vjjsky8w2o8"]
 
 [ext_resource type="Script" uid="uid://do2gihkibl5hj" path="res://levels/level_objects/moveable/moving_stuff.gd" id="1_xsxwo"]
+[ext_resource type="Texture2D" uid="uid://uobtn4655q25" path="res://assets/programmer_art/rail.png" id="2_icdi4"]
 
 [node name="MovingStuff" type="Path2D" unique_id=767670818]
 script = ExtResource("1_xsxwo")
@@ -9,7 +10,10 @@ script = ExtResource("1_xsxwo")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=919766140]
 z_index = -1
-width = 5.0
-default_color = Color(0.48805398, 0.48805404, 0.48805404, 1)
+points = PackedVector2Array(-5, 46)
+width = 6.0
+texture = ExtResource("2_icdi4")
+texture_mode = 2
+joint_mode = 1
 begin_cap_mode = 2
 end_cap_mode = 2
