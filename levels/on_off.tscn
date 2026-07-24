@@ -51,7 +51,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(2340, -674)
+position = Vector2(2332, -708)
 
 [node name="Challenge1" type="Node" parent="." unique_id=2104367168]
 
@@ -124,20 +124,34 @@ tile = ExtResource("3_wbeui")
 position = Vector2(2488, -636)
 curve = SubResource("Curve2D_dqet0")
 time = 10.0
-trans_type = 0
+wait_until_player_touches_to_move = true
 move_in_editor = null
 
 [node name="Node2D" type="Node2D" parent="Challenge4/MovingStuff" unique_id=1049452543]
 
 [node name="MoveablePlatform" parent="Challenge4/MovingStuff/Node2D" unique_id=1164924703 instance=ExtResource("4_wbeui")]
-position = Vector2(-32, 0)
-size = 4
+position = Vector2(-48, 0)
+size = 2
 tile = ExtResource("6_n3dx3")
+wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform2" parent="Challenge4/MovingStuff/Node2D" unique_id=1793400492 instance=ExtResource("4_wbeui")]
-position = Vector2(48, 0)
-size = 4
+position = Vector2(64, 0)
+size = 2
+tile = ExtResource("6_n3dx3")
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform3" parent="Challenge4/MovingStuff/Node2D" unique_id=713888071 instance=ExtResource("4_wbeui")]
+position = Vector2(-16, 0)
+size = 2
 tile = ExtResource("3_wbeui")
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform4" parent="Challenge4/MovingStuff/Node2D" unique_id=819909770 instance=ExtResource("4_wbeui")]
+position = Vector2(32, 0)
+size = 2
+tile = ExtResource("3_wbeui")
+wait_until_player_touches_to_move = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge4/MovingStuff/Node2D" unique_id=1899286897]
 position = Vector2(8, -8)
