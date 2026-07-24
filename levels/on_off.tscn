@@ -63,6 +63,7 @@ wait_until_player_touches_to_move = true
 return_quickly = true
 
 [node name="MoveablePlatform" parent="Challenge1/MovingStuff" unique_id=1453184382 instance=ExtResource("4_wbeui")]
+position = Vector2(251.33472, 0)
 size = 7
 tile = ExtResource("5_khffv")
 wait_until_player_touches_to_move = true
@@ -75,6 +76,7 @@ curve = SubResource("Curve2D_wf343")
 time = 5.0
 
 [node name="Node2D" type="Node2D" parent="Challenge2/MovingStuff" unique_id=1969226086]
+position = Vector2(0, -75.912704)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge2/MovingStuff/Node2D" unique_id=1640600955]
 position = Vector2(8, 0)
@@ -87,6 +89,7 @@ curve = SubResource("Curve2D_khffv")
 time = 5.0
 
 [node name="Node2D" type="Node2D" parent="Challenge2/MovingStuff2" unique_id=1231326449]
+position = Vector2(0, -75.912704)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge2/MovingStuff2/Node2D" unique_id=1253757857]
 position = Vector2(8, 0)
@@ -101,6 +104,7 @@ curve = SubResource("Curve2D_wbeui")
 time = 5.0
 
 [node name="MoveablePlatform" parent="Challenge3/MovingStuff" unique_id=1443166074 instance=ExtResource("4_wbeui")]
+position = Vector2(231.5739, 0)
 size = 4
 tile = ExtResource("6_n3dx3")
 
@@ -110,6 +114,7 @@ curve = SubResource("Curve2D_o3lui")
 time = 5.0
 
 [node name="MoveablePlatform" parent="Challenge3/MovingStuff3" unique_id=528714557 instance=ExtResource("4_wbeui")]
+position = Vector2(-231.5739, 0)
 size = 4
 tile = ExtResource("3_wbeui")
 
@@ -119,15 +124,19 @@ tile = ExtResource("3_wbeui")
 position = Vector2(2452, -636)
 curve = SubResource("Curve2D_dqet0")
 time = 10.0
+trans_type = 0
 
 [node name="Node2D" type="Node2D" parent="Challenge4/MovingStuff" unique_id=1049452543]
+position = Vector2(0, -153.60153)
 
 [node name="MoveablePlatform" parent="Challenge4/MovingStuff/Node2D" unique_id=1164924703 instance=ExtResource("4_wbeui")]
-position = Vector2(-40, 0)
+position = Vector2(-48, 0)
 tile = ExtResource("6_n3dx3")
 
 [node name="MoveablePlatform2" parent="Challenge4/MovingStuff/Node2D" unique_id=1793400492 instance=ExtResource("4_wbeui")]
-position = Vector2(40, 0)
+position = Vector2(48, 0)
 tile = ExtResource("3_wbeui")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Challenge4/MovingStuff/Node2D" unique_id=1899286897]
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
