@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://yvuh14w0qnas"]
 
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="1_2kv7s"]
+[ext_resource type="PackedScene" uid="uid://dn8c018o621d7" path="res://levels/level_objects/level_bounds.tscn" id="1_dqet0"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_e7ewd"]
 [ext_resource type="PackedScene" uid="uid://c4fyx3j4wo0g5" path="res://levels/level_objects/on_off_tiles/off_tile.tscn" id="3_wbeui"]
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="3_wf343"]
@@ -8,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="5_khffv"]
 [ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="6_n3dx3"]
 [ext_resource type="Script" uid="uid://disybcl4jiyl7" path="res://levels/camera_up.gd" id="8_ix7qm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3lui"]
+size = Vector2(431, 314)
 
 [sub_resource type="Curve2D" id="Curve2D_0es7p"]
 _data = {
@@ -57,6 +61,12 @@ tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
 position = Vector2(26, -69)
+
+[node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("1_dqet0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=2139265697]
+position = Vector2(205.5, -147)
+shape = SubResource("RectangleShape2D_o3lui")
 
 [node name="Challenge1" type="Node" parent="." unique_id=2104367168]
 
