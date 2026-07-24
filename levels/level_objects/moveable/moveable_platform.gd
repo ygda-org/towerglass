@@ -3,16 +3,13 @@ extends Node2D
 @export var size: int = 5
 @export var tile: PackedScene
 @export var wait_until_player_touches_to_move: bool = false
-var start_pos: Vector2
 var moving: bool = true
 var crumbler: bool = false
 
 signal touched_player
 
 func _ready() -> void:
-	var posx = 0
 	moving = not wait_until_player_touches_to_move
-	start_pos = position
 	for i in range(size):
 		var addend = tile.instantiate()
 		if addend.name == 'MovableTile':
@@ -30,15 +27,13 @@ func _ready() -> void:
 				addend.side = "right"
 			else:
 				addend.side = "middle"
-		addend.position = Vector2(posx, 0)
 		addend.rotation = rotation
-		posx += 16
 		add_child(addend)
 
 func _physics_process(delta: float) -> void:
 	var i: int = 0
 	for child in get_children():
-		child.global_position = global_position + Vector2(i * 16, 0)
+		child.global_position = global_position + Vector2((i - size / 2.0) * 16, 0)
 		i += 1
 	
 	if not moving and wait_until_player_touches_to_move:
