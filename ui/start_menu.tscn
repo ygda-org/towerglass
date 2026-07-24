@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cvkv0v8mxuyex" path="res://assets/start_menu/Settings uh.png" id="8_0kfsi"]
 [ext_resource type="Texture2D" uid="uid://dds5f2sdagt8i" path="res://assets/start_menu/Settings h.png" id="9_r3a5d"]
 [ext_resource type="Texture2D" uid="uid://csxhulpiwhaka" path="res://assets/start_menu/Wheel.png" id="10_lnpn0"]
+[ext_resource type="Texture2D" uid="uid://bxbs3r27jv22k" path="res://assets/start_menu/Title.PNG" id="11_dfrpb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_loyqk"]
 atlas = ExtResource("2_iuit4")
@@ -108,6 +109,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=1130345692]
+z_index = -2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -137,7 +139,14 @@ texture_normal = ExtResource("8_0kfsi")
 texture_hover = ExtResource("9_r3a5d")
 
 [node name="Wheel" type="Sprite2D" parent="." unique_id=726183910]
+z_index = -1
 texture = ExtResource("10_lnpn0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=391304930]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_dfrpb")
 
 [connection signal="mouse_entered" from="MainMenu/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="MainMenu/PlayButton" to="." method="_on_play_button_pressed"]
