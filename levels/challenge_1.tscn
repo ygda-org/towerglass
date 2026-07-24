@@ -87,7 +87,6 @@ position = Vector2(-216, -832)
 curve = SubResource("Curve2D_ri1ak")
 time = 21.0
 wait_until_player_touches_to_move = true
-go_back = false
 
 [node name="MoveablePlatform" parent="MovingStuff3" unique_id=1627863311 instance=ExtResource("6_efrhq")]
 position = Vector2(0, 120)
@@ -127,7 +126,6 @@ position = Vector2(-179, -832)
 curve = SubResource("Curve2D_d2mp6")
 time = 8.0
 wait_until_player_touches_to_move = true
-go_back = false
 
 [node name="MoveablePlatform" parent="MovingStuff4" unique_id=491566935 instance=ExtResource("6_efrhq")]
 position = Vector2(125, 25)
