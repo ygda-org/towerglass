@@ -22,9 +22,11 @@ enum Labels {
 	ONANDOFF,
 	SANDFALLING,
 	BOILERAMBIENCE,
+	PLAYERHIT,
+	SQUEAK,
 }
 
-const print_sounds = false
+const print_sounds: bool = false
 
 @export var label_to_setting: Dictionary[Labels, SfxSettings]
 
