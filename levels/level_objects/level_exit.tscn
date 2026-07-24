@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://doe7bcjt86hin"]
+
+[ext_resource type="Script" uid="uid://cxw5pw8lvr0sg" path="res://levels/level_objects/level_exit.gd" id="1_8dynk"]
+[ext_resource type="Texture2D" uid="uid://ux1r0b0iqnoa" path="res://assets/level_components/GMTK2026HOURGLASSLVLFINISH.png" id="1_ntxl6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri1ak"]
+size = Vector2(34, 36)
+
+[node name="level_exit" type="Area2D" unique_id=1710757709]
+script = ExtResource("1_8dynk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387217242]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ri1ak")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1224149878]
+texture = ExtResource("1_ntxl6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
