@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	
 	if not moving and wait_until_player_touches_to_move:
 		for child in get_children():
-			if GameState.player.left_floor == child or GameState.player.right_floor == child:
+			if GameState.player.left_floor == self or GameState.player.right_floor == self:
 				touched_player.emit()
 				moving = true
 	if crumbler:

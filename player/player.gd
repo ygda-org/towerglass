@@ -48,7 +48,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float):
-	
 	was_on_floor = is_on_floor()
 	
 	if is_on_floor() and velocity.x != 0:

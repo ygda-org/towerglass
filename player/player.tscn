@@ -437,10 +437,12 @@ visible = false
 [node name="LeftRay" type="RayCast2D" parent="." unique_id=441897428]
 position = Vector2(-8, 12)
 target_position = Vector2(0, 8)
+collision_mask = 17
 
 [node name="RightRay" type="RayCast2D" parent="." unique_id=716633532]
 position = Vector2(8, 12)
 target_position = Vector2(0, 8)
+collision_mask = 17
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1323448440]
 collision_layer = 0
