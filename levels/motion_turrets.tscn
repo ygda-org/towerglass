@@ -75,8 +75,7 @@ time = 10.0
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform" parent="MovingStuff" unique_id=1164924703 instance=ExtResource("5_c8xjb")]
-position = Vector2(158.18304, 39.345215)
-velocity = Vector2(-103.4765, -0.3495865)
+position = Vector2(56, 39)
 size = 3
 tile = ExtResource("6_qf1cs")
 wait_until_player_touches_to_move = true

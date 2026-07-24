@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c43r0mtwi3cfj" path="res://levels/level_objects/moveable/moveable_platform.gd" id="1_erro2"]
 
-[node name="MoveablePlatform" type="CharacterBody2D" unique_id=1477656264]
-collision_layer = 16
+[node name="MoveablePlatform" type="AnimatableBody2D" unique_id=1189294733]
+collision_layer = 17
 collision_mask = 0
 script = ExtResource("1_erro2")

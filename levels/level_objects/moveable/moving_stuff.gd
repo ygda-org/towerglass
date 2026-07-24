@@ -74,7 +74,7 @@ func update_children() -> void:
 		if child is Node2D and child is not Line2D:
 			if child is CharacterBody2D and (GameState.player.left_floor == child or GameState.player.right_floor == child):
 				for i in range(10):
-					child.velocity = $PathFollow2D.global_position - child.global_position
+					child.linear_velocity = $PathFollow2D.global_position - child.global_position
 					child.move_and_slide()
 			else:
 				child.position = $PathFollow2D.position

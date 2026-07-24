@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends AnimatableBody2D
 
 @export var size: int = 5#:
 	#set(new_size):
@@ -45,10 +45,9 @@ func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	if not moving and wait_until_player_touches_to_move:
-		for child in get_children():
-			if GameState.player.left_floor == child or GameState.player.left_floor == child:
-				touched_player.emit()
-				moving = true
+		if GameState.player.left_floor == self or GameState.player.left_floor == self:
+			touched_player.emit()
+			moving = true
 	if crumbler:
 		for child in get_children():
 			if "CrumblingTile" in child.name and not child.crumbling and (GameState.player.left_floor == child or GameState.player.right_floor == child):
