@@ -68,5 +68,6 @@ position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_850wk")
 
 [node name="RespawnPoint" type="Marker2D" parent="." unique_id=1963268920]
+position = Vector2(0, 25)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

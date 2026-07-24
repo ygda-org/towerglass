@@ -15,7 +15,7 @@ size = Vector2(2736, 1932.5)
 
 [sub_resource type="Curve2D" id="Curve2D_0es7p"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 384, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 0)
 }
 point_count = 2
 
@@ -60,7 +60,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(26, -69)
+position = Vector2(2292, -655)
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("1_dqet0")]
 visible = false
@@ -95,7 +95,7 @@ move_in_editor = null
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge2/MovingStuff/Node2D" unique_id=1640600955]
 position = Vector2(8, 0)
-tile_map_data = PackedByteArray("AAD9////AgAEAAIAAAD9/wAAAAAAAAAAAAD+////AgAEAAAAABD+/wAAAAABAAAAAAD/////AgAAAAAAABD//wAAAAACAAAAAAAAAP//AgAAAAIAAAAAAAAAAAADAAAAAAABAP//AgACAAIAABABAAAAAAAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9////AgAEAAIAAAD9/wAAAAAKAAUAAAD+////AgAEAAAAABD+/wAAAAALAAUAAAD/////AgAAAAAAABD//wAAAAALAAUAAAAAAP//AgAAAAIAAAAAAAAAAAALAAUAAAABAP//AgACAAIAABABAAAAAAAMAAUAAAA=")
 tile_set = ExtResource("1_2kv7s")
 
 [node name="MovingStuff2" parent="Challenge2" unique_id=1089932170 instance=ExtResource("3_wf343")]
@@ -108,7 +108,7 @@ move_in_editor = null
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge2/MovingStuff2/Node2D" unique_id=1253757857]
 position = Vector2(8, 0)
-tile_map_data = PackedByteArray("AAD+////AgACAAAAABD+/wAAAAABAAAAAAD/////AgACAAAAAAD//wAAAAABAAAAAAAAAP//AgACAAIAABAAAAAAAAABAAAAAAABAP//AgAEAAAAABABAAAAAAAEAAAAAAD9////AgAEAAIAAAD9/wAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+////AgACAAAAABD+/wAAAAALAAUAAAD/////AgACAAAAAAD//wAAAAALAAUAAAAAAP//AgACAAIAABAAAAAAAAALAAUAAAABAP//AgAEAAAAABABAAAAAAAMAAUAAAD9////AgAEAAIAAAD9/wAAAAAKAAUAAAA=")
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Challenge3" type="Node" parent="." unique_id=1470562670]
@@ -187,13 +187,13 @@ shape = SubResource("RectangleShape2D_0es7p")
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge4" unique_id=2132095253]
 position = Vector2(10, 8)
 rotation = 1.5707964
-tile_map_data = PackedByteArray("AADW/2v/AAABAAAAAADX/2v/AAACAAAAAADY/2v/AAADAAAAAADZ/2v/AAAEAAAAAADU/2v/AAAAAAAAAADV/2v/AAABAAAAAAA=")
+tile_map_data = PackedByteArray("AADW/2v/AAABAAAAAADX/2v/AAABAAAAAADY/2v/AAABAAAAAADZ/2v/AAAEAAAAAADU/2v/AAAAAAAAAADV/2v/AAABAAAAAAA=")
 tile_set = ExtResource("1_2kv7s")
 
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=138674609]
 z_index = -1
 tile_set = ExtResource("1_2kv7s")
 
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@143283" to="TileMapLayer/@Area2D@143283" method="_on_body_entered"]
 [connection signal="body_entered" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_entered"]
 [connection signal="body_exited" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_exited"]
