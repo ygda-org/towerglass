@@ -12,12 +12,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		if get_slide_collision(i).get_collider()==GameState.player:
+			SFX.play(SFX.Labels.PLAYERHIT)
 			GameState.player.damage(0.2)
 	if get_slide_collision_count() != 0:
-		print("hit")
 		if player_visible and not played_ding:
 			SFX.play(SFX.Labels.BULLETHITWALL)
-			print("ding")
 			played_ding = true
 			print(position)
 		queue_free()

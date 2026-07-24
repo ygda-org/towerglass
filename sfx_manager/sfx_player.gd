@@ -25,7 +25,8 @@ enum Labels {
 	PLAYERHIT,
 	SQUEAK,
 	PLATFORMCRUMBLE,
-	
+	LEVELSTART,
+	LEVELTRANSITION,
 }
 
 const print_sounds: bool = false
@@ -61,6 +62,16 @@ func play(label: Labels):
 func force_clear_audios():
 	for node in get_children():
 		node.queue_free()
+		
+func force_pause_audios():
+	for node in get_children():
+		if node is AudioStreamPlayer:
+			node.stream_paused = true
+		
+func force_play_audios():
+	for node in get_children():
+		if node is AudioStreamPlayer:
+			node.stream_paused = false
 
 ## remove all playing audio of a specific type
 func clear_audio(label : Labels):

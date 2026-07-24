@@ -41,6 +41,11 @@ func _ready() -> void:
 	GameState.last_location = global_position
 	$Anim.play("default")
 	sand.play("yellow_idle")
+	
+	SFX.play(SFX.Labels.LEVELTRANSITION)
+	await get_tree().create_timer(0.6).timeout
+	SFX.play(SFX.Labels.LEVELSTART)
+
 
 func _physics_process(delta: float):
 	

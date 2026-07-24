@@ -27,6 +27,11 @@ func _on_exit_button_pressed():
 	toggle_pause()
 
 func toggle_pause():
+	if get_tree().paused == true:
+		SFX.force_play_audios()
+	if get_tree().paused == false:
+		SFX.force_pause_audios()
+		
 	get_tree().paused = not get_tree().paused
 	visible = get_tree().paused
 

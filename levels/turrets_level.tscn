@@ -50,6 +50,7 @@ curve = SubResource("Curve2D_1su5m")
 time = 5.0
 
 [node name="Node2D" type="Node2D" parent="MovingStuff" unique_id=87688072]
+position = Vector2(-100, 0)
 
 [node name="MoveablePlatform" parent="MovingStuff/Node2D" unique_id=1164924703 instance=ExtResource("5_g5onw")]
 tile = ExtResource("5_vv7wc")
@@ -81,5 +82,7 @@ shot_directions = Array[Vector2]([Vector2(1, 0)])
 [node name="Turret11" parent="." unique_id=368415244 instance=ExtResource("3_is6h6")]
 position = Vector2(545, -16)
 shot_directions = Array[Vector2]([Vector2(-1, 0)])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1043266207]
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
