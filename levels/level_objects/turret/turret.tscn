@@ -357,13 +357,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kg8m"]
 size = Vector2(32, 32)
 
-[sub_resource type="Gradient" id="Gradient_2n5gj"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_55d6i"]
-gradient = SubResource("Gradient_2n5gj")
-width = 8
-height = 8
-
 [node name="Turret" type="StaticBody2D" unique_id=631227605]
 script = ExtResource("1_0o3ad")
 shot_directions = Array[Vector2]([Vector2(-1, 0), Vector2(0, -1), Vector2(1, 0), Vector2(0, 1)])
@@ -392,10 +385,6 @@ shape = SubResource("RectangleShape2D_5kg8m")
 
 [node name="BulletSpawn" type="Marker2D" parent="BarrelPivot" unique_id=832742001]
 position = Vector2(37, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="BarrelPivot" unique_id=1417697133]
-position = Vector2(26, 0)
-texture = SubResource("GradientTexture2D_55d6i")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1975081268]
 zoom = Vector2(1.5, 1.5)
