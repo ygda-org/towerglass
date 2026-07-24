@@ -16,6 +16,7 @@ func _ready() -> void:
 	name = "CrumblingTile" + str(hash(self))
 
 func crumble():
+	SFX.play(SFX.Labels.PLATFORMCRUMBLE)
 	side_anim("crumbling")
 	await $AnimatedSprite2D.animation_finished
 	$CollisionShape2D.disabled = true

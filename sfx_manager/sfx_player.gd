@@ -24,6 +24,8 @@ enum Labels {
 	BOILERAMBIENCE,
 	PLAYERHIT,
 	SQUEAK,
+	PLATFORMCRUMBLE,
+	
 }
 
 const print_sounds: bool = false

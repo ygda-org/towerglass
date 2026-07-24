@@ -66,6 +66,9 @@ func _physics_process(delta: float):
 		print("god mode :", god_mode)
 		sand_in_bottom = 0.0
 		
+	if Input.is_action_just_pressed("reset"):
+		die()
+		
 	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	drag_speed_boost = move_toward(drag_speed_boost, 1.0, delta*2)
