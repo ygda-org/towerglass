@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+## True == On, False == Off
 @export var initial_state: bool
 @onready var current_state = initial_state
 
@@ -21,6 +22,7 @@ func _process(_delta):
 			$AnimatedSprite2D.play('on')
 		else:
 			$AnimatedSprite2D.play('off')
+		SFX.play(SFX.Labels.ONANDOFF)
 func flip():
 	current_state = not current_state
 	queue_to_flip = true

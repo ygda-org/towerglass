@@ -41,6 +41,11 @@ func _ready() -> void:
 	GameState.last_location = global_position
 	$Anim.play("default")
 	sand.play("yellow_idle")
+	
+	SFX.play(SFX.Labels.LEVELTRANSITION)
+	await get_tree().create_timer(0.6).timeout
+	SFX.play(SFX.Labels.LEVELSTART)
+
 
 func _physics_process(delta: float):
 	
@@ -53,7 +58,7 @@ func _physics_process(delta: float):
 		
 	if Input.is_action_just_released("jump") and is_on_floor():
 		SFX.play(SFX.Labels.TOWERCROSSWHOOSH)
-		SFX.play(SFX.Labels.FLIP)
+		#SFX.play(SFX.Labels.FLIP)
 		SFX.play(SFX.Labels.FLIPSANDFALL)
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -65,6 +70,9 @@ func _physics_process(delta: float):
 		god_mode = not god_mode
 		print("god mode :", god_mode)
 		sand_in_bottom = 0.0
+		
+	if Input.is_action_just_pressed("reset"):
+		die()
 		
 	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"

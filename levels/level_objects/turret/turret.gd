@@ -21,6 +21,8 @@ const BULLET = preload("uid://d5m3kp8lwgis")
 var current_direction_index = 0
 var iter_dir = 1
 
+var player_visible: bool = false
+
 func _ready():
 	match orientation:
 		"north":
@@ -60,10 +62,23 @@ func pause():
 	var bullet = BULLET.instantiate()
 	bullet.velocity = shot_directions[current_direction_index]
 	bullet.position = $BarrelPivot/BulletSpawn.global_position
+	if $BarrelPivot.rotation > 0.0:
+		SFX.play(SFX.Labels.TURRETTURN)
+	else:
+		SFX.clear_audio(SFX.Labels.TURRETTURN)
 	bullet.rotation = $BarrelPivot.rotation
 	var parent = self
 	for i in range(bullet_parent_amount):
 		parent = parent.get_parent()
 	parent.add_child(bullet)
+	if player_visible == true:
+		SFX.play(SFX.Labels.BULLETSHOOT)
+		SFX.clear_audio(SFX.Labels.TURRETTURN)
 	await get_tree().create_timer(pause_time/2).timeout
 	shoot()
+
+func _on_visible_on_screen_notifier_2d_screen_entered():
+	player_visible = true
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	player_visible = false

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dsu8gp6oeomwc"]
+[gd_scene format=3 uid="uid://nqj1gawkl4gn"]
 
 [sub_resource type="GDScript" id="GDScript_sxxdi"]
 script/source = "extends Node2D
@@ -8,6 +8,7 @@ const CRUMBLING_TILE = preload(\"uid://bn4m4aljk32wv\")
 @export var tiles: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(\"dubfijsgj\")
 	name = \"CrumblingPlatform\" + str(hash(self))
 	var posx: int = 0
 	for i in range(tiles):

@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://didrfctbn84l3" path="res://ui/start_menu.gd" id="1_kw4xl"]
 [ext_resource type="Texture2D" uid="uid://cb380qyv8axnq" path="res://assets/start_menu/YGDA Logo.png" id="2_iuit4"]
+[ext_resource type="Texture2D" uid="uid://dl3p5ekd61j3c" path="res://assets/start_menu/Main screen.png" id="3_loyqk"]
+[ext_resource type="Texture2D" uid="uid://cy5l35yr6jvoy" path="res://assets/start_menu/Play uh.png" id="4_eh4yk"]
+[ext_resource type="Texture2D" uid="uid://dsux4x0tsgv82" path="res://assets/start_menu/Play h.png" id="5_lnpn0"]
+[ext_resource type="Texture2D" uid="uid://kjy4aofypc6" path="res://assets/start_menu/Credits uh.png" id="6_dfrpb"]
+[ext_resource type="Texture2D" uid="uid://7hhbdtpijr8w" path="res://assets/start_menu/Credits h.png" id="7_sdwtg"]
+[ext_resource type="Texture2D" uid="uid://cvkv0v8mxuyex" path="res://assets/start_menu/Settings uh.png" id="8_0kfsi"]
+[ext_resource type="Texture2D" uid="uid://dds5f2sdagt8i" path="res://assets/start_menu/Settings h.png" id="9_r3a5d"]
+[ext_resource type="Texture2D" uid="uid://csxhulpiwhaka" path="res://assets/start_menu/Wheel.png" id="10_lnpn0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_loyqk"]
 atlas = ExtResource("2_iuit4")
@@ -94,12 +102,46 @@ offset_right = 960.0
 offset_bottom = 540.0
 color = Color(0, 0, 0, 1)
 
-[node name="StartButton" type="Button" parent="." unique_id=1154419281]
-layout_mode = 0
-offset_left = 99.0
-offset_top = 93.0
-offset_right = 240.0
-offset_bottom = 209.0
-text = "Start :D"
+[node name="MainMenu" type="Control" parent="." unique_id=298026191]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=1130345692]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_loyqk")
+
+[node name="PlayButton" type="TextureButton" parent="MainMenu" unique_id=1568991753]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("4_eh4yk")
+texture_hover = ExtResource("5_lnpn0")
+
+[node name="CreditsButton" type="TextureButton" parent="MainMenu" unique_id=1649406817]
+layout_mode = 0
+offset_top = 148.0
+offset_right = 960.0
+offset_bottom = 687.0
+texture_normal = ExtResource("6_dfrpb")
+texture_hover = ExtResource("7_sdwtg")
+
+[node name="SettingsButton" type="TextureButton" parent="MainMenu" unique_id=1048333229]
+layout_mode = 0
+offset_top = 75.0
+offset_right = 960.0
+offset_bottom = 614.0
+texture_normal = ExtResource("8_0kfsi")
+texture_hover = ExtResource("9_r3a5d")
+
+[node name="Wheel" type="Sprite2D" parent="." unique_id=726183910]
+texture = ExtResource("10_lnpn0")
+
+[connection signal="mouse_entered" from="MainMenu/PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="pressed" from="MainMenu/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="MainMenu/CreditsButton" to="." method="_on_credits_button_mouse_entered"]
+[connection signal="pressed" from="MainMenu/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="MainMenu/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="pressed" from="MainMenu/SettingsButton" to="." method="_on_settings_button_pressed"]

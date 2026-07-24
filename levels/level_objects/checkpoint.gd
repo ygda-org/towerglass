@@ -10,13 +10,10 @@ func _ready() -> void:
 func activate_checkpoint():
 	activated = true
 	$AnimatedSprite2D.play("claimed")
+	SFX.play(SFX.Labels.BELL)
 	GameState.last_location = $RespawnPoint.global_position
 	GameState.player.total_sand = 6.0
 	GameState.player.sand_in_bottom = GameState.player.total_sand/2
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == GameState.player and not activated:

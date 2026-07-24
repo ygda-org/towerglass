@@ -50,6 +50,7 @@ curve = SubResource("Curve2D_1su5m")
 time = 5.0
 
 [node name="Node2D" type="Node2D" parent="MovingStuff" unique_id=87688072]
+position = Vector2(-100, 0)
 
 [node name="MoveablePlatform" parent="MovingStuff/Node2D" unique_id=1164924703 instance=ExtResource("5_g5onw")]
 tile = ExtResource("5_vv7wc")
