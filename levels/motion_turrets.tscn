@@ -152,4 +152,8 @@ is_one_direction = true
 shot_directions = Array[Vector2]([Vector2(-1, 0)])
 pause_time = 1.5
 
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=385344620]
+z_index = -1
+tile_set = ExtResource("1_v2qgv")
+
+[connection signal="body_entered" from="TileMapLayer/@Area2D@48821" to="TileMapLayer/@Area2D@48821" method="_on_body_entered"]

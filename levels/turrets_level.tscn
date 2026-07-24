@@ -83,4 +83,8 @@ shot_directions = Array[Vector2]([Vector2(1, 0)])
 position = Vector2(545, -16)
 shot_directions = Array[Vector2]([Vector2(-1, 0)])
 
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=667687290]
+z_index = -1
+tile_set = ExtResource("1_mbwgq")
+
+[connection signal="body_entered" from="TileMapLayer/@Area2D@46680" to="TileMapLayer/@Area2D@46680" method="_on_body_entered"]
