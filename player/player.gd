@@ -12,6 +12,8 @@ var total_sand: float = 6.0
 ##Either "yellow" or "blue
 var sand_bottom_col : String = "yellow"
 var jump_charge = 0.0
+var camera_offset: Vector2 = Vector2.ZERO
+var camera_offset_follow: float = 0.0
 @export var jump_charge_curve: Curve
 
 const MAX_SPEED = 150
@@ -72,7 +74,7 @@ func _physics_process(delta: float):
 		
 	if Input.is_action_just_pressed("reset"):
 		die()
-		
+	$Camera2D.offset = camera_offset * camera_offset_follow
 	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	drag_speed_boost = move_toward(drag_speed_boost, 1.0, delta*2)
@@ -88,6 +90,7 @@ func _physics_process(delta: float):
 		
 		velocity.x = (DRAG_SPEED - walk_offset) * dir * drag_speed_boost
 		$Camera2D.position_smoothing_speed = 4.0
+		
 		$Camera2D.global_position = global_position
 		if Input.is_action_pressed("jump"):
 			$Anim.play("squash")
@@ -104,7 +107,7 @@ func _physics_process(delta: float):
 			flip()
 			GameState.player_jumped.emit()
 	else:
-		$Camera2D.position_smoothing_speed = 1.0
+		$Camera2D.position_smoothing_speed = 4.0
 		if dir * velocity.x <= 0:
 			velocity.x *= AIR_FRICTION
 		velocity.x = move_toward(velocity.x, MAX_SPEED * dir, AIR_CONTROL * delta * aerial_acceleration_curve.sample(abs(velocity.x/MAX_SPEED)))
