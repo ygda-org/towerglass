@@ -12,6 +12,8 @@ shot_directions = Array[Vector2]([Vector2(-1, 0), Vector2(0, -1), Vector2(1, 0),
 
 [node name="Body" type="Sprite2D" parent="." unique_id=703135798]
 texture = ExtResource("2_8nwv5")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460456024]
 shape = SubResource("RectangleShape2D_5kg8m")
