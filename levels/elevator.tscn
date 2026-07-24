@@ -144,7 +144,7 @@ trans_type = 0
 ease_type = 0
 
 [node name="MoveablePlatform" parent="Elevator/MovingStuff" unique_id=1189294733 instance=ExtResource("3_hric6")]
-position = Vector2(5, -15)
+position = Vector2(-140, -1800)
 collision_layer = 49
 size = 7
 tile = ExtResource("4_p38r5")
@@ -161,6 +161,7 @@ trans_type = 0
 ease_type = 0
 
 [node name="MoveablePlatform" parent="Piston/MovingStuff" unique_id=2132439178 instance=ExtResource("3_hric6")]
+position = Vector2(-140, -1800)
 collision_layer = 49
 size = 4
 tile = ExtResource("4_p38r5")
@@ -175,7 +176,7 @@ trans_type = 0
 ease_type = 0
 
 [node name="MoveablePlatform" parent="Piston/MovingStuff2" unique_id=1562163498 instance=ExtResource("3_hric6")]
-position = Vector2(-140, -1500)
+position = Vector2(-140, -1800)
 collision_layer = 49
 size = 4
 tile = ExtResource("4_p38r5")
@@ -190,7 +191,7 @@ trans_type = 0
 ease_type = 0
 
 [node name="MoveablePlatform" parent="Piston/MovingStuff3" unique_id=613363194 instance=ExtResource("3_hric6")]
-position = Vector2(-140, -1280)
+position = Vector2(-140, -1800)
 collision_layer = 49
 size = 4
 tile = ExtResource("4_p38r5")
@@ -205,7 +206,7 @@ trans_type = 0
 ease_type = 0
 
 [node name="MoveablePlatform" parent="Piston/MovingStuff4" unique_id=1814528822 instance=ExtResource("3_hric6")]
-position = Vector2(-140, -1650)
+position = Vector2(-140, -1800)
 collision_layer = 49
 size = 4
 tile = ExtResource("4_p38r5")
