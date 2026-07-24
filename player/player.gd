@@ -157,7 +157,7 @@ func flip():
 	await sand.animation_finished
 	sand.flip_h = false
 
-func damage(dmg: int) -> void:
+func damage(dmg: float) -> void:
 	total_sand -= dmg
 	sand_in_bottom = min(sand_in_bottom, total_sand)
 	
