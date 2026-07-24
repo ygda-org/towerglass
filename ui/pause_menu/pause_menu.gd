@@ -11,6 +11,11 @@ func _ready():
 	$MusicSlider/MusicHSlider.value = GameState.music_volume
 	$SFXSlider/SFXHSlider.value = GameState.sfx_volume
 	$AmbienceSlider/AmbienceHSlider.value = GameState.ambience_volume
+	
+	change_bus_volume("Master", GameState.master_volume)
+	change_bus_volume("Music", GameState.music_volume)
+	change_bus_volume("SFX", GameState.sfx_volume)
+	change_bus_volume("Ambience", GameState.ambience_volume)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

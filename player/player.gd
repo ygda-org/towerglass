@@ -113,6 +113,10 @@ func _physics_process(delta: float):
 			grav_mult = gravity_curve_dec.sample(velocity.y/MAX_FALL_SPEED)
 		else:
 			grav_mult = gravity_curve_asc.sample(velocity.y/MAX_JUMP)
+			
+		if god_mode:
+			grav_mult = 0.5
+			
 		velocity.y = move_toward(velocity.y, MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
 	move_and_slide()
 	
