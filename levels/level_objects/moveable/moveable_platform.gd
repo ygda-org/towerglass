@@ -25,6 +25,15 @@ func _ready() -> void:
 		if tile_name == 'MoveableTile':
 			if i == 0:
 				addend.get_node("AnimatedSprite2D").set_animation('left')
+				addend.rotation_degrees = 90
+			elif i == size - 1:
+				addend.get_node("AnimatedSprite2D").set_animation('right')
+				addend.rotation_degrees = -90
+			else:
+				addend.get_node("AnimatedSprite2D").set_animation('middle')
+		elif tile_name == "MoveableBrick":
+			if i == 0:
+				addend.get_node("AnimatedSprite2D").set_animation('left')
 			elif i == size - 1:
 				addend.get_node("AnimatedSprite2D").set_animation('right')
 			else:
@@ -48,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if not moving and wait_until_player_touches_to_move:
-		if tile_name == "MoveableTile":
+		if tile_name == "MoveableTile" or "MoveableBrick":
 			if GameState.player.left_floor == self or GameState.player.right_floor == self:
 				touched_player.emit()
 				moving = true
