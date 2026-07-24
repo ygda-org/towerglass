@@ -83,6 +83,4 @@ shot_directions = Array[Vector2]([Vector2(1, 0)])
 position = Vector2(545, -16)
 shot_directions = Array[Vector2]([Vector2(-1, 0)])
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1043266207]
-
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
