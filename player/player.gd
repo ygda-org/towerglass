@@ -74,7 +74,14 @@ func _physics_process(delta: float):
 		
 	if Input.is_action_just_pressed("reset"):
 		die()
+	
+	$Camera2D.global_position = global_position
 	$Camera2D.offset = camera_offset * camera_offset_follow
+	if $CameraOffsetDetection.has_overlapping_areas():
+		camera_offset_follow += delta
+	else:
+		camera_offset_follow -= delta
+	camera_offset_follow = clamp(camera_offset_follow, 0, 1)
 	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
 	drag_speed_boost = move_toward(drag_speed_boost, 1.0, delta*2)
@@ -90,8 +97,6 @@ func _physics_process(delta: float):
 		
 		velocity.x = (DRAG_SPEED - walk_offset) * dir * drag_speed_boost
 		$Camera2D.position_smoothing_speed = 4.0
-		
-		$Camera2D.global_position = global_position
 		if Input.is_action_pressed("jump"):
 			$Anim.play("squash")
 			mask_tex.height = 14 - $Anim.frame - 1
@@ -107,7 +112,7 @@ func _physics_process(delta: float):
 			flip()
 			GameState.player_jumped.emit()
 	else:
-		$Camera2D.position_smoothing_speed = 4.0
+		$Camera2D.position_smoothing_speed = 1.0
 		if dir * velocity.x <= 0:
 			velocity.x *= AIR_FRICTION
 		velocity.x = move_toward(velocity.x, MAX_SPEED * dir, AIR_CONTROL * delta * aerial_acceleration_curve.sample(abs(velocity.x/MAX_SPEED)))
