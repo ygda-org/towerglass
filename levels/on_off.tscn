@@ -140,7 +140,7 @@ tile = ExtResource("3_wbeui")
 [node name="MovingStuff" parent="Challenge4" unique_id=1532192589 instance=ExtResource("3_wf343")]
 position = Vector2(2484, -636)
 curve = SubResource("Curve2D_dqet0")
-time = 35.0
+time = 37.0
 wait_until_player_touches_to_move = true
 go_back = false
 trans_type = 0
