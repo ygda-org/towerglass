@@ -52,8 +52,9 @@ func _physics_process(delta: float):
 		SFX.clear_audio(SFX.Labels.WALK)
 		
 	if Input.is_action_just_released("jump") and is_on_floor():
-		SFX.play(SFX.Labels.FLIPSANDFALL)
 		SFX.play(SFX.Labels.TOWERCROSSWHOOSH)
+		SFX.play(SFX.Labels.FLIP)
+		SFX.play(SFX.Labels.FLIPSANDFALL)
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		SFX.play(SFX.Labels.JUMPCHARGE)
@@ -156,7 +157,7 @@ func flip():
 	await sand.animation_finished
 	sand.flip_h = false
 
-func damage(dmg: int) -> void:
+func damage(dmg: float) -> void:
 	total_sand -= dmg
 	sand_in_bottom = min(sand_in_bottom, total_sand)
 	
