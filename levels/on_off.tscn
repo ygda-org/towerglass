@@ -61,7 +61,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(1482, -607)
+position = Vector2(23, -69)
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("1_dqet0")]
 visible = false
@@ -137,6 +137,9 @@ tile = ExtResource("3_wbeui")
 
 [node name="Challenge4" type="Node" parent="." unique_id=1640753467]
 
+[node name="Checkpoint" parent="Challenge4" unique_id=499865360 instance=ExtResource("10_gf36e")]
+position = Vector2(2308, -649)
+
 [node name="MovingStuff" parent="Challenge4" unique_id=1532192589 instance=ExtResource("3_wf343")]
 position = Vector2(2484, -636)
 curve = SubResource("Curve2D_dqet0")
@@ -195,9 +198,6 @@ tile_set = ExtResource("1_2kv7s")
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=138674609]
 z_index = -1
 tile_set = ExtResource("1_2kv7s")
-
-[node name="Checkpoint" parent="." unique_id=499865360 instance=ExtResource("10_gf36e")]
-position = Vector2(2308, -649)
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
 [connection signal="body_entered" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_entered"]
