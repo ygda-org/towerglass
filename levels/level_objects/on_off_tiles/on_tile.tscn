@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://b7f8rdl578o7p"]
 
 [ext_resource type="Script" uid="uid://biqixaburqtf2" path="res://levels/level_objects/on_off_tiles/on_off_tile.gd" id="1_ydero"]
-[ext_resource type="Texture2D" uid="uid://dlmkiremghwqa" path="res://assets/level_components/on_off/on.png" id="2_8whe4"]
-[ext_resource type="Texture2D" uid="uid://b6qg7chvfcgql" path="res://assets/level_components/on_off/off.png" id="2_x1e52"]
+[ext_resource type="Texture2D" uid="uid://dfs4w8q7l1si6" path="res://assets/level_components/on_off/onoffblock(1).png" id="2_8whe4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1e52"]
+atlas = ExtResource("2_8whe4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oweqr"]
+atlas = ExtResource("2_8whe4")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_x1e52")
+"texture": SubResource("AtlasTexture_x1e52")
 }],
 "loop": 1,
 "name": &"off",
@@ -16,7 +23,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8whe4")
+"texture": SubResource("AtlasTexture_oweqr")
 }],
 "loop": 0,
 "name": &"on",
