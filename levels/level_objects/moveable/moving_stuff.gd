@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		$PathFollow2D.progress_ratio = timer_ratio
 	update_children()
 	elapsed_time += delta * 2
-	if return_quickly and $PathFollow2D.global_position.distance_to(GameState.player.global_position) > 150:
+	if return_quickly and abs($PathFollow2D.global_position.x - GameState.player.global_position.x) > 134:
 		elapsed_time += delta * 2
 	if elapsed_time > time:
 		if go_back:
