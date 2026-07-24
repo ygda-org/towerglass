@@ -1,3 +1,4 @@
+@tool
 extends Path2D
 
 
@@ -11,6 +12,8 @@ var progress: float
 var elapsed_time: float = 0
 var flip = false
 var moving = true
+
+var child_deltas = {}
 
 func _ready() -> void:
 	var points = curve.get_baked_points()
