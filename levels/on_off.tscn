@@ -199,5 +199,5 @@ offset_amount = Vector2(0, -128)
 position = Vector2(2482.5, -1202.25)
 shape = SubResource("RectangleShape2D_0es7p")
 
-[connection signal="body_entered" from="TileMapLayer/@Area2D@391989" to="TileMapLayer/@Area2D@391989" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@392036" to="TileMapLayer/@Area2D@392036" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@388492" to="TileMapLayer/@Area2D@388492" method="_on_body_entered"]
