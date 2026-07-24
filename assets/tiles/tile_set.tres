@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d3f4if0w8siwm" path="res://assets/tiles/GMTK2026PIPESET.png" id="10_qpy5e"]
 [ext_resource type="Texture2D" uid="uid://byljcp4s303hk" path="res://assets/tiles/repeating pit edit fixed.png" id="11_trb68"]
 [ext_resource type="Texture2D" uid="uid://dl0xf1lygr2hn" path="res://assets/tiles/GMTK2026Silvercogdecor.png" id="12_iak18"]
+[ext_resource type="Texture2D" uid="uid://by5h34gdig2p0" path="res://assets/programmer_art/mouse (2).png" id="13_qpy5e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy046"]
 texture = ExtResource("1_vl7tc")
@@ -335,9 +336,16 @@ texture = ExtResource("12_iak18")
 5:1/0 = 0
 5:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iak18"]
+texture = ExtResource("13_qpy5e")
+2:2/0 = 0
+2:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 8
+physics_layer_2/collision_layer = 32
+physics_layer_2/collision_mask = 32
 sources/0 = SubResource("TileSetAtlasSource_hy046")
 sources/1 = SubResource("TileSetScenesCollectionSource_k8n7d")
 sources/2 = SubResource("TileSetAtlasSource_18k7h")
@@ -345,3 +353,4 @@ sources/5 = SubResource("TileSetAtlasSource_uyjtm")
 sources/3 = SubResource("TileSetAtlasSource_wlwvt")
 sources/4 = SubResource("TileSetAtlasSource_fprp5")
 sources/6 = SubResource("TileSetAtlasSource_qqwny")
+sources/7 = SubResource("TileSetAtlasSource_iak18")

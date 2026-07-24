@@ -11,7 +11,9 @@ func _ready() -> void:
 	pass
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	
+	move_and_slide()
 	
 	if player_visible == true:
 		SFX.play(SFX.Labels.SQUEAK)
@@ -21,13 +23,14 @@ func _process(delta: float) -> void:
 	
 	if not is_on_floor():
 		$AnimatedSprite2D.play("air")
-		velocity.y += 20 * delta
+		velocity.y += 250 * delta
 	else:
 		$AnimatedSprite2D.play("walk")
 	
-	if is_on_wall():
+	if is_on_wall() or $Area2D/RayCast2D.get_collider() == null:
 		dir *= -1
 		$Area2D.scale.x *= -1
+		
 	
 	if dir == 1:
 		$AnimatedSprite2D.flip_h = true
@@ -36,7 +39,7 @@ func _process(delta: float) -> void:
 	
 	velocity.x = velo * dir
 	
-	move_and_slide()
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

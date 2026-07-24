@@ -57,7 +57,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5dwjn")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"air",
 "speed": 2.0
 }, {
@@ -91,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kp2wr")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"fall",
 "speed": 2.0
 }, {
@@ -102,7 +102,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5fcic")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"walk",
 "speed": 2.0
 }, {
@@ -130,13 +130,15 @@ animations = [{
 }],
 "loop": 0,
 "name": &"youch",
-"speed": 18.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syxyi"]
 size = Vector2(24, 20)
 
 [node name="Rat" type="CharacterBody2D" unique_id=85061952]
+collision_layer = 49
+collision_mask = 49
 script = ExtResource("1_2rttx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=156635470]
@@ -148,10 +150,15 @@ shape = SubResource("RectangleShape2D_4s6wt")
 position = Vector2(-10, -10)
 scale = Vector2(1.25, 1.2499999)
 sprite_frames = SubResource("SpriteFrames_526j8")
-animation = &"youch"
+animation = &"air"
 centered = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2034564060]
+
+[node name="RayCast2D" type="RayCast2D" parent="Area2D" unique_id=988255640]
+position = Vector2(11.999998, 10)
+scale = Vector2(1.25, 1.2499999)
+target_position = Vector2(1.9073486e-06, 3.1999998)
 
 [node name="AreaCollision2D" type="CollisionShape2D" parent="Area2D" unique_id=723713253]
 position = Vector2(2, 0)
