@@ -38,9 +38,9 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_ix7qm"]
+[sub_resource type="Curve2D" id="Curve2D_dqet0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, -256, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -256)
 }
 point_count = 2
 
@@ -51,7 +51,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(1474, -586)
+position = Vector2(2287, -675)
 
 [node name="Challenge1" type="Node" parent="." unique_id=2104367168]
 
@@ -115,12 +115,19 @@ tile = ExtResource("3_wbeui")
 
 [node name="Challenge4" type="Node" parent="." unique_id=1640753467]
 
-[node name="MovingStuff" parent="Challenge4" unique_id=662710456 instance=ExtResource("3_wf343")]
-position = Vector2(2432, -640)
-curve = SubResource("Curve2D_ix7qm")
+[node name="MovingStuff" parent="Challenge4" unique_id=1532192589 instance=ExtResource("3_wf343")]
+position = Vector2(2452, -636)
+curve = SubResource("Curve2D_dqet0")
+time = 10.0
 
-[node name="MoveablePlatform" parent="Challenge4/MovingStuff" unique_id=1164924703 instance=ExtResource("4_wbeui")]
-position = Vector2(-2432, 640)
+[node name="Node2D" type="Node2D" parent="Challenge4/MovingStuff" unique_id=1049452543]
+
+[node name="MoveablePlatform" parent="Challenge4/MovingStuff/Node2D" unique_id=1164924703 instance=ExtResource("4_wbeui")]
+position = Vector2(-40, 0)
 tile = ExtResource("6_n3dx3")
+
+[node name="MoveablePlatform2" parent="Challenge4/MovingStuff/Node2D" unique_id=1793400492 instance=ExtResource("4_wbeui")]
+position = Vector2(40, 0)
+tile = ExtResource("3_wbeui")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
