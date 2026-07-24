@@ -40,7 +40,10 @@ func _ready():
 	shoot()
 
 func rotation_to_frame(rotation : float) -> int:
-	return int(round(remap(rotation, 0, 2*PI, 0, 12)))
+	var frame : int = int(round(remap(rotation, 0, 2*PI, 0, 12)))
+	if frame < 0:
+		frame += 12
+	return frame
 
 func shoot():
 	if $RotateTurret.frame >= 12:
@@ -58,7 +61,6 @@ func shoot():
 	var next_angle = shot_directions[next_direction_index].angle()
 	if abs($BarrelPivot.rotation - next_angle) > PI:
 		next_angle += 2*PI
-	print(rotation_to_frame(next_angle), "\t", next_angle)
 	tween.tween_property($BarrelPivot, "rotation", next_angle, shot_time)
 	tween.tween_callback(pause.call_deferred)
 	var rotate_tween = get_tree().create_tween()

@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://bn6f701wdg7wr"]
 
 [ext_resource type="Texture2D" uid="uid://buvhsy871lo78" path="res://assets/ui/level_select_top.png" id="1_4dsvd"]
+[ext_resource type="Shader" uid="uid://bsjyan0sbiok0" path="res://ui/level_select.gdshader" id="1_hunyx"]
 [ext_resource type="PackedScene" uid="uid://c7u6ehfby38rj" path="res://ui/select_button.tscn" id="1_o7pgs"]
 [ext_resource type="Texture2D" uid="uid://bq70ukwbrgxcq" path="res://assets/ui/level_select_bot.png" id="2_hunyx"]
+
+[sub_resource type="Gradient" id="Gradient_we87s"]
+colors = PackedColorArray(0.4647959, 0.2752534, 0.035808243, 1, 0.6314626, 0.46867982, 0.3321622, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8r3h1"]
+noise_type = 3
+frequency = 0.0073
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qable"]
+width = 960
+height = 540
+noise = SubResource("FastNoiseLite_8r3h1")
+color_ramp = SubResource("Gradient_we87s")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dsvd"]
+shader = ExtResource("1_hunyx")
+shader_parameter/noise = SubResource("NoiseTexture2D_qable")
 
 [node name="LevelSelect" type="Control" unique_id=1948940972]
 layout_mode = 3
@@ -12,20 +31,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="Control" parent="." unique_id=659892312]
+[node name="Background" type="ColorRect" parent="." unique_id=448534418]
+material = SubResource("ShaderMaterial_4dsvd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.46139455, 0.3573573, 0.24584167, 1)
+
+[node name="Clock" type="Control" parent="." unique_id=659892312]
 anchors_preset = 0
 offset_left = 330.0
 offset_right = 370.0
 offset_bottom = 40.0
 
-[node name="Top" type="TextureRect" parent="Background" unique_id=922503570]
+[node name="Top" type="TextureRect" parent="Clock" unique_id=922503570]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.563, 0.563)
 texture = ExtResource("1_4dsvd")
 
-[node name="Base" type="TextureRect" parent="Background" unique_id=482608318]
+[node name="Base" type="TextureRect" parent="Clock" unique_id=482608318]
 layout_mode = 0
 offset_right = 540.0
 offset_bottom = 960.0
@@ -85,3 +114,21 @@ offset_right = 516.0
 offset_bottom = 371.0
 number = 6
 target = "res://levels/motion_turrets.tscn"
+
+[node name="SelectButton7" parent="." unique_id=1130250613 instance=ExtResource("1_o7pgs")]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 281.0
+offset_right = 467.0
+offset_bottom = 329.0
+number = 7
+target = "res://levels/turrets_level.tscn"
+
+[node name="SelectButton8" parent="." unique_id=1954730422 instance=ExtResource("1_o7pgs")]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 247.0
+offset_right = 528.0
+offset_bottom = 295.0
+number = 8
+target = "res://levels/aww_rats.tscn"

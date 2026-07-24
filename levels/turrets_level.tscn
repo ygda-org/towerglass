@@ -99,4 +99,4 @@ shot_directions = Array[Vector2]([Vector2(-1, 0)])
 z_index = -1
 tile_set = ExtResource("1_mbwgq")
 
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@90880" to="TileMapLayer/@Area2D@90880" method="_on_body_entered"]
