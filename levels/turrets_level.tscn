@@ -36,11 +36,13 @@ shot_time = 0.5
 [node name="Turret2" parent="." unique_id=70427657 instance=ExtResource("3_is6h6")]
 position = Vector2(623, -16)
 orientation = "south"
+is_one_direction = true
 shot_directions = Array[Vector2]([Vector2(0, -1)])
 
 [node name="Turret4" parent="." unique_id=464585689 instance=ExtResource("3_is6h6")]
 position = Vector2(712, -16)
 orientation = "south"
+is_one_direction = true
 shot_directions = Array[Vector2]([Vector2(0, -1)])
 
 [node name="Turret5" parent="." unique_id=1455568618 instance=ExtResource("3_is6h6")]
@@ -90,6 +92,7 @@ shot_directions = Array[Vector2]([Vector2(1, 0)])
 [node name="Turret11" parent="." unique_id=368415244 instance=ExtResource("3_is6h6")]
 position = Vector2(545, -16)
 orientation = "south"
+is_one_direction = true
 shot_directions = Array[Vector2]([Vector2(-1, 0)])
 
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=667687290]
