@@ -75,7 +75,7 @@ time = 10.0
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform" parent="MovingStuff" unique_id=1164924703 instance=ExtResource("5_c8xjb")]
-position = Vector2(88.95668, 39.111343)
+position = Vector2(205.54993, 39.505234)
 size = 3
 tile = ExtResource("6_qf1cs")
 wait_until_player_touches_to_move = true
@@ -86,7 +86,7 @@ time = 8.0
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform" parent="MovingStuff2" unique_id=1886118969 instance=ExtResource("5_c8xjb")]
-position = Vector2(754.1356, 4)
+position = Vector2(785.1755, 4)
 size = 4
 tile = ExtResource("6_qf1cs")
 wait_until_player_touches_to_move = true
@@ -97,7 +97,7 @@ time = 8.0
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform" parent="MovingStuff3" unique_id=1319487171 instance=ExtResource("5_c8xjb")]
-position = Vector2(930.3406, -266.33194)
+position = Vector2(930.081, -307.99884)
 tile = ExtResource("6_qf1cs")
 wait_until_player_touches_to_move = true
 
@@ -114,7 +114,7 @@ curve = SubResource("Curve2D_wh6vw")
 time = 2.0
 
 [node name="Turret" parent="MovingStuff4" unique_id=1263033966 instance=ExtResource("3_xok05")]
-position = Vector2(1637, -391.37286)
+position = Vector2(1637, -370.20755)
 is_one_direction = true
 shot_directions = Array[Vector2]([Vector2(-1, 0)])
 bullet_parent_amount = 2
@@ -125,7 +125,7 @@ time = 20.0
 wait_until_player_touches_to_move = true
 
 [node name="MoveablePlatform" parent="MovingStuff5" unique_id=1918202717 instance=ExtResource("5_c8xjb")]
-position = Vector2(1456.8585, -362.38644)
+position = Vector2(1022.6084, -549.95483)
 size = 2
 tile = ExtResource("6_qf1cs")
 wait_until_player_touches_to_move = true
@@ -136,7 +136,7 @@ time = 6.0
 trans_type = 0
 
 [node name="Turret" parent="MovingStuff6" unique_id=854716975 instance=ExtResource("3_xok05")]
-position = Vector2(715.99994, -671)
+position = Vector2(688.80786, -671)
 is_one_direction = true
 shot_directions = Array[Vector2]([Vector2(0, 1)])
 bullet_parent_amount = 2

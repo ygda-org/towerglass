@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 @export var size: int = 5
@@ -35,7 +36,8 @@ func _physics_process(delta: float) -> void:
 	for child in get_children():
 		child.global_position = global_position + Vector2((i - size / 2.0) * 16, 0)
 		i += 1
-	
+	if Engine.is_editor_hint():
+		return
 	if not moving and wait_until_player_touches_to_move:
 		for child in get_children():
 			if GameState.player.left_floor == child or GameState.player.left_floor == child:
