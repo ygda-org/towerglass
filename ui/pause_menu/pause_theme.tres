@@ -1,0 +1,27 @@
+[gd_resource type="Theme" format=3 uid="uid://b10b8y1i6yf6p"]
+
+[ext_resource type="Texture2D" uid="uid://dmenakivaqqia" path="res://assets/ui/pause_menu/slider_dot.png" id="1_sxwbc"]
+[ext_resource type="Texture2D" uid="uid://bgabcv01oikvn" path="res://assets/ui/pause_menu/slider_dragged.png" id="2_v2akf"]
+[ext_resource type="Texture2D" uid="uid://cieytgx5y6hy7" path="res://assets/ui/pause_menu/slider_undragged.png" id="3_2ivah"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j11rl"]
+load_path = "res://.godot/imported/slider_dot.png-b385e80cf19ea5ad307d147881dadf05.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18k7h"]
+texture = ExtResource("2_v2akf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyjtm"]
+texture = ExtResource("3_2ivah")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdlyj"]
+texture = ExtResource("2_v2akf")
+texture_margin_top = 7.0
+texture_margin_bottom = 7.0
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_sxwbc")
+HSlider/icons/grabber_disabled = SubResource("CompressedTexture2D_j11rl")
+HSlider/icons/grabber_highlight = ExtResource("1_sxwbc")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_18k7h")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_uyjtm")
+HSlider/styles/slider = SubResource("StyleBoxTexture_wdlyj")
