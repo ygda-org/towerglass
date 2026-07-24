@@ -63,6 +63,7 @@ tile_set = ExtResource("1_2kv7s")
 position = Vector2(26, -69)
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("1_dqet0")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=2139265697]
 position = Vector2(1364, -928.75)
