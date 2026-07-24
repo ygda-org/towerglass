@@ -26,9 +26,9 @@ var player_visible: bool = false
 func _ready():
 	match orientation:
 		"north":
-			pass
-		"south":
 			$Body.region_rect.position.y = 32
+		"south":
+			pass
 		"east":
 			$Body.region_rect.position.x = 32
 		"west":
