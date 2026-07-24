@@ -38,6 +38,12 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_ix7qm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, -256, 0, 0, 0, 0)
+}
+point_count = 2
+
 [node name="OnOff" type="Node2D" unique_id=2118787507]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=188622445]
@@ -108,5 +114,13 @@ size = 4
 tile = ExtResource("3_wbeui")
 
 [node name="Challenge4" type="Node" parent="." unique_id=1640753467]
+
+[node name="MovingStuff" parent="Challenge4" unique_id=662710456 instance=ExtResource("3_wf343")]
+position = Vector2(2432, -640)
+curve = SubResource("Curve2D_ix7qm")
+
+[node name="MoveablePlatform" parent="Challenge4/MovingStuff" unique_id=1164924703 instance=ExtResource("4_wbeui")]
+position = Vector2(-2432, 640)
+tile = ExtResource("6_n3dx3")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

@@ -33,7 +33,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var i: int = 0
 	for child in get_children():
-		child.global_position = global_position + Vector2(i * 16, 0)
+		child.global_position = global_position + Vector2((i - size / 2.0) * 16, 0)
 		i += 1
 	
 	if not moving and wait_until_player_touches_to_move:

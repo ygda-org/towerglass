@@ -66,5 +66,3 @@ func update_children() -> void:
 	for child in get_children():
 		if child is Node2D and child is not Line2D:
 			child.position = $PathFollow2D.position
-			if child.name == "MoveablePlatform":
-				child.position.x += child.size * -8
