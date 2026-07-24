@@ -84,9 +84,9 @@ func _physics_process(delta: float):
 	camera_offset_follow = clamp(camera_offset_follow, 0, 1)
 	#$Sprite2D.modulate = Color(jump_charge/MAX_JUMP_CHARGE, 0.0, 0.0, 1.0)
 	$Placeholder.text = str(round(sand_in_bottom / total_sand * 100)) + "%"
-	drag_speed_boost = move_toward(drag_speed_boost, 1.0, delta*2)
 	var dir = Input.get_axis("left", "right")
 	if is_on_floor():
+		drag_speed_boost = move_toward(drag_speed_boost, 1.0, delta*3)
 		poll_floor_type()
 		#Sticky Platform Check
 		var jump_offset : int = 0
@@ -108,8 +108,8 @@ func _physics_process(delta: float):
 			mask_tex.height = 14
 			$Mask.position.y = 0
 			velocity.y = (MAX_JUMP + jump_offset) * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
-			jump_charge = 0.0
 			flip()
+			jump_charge = 0.0
 			GameState.player_jumped.emit()
 	else:
 		$Camera2D.position_smoothing_speed = 1.0
@@ -159,7 +159,7 @@ func poll_floor_type():
 	right_floor = $RightRay.get_collider()
 
 func flip():
-	drag_speed_boost = MAX_DRAG_SPEED_BOOST
+	drag_speed_boost = MAX_DRAG_SPEED_BOOST * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 	if Input.is_action_pressed("left"):
 		$Anim.play("left_flip")
 		sand.flip_h = true
