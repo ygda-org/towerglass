@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://grcmoikvy13x" path="res://assets/sfx/ui/player/walk.wav" id="7_ox5es"]
 [ext_resource type="AudioStream" uid="uid://dtmg7fegeb7og" path="res://assets/sfx/ui/player/flip_sandfall.mp3" id="8_nnboj"]
 [ext_resource type="AudioStream" uid="uid://b7lgsmtag817l" path="res://assets/sfx/ui/player/flip.mp3" id="8_uedv3"]
-[ext_resource type="AudioStream" uid="uid://cp80ya33m8l7g" path="res://assets/sfx/ui/player/hourglass_fall.wav" id="9_uedv3"]
+[ext_resource type="AudioStream" uid="uid://dixtdhirlu2k1" path="res://assets/sfx/ui/player/hourglass_fall.mp3" id="10_a1kgk"]
 [ext_resource type="AudioStream" uid="uid://k56h3wi54uf" path="res://assets/sfx/ui/player/towercrosswhoosh.mp3" id="10_ffh7i"]
 [ext_resource type="AudioStream" uid="uid://bb3is4ecf0yyh" path="res://assets/sfx/ui/player/jump_charge.mp3" id="11_uedv3"]
 [ext_resource type="AudioStream" uid="uid://bbv5vh7v1x5m7" path="res://assets/sfx/ambience/clock.wav" id="12_kfywt"]
@@ -75,7 +75,7 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 [sub_resource type="Resource" id="Resource_a1kgk"]
 script = ExtResource("2_x0386")
 bus = "SFX"
-stream = ExtResource("9_uedv3")
+stream = ExtResource("10_a1kgk")
 volume_variance = 1.5
 pitch_variance = 0.1
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"

@@ -1,22 +1,18 @@
 [gd_scene format=3 uid="uid://d5m3kp8lwgis"]
 
 [ext_resource type="Script" uid="uid://c5jfh1b50r2cm" path="res://levels/level_objects/turret/bullet.gd" id="1_pcfic"]
-
-[sub_resource type="Gradient" id="Gradient_gxii5"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_55d6i"]
-gradient = SubResource("Gradient_gxii5")
-width = 10
-height = 10
+[ext_resource type="Texture2D" uid="uid://yg2qdls36ka8" path="res://assets/turret/bullet.png" id="2_vllv5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55d6i"]
-radius = 5.0
+radius = 3.0
 
 [node name="Bullet" type="CharacterBody2D" unique_id=258375840]
 script = ExtResource("1_pcfic")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2017460575]
-texture = SubResource("GradientTexture2D_55d6i")
+position = Vector2(-8, -7)
+texture = ExtResource("2_vllv5")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=257196667]
 shape = SubResource("CircleShape2D_55d6i")

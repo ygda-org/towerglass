@@ -48,6 +48,7 @@ func pause():
 	var bullet = BULLET.instantiate()
 	bullet.velocity = shot_directions[current_direction_index]
 	bullet.position = $BarrelPivot/BulletSpawn.global_position
+	bullet.rotation = $BarrelPivot.rotation
 	var parent = self
 	for i in range(bullet_parent_amount):
 		parent = parent.get_parent()
