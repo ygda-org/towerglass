@@ -11,5 +11,3 @@ func _ready() -> void:
 	GameState.player.get_node("Camera2D").limit_right = child.global_position.x + bound.size.x / 2
 	GameState.player.get_node("Camera2D").limit_top = child.global_position.y - bound.size.y / 2
 	GameState.player.get_node("Camera2D").limit_bottom = child.global_position.y + bound.size.y / 2
-func _on_body_exited(body: Node2D) -> void:
-	GameState.player.die()
