@@ -80,7 +80,7 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_fgeik"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 728, 296, 0, 0, 0, 0, 621.8606, 294.03284, 0, 0, 0, 0, 552, 296)
+"points": PackedVector2Array(0, 0, 0, 0, 713, 296, 0, 0, 0, 0, 625, 296, 0, 0, 0, 0, 537, 296)
 }
 point_count = 3
 
@@ -139,8 +139,9 @@ wait_until_player_touches_to_move = true
 go_back = false
 
 [node name="MoveablePlatform" parent="Challenge2/MovingStuff2" unique_id=662124419 instance=ExtResource("8_gwo7s")]
-position = Vector2(728, 296)
+position = Vector2(713, 296)
 tile = ExtResource("9_gwo7s")
+wait_until_player_touches_to_move = true
 
 [node name="Challenge3" type="Node" parent="." unique_id=1710617905]
 
@@ -158,3 +159,4 @@ trans_type = 3
 position = Vector2(425, 263)
 size = 3
 tile = ExtResource("9_gwo7s")
+wait_until_player_touches_to_move = true
