@@ -28,8 +28,6 @@ tile_set = ExtResource("3_7lf0s")
 
 [node name="Turret" parent="." unique_id=631227605 instance=ExtResource("4_ccxi4")]
 position = Vector2(353, 240)
-is_one_direction = true
-shot_directions = Array[Vector2]([Vector2(0, -1), Vector2(0, -1)])
 
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=619583097]
 z_index = -1

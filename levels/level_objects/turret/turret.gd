@@ -35,10 +35,16 @@ func _ready():
 			$Body.region_rect.position.x = 32
 			$Body.region_rect.position.y = 32
 	$BarrelPivot.rotation = shot_directions[0].angle()
+	$RotateTurret.frame = rotation_to_frame(shot_directions[0].angle())
 	await get_tree().create_timer(0.5).timeout
 	shoot()
 
+func rotation_to_frame(rotation : float) -> int:
+	return int(round(remap(rotation, 0, 2*PI, 0, 12)))
+
 func shoot():
+	if $RotateTurret.frame >= 12:
+		$RotateTurret.frame = $RotateTurret.frame % 12
 	if is_one_direction:
 		pause()
 		return
@@ -50,11 +56,13 @@ func shoot():
 	var tween = get_tree().create_tween()
 	var next_direction_index = (current_direction_index + iter_dir) % len(shot_directions)
 	var next_angle = shot_directions[next_direction_index].angle()
-	print($BarrelPivot.rotation, next_angle)
 	if abs($BarrelPivot.rotation - next_angle) > PI:
 		next_angle += 2*PI
+	print(rotation_to_frame(next_angle), "\t", next_angle)
 	tween.tween_property($BarrelPivot, "rotation", next_angle, shot_time)
 	tween.tween_callback(pause.call_deferred)
+	var rotate_tween = get_tree().create_tween()
+	rotate_tween.tween_property($RotateTurret, "frame", rotation_to_frame(next_angle), shot_time)
 	current_direction_index = next_direction_index
 
 func pause():
@@ -74,7 +82,23 @@ func pause():
 	if player_visible == true:
 		SFX.play(SFX.Labels.BULLETSHOOT)
 		SFX.clear_audio(SFX.Labels.TURRETTURN)
+	
+	$RotateTurret.visible = false
+	$ShootTurret.visible = true
+	$ShootTurret.speed_scale = 1/(pause_time/2)
+	match ($RotateTurret.frame % 12):
+		0:
+			$ShootTurret.play("east_shoot")
+		3:
+			$ShootTurret.play("south_shoot")
+		6:
+			$ShootTurret.play("west_shoot")
+		9:
+			$ShootTurret.play("north_shoot")
+	
 	await get_tree().create_timer(pause_time/2).timeout
+	$RotateTurret.visible = true
+	$ShootTurret.visible = false
 	shoot()
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
