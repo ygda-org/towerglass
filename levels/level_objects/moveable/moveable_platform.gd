@@ -10,6 +10,7 @@ extends AnimatableBody2D
 @export var wait_until_player_touches_to_move: bool = false
 var moving: bool = true
 var crumbler: bool = false
+@export var hitboxes: bool = false
 var tile_name: String
 
 signal touched_player

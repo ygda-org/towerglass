@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://csxvxvl2dpibo" path="res://assets/tiles/ground_tiles.png" id="1_ygkoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwqg"]
-size = Vector2(16, 7.5)
+size = Vector2(16, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wwqg"]
 atlas = ExtResource("1_ygkoo")
@@ -45,11 +45,11 @@ animations = [{
 }]
 
 [node name="MoveableTile" type="CollisionShape2D" unique_id=204103478]
-position = Vector2(0, 1.25)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_3wwqg")
 one_way_collision = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1338788188]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_0es7p")
-animation = &"right"
+animation = &"left"
