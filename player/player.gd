@@ -184,6 +184,7 @@ func die() -> void:
 	$DeathCooldown.start()
 	
 	position = GameState.last_location
+	velocity = Vector2.ZERO
 	total_sand = 6.0
 	sand_in_bottom = total_sand/2
 	died.emit()
