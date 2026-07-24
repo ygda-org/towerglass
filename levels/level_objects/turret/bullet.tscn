@@ -1,23 +1,22 @@
 [gd_scene format=3 uid="uid://d5m3kp8lwgis"]
 
-[ext_resource type="Script" uid="uid://cptaws0q5c1um" path="res://levels/level_objects/turret/turret.gd" id="1_pcfic"]
+[ext_resource type="Script" uid="uid://c5jfh1b50r2cm" path="res://levels/level_objects/turret/bullet.gd" id="1_pcfic"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kg8m"]
-size = Vector2(32, 32)
+[sub_resource type="Gradient" id="Gradient_gxii5"]
 
-[node name="Turret" type="StaticBody2D" unique_id=631227605]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_55d6i"]
+gradient = SubResource("Gradient_gxii5")
+width = 10
+height = 10
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_55d6i"]
+radius = 5.0
+
+[node name="Bullet" type="CharacterBody2D" unique_id=258375840]
 script = ExtResource("1_pcfic")
-shot_directions = Array[Vector2]([Vector2(-1, 0), Vector2(0, -1), Vector2(1, 0), Vector2(0, 1)])
 
-[node name="Body" type="Sprite2D" parent="." unique_id=299379563]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2017460575]
+texture = SubResource("GradientTexture2D_55d6i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460456024]
-shape = SubResource("RectangleShape2D_5kg8m")
-
-[node name="BarrelPivot" type="Node2D" parent="." unique_id=799978954]
-
-[node name="BulletSpawn" type="Marker2D" parent="BarrelPivot" unique_id=832742001]
-position = Vector2(37, 0)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1975081268]
-zoom = Vector2(3, 3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=257196667]
+shape = SubResource("CircleShape2D_55d6i")
