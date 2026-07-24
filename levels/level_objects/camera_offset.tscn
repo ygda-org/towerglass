@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://62t1oc04japv"]
+
+[ext_resource type="Script" uid="uid://disybcl4jiyl7" path="res://levels/level_objects/camera_offset.gd" id="1_iypdn"]
+
+[node name="CameraOffset" type="Area2D" unique_id=497969490]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_iypdn")

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="4_wbeui"]
 [ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="5_khffv"]
 [ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="6_n3dx3"]
-[ext_resource type="Script" uid="uid://disybcl4jiyl7" path="res://levels/camera_up.gd" id="8_ix7qm"]
+[ext_resource type="PackedScene" uid="uid://62t1oc04japv" path="res://levels/level_objects/camera_offset.tscn" id="10_5dyyl"]
 [ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="10_gf36e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3lui"]
@@ -51,7 +51,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
-size = Vector2(178, 1031)
+size = Vector2(177, 1007.5)
 
 [node name="OnOff" type="Node2D" unique_id=2118787507]
 
@@ -61,7 +61,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAI
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(23, -69)
+position = Vector2(2328, -688)
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("1_dqet0")]
 visible = false
@@ -179,26 +179,21 @@ position = Vector2(8, -8)
 tile_map_data = PackedByteArray("AAD//wAAAAADAAUAAAD/////AgAAAAIAAAA=")
 tile_set = ExtResource("1_2kv7s")
 
-[node name="CameraUp" type="Area2D" parent="Challenge4" unique_id=1659350210]
-visible = false
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("8_ix7qm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge4/CameraUp" unique_id=1938220807]
-position = Vector2(2484, -1213.5)
-shape = SubResource("RectangleShape2D_0es7p")
-
 [node name="TileMapLayer" type="TileMapLayer" parent="Challenge4" unique_id=2132095253]
 position = Vector2(10, 8)
 rotation = 1.5707964
 tile_map_data = PackedByteArray("AADW/2v/AAABAAAAAADX/2v/AAABAAAAAADY/2v/AAABAAAAAADZ/2v/AAAEAAAAAADU/2v/AAAAAAAAAADV/2v/AAABAAAAAAA=")
 tile_set = ExtResource("1_2kv7s")
 
+[node name="CameraOffset" parent="Challenge4" unique_id=497969490 instance=ExtResource("10_5dyyl")]
+offset_amount = Vector2(0, -134)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge4/CameraOffset" unique_id=26121783]
+position = Vector2(2482.5, -1202.25)
+shape = SubResource("RectangleShape2D_0es7p")
+
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=138674609]
 z_index = -1
 tile_set = ExtResource("1_2kv7s")
 
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_entered"]
-[connection signal="body_exited" from="Challenge4/CameraUp" to="Challenge4/CameraUp" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@277803" to="TileMapLayer/@Area2D@277803" method="_on_body_entered"]

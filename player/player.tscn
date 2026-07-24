@@ -387,6 +387,9 @@ particles_anim_h_frames = 2
 particles_anim_v_frames = 2
 particles_anim_loop = false
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+size = Vector2(16, 24)
+
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
 collision_layer = 3
 collision_mask = 17
@@ -475,5 +478,10 @@ angular_velocity_max = 5.0
 damping_min = 2.0
 damping_max = 2.0
 anim_offset_max = 1.0
+
+[node name="CameraOffsetDetection" type="Area2D" parent="." unique_id=1983965224]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetDetection" unique_id=1047584152]
+shape = SubResource("RectangleShape2D_0es7p")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
