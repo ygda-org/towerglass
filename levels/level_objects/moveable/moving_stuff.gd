@@ -15,6 +15,8 @@ var moving = true
 
 var child_deltas = {}
 
+@export var move_in_editor = false
+
 func _ready() -> void:
 	var points = curve.get_baked_points()
 	$Line2D.points = points
@@ -27,6 +29,8 @@ func _ready() -> void:
 				child.touched_player.connect(start_move)
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint() and not move_in_editor:
+		return
 	if not moving:
 		return
 	var timer_ratio = Tween.interpolate_value(0.0, 1.0, elapsed_time, time, trans_type, ease_type)

@@ -1,18 +1,12 @@
-@tool
 extends Node2D
 
-@export var size: int = 5:
-	set(new_size):
-		size = new_size
-		for node in get_children():
-			node.queue_free()
-		_ready()
-@export var tile: PackedScene:
-	set(new_tile):
-		tile = new_tile
-		for node in get_children():
-			node.queue_free()
-		_ready()
+@export var size: int = 5#:
+	#set(new_size):
+	#	size = new_size
+	#	for node in get_children():
+	#		node.queue_free()
+	#	_ready()
+@export var tile: PackedScene
 @export var wait_until_player_touches_to_move: bool = false
 var moving: bool = true
 var crumbler: bool = false
@@ -20,6 +14,8 @@ var crumbler: bool = false
 signal touched_player
 
 func _ready() -> void:
+	for node in get_children():
+		node.queue_free()
 	moving = not wait_until_player_touches_to_move
 	for i in range(size):
 		var addend = tile.instantiate()
