@@ -147,6 +147,7 @@ texture = ExtResource("10_lnpn0")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("11_dfrpb")
 
 [connection signal="mouse_entered" from="MainMenu/PlayButton" to="." method="_on_play_button_mouse_entered"]
