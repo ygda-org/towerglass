@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bnmlb7f0wsmxm" path="res://assets/hourglass/hg_flip.png" id="3_yw30f"]
 [ext_resource type="Texture2D" uid="uid://535ojd70drt" path="res://assets/hourglass/hg_idlesand.png" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://bi3gpmkqlfe5x" path="res://player/ambience_player.gd" id="7_boad6"]
+[ext_resource type="Texture2D" uid="uid://5sjhumhccca2" path="res://assets/programmer_art/SandParticle.png" id="8_rgyib"]
 
 [sub_resource type="Curve" id="Curve_qjkh3"]
 _data = [Vector2(0, 1), 0.0, -0.1595681, 0, 0, Vector2(1, 0.8016529), -0.56181103, 0.0, 0, 0]
@@ -380,6 +381,12 @@ height = 24.0
 radius = 8.0
 height = 24.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hg6s5"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
 collision_layer = 3
 collision_mask = 17
@@ -448,5 +455,23 @@ one_shot = true
 
 [node name="AmbiencePlayer" type="Node" parent="." unique_id=163559258]
 script = ExtResource("7_boad6")
+
+[node name="HitParticle" type="CPUParticles2D" parent="." unique_id=113368487]
+material = SubResource("CanvasItemMaterial_hg6s5")
+emitting = false
+texture = ExtResource("8_rgyib")
+lifetime = 0.5
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 500)
+initial_velocity_max = 100.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0
+damping_min = 2.0
+damping_max = 2.0
+anim_offset_max = 1.0
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

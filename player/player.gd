@@ -160,6 +160,8 @@ func flip():
 func damage(dmg: float) -> void:
 	total_sand -= dmg
 	sand_in_bottom = min(sand_in_bottom, total_sand)
+	$HitParticle.emitting = true
+	$HitParticle.emitting = false
 	
 func die() -> void:
 	if $DeathCooldown.time_left > 0.0:

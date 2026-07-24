@@ -45,7 +45,7 @@ func shoot():
 
 func pause():
 	await get_tree().create_timer(pause_time/2).timeout
-	var bullet : CharacterBody2D = BULLET.instantiate()
+	var bullet = BULLET.instantiate()
 	bullet.velocity = shot_directions[current_direction_index]
 	bullet.position = $BarrelPivot/BulletSpawn.global_position
 	var parent = self
