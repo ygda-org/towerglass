@@ -291,7 +291,7 @@ script = ExtResource("1_w8fke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713537414]
 sprite_frames = SubResource("SpriteFrames_0es7p")
-animation = &"left_regenerate"
+animation = &"right_crumbling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205369307]
 position = Vector2(0, 3.5)
@@ -299,6 +299,10 @@ shape = SubResource("RectangleShape2D_y0u0i")
 
 [node name="RegenerateTimer" type="Timer" parent="." unique_id=897639255]
 wait_time = 2.0
+one_shot = true
+
+[node name="CrumbleTimer" type="Timer" parent="." unique_id=1865086167]
+wait_time = 1.0999999999999999
 one_shot = true
 
 [connection signal="timeout" from="RegenerateTimer" to="." method="_on_timer_timeout"]

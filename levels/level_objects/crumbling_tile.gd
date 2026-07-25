@@ -18,7 +18,8 @@ func _ready() -> void:
 func crumble():
 	SFX.play(SFX.Labels.PLATFORMCRUMBLE)
 	side_anim("crumbling")
-	await $AnimatedSprite2D.animation_finished
+	$CrumbleTimer.start()
+	await $CrumbleTimer.timeout
 	$CollisionShape2D.disabled = true
 	$RegenerateTimer.start()
 	
