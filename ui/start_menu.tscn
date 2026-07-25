@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dds5f2sdagt8i" path="res://assets/start_menu/Settings h.png" id="9_r3a5d"]
 [ext_resource type="Texture2D" uid="uid://csxhulpiwhaka" path="res://assets/start_menu/Wheel.png" id="10_lnpn0"]
 [ext_resource type="Texture2D" uid="uid://bxbs3r27jv22k" path="res://assets/start_menu/Title.PNG" id="11_dfrpb"]
+[ext_resource type="PackedScene" uid="uid://bg1ofmw7qpb2j" path="res://ui/pause_menu/pause_menu.tscn" id="13_0kfsi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_loyqk"]
 atlas = ExtResource("2_iuit4")
@@ -191,6 +192,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("11_dfrpb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=147829715]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1246076756 instance=ExtResource("13_0kfsi")]
 
 [connection signal="mouse_entered" from="MainMenu/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="MainMenu/PlayButton" to="." method="_on_play_button_pressed"]
