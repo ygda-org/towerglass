@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b42gjlqkaf2bv"]
 
+[ext_resource type="Script" uid="uid://d2fa021eyxtpl" path="res://levels/level_objects/fire.gd" id="1_bov31"]
 [ext_resource type="Texture2D" uid="uid://b32vm3yegiixj" path="res://assets/tiles/GMTK2026Fireanim.png" id="1_rduqa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bov31"]
@@ -58,6 +59,7 @@ size = Vector2(11, 13)
 [node name="Fire" type="StaticBody2D" unique_id=952057307]
 collision_layer = 8
 collision_mask = 0
+script = ExtResource("1_bov31")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2122997239]
 sprite_frames = SubResource("SpriteFrames_0es7p")
@@ -67,3 +69,9 @@ frame_progress = 0.7123123
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=635135704]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_0es7p")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=339844013]
+rect = Rect2(-6, -6, 13, 14)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

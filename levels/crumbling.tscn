@@ -52,6 +52,7 @@ size = Vector2(992, 755)
 [node name="Level3" type="Node2D" unique_id=987068114]
 
 [node name="Background" parent="." unique_id=1886125022 instance=ExtResource("1_jscrd")]
+visible = false
 
 [node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("11_fgeik")]
 position = Vector2(277, -16)
