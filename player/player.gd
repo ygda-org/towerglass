@@ -46,13 +46,19 @@ var camera_center_position = Vector2(0,0)
 var camera_target_offset = Vector2(0,0)
 var sway_dir = 1
 
+var is_dead : bool = false
+
 func _ready() -> void:
 	$CanvasLayer.visible = true
 	GameState.player = self
-	GameState.last_location = global_position
+	#GameState.last_location = global_position
+	if GameState.lvl_to_loc[GameState.current_level] != Vector2(-1000,-1000):
+		global_position = GameState.lvl_to_loc[GameState.current_level]
+	else:
+		GameState.lvl_to_loc[GameState.current_level] = GameState.player.global_position
 	$Anim.play("default")
 	sand.play("yellow_idle")
-	
+	update_sand_visual()
 	SFX.play(SFX.Labels.LEVELTRANSITION)
 	await get_tree().create_timer(0.6).timeout
 	SFX.play(SFX.Labels.LEVELSTART)
@@ -232,23 +238,29 @@ func damage(dmg: float) -> void:
 	$HitParticle.emitting = false
 	
 func die() -> void:
-	has_moved = false
-	if $DeathCooldown.time_left > 0.0:
+	process_mode = Node.PROCESS_MODE_DISABLED
+	if is_dead:
 		return
-	
-	if god_mode == true:
-		return
-		
-	$DeathCooldown.start()
-	
-	position = GameState.last_location
-	velocity = Vector2.ZERO
-	total_sand = 6.0
-	sand_in_bottom = total_sand/2
-	update_sand_visual()
-	var tween : Tween = get_tree().create_tween()
-	tween.tween_property($CanvasLayer/Vignette, "self_modulate", Color(1.0,1.0,1.0,(sand_in_bottom / total_sand)**2), 0.5)
-	died.emit()
+	is_dead = true
+	visible = false
+	SceneSwitcher.go_to_scene(GameState.current_lvl_path)
+	#has_moved = false
+	#if $DeathCooldown.time_left > 0.0:
+		#return
+	#
+	#if god_mode == true:
+		#return
+		#
+	#$DeathCooldown.start()
+	#
+	#position = GameState.lvl_to_loc[GameState.current_level]
+	#velocity = Vector2.ZERO
+	#total_sand = 6.0
+	#sand_in_bottom = total_sand/2
+	#update_sand_visual()
+	#var tween : Tween = get_tree().create_tween()
+	#tween.tween_property($CanvasLayer/Vignette, "self_modulate", Color(1.0,1.0,1.0,(sand_in_bottom / total_sand)**2), 0.5)
+	#died.emit()
 
 func _on_hurtbox_body_entered(body):
 	SFX.play(SFX.Labels.DEATHSPILL)

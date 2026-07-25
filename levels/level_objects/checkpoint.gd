@@ -5,13 +5,14 @@ var activated: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	activated = false
-	GameState.last_location = GameState.player.global_position
+	#GameState.last_location = GameState.player.global_position
 
 func activate_checkpoint():
 	activated = true
 	$AnimatedSprite2D.play("claimed")
 	SFX.play(SFX.Labels.BELL)
-	GameState.last_location = $RespawnPoint.global_position
+	#GameState.last_location = $RespawnPoint.global_position
+	GameState.lvl_to_loc[GameState.current_level] = $RespawnPoint.global_position
 	GameState.player.total_sand = 6.0
 	GameState.player.sand_in_bottom = GameState.player.total_sand/2
 

@@ -12,6 +12,8 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == GameState.player and not activated:
+		GameState.player.is_dead = true
+		GameState.lvl_to_loc[GameState.current_level] = Vector2(-1000,-1000)
 		#GameState.player.process_mode = Node.PROCESS_MODE_DISABLED
 		GameState.player.is_physics_process = false
 		activated = true
