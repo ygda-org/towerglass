@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://chmwk6sakdq8c"]
+
+[ext_resource type="Script" uid="uid://b1trsnwfim208" path="res://globals/music_player/music_player.gd" id="1_hupx2"]
+[ext_resource type="Script" uid="uid://sy1ixyycss1j" path="res://globals/music_player/music_settings.gd" id="2_we102"]
+[ext_resource type="AudioStream" uid="uid://ylufx8cl8oqi" path="res://assets/music/main menu ig.ogg" id="3_rwxnn"]
+[ext_resource type="AudioStream" uid="uid://ddvh4bvoiuhjk" path="res://assets/music/basic level song 1.ogg" id="4_oayp0"]
+[ext_resource type="AudioStream" uid="uid://c7el6xo0yg10s" path="res://assets/music/intermediate_level_theme.mp3" id="5_ftyri"]
+[ext_resource type="AudioStream" uid="uid://d0yt20jmex8mf" path="res://assets/music/Ticking.mp3" id="6_lsk71"]
+[ext_resource type="AudioStream" uid="uid://bh2xegl7jcff8" path="res://assets/music/expert_level_theme.ogg" id="7_03ncj"]
+[ext_resource type="AudioStream" uid="uid://dunktuy225qdp" path="res://assets/music/level_select.ogg" id="8_tlrt4"]
+[ext_resource type="AudioStream" uid="uid://cl58yjf0c43ft" path="res://assets/music/slipping_through_the_cracks.ogg" id="9_rbbvo"]
+
+[sub_resource type="Resource" id="Resource_eeko5"]
+script = ExtResource("2_we102")
+loop_stream = ExtResource("3_rwxnn")
+metadata/_custom_type_script = "uid://sy1ixyycss1j"
+
+[sub_resource type="Resource" id="Resource_gldfg"]
+script = ExtResource("2_we102")
+loop_stream = ExtResource("4_oayp0")
+metadata/_custom_type_script = "uid://sy1ixyycss1j"
+
+[sub_resource type="Resource" id="Resource_2fyio"]
+script = ExtResource("2_we102")
+loop_stream = ExtResource("5_ftyri")
+metadata/_custom_type_script = "uid://sy1ixyycss1j"
+
+[sub_resource type="Resource" id="Resource_emc4l"]
+script = ExtResource("2_we102")
+loop_stream = ExtResource("6_lsk71")
+metadata/_custom_type_script = "uid://sy1ixyycss1j"
+
+[sub_resource type="Resource" id="Resource_xqwue"]
+script = ExtResource("2_we102")
+loop_stream = ExtResource("7_03ncj")
+metadata/_custom_type_script = "uid://sy1ixyycss1j"
+
+[sub_resource type="Resource" id="Resource_jqr4q"]
+script = ExtResource("2_we102")
+loop_stream = ExtResource("8_tlrt4")
+metadata/_custom_type_script = "uid://sy1ixyycss1j"
+
+[sub_resource type="Resource" id="Resource_6cnhx"]
+script = ExtResource("2_we102")
+loop_stream = ExtResource("9_rbbvo")
+metadata/_custom_type_script = "uid://sy1ixyycss1j"
+
+[node name="MusicPlayer" type="Node" unique_id=1900023536]
+script = ExtResource("1_hupx2")
+label_to_settings = Dictionary[int, ExtResource("2_we102")]({
+0: SubResource("Resource_eeko5"),
+1: SubResource("Resource_gldfg"),
+2: SubResource("Resource_2fyio"),
+3: SubResource("Resource_emc4l"),
+4: SubResource("Resource_xqwue"),
+5: SubResource("Resource_jqr4q"),
+6: SubResource("Resource_6cnhx")
+})
