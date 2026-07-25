@@ -38,8 +38,6 @@ var right_floor : Object = null
 
 var was_on_floor : bool = false
 
-var normal_gravity = true
-
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
@@ -125,10 +123,8 @@ func _physics_process(delta: float):
 			grav_mult = gravity_curve_asc.sample(abs(velocity.y)/MAX_JUMP)
 		if god_mode:
 			grav_mult = 0.5
-		if normal_gravity:
-			velocity.y = move_toward(velocity.y, up_direction.y * MAX_FALL_SPEED, up_direction.y*delta*GRAVITY*grav_mult)
-		else:
-			velocity.y = move_toward(velocity.y, -up_direction.y * MAX_FALL_SPEED, up_direction.y*delta*GRAVITY*grav_mult)
+
+		velocity.y = move_toward(velocity.y, -up_direction.y * MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
 		
 	move_and_slide()
 	
