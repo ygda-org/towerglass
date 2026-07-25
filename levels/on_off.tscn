@@ -143,13 +143,11 @@ wait_until_player_touches_to_move = true
 position = Vector2(2134, -611)
 curve = SubResource("Curve2D_o3lui")
 time = 5.0
-wait_until_player_touches_to_move = true
 move_in_editor = null
 
 [node name="MoveablePlatform" parent="Challenge3/MovingStuff3" unique_id=528714557 instance=ExtResource("4_wbeui")]
 size = 4
 tile = ExtResource("3_wbeui")
-wait_until_player_touches_to_move = true
 
 [node name="Challenge4" type="Node" parent="." unique_id=1640753467]
 
@@ -201,4 +199,4 @@ position = Vector2(2482.5, -1202.25)
 shape = SubResource("RectangleShape2D_0es7p")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@75118" to="TileMapLayer/@Area2D@75118" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@87092" to="TileMapLayer/@Area2D@87092" method="_on_body_entered"]
