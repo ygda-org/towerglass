@@ -555,4 +555,4 @@ tile_map_data = PackedByteArray("AAA7AKn/AgACAAAAAAA8AKn/AgACAAIAAAA9AKn/AgACAAA
 tile_set = ExtResource("1_s6tru")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@51296" to="TileMapLayer/@Area2D@51296" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@67236" to="TileMapLayer/@Area2D@67236" method="_on_body_entered"]

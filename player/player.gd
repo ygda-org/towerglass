@@ -40,6 +40,8 @@ var was_on_floor : bool = false
 
 var is_physics_process : bool = true
 
+var has_moved: bool = false
+
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
@@ -52,13 +54,14 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float):
-	
+		
 	if not is_physics_process:
 		return
 	
 	was_on_floor = is_on_floor()
 	
 	if is_on_floor() and velocity.x != 0:
+		has_moved = true
 		SFX.play(SFX.Labels.WALK)
 	else:
 		SFX.clear_audio(SFX.Labels.WALK)
@@ -146,6 +149,9 @@ func set_gravity(dir):
 func update_sand(delta : float):
 	if "flip" in $Anim.animation and $Anim.is_playing():
 		return
+		
+	if has_moved == false:
+		return
 	
 	sand_in_bottom += delta
 	
@@ -193,6 +199,7 @@ func damage(dmg: float) -> void:
 	$HitParticle.emitting = false
 	
 func die() -> void:
+	has_moved = false
 	if $DeathCooldown.time_left > 0.0:
 		return
 	
