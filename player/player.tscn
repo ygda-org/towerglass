@@ -409,6 +409,49 @@ particles_anim_h_frames = 2
 particles_anim_v_frames = 2
 particles_anim_loop = false
 
+[sub_resource type="Gradient" id="Gradient_377x3"]
+offsets = PackedFloat32Array(0.3173584, 0.9362263)
+colors = PackedColorArray(0.7232993, 0.5198668, 0.124609195, 1, 0.72, 0.52080005, 0.122400016, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5fofi"]
+gradient = SubResource("Gradient_377x3")
+width = 5
+height = 5
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_vluf6"]
+offsets = PackedFloat32Array(0, 0.492748, 0.65305334, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_hg6s5"]
+offsets = PackedFloat32Array(0, 0.90981126, 1)
+colors = PackedColorArray(0.3967687, 0.3967687, 0.3967687, 1, 0.6212585, 0.6212585, 0.6212585, 1, 0.62, 0.62, 0.62, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_377x3"]
+gradient = SubResource("Gradient_hg6s5")
+width = 4
+height = 4
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8781481, 0)
+
+[sub_resource type="Gradient" id="Gradient_p5txo"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_8t03j"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.72156864, 0.52156866, 0.1254902, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vluf6"]
+gradient = SubResource("Gradient_8t03j")
+width = 3
+height = 3
+
+[sub_resource type="Gradient" id="Gradient_2ieo8"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Player" type="CharacterBody2D" unique_id=491503936]
 z_index = 10
 collision_layer = 3
@@ -496,6 +539,7 @@ material = SubResource("CanvasItemMaterial_hg6s5")
 emitting = false
 texture = ExtResource("8_rgyib")
 lifetime = 0.5
+one_shot = true
 explosiveness = 1.0
 emission_shape = 1
 emission_sphere_radius = 10.0
@@ -508,6 +552,73 @@ angular_velocity_max = 5.0
 damping_min = 2.0
 damping_max = 2.0
 anim_offset_max = 1.0
+
+[node name="DragParticles" type="CPUParticles2D" parent="." unique_id=817056705]
+position = Vector2(0, 12)
+emitting = false
+amount = 15
+texture = SubResource("GradientTexture2D_5fofi")
+lifetime = 1.22
+emission_shape = 3
+emission_rect_extents = Vector2(8, 0)
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 25.0
+initial_velocity_max = 30.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+radial_accel_min = 20.0
+radial_accel_max = 35.0
+scale_amount_min = 0.8
+scale_amount_max = 1.4
+color_ramp = SubResource("Gradient_vluf6")
+
+[node name="JumpParticle" type="CPUParticles2D" parent="." unique_id=1400501499]
+position = Vector2(0, -4)
+emitting = false
+amount = 14
+texture = SubResource("GradientTexture2D_377x3")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(8, 0)
+direction = Vector2(0, 1)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 35.0
+initial_velocity_max = 40.0
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+damping_min = 7.337
+damping_max = 7.337
+scale_amount_min = 0.8
+scale_amount_max = 1.6
+color_ramp = SubResource("Gradient_p5txo")
+
+[node name="LandParticle" type="CPUParticles2D" parent="." unique_id=1790233236]
+position = Vector2(0, 14)
+emitting = false
+amount = 16
+texture = SubResource("GradientTexture2D_vluf6")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(8, 0)
+direction = Vector2(0, -1)
+spread = 60.0
+gravity = Vector2(0, 80)
+initial_velocity_min = 35.0
+initial_velocity_max = 45.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+damping_min = 10.0
+damping_max = 10.0
+scale_amount_min = 1.1
+scale_amount_max = 1.6
+color_ramp = SubResource("Gradient_2ieo8")
 
 [node name="Down" type="RayCast2D" parent="." unique_id=613985075]
 target_position = Vector2(0, 1024)
