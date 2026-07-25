@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bn6f701wdg7wr"]
 
-[ext_resource type="Texture2D" uid="uid://buvhsy871lo78" path="res://assets/ui/level_select_top.png" id="1_4dsvd"]
 [ext_resource type="Shader" uid="uid://bsjyan0sbiok0" path="res://ui/level_select.gdshader" id="1_hunyx"]
 [ext_resource type="PackedScene" uid="uid://c7u6ehfby38rj" path="res://ui/select_button.tscn" id="1_o7pgs"]
 [ext_resource type="Script" uid="uid://br02k4olhlvjc" path="res://ui/level_select.gd" id="1_qable"]
-[ext_resource type="Texture2D" uid="uid://bq70ukwbrgxcq" path="res://assets/ui/level_select_bot.png" id="2_hunyx"]
+[ext_resource type="Texture2D" uid="uid://bjoabvg7f2evh" path="res://assets/ui/UPDATED_level_select_top.PNG" id="3_qable"]
+[ext_resource type="Texture2D" uid="uid://0t6rbkinpjcu" path="res://assets/ui/UPDATED_level_select_bottom.PNG" id="4_8r3h1"]
 
 [sub_resource type="Gradient" id="Gradient_we87s"]
 colors = PackedColorArray(0.4647959, 0.2752534, 0.035808243, 1, 0.6314626, 0.46867982, 0.3321622, 1)
@@ -49,19 +49,19 @@ offset_left = 330.0
 offset_right = 370.0
 offset_bottom = 40.0
 
-[node name="Top" type="TextureRect" parent="Clock" unique_id=922503570]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.563, 0.563)
-texture = ExtResource("1_4dsvd")
-
 [node name="Base" type="TextureRect" parent="Clock" unique_id=482608318]
 layout_mode = 0
 offset_right = 540.0
 offset_bottom = 960.0
 scale = Vector2(0.563, 0.563)
-texture = ExtResource("2_hunyx")
+texture = ExtResource("4_8r3h1")
+
+[node name="Top" type="TextureRect" parent="Clock" unique_id=922503570]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 960.0
+scale = Vector2(0.563, 0.563)
+texture = ExtResource("3_qable")
 
 [node name="SelectButton" parent="." unique_id=911375310 instance=ExtResource("1_o7pgs")]
 layout_mode = 1
