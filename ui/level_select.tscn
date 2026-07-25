@@ -3,9 +3,10 @@
 [ext_resource type="Shader" uid="uid://bsjyan0sbiok0" path="res://ui/level_select.gdshader" id="1_hunyx"]
 [ext_resource type="PackedScene" uid="uid://c7u6ehfby38rj" path="res://ui/select_button.tscn" id="1_o7pgs"]
 [ext_resource type="Script" uid="uid://br02k4olhlvjc" path="res://ui/level_select.gd" id="1_qable"]
-[ext_resource type="Texture2D" uid="uid://b80ubkmo4x1vu" path="res://assets/icon.svg" id="3_8r3h1"]
 [ext_resource type="Texture2D" uid="uid://bjoabvg7f2evh" path="res://assets/ui/UPDATED_level_select_top.PNG" id="3_qable"]
 [ext_resource type="Texture2D" uid="uid://0t6rbkinpjcu" path="res://assets/ui/UPDATED_level_select_bottom.PNG" id="4_8r3h1"]
+[ext_resource type="Texture2D" uid="uid://1fq8bjlax4ra" path="res://assets/ui/dark_skip.png" id="6_inwjl"]
+[ext_resource type="Texture2D" uid="uid://dcocu7guclyf1" path="res://assets/ui/light_skip.png" id="7_we87s"]
 
 [sub_resource type="Gradient" id="Gradient_we87s"]
 colors = PackedColorArray(0.4647959, 0.2752534, 0.035808243, 1, 0.6314626, 0.46867982, 0.3321622, 1)
@@ -212,11 +213,15 @@ level_song = 4
 
 [node name="Skip" type="TextureButton" parent="." unique_id=1700961927]
 layout_mode = 0
-offset_left = 794.0
-offset_top = 405.0
-offset_right = 922.0
-offset_bottom = 533.0
-texture_normal = ExtResource("3_8r3h1")
+offset_left = 829.00006
+offset_top = 474.99997
+offset_right = 1341.0001
+offset_bottom = 731.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_inwjl")
+texture_pressed = ExtResource("6_inwjl")
+texture_hover = ExtResource("7_we87s")
+stretch_mode = 5
 
 [connection signal="mouse_entered" from="Skip" to="." method="_on_skip_mouse_entered"]
 [connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

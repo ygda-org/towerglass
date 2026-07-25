@@ -212,6 +212,8 @@ func update_sand_visual():
 	mask_grad.offsets = PackedFloat32Array(points)
 
 func poll_floor_type():
+	$LeftRay.force_raycast_update()
+	$RightRay.force_raycast_update()
 	left_floor = $LeftRay.get_collider()
 	right_floor = $RightRay.get_collider()
 
@@ -244,7 +246,7 @@ func damage(dmg: float) -> void:
 	$HitParticle.emitting = false
 	
 func die() -> void:
-	process_mode = Node.PROCESS_MODE_DISABLED
+	call_deferred("set_process", Node.PROCESS_MODE_DISABLED)
 	if is_dead:
 		return
 	is_dead = true

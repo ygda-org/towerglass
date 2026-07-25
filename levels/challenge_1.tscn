@@ -108,7 +108,6 @@ position = Vector2(80, -144)
 curve = SubResource("Curve2D_kva35")
 time = 60.0
 go_back = false
-stupid_hack_please_dont_ask = true
 
 [node name="MoveablePlatform" parent="MovingStuff2" unique_id=1189294733 instance=ExtResource("6_efrhq")]
 position = Vector2(0, 216)
@@ -154,7 +153,6 @@ curve = SubResource("Curve2D_aqj26")
 time = 8.0
 wait_until_player_touches_to_move = true
 go_back = false
-stupid_hack_please_dont_ask = true
 
 [node name="MoveablePlatform" parent="MovingStuff6" unique_id=1847018193 instance=ExtResource("6_efrhq")]
 position = Vector2(340, -140)
@@ -261,6 +259,3 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=265562200]
 position = Vector2(488.5, -732)
 shape = SubResource("RectangleShape2D_0es7p")
-
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@113579" to="TileMapLayer/@Area2D@113579" method="_on_body_entered"]
