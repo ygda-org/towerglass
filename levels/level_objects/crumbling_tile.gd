@@ -43,3 +43,6 @@ func side_anim(anim_name: String) -> void:
 	if side == "":
 		print("huh")
 	$AnimatedSprite2D.play(side + "_" + anim_name)
+
+func accelerate_crumble():
+	$CollisionShape2D.disabled = true

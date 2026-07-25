@@ -92,9 +92,10 @@ func _physics_process(delta: float):
 		camera_center_position = global_position + Vector2(0, 15*jump_charge/MAX_JUMP_CHARGE)
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2, 2)+Vector2(0.2,0.2)*jump_charge/MAX_JUMP_CHARGE, delta)
 	else:
+		$Camera2D.position_smoothing_speed = 2
 		camera_center_position = global_position + Vector2(0, -100*velocity.y/MAX_JUMP)
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2, 2)-Vector2(0.2,0.2)*velocity.y/MAX_JUMP,delta*7)
-	$Camera2D.offset = $Camera2D.offset.lerp(camera_offset * camera_offset_follow, delta)
+	$Camera2D.offset = $Camera2D.offset.lerp(camera_offset * camera_offset_follow, delta/3)
 	
 	# swaying
 	if jump_charge == MAX_JUMP_CHARGE:
@@ -144,6 +145,8 @@ func _physics_process(delta: float):
 			$JumpJuice.start()
 			GameState.player_jumped.emit()
 	else:
+		left_floor = null
+		right_floor = null
 		$Camera2D.position_smoothing_speed = 1.0
 		if dir * velocity.x <= 0:
 			velocity.x *= AIR_FRICTION
@@ -176,7 +179,7 @@ func update_sand(delta : float):
 		return
 	
 	sand_in_bottom += delta
-	
+	$CanvasLayer/Vignette.self_modulate.a = (sand_in_bottom / total_sand)**2
 	update_sand_visual()
 	
 	if sand_in_bottom >= total_sand:
@@ -211,6 +214,8 @@ func flip():
 		sand_bottom_col = "yellow"
 	sand_in_bottom = total_sand - sand_in_bottom
 	update_sand_visual()
+	var tween : Tween = get_tree().create_tween()
+	tween.tween_property($CanvasLayer/Vignette, "self_modulate", Color(1.0,1.0,1.0,(sand_in_bottom / total_sand)**2), 0.5)
 	await sand.animation_finished
 	sand.flip_h = false
 
