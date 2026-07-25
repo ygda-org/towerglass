@@ -220,7 +220,7 @@ stream = ExtResource("24_bvj6r")
 volume = -4.0
 volume_variance = 1.5
 pitch_variance = 0.1
-min_delay = 1.3
+min_delay = 0.5
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_wbd63"]
