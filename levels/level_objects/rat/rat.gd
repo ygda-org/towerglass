@@ -4,6 +4,7 @@ var velo: int = 50
 var dir = 1
 var collider
 var biting = false
+@onready var spawn:= Vector2 (global_position.x, global_position.y)
 
 var player_visible = false
 
@@ -39,10 +40,11 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = velo * dir
 	
-	
+	GameState.player.died.connect(respawn)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	
 	if body != GameState.player:
 		return
 	
@@ -69,3 +71,7 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	player_visible = false
+
+
+func respawn():
+	global_position = spawn
