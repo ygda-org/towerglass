@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="1_enwyp"]
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="2_85c3i"]
+[ext_resource type="PackedScene" uid="uid://qeo4gtjn6fg4" path="res://levels/level_objects/rat/rat.tscn" id="3_dcoxu"]
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="3_gkkva"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="4_dcoxu"]
 [ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="5_sxbvl"]
@@ -23,7 +24,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhj7k"]
-size = Vector2(947, 20)
+size = Vector2(2445, 20)
 
 [sub_resource type="Curve2D" id="Curve2D_gkkva"]
 _data = {
@@ -43,16 +44,100 @@ point_count = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0fhp"]
 size = Vector2(174, 379)
 
+[sub_resource type="Curve2D" id="Curve2D_sxbvl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_rdink"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ju8h8"]
+size = Vector2(126, 830)
+
+[sub_resource type="Curve2D" id="Curve2D_xhj7k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_sxwbc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3642g"]
+size = Vector2(100, 308)
+
+[sub_resource type="Curve2D" id="Curve2D_alm23"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1hkf1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_yf4us"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4eab"]
+size = Vector2(171, 551)
+
+[sub_resource type="Curve2D" id="Curve2D_skvqh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_aqgnq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -100)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skvqh"]
+size = Vector2(636.5, 71.138916)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqgnq"]
+size = Vector2(169, 440)
+
 [node name="Trampoline" type="Node2D" unique_id=563532105]
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("1_enwyp")]
-position = Vector2(13, -12)
+position = Vector2(581, -2430)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1879672368]
-tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAAAAAAAAAACAAAAAAABAAAAAAADAAAAAAACAAAAAAAEAAAAAAD+/wAAAAAAAAAAAAAOAPH/AAAAAAAAAAAPAPH/AAABAAAAAAAQAPH/AAACAAAAAAARAPH/AAADAAAAAAASAPH/AAAEAAAAAAAZAOD/AAAAAAAAAAAaAOD/AAABAAAAAAAbAOD/AAACAAAAAAAcAOD/AAADAAAAAAAdAOD/AAAEAAAAAAAvAMf/AAAAAAAAAAAwAMf/AAABAAAAAAAxAMf/AAACAAAAAAAyAMf/AAADAAAAAAAzAMf/AAACAAAAAAA0AMf/AAACAAAAAAA1AMf/AAACAAAAAAA2AMf/AAACAAAAAAA3AMf/AAACAAAAAAA8AMf/AAACAAAAAAA7AMf/AAACAAAAAAA6AMf/AAACAAAAAAA5AMf/AAACAAAAAAA4AMf/AAACAAAAAAA9AMf/AAACAAAAAAA+AMf/AAACAAAAAAA/AMf/AAACAAAAAABAAMf/AAACAAAAAABBAMf/AAACAAAAAABCAMf/AAACAAAAAABDAMf/AAACAAAAAABEAMf/AAACAAAAAABFAMf/AAAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAAAAAAAAAACAAAAAAABAAAAAAADAAAAAAACAAAAAAAEAAAAAAD+/wAAAAAAAAAAAAAOAPH/AAAAAAAAAAAPAPH/AAABAAAAAAAQAPH/AAACAAAAAAARAPH/AAADAAAAAAASAPH/AAAEAAAAAAAZAOD/AAAAAAAAAAAaAOD/AAABAAAAAAAbAOD/AAACAAAAAAAcAOD/AAADAAAAAAAdAOD/AAAEAAAAAAAvAMf/AAAAAAAAAAAwAMf/AAABAAAAAAAxAMf/AAACAAAAAAAyAMf/AAADAAAAAAAzAMf/AAACAAAAAAA0AMf/AAACAAAAAAA1AMf/AAACAAAAAAA2AMf/AAACAAAAAAA3AMf/AAACAAAAAAA8AMf/AAACAAAAAAA7AMf/AAACAAAAAAA6AMf/AAACAAAAAAA5AMf/AAACAAAAAAA4AMf/AAACAAAAAAA9AMf/AAACAAAAAAA+AMf/AAACAAAAAAA/AMf/AAACAAAAAABAAMf/AAACAAAAAABBAMf/AAACAAAAAABCAMf/AAACAAAAAABDAMf/AAACAAAAAABEAMf/AAACAAAAAABFAMf/AAAEAAAAAABKAJP/AAAAAAAAAABLAJP/AAABAAAAAABMAJP/AAACAAAAAABMAJL/AQAAAAAABQBNAJP/AAADAAAAAABOAJP/AAAEAAAAAAAvAH3/AAAAAAAAAAAwAH3/AAABAAAAAAAxAH3/AAACAAAAAAAyAH3/AAADAAAAAAAzAH3/AAAEAAAAAAA6AIH/AAAAAAAAAAA7AIH/AAAEAAAAAAAiAGn/AAAAAAAAAAAjAGn/AAABAAAAAAAkAGn/AAACAAAAAAAlAGn/AAADAAAAAAAmAGn/AAAEAAAAAAAtAG3/AAAAAAAAAAAuAG3/AAAEAAAAAAA/AJH/AAAAAAAAAABAAJH/AAABAAAAAABBAJH/AAACAAAAAABCAJH/AAADAAAAAABDAJH/AAAEAAAAAAAYAFv/AQAAAAAAAQAZAFv/AQAAAAAAAQAaAFv/AQAAAAAAAQAbAFv/AQAAAAAAAQAcAFv/AQAAAAAAAQAdAFv/AQAAAAAAAQAeAFv/AQAAAAAAAQAfAFv/AQAAAAAAAQAgAFv/AQAAAAAAAQAhAFv/AQAAAAAAAQAZAE//AQAAAAAAAgAaAE//AQAAAAAAAgAbAE//AQAAAAAAAgAcAE//AQAAAAAAAgAdAE//AQAAAAAAAgAeAE//AQAAAAAAAgAfAE//AQAAAAAAAgAgAE//AQAAAAAAAgAhAE//AQAAAAAAAgAYAE//AQAAAAAAAgAgAEj/AAAAAAAAAAAhAEj/AAAEAAAAAAASACv/AQAAAAAAAQASADv/AQAAAAAAAQATACv/AQAAAAAAAQATADv/AQAAAAAAAQAUACv/AQAAAAAAAQAUADv/AQAAAAAAAQAVACv/AQAAAAAAAQAVADv/AQAAAAAAAQAWACv/AQAAAAAAAQAWADv/AQAAAAAAAQAXACv/AQAAAAAAAQAXADv/AQAAAAAAAQAYACv/AQAAAAAAAQAYADv/AQAAAAAAAQAZACv/AQAAAAAAAQAZADv/AQAAAAAAAQAaACv/AQAAAAAAAQAaADv/AQAAAAAAAQAbACv/AQAAAAAAAQAbADv/AQAAAAAAAQA=")
 tile_set = ExtResource("2_85c3i")
 
-[node name="MovingStuff" parent="." unique_id=767670818 instance=ExtResource("3_gkkva")]
+[node name="Rat" parent="TileMapLayer" unique_id=85061952 instance=ExtResource("3_dcoxu")]
+position = Vector2(1066, -1787)
+
+[node name="Rat2" parent="TileMapLayer" unique_id=1599368939 instance=ExtResource("3_dcoxu")]
+position = Vector2(941, -2043)
+
+[node name="Rat3" parent="TileMapLayer" unique_id=1003057350 instance=ExtResource("3_dcoxu")]
+position = Vector2(711, -2147)
+
+[node name="Rat4" parent="TileMapLayer" unique_id=1937808738 instance=ExtResource("3_dcoxu")]
+position = Vector2(729.22864, -2369.8918)
+
+[node name="Rat5" parent="TileMapLayer" unique_id=903518735 instance=ExtResource("3_dcoxu")]
+position = Vector2(527, -2956)
+
+[node name="MovingStuff" parent="." unique_id=1969863893 instance=ExtResource("3_gkkva")]
 position = Vector2(163.71193, 7.6651306)
 curve = SubResource("Curve2D_1su5m")
 wait_until_player_touches_to_move = true
@@ -75,8 +160,6 @@ shape = SubResource("RectangleShape2D_1su5m")
 position = Vector2(369.41003, -281.88812)
 curve = SubResource("Curve2D_85c3i")
 wait_until_player_touches_to_move = true
-trans_type = 0
-ease_type = 0
 
 [node name="MoveablePlatform" parent="MovingStuff2" unique_id=844992352 instance=ExtResource("4_dcoxu")]
 tile = ExtResource("5_sxbvl")
@@ -86,14 +169,13 @@ wait_until_player_touches_to_move = true
 position = Vector2(-1, 124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=38330548]
-position = Vector2(463.5, 0)
+position = Vector2(1212.5, 0)
 shape = SubResource("RectangleShape2D_xhj7k")
 
 [node name="MovingStuff3" parent="." unique_id=1534889422 instance=ExtResource("3_gkkva")]
 position = Vector2(566, -549)
 curve = SubResource("Curve2D_gkkva")
 wait_until_player_touches_to_move = true
-ease_type = 0
 
 [node name="MoveablePlatform" parent="MovingStuff3" unique_id=137659163 instance=ExtResource("4_dcoxu")]
 tile = ExtResource("5_sxbvl")
@@ -118,7 +200,142 @@ wait_until_player_touches_to_move = true
 
 [node name="CameraOffset3" parent="." unique_id=213066907 instance=ExtResource("6_85c3i")]
 position = Vector2(620, -734)
+offset_amount = Vector2(0, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffset3" unique_id=1808500720]
 position = Vector2(-2, 2.5)
 shape = SubResource("RectangleShape2D_x0fhp")
+
+[node name="MovingStuff5" parent="." unique_id=278641493 instance=ExtResource("3_gkkva")]
+position = Vector2(1212.1743, -908.26514)
+curve = SubResource("Curve2D_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform" parent="MovingStuff5" unique_id=1814611684 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="MovingStuff6" parent="." unique_id=1134394201 instance=ExtResource("3_gkkva")]
+position = Vector2(1219, -1169)
+curve = SubResource("Curve2D_rdink")
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform" parent="MovingStuff6" unique_id=999319430 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="CameraOffset4" parent="." unique_id=475680719 instance=ExtResource("6_85c3i")]
+position = Vector2(1211, -1008)
+offset_amount = Vector2(0, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffset4" unique_id=1227750179]
+position = Vector2(-9, -308)
+shape = SubResource("RectangleShape2D_ju8h8")
+
+[node name="MovingStuff7" parent="." unique_id=1392914848 instance=ExtResource("3_gkkva")]
+position = Vector2(1200.1111, -1461.1238)
+curve = SubResource("Curve2D_xhj7k")
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform" parent="MovingStuff7" unique_id=104577686 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="MovingStuff8" parent="." unique_id=1711644928 instance=ExtResource("3_gkkva")]
+position = Vector2(908, -1795)
+curve = SubResource("Curve2D_sxwbc")
+time = 1.5
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform" parent="MovingStuff8" unique_id=2001375152 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="CameraOffset5" parent="." unique_id=178132210 instance=ExtResource("6_85c3i")]
+position = Vector2(908, -1842)
+offset_amount = Vector2(0, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffset5" unique_id=1253054543]
+position = Vector2(5, -98)
+shape = SubResource("RectangleShape2D_3642g")
+
+[node name="MovingStuff9" parent="." unique_id=767670818 instance=ExtResource("3_gkkva")]
+position = Vector2(689.9199, -2118.6006)
+curve = SubResource("Curve2D_alm23")
+time = 1.5
+
+[node name="MoveablePlatform" parent="MovingStuff9" unique_id=1205918049 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+
+[node name="CameraOffset6" parent="." unique_id=2112385616 instance=ExtResource("6_85c3i")]
+position = Vector2(691, -2158)
+offset_amount = Vector2(0, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffset6" unique_id=801294559]
+position = Vector2(-2, -105)
+shape = SubResource("RectangleShape2D_3642g")
+
+[node name="MovingStuff10" parent="." unique_id=333111528 instance=ExtResource("3_gkkva")]
+position = Vector2(469.75006, -2443.0652)
+curve = SubResource("Curve2D_1hkf1")
+time = 1.5
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform" parent="MovingStuff10" unique_id=1991737617 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="MovingStuff11" parent="." unique_id=1727138412 instance=ExtResource("3_gkkva")]
+position = Vector2(464.04932, -2679.6936)
+curve = SubResource("Curve2D_yf4us")
+time = 1.5
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform" parent="MovingStuff11" unique_id=525779781 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="CameraOffset7" parent="." unique_id=1332861691 instance=ExtResource("6_85c3i")]
+position = Vector2(471, -2660)
+offset_amount = Vector2(0, -75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffset7" unique_id=105620153]
+position = Vector2(-7.5, -40.5)
+shape = SubResource("RectangleShape2D_v4eab")
+
+[node name="MovingStuff12" parent="." unique_id=79272382 instance=ExtResource("3_gkkva")]
+position = Vector2(359, -2996.856)
+curve = SubResource("Curve2D_skvqh")
+time = 1.5
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform" parent="MovingStuff12" unique_id=827763943 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="MovingStuff13" parent="." unique_id=147127579 instance=ExtResource("3_gkkva")]
+position = Vector2(367.40826, -3275)
+curve = SubResource("Curve2D_aqgnq")
+time = 1.5
+wait_until_player_touches_to_move = true
+
+[node name="MoveablePlatform" parent="MovingStuff13" unique_id=1415117288 instance=ExtResource("4_dcoxu")]
+tile = ExtResource("5_sxbvl")
+wait_until_player_touches_to_move = true
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1166114766]
+position = Vector2(372, -2343)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=53592590]
+position = Vector2(-55.75, 0)
+shape = SubResource("RectangleShape2D_skvqh")
+
+[node name="CameraOffset8" parent="." unique_id=1725629125 instance=ExtResource("6_85c3i")]
+position = Vector2(369, -3235)
+offset_amount = Vector2(0, -75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffset8" unique_id=909596323]
+position = Vector2(-4, 30)
+shape = SubResource("RectangleShape2D_aqgnq")
+
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
