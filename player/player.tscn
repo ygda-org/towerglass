@@ -509,5 +509,9 @@ position = Vector2(8, 12)
 target_position = Vector2(0, 8)
 collision_mask = 128
 
+[node name="JumpJuice" type="Timer" parent="." unique_id=142527266]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
