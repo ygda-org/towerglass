@@ -52,6 +52,9 @@ func create_bitmap(button):
 func _on_settings_button_pressed():
 	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONCLICK)
+		$CanvasLayer/PauseMenu.toggle_pause()
+		$CanvasLayer/PauseMenu/LevelSelectButton.visible = false
+		$CanvasLayer/PauseMenu/Cover.visible = true
 
 
 func _on_credits_button_pressed():
@@ -71,7 +74,6 @@ func _on_play_button_mouse_entered():
 func _on_credits_button_mouse_entered():
 	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONHOVER)
-
 
 func _on_settings_button_mouse_entered():
 	if not intro_playing:
