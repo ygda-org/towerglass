@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://da1md2upxixgx"]
 
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="1_54c1e"]
+[ext_resource type="PackedScene" uid="uid://bkkk7s66no47" path="res://levels/level_objects/background.tscn" id="1_ni1x5"]
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="1_tmjk1"]
 [ext_resource type="PackedScene" uid="uid://doe7bcjt86hin" path="res://levels/level_objects/level_exit.tscn" id="1_ua0w8"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="2_tj44o"]
@@ -16,6 +17,8 @@ _data = {
 point_count = 6
 
 [node name="AwwRats" type="Node2D" unique_id=1003027194]
+
+[node name="Background" parent="." unique_id=1886125022 instance=ExtResource("1_ni1x5")]
 
 [node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("1_ua0w8")]
 position = Vector2(3346, -272)
@@ -135,4 +138,4 @@ tile = ExtResource("3_ua0w8")
 wait_until_player_touches_to_move = true
 
 [connection signal="body_entered" from="DecorationTileMapLayer/Checkpoint" to="DecorationTileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@49891" to="DecorationTileMapLayer/@Area2D@49891" method="_on_body_entered"]
+[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@185977" to="DecorationTileMapLayer/@Area2D@185977" method="_on_body_entered"]
