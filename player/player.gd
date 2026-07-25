@@ -73,7 +73,11 @@ func _physics_process(delta: float):
 	
 	if is_on_floor() and velocity.x != 0:
 		has_moved = true
-		SFX.play(SFX.Labels.WALK)
+		if ($StickyLeft.get_collider() != null) or ($StickyRight.get_collider() != null):
+			SFX.play(SFX.Labels.STICKYPLATFORMWALK)
+
+		else:
+			SFX.play(SFX.Labels.WALK)
 		$DragParticles.emitting = true
 	else:
 		SFX.clear_audio(SFX.Labels.WALK)
@@ -173,6 +177,8 @@ func _physics_process(delta: float):
 	move_and_slide()
 	
 	if not was_on_floor and is_on_floor():
+		if ($StickyLeft.get_collider() != null) or ($StickyRight.get_collider() != null):
+			SFX.play(SFX.Labels.STICKYPLATFORMHIT)
 		SFX.play(SFX.Labels.HOURGLASSFALL)
 		$LandParticle.emitting = true
 	
