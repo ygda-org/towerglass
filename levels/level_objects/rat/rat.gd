@@ -54,6 +54,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		GameState.player.velocity.y -= 250
 	else:
 		$AnimatedSprite2D.play("bite")
+		SFX.play(SFX.Labels.BITE)
 		SFX.play(SFX.Labels.PLAYERHIT)
 		await $AnimatedSprite2D.animation_finished
 	if $Area2D.overlaps_body(body):
