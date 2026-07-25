@@ -37,7 +37,7 @@ tile_set = ExtResource("1_mbwgq")
 position = Vector2(2182, -1360)
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_is6h6")]
-position = Vector2(2214, -1356)
+position = Vector2(5, -12)
 
 [node name="Turret3" parent="." unique_id=900368079 instance=ExtResource("3_is6h6")]
 position = Vector2(1089, -465)
@@ -110,6 +110,7 @@ time = 5.0
 tile = ExtResource("5_vv7wc")
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("9_ifp51")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=1362580410]
 position = Vector2(1110.5, -815)
