@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bghq4qvq0k4ya"]
 
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="1_enwyp"]
+[ext_resource type="PackedScene" uid="uid://bkkk7s66no47" path="res://levels/level_objects/background.tscn" id="1_sxbvl"]
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="2_85c3i"]
 [ext_resource type="PackedScene" uid="uid://qeo4gtjn6fg4" path="res://levels/level_objects/rat/rat.tscn" id="3_dcoxu"]
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="3_gkkva"]
@@ -112,6 +113,11 @@ point_count = 2
 size = Vector2(636.5, 71.138916)
 
 [node name="Trampoline" type="Node2D" unique_id=563532105]
+
+[node name="Background" parent="." unique_id=1886125022 instance=ExtResource("1_sxbvl")]
+
+[node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("8_dcoxu")]
+position = Vector2(344, -3520)
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("1_enwyp")]
 position = Vector2(16, -12)
@@ -330,8 +336,5 @@ position = Vector2(372, -2343)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=53592590]
 position = Vector2(-55.75, 0)
 shape = SubResource("RectangleShape2D_skvqh")
-
-[node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("8_dcoxu")]
-position = Vector2(344, -3520)
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
