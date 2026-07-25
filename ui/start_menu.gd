@@ -9,6 +9,8 @@ extends Control
 
 var elapsed_time : float = 0
 
+var intro_playing = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	create_bitmap(play_button)
@@ -28,6 +30,7 @@ func _ready():
 	tween_closing.parallel().tween_property(color_rect, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0).set_trans(Tween.TRANS_SINE)
 	await get_tree().create_timer(1.41).timeout 
 	ygda_logo.visible = false
+	intro_playing = false
 	Music.start(Music.Labels.TITLE)
 
 func _process(delta):
@@ -47,24 +50,29 @@ func create_bitmap(button):
 		button.texture_click_mask = bitmap
 
 func _on_settings_button_pressed():
-	SFX.play(SFX.Labels.BUTTONCLICK)
+	if not intro_playing:
+		SFX.play(SFX.Labels.BUTTONCLICK)
 
 
 func _on_credits_button_pressed():
-	SFX.play(SFX.Labels.BUTTONCLICK)
+	if not intro_playing:
+		SFX.play(SFX.Labels.BUTTONCLICK)
 
 func _on_play_button_pressed():
-	SceneSwitcher.go_to_scene("res://ui/level_select.tscn")
-	SFX.play(SFX.Labels.BUTTONCLICK)
+	if not intro_playing:
+		SceneSwitcher.go_to_scene("res://ui/level_select.tscn")
+		SFX.play(SFX.Labels.BUTTONCLICK)
 
 
 func _on_play_button_mouse_entered():
+	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONHOVER)
 
-
 func _on_credits_button_mouse_entered():
+	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONHOVER)
 
 
 func _on_settings_button_mouse_entered():
+	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONHOVER)

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bkkk7s66no47"]
 
-[ext_resource type="Texture2D" uid="uid://celvw7ufsuewb" path="res://assets/background/background_background.png" id="1_8j05b"]
 [ext_resource type="Script" uid="uid://df7o11e2md8wd" path="res://levels/level_objects/background.gd" id="1_yk7fh"]
-[ext_resource type="Texture2D" uid="uid://biu7lhyidfg76" path="res://assets/background/gear_layer.png" id="2_yk7fh"]
-[ext_resource type="Texture2D" uid="uid://bfi7mdahs3r7v" path="res://assets/background/pipe_layer.png" id="3_0kpbv"]
+[ext_resource type="Texture2D" uid="uid://nno555smsgbr" path="res://assets/new_background/Background.png" id="2_0kpbv"]
+[ext_resource type="Texture2D" uid="uid://ba5l05fiirndt" path="res://assets/new_background/Gears.png" id="3_6ai0t"]
+[ext_resource type="Texture2D" uid="uid://dxafhlvhfl760" path="res://assets/new_background/Big pipes.png" id="4_dwapv"]
+[ext_resource type="Texture2D" uid="uid://dldj8rsruotox" path="res://assets/new_background/Small pipes.png" id="5_qggmj"]
 
 [node name="Background" type="Node2D" unique_id=1886125022]
 z_index = -4000
@@ -15,25 +16,34 @@ script = ExtResource("1_yk7fh")
 scroll_scale = Vector2(0.01, 0.01)
 repeat_size = Vector2(960, 540)
 
-[node name="Sprite2D" type="Sprite2D" parent="Offset/Parallax2D" unique_id=776062484]
+[node name="Background" type="Sprite2D" parent="Offset/Parallax2D" unique_id=776062484]
 self_modulate = Color(0.42397958, 0.27558884, 0.034105822, 1)
 position = Vector2(480, 270)
-texture = ExtResource("1_8j05b")
+texture = ExtResource("2_0kpbv")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Offset" unique_id=1693657178]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(960, 540)
+
+[node name="Gears" type="Sprite2D" parent="Offset/Parallax2D2" unique_id=2116809115]
+self_modulate = Color(0.42397958, 0.27558884, 0.034105822, 1)
+position = Vector2(480, 270)
+texture = ExtResource("3_6ai0t")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Offset" unique_id=1418462563]
 scroll_scale = Vector2(0.25, 0.25)
 repeat_size = Vector2(960, 540)
 
-[node name="Sprite2D" type="Sprite2D" parent="Offset/Parallax2D2" unique_id=2116809115]
+[node name="BigPipes" type="Sprite2D" parent="Offset/Parallax2D4" unique_id=1854334142]
 self_modulate = Color(0.42397958, 0.27558884, 0.034105822, 1)
 position = Vector2(480, 270)
-texture = ExtResource("2_yk7fh")
+texture = ExtResource("4_dwapv")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Offset" unique_id=1125576176]
 scroll_scale = Vector2(0.35, 0.35)
 repeat_size = Vector2(960, 540)
 
-[node name="Sprite2D" type="Sprite2D" parent="Offset/Parallax2D3" unique_id=1372406624]
+[node name="SmallPipes" type="Sprite2D" parent="Offset/Parallax2D3" unique_id=1372406624]
 self_modulate = Color(0.42397958, 0.27558884, 0.034105822, 1)
 position = Vector2(480, 270)
-texture = ExtResource("3_0kpbv")
+texture = ExtResource("5_qggmj")

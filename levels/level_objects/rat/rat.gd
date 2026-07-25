@@ -57,6 +57,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		SFX.play(SFX.Labels.PLAYERHIT)
 		await $AnimatedSprite2D.animation_finished
 	if $Area2D.overlaps_body(body):
+		SFX.play(SFX.Labels.BOUNCEOFFMOUSE)
 		GameState.player.velocity.y -= 250
 		GameState.player.flip()
 	await get_tree().create_timer(0.05).timeout

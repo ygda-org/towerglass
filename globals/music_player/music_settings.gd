@@ -7,3 +7,5 @@ class_name MusicSettings
 @export var loop_stream: AudioStream
 ## volume adjustment, in decibels
 @export var volume: float
+## What bus to play on
+@export var bus: String = "Music"

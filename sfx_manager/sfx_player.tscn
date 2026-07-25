@@ -26,10 +26,13 @@
 [ext_resource type="AudioStream" uid="uid://c2iriue0qvyam" path="res://assets/sfx/ui/obstacles/crumbling_platform/platform_crumble.wav" id="24_bvj6r"]
 [ext_resource type="AudioStream" uid="uid://cghlps153f7rv" path="res://assets/sfx/ui/lvl_start.mp3" id="25_u6rw6"]
 [ext_resource type="AudioStream" uid="uid://dxg2fknvw5rd8" path="res://assets/sfx/ui/lvl_transition.mp3" id="26_fp4on"]
+[ext_resource type="AudioStream" uid="uid://bipm56nyse72o" path="res://assets/sfx/ambience/steam.wav" id="27_iha62"]
+[ext_resource type="AudioStream" uid="uid://iyrt8itv6b34" path="res://assets/sfx/ambience/SteamAlt.mp3" id="28_7v4tp"]
+[ext_resource type="AudioStream" uid="uid://copf6l50i7l0" path="res://assets/sfx/ui/obstacles/rat/BounceOffOfMouse.mp3" id="29_nwht3"]
 
 [sub_resource type="Resource" id="Resource_4s6wt"]
 script = ExtResource("2_x0386")
-bus = "SFX"
+bus = "Music"
 stream = ExtResource("3_lllij")
 volume = -15.0
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
@@ -173,6 +176,7 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 script = ExtResource("2_x0386")
 bus = "SFX"
 stream = ExtResource("20_x85ao")
+volume_variance = -10.0
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_3whmg"]
@@ -228,6 +232,30 @@ volume_variance = 1.5
 pitch_variance = 0.1
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
+[sub_resource type="Resource" id="Resource_6xan6"]
+script = ExtResource("2_x0386")
+bus = "Ambience"
+stream = ExtResource("27_iha62")
+volume_variance = 1.5
+pitch_variance = 0.1
+metadata/_custom_type_script = "uid://c3d63fvkogmx2"
+
+[sub_resource type="Resource" id="Resource_r352t"]
+script = ExtResource("2_x0386")
+bus = "Ambience"
+stream = ExtResource("28_7v4tp")
+volume_variance = 1.5
+pitch_variance = 0.1
+metadata/_custom_type_script = "uid://c3d63fvkogmx2"
+
+[sub_resource type="Resource" id="Resource_rdsd8"]
+script = ExtResource("2_x0386")
+bus = "SFX"
+stream = ExtResource("29_nwht3")
+volume_variance = 1.5
+pitch_variance = 0.1
+metadata/_custom_type_script = "uid://c3d63fvkogmx2"
+
 [node name="SfxPlayer" type="Node" unique_id=1790965844]
 process_mode = 3
 script = ExtResource("1_tglcb")
@@ -256,5 +284,8 @@ label_to_setting = Dictionary[int, ExtResource("2_x0386")]({
 21: SubResource("Resource_bvj6r"),
 22: SubResource("Resource_leiid"),
 23: SubResource("Resource_wbd63"),
-24: SubResource("Resource_jufvv")
+24: SubResource("Resource_jufvv"),
+25: SubResource("Resource_6xan6"),
+26: SubResource("Resource_r352t"),
+27: SubResource("Resource_rdsd8")
 })

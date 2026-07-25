@@ -1,5 +1,21 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://b6dsdg6suhaen"]
 
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+damping = 0.3
+wet = 0.23
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
+resource_name = "Reverb"
+damping = 0.3
+wet = 0.23
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
+resource_name = "EQ"
+band_db/1000_hz = -22.2
+band_db/3200_hz = -34.5
+band_db/10000_hz = -40.0
+
 [resource]
 bus/0/volume_db = -0.030508041
 bus/1/name = &"Music"
@@ -14,9 +30,15 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = -0.032730103
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_g28q7")
+bus/2/effect/0/enabled = true
 bus/3/name = &"Ambience"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = -0.030508041
 bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectReverb_n8wo2")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectEQ_j3pel")
+bus/3/effect/1/enabled = true

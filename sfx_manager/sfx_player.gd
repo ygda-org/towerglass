@@ -27,6 +27,9 @@ enum Labels {
 	PLATFORMCRUMBLE,
 	LEVELSTART,
 	LEVELTRANSITION,
+	STEAM,
+	STEAMALT,
+	BOUNCEOFFMOUSE,
 }
 
 const print_sounds: bool = false

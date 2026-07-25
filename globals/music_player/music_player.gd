@@ -31,6 +31,7 @@ func start(label: Labels, fadeout:bool=true):
 	# check if can loop
 	if settings.loop_stream:
 		new_player.finished.connect(_loop_stream.bind(label))
+	new_player.bus = settings.bus
 	if fadeout:
 		if current_player:
 			var out_tween = get_tree().create_tween()
