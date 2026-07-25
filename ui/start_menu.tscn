@@ -196,6 +196,97 @@ texture = ExtResource("11_dfrpb")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=147829715]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1246076756 instance=ExtResource("13_0kfsi")]
+visible = false
+
+[node name="Credits" type="ColorRect" parent="." unique_id=770214411]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = 290.0
+offset_right = 293.0
+offset_bottom = 616.75
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Programming" type="Label" parent="Credits" unique_id=1528707908]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 7.5
+offset_right = -257.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Programming
+MrPuffyWuff
+Penguinja
+Theophylaktos
+Alkinyx
+Green4TFG
+controlmage23
+ckarby
+Vinter_Bie
+drinkmelonwater
+https://godotengine.org/license/
+"
+
+[node name="Art" type="Label" parent="Credits" unique_id=221590713]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 4.5
+offset_right = 343.0
+offset_bottom = 261.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Art
+Harbinger_of_entropy
+froqqo
+sashasauceys
+drinkmelonwater
+llama_brown
+rota-fortunae
+youzicha08
+ne3n
+MrPuffyWuff"
+
+[node name="Music" type="Label" parent="Credits" unique_id=1402256163]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 7.5
+offset_right = 603.0
+offset_bottom = 264.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sound Design
+fwugneo
+Theophylaktos
+epiderspider
+froqqo
+casualgamera
+llama_brown
+scienceisprettycool
+stonkola
+"
+
+[node name="CreditBack" type="Button" parent="Credits" unique_id=1058076952]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -31.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "BACK"
 
 [connection signal="mouse_entered" from="MainMenu/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="MainMenu/PlayButton" to="." method="_on_play_button_pressed"]
@@ -203,3 +294,4 @@ texture = ExtResource("11_dfrpb")
 [connection signal="pressed" from="MainMenu/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="mouse_entered" from="MainMenu/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
 [connection signal="pressed" from="MainMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Credits/CreditBack" to="." method="_on_credit_back_pressed"]
