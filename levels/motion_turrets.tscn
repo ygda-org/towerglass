@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="4_8vr1k"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="5_c8xjb"]
 [ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="6_qf1cs"]
+[ext_resource type="PackedScene" uid="uid://doe7bcjt86hin" path="res://levels/level_objects/level_exit.tscn" id="7_gcxu8"]
 
 [sub_resource type="Curve2D" id="Curve2D_8vr1k"]
 _data = {
@@ -165,4 +166,7 @@ pause_time = 1.5
 z_index = -1
 tile_set = ExtResource("1_v2qgv")
 
-[connection signal="body_entered" from="TileMapLayer/@Area2D@69586" to="TileMapLayer/@Area2D@69586" method="_on_body_entered"]
+[node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("7_gcxu8")]
+position = Vector2(455, -560)
+
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
