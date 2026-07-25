@@ -68,7 +68,7 @@ texture = SubResource("GradientTexture2D_5kg8m")
 
 [node name="Offset" type="TileMapLayer" parent="." unique_id=1485690544]
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAKAP//AgACAAAAAAAJAP//AgAAAAAAAAALAP//AgACAAIAAAA5AOv/AQAAAAAABQBzAL//AgAEAAAAAAB0AL//AgACAAAAAAByAL//AgAAAAAAABCiAK//AgACAAAAAACjAK//AgAEAAAAAACaAK7/AgAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAAKAP//AgACAAAAAAAJAP//AgAAAAAAAAALAP//AgACAAIAAAA5AOv/AQAAAAAABQBzAL//AgAEAAAAAAB0AL//AgACAAAAAAByAL//AgAAAAAAABCiAK//AgACAAAAAACjAK//AgAEAAAAAACaAK7/AgAAAAIAAABGAOv/AgAAAAIAAABHAOv/AgACAAAAAABIAOv/AgAAAAAAAABJAOv/AgACAAAAAABKAOv/AgACAAAAAABLAOv/AgACAAIAAABMAOv/AgACAAAAAABNAOv/AgAAAAIAAABOAOv/AgAAAAAAAABPAOv/AgAEAAAAAABQAOv/AgAAAAAAAABRAOv/AgAEAAIAAABSAOv/AgAAAAIAAABTAOv/AgAAAAIAAABUAOv/AgAEAAIAAABVAOv/AgAEAAAAAABWAOv/AgACAAIAAABXAOv/AgAAAAIAAABYAOv/AgACAAIAAABZAOv/AgAEAAIAAABaAOv/AgAEAAAAAABbAOv/AgAAAAIAAABcAOv/AgAEAAAAAABdAOv/AgACAAAAAABeAOv/AgAAAAAAAABfAOv/AgAAAAIAAABgAOv/AgACAAIAAABhAOv/AgAEAAIAAABiAOv/AgAAAAAAAABjAOv/AgAEAAIAAABkAOv/AgACAAIAAABlAOv/AgACAAIAAABmAOv/AgAEAAIAAABnAOv/AgAEAAIAAABoAOv/AgACAAIAAABpAOv/AgAAAAIAAABqAOv/AgAEAAAAAABrAOv/AgAEAAAAAABsAOv/AgAEAAAAAABtAOv/AgAAAAAAAABuAOv/AgACAAAAAABvAOv/AgACAAAAAAA=")
 tile_set = ExtResource("1_8rwx0")
 
 [node name="Turret" parent="." unique_id=631227605 instance=ExtResource("3_tqto1")]
@@ -164,6 +164,6 @@ tile = ExtResource("6_cbmfa")
 position = Vector2(3350, -1776)
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@78385" to="TileMapLayer/@Area2D@78385" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@78395" to="TileMapLayer/@Area2D@78395" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@79690" to="TileMapLayer/@Area2D@79690" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@79700" to="TileMapLayer/@Area2D@79700" method="_on_body_entered"]
 [connection signal="body_entered" from="Offset/Checkpoint" to="Offset/Checkpoint" method="_on_body_entered"]
