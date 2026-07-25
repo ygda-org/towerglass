@@ -65,7 +65,7 @@ offset_bottom = 504.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.45882353, 0.7529412, 0.41568628, 0)
+color = Color(0, 0, 0, 0)
 
 [node name="Anim" type="AnimationPlayer" parent="." unique_id=1104405572]
 libraries/ = SubResource("AnimationLibrary_tt4p4")
