@@ -7,6 +7,8 @@ extends Control
 @onready var credits_button = $MainMenu/CreditsButton
 @onready var settings_button = $MainMenu/SettingsButton
 
+var elapsed_time : float = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	create_bitmap(play_button)
@@ -29,6 +31,8 @@ func _ready():
 
 func _process(delta):
 	$Wheel.rotation += deg_to_rad(5) * delta
+	$MainArt.rotation_degrees = 1.1 * sin(1.5 * elapsed_time)
+	elapsed_time += delta
 
 func create_bitmap(button):
 	if button.texture_normal:
