@@ -190,6 +190,7 @@ target = "res://levels/best_buds.tscn"
 level_song = 4
 
 [node name="SelectButton14" parent="." unique_id=1916954849 instance=ExtResource("1_o7pgs")]
+visible = false
 layout_mode = 0
 offset_left = 490.0
 offset_top = 221.0
@@ -204,6 +205,6 @@ offset_left = 456.0
 offset_top = 162.0
 offset_right = 504.0
 offset_bottom = 210.0
-number = 15
+number = 14
 target = "uid://cluv6i5p50m0t"
 level_song = 4
