@@ -29,7 +29,7 @@ tile_map_data = PackedByteArray("AAD+/wIAAAAAAAYAAAD//wIAAAACAAIAAAAAAP//AAABAAU
 tile_set = ExtResource("2_ai7dk")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("1_l2fvd")]
-position = Vector2(705, -613)
+position = Vector2(-7, -12)
 
 [node name="Rats" type="Node" parent="." unique_id=5036519]
 
@@ -80,7 +80,7 @@ tile = ExtResource("6_o4lxu")
 wait_until_player_touches_to_move = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@75570" to="TileMapLayer/@Area2D@75570" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@75571" to="TileMapLayer/@Area2D@75571" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@75591" to="TileMapLayer/@Area2D@75591" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@75592" to="TileMapLayer/@Area2D@75592" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@76720" to="TileMapLayer/@Area2D@76720" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@76721" to="TileMapLayer/@Area2D@76721" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@76741" to="TileMapLayer/@Area2D@76741" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@76742" to="TileMapLayer/@Area2D@76742" method="_on_body_entered"]
