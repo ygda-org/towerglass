@@ -18,6 +18,8 @@ const BULLET = preload("uid://d5m3kp8lwgis")
 
 @export var bullet_parent_amount: int = 1
 
+@export var start_delay_addon_time: float = 0.0
+
 var current_direction_index = 0
 var iter_dir = 1
 
@@ -36,7 +38,7 @@ func _ready():
 			$Body.region_rect.position.y = 32
 	$BarrelPivot.rotation = shot_directions[0].angle()
 	$RotateTurret.frame = rotation_to_frame(shot_directions[0].angle())
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5 + start_delay_addon_time).timeout
 	shoot()
 
 func rotation_to_frame(rotation : float) -> int:
