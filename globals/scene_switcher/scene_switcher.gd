@@ -14,6 +14,8 @@ func set_background_color(color : Color) -> void:
 	$ColorRect.color.a = 0.0
 
 func go_to_scene(target : String, type : TYPE = TYPE.FADE) -> void:
+	if GameState.player != null:
+		GameState.player.is_dead = true
 	starting_transition(type)
 	await $Anim.animation_finished
 	get_tree().change_scene_to_file(target)
