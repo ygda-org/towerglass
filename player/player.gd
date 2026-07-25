@@ -84,8 +84,14 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("reset"):
 		die()
 	
-	$Camera2D.global_position = global_position
+	if $JumpJuice.is_stopped():
+		$Camera2D.global_position = global_position + Vector2(0, 15*jump_charge/MAX_JUMP_CHARGE)
+		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2, 2)+Vector2(0.2,0.2)*jump_charge/MAX_JUMP_CHARGE, delta)
+	else:
+		$Camera2D.global_position = global_position + Vector2(0, -100*velocity.y/MAX_JUMP)
+		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2, 2)-Vector2(0.2,0.2)*velocity.y/MAX_JUMP,delta*7)
 	$Camera2D.offset = $Camera2D.offset.lerp(camera_offset * camera_offset_follow, delta)
+	
 	if $CameraOffsetDetection.has_overlapping_areas():
 		camera_offset_follow += delta
 	else:
@@ -119,7 +125,9 @@ func _physics_process(delta: float):
 			$Mask.position.y = 0
 			velocity.y = -up_direction.y * (MAX_JUMP + jump_offset) * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 			flip()
+			$JumpJuice.wait_time = jump_charge
 			jump_charge = 0.0
+			$JumpJuice.start()
 			GameState.player_jumped.emit()
 	else:
 		$Camera2D.position_smoothing_speed = 1.0
