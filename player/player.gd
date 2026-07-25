@@ -85,7 +85,7 @@ func _physics_process(delta: float):
 		die()
 	
 	$Camera2D.global_position = global_position
-	$Camera2D.offset = camera_offset * camera_offset_follow
+	$Camera2D.offset = $Camera2D.offset.lerp(camera_offset * camera_offset_follow, delta)
 	if $CameraOffsetDetection.has_overlapping_areas():
 		camera_offset_follow += delta
 	else:
