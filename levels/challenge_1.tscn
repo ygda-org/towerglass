@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://yiu52fgsbvtq"]
 
+[ext_resource type="PackedScene" uid="uid://bkkk7s66no47" path="res://levels/level_objects/background.tscn" id="1_cmxt0"]
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="1_s6tru"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_nqpd8"]
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="5_j22ws"]
@@ -358,6 +359,8 @@ _bundled = {
 
 [node name="Challenge_1" type="Node2D" unique_id=1937825049]
 
+[node name="Background" parent="." unique_id=1886125022 instance=ExtResource("1_cmxt0")]
+
 [node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("7_7ga3b")]
 position = Vector2(1143, -1440)
 
@@ -552,4 +555,4 @@ tile_map_data = PackedByteArray("AAA7AKn/AgACAAAAAAA8AKn/AgACAAIAAAA9AKn/AgACAAA
 tile_set = ExtResource("1_s6tru")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@38235" to="TileMapLayer/@Area2D@38235" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@162183" to="TileMapLayer/@Area2D@162183" method="_on_body_entered"]

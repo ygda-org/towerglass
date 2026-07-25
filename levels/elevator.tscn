@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://c8sceavibytfr"]
 
 [ext_resource type="PackedScene" uid="uid://qeo4gtjn6fg4" path="res://levels/level_objects/rat/rat.tscn" id="1_k3ygh"]
+[ext_resource type="PackedScene" uid="uid://bkkk7s66no47" path="res://levels/level_objects/background.tscn" id="1_p38r5"]
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="2_n26lo"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="3_hric6"]
 [ext_resource type="PackedScene" uid="uid://7tc7yjex5is7" path="res://levels/level_objects/turret/turret.tscn" id="4_n26lo"]
@@ -40,6 +41,8 @@ _data = {
 point_count = 2
 
 [node name="Elevator" type="Node2D" unique_id=238649862]
+
+[node name="Background" parent="." unique_id=1886125022 instance=ExtResource("1_p38r5")]
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("5_8l71e")]
 position = Vector2(-26, -43)

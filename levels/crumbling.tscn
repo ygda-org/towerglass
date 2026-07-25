@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bky8s5weersor"]
 
+[ext_resource type="PackedScene" uid="uid://bkkk7s66no47" path="res://levels/level_objects/background.tscn" id="1_jscrd"]
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="1_vkd0v"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_hldmh"]
 [ext_resource type="Script" uid="uid://bct8x5uoy144b" path="res://levels/level_objects/general_attack.gd" id="2_qo776"]
@@ -46,6 +47,8 @@ point_count = 3
 size = Vector2(992, 755)
 
 [node name="Level3" type="Node2D" unique_id=987068114]
+
+[node name="Background" parent="." unique_id=1886125022 instance=ExtResource("1_jscrd")]
 
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=1961474562]
 z_index = -1
@@ -181,5 +184,3 @@ shape = SubResource("RectangleShape2D_0es7p")
 
 [node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("11_fgeik")]
 position = Vector2(277, -16)
-
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
