@@ -203,3 +203,8 @@ func die() -> void:
 func _on_hurtbox_body_entered(body):
 	SFX.play(SFX.Labels.DEATHSPILL)
 	die()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	if not $Down.is_colliding():
+		die()

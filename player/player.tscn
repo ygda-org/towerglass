@@ -486,4 +486,11 @@ damping_min = 2.0
 damping_max = 2.0
 anim_offset_max = 1.0
 
+[node name="Down" type="RayCast2D" parent="." unique_id=613985075]
+target_position = Vector2(0, 1024)
+collision_mask = 27
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=224549612]
+
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
