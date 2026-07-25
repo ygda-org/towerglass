@@ -207,7 +207,7 @@ wait_until_player_touches_to_move = true
 
 [node name="CameraOffset3" parent="." unique_id=213066907 instance=ExtResource("6_85c3i")]
 position = Vector2(620, -734)
-offset_amount = Vector2(0, 60)
+offset_amount = Vector2(0, -60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffset3" unique_id=1808500720]
 position = Vector2(-2, 2.5)
