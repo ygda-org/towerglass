@@ -68,8 +68,10 @@ func _physics_process(delta: float):
 	if is_on_floor() and velocity.x != 0:
 		has_moved = true
 		SFX.play(SFX.Labels.WALK)
+		$DragParticles.emitting = true
 	else:
 		SFX.clear_audio(SFX.Labels.WALK)
+		$DragParticles.emitting = false
 		
 	if Input.is_action_just_released("jump") and is_on_floor():
 		SFX.play(SFX.Labels.TOWERCROSSWHOOSH)
@@ -166,6 +168,7 @@ func _physics_process(delta: float):
 	
 	if not was_on_floor and is_on_floor():
 		SFX.play(SFX.Labels.HOURGLASSFALL)
+		$LandParticle.emitting = true
 	
 	update_sand(delta)
 
@@ -201,6 +204,8 @@ func poll_floor_type():
 	right_floor = $RightRay.get_collider()
 
 func flip():
+	$JumpParticle.restart()
+	$JumpParticle.emitting = true
 	drag_speed_boost = MAX_DRAG_SPEED_BOOST * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 	if Input.is_action_pressed("left"):
 		$Anim.play("left_flip")

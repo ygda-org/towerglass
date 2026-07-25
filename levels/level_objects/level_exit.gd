@@ -15,6 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 		#GameState.player.process_mode = Node.PROCESS_MODE_DISABLED
 		GameState.player.is_physics_process = false
 		activated = true
+		GameState.update_max_level_beaten()
 		super_cool_exit_animation()
 
 
