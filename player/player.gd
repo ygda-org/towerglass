@@ -93,10 +93,10 @@ func _physics_process(delta: float):
 	else:
 		SFX.clear_audio(SFX.Labels.JUMPCHARGE)
 		
-	if Input.is_action_just_pressed("god_mode"):
-		god_mode = not god_mode
-		print("god mode :", god_mode)
-		sand_in_bottom = 0.0
+	#if Input.is_action_just_pressed("god_mode"):
+		#god_mode = not god_mode
+		#print("god mode :", god_mode)
+		#sand_in_bottom = 0.0
 		
 	if Input.is_action_just_pressed("reset"):
 		die()
@@ -212,6 +212,8 @@ func update_sand_visual():
 	mask_grad.offsets = PackedFloat32Array(points)
 
 func poll_floor_type():
+	$LeftRay.force_raycast_update()
+	$RightRay.force_raycast_update()
 	left_floor = $LeftRay.get_collider()
 	right_floor = $RightRay.get_collider()
 
@@ -244,7 +246,7 @@ func damage(dmg: float) -> void:
 	$HitParticle.emitting = false
 	
 func die() -> void:
-	process_mode = Node.PROCESS_MODE_DISABLED
+	call_deferred("set_process", Node.PROCESS_MODE_DISABLED)
 	if is_dead:
 		return
 	is_dead = true

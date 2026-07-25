@@ -72,6 +72,7 @@ func _physics_process(delta: float) -> void:
 							touched_player.emit()
 							moving = true
 	if tile_name == "CrumblingTile":
+		GameState.player.poll_floor_type()
 		var player_on = false
 		for child in get_children():
 			if not child.crumbling and (GameState.player.left_floor == child or GameState.player.right_floor == child):
@@ -81,8 +82,8 @@ func _physics_process(delta: float) -> void:
 			elif child.crumbling:
 				if GameState.player.left_floor == child or GameState.player.right_floor == child:
 					player_on = true
-		for child in get_children():
-			if not player_on and child.crumbling:
-				for child2 in get_children():
-					child2.accelerate_crumble()
-				return
+		#for child in get_children():
+			#if not player_on and child.crumbling:
+				#for child2 in get_children():
+					#child2.accelerate_crumble()
+				#return
