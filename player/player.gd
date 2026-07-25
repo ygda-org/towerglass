@@ -241,7 +241,7 @@ func flip():
 
 func damage(dmg: float) -> void:
 	total_sand -= dmg
-	sand_in_bottom = min(sand_in_bottom, total_sand)
+	sand_in_bottom = min(0, sand_in_bottom-dmg)
 	$HitParticle.emitting = true
 	$HitParticle.emitting = false
 	
