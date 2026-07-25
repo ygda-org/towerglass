@@ -10,6 +10,7 @@ script = ExtResource("1_xsxwo")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=919766140]
 z_index = -1
+position = Vector2(-8, 4)
 points = PackedVector2Array(-5, 46)
 width = 6.0
 texture = ExtResource("2_icdi4")
