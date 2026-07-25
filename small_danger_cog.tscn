@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cgp1wgixbjlfo"]
+
+[ext_resource type="Texture2D" uid="uid://b3xij6jnacq7v" path="res://assets/tiles/small_danger_cog.png" id="1_wpt2v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2kaw"]
+atlas = ExtResource("1_wpt2v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d2n7"]
+atlas = ExtResource("1_wpt2v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x626e"]
+atlas = ExtResource("1_wpt2v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edi4o"]
+atlas = ExtResource("1_wpt2v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gybuo"]
+atlas = ExtResource("1_wpt2v")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pj5f"]
+atlas = ExtResource("1_wpt2v")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u157o"]
+atlas = ExtResource("1_wpt2v")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf71a"]
+atlas = ExtResource("1_wpt2v")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2kaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d2n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x626e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edi4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gybuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pj5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u157o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf71a")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+size = Vector2(14, 14)
+
+[node name="SmallDangerCog" type="AnimatableBody2D" unique_id=1044042712]
+collision_layer = 8
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=103726550]
+sprite_frames = SubResource("SpriteFrames_0es7p")
+autoplay = "default"
+frame_progress = 0.82529324
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890330488]
+shape = SubResource("RectangleShape2D_0es7p")
