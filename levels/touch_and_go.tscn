@@ -56,7 +56,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACAAEAAAABAAAAAAACAAEAAAD//wAAAAACAAE
 tile_set = ExtResource("1_lv7of")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_go423")]
-position = Vector2(1067, -833)
+position = Vector2(12, -12)
 
 [node name="MovingStuff" parent="." unique_id=767670818 instance=ExtResource("3_2wlir")]
 position = Vector2(136, 0)
@@ -68,6 +68,7 @@ trans_type = 0
 stupid_hack_please_dont_ask = true
 
 [node name="MoveablePlatform" parent="MovingStuff" unique_id=1189294733 instance=ExtResource("4_7a03l")]
+position = Vector2(8, 0)
 tile = ExtResource("5_kga2f")
 wait_until_player_touches_to_move = true
 
@@ -78,7 +79,6 @@ time = 15.0
 wait_until_player_touches_to_move = true
 return_quickly = true
 trans_type = 0
-stupid_hack_please_dont_ask = null
 
 [node name="MoveablePlatform" parent="MovingStuff2" unique_id=1905233157 instance=ExtResource("4_7a03l")]
 position = Vector2(1, 0)
@@ -95,7 +95,7 @@ trans_type = 0
 stupid_hack_please_dont_ask = true
 
 [node name="MoveablePlatform" parent="MovingStuff3" unique_id=806244887 instance=ExtResource("4_7a03l")]
-position = Vector2(0, 1)
+position = Vector2(8, 1)
 tile = ExtResource("5_kga2f")
 wait_until_player_touches_to_move = true
 
@@ -106,7 +106,6 @@ time = 60.0
 wait_until_player_touches_to_move = true
 go_back = false
 trans_type = 0
-stupid_hack_please_dont_ask = null
 
 [node name="MoveablePlatform" parent="MovingStuff4" unique_id=773732186 instance=ExtResource("4_7a03l")]
 tile = ExtResource("5_kga2f")
@@ -148,6 +147,7 @@ position = Vector2(551, -2928)
 
 [node name="MoveablePlatform" parent="." unique_id=651132623 instance=ExtResource("4_7a03l")]
 position = Vector2(1184, -889)
+tile = ExtResource("9_wnjpr")
 
 [node name="MoveablePlatform2" parent="." unique_id=1244260001 instance=ExtResource("4_7a03l")]
 position = Vector2(1184, -1129)
