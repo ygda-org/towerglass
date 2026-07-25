@@ -387,6 +387,18 @@ animations = [{
 radius = 8.0
 height = 24.0
 
+[sub_resource type="Gradient" id="Gradient_rgyib"]
+offsets = PackedFloat32Array(0.21760291, 0.9666666)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.8039216)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_55d6i"]
+gradient = SubResource("Gradient_rgyib")
+width = 960
+height = 540
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.77741927, 0)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwd6l"]
 radius = 8.0
 height = 24.0
@@ -447,6 +459,10 @@ drag_right_margin = 0.1
 editor_draw_drag_margin = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=664277679]
+
+[node name="Vignette" type="Sprite2D" parent="CanvasLayer" unique_id=339412916]
+position = Vector2(480, 270)
+texture = SubResource("GradientTexture2D_55d6i")
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1246076756 instance=ExtResource("3_g1dw6")]
 visible = false
