@@ -47,6 +47,7 @@ var camera_target_offset = Vector2(0,0)
 var sway_dir = 1
 
 func _ready() -> void:
+	$CanvasLayer.visible = true
 	GameState.player = self
 	GameState.last_location = global_position
 	$Anim.play("default")
@@ -239,6 +240,9 @@ func die() -> void:
 	velocity = Vector2.ZERO
 	total_sand = 6.0
 	sand_in_bottom = total_sand/2
+	update_sand_visual()
+	var tween : Tween = get_tree().create_tween()
+	tween.tween_property($CanvasLayer/Vignette, "self_modulate", Color(1.0,1.0,1.0,(sand_in_bottom / total_sand)**2), 0.5)
 	died.emit()
 
 func _on_hurtbox_body_entered(body):
