@@ -498,5 +498,15 @@ collision_mask = 25
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=224549612]
 
+[node name="StickyLeft" type="RayCast2D" parent="." unique_id=844388091]
+position = Vector2(-8, 12)
+target_position = Vector2(0, 8)
+collision_mask = 128
+
+[node name="StickyRight" type="RayCast2D" parent="." unique_id=1882951287]
+position = Vector2(8, 12)
+target_position = Vector2(0, 8)
+collision_mask = 128
+
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

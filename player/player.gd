@@ -97,9 +97,10 @@ func _physics_process(delta: float):
 		#Sticky Platform Check
 		var jump_offset : int = 0
 		var walk_offset : int = 0
-		if (left_floor and "Sticky" in left_floor.name) or (right_floor and "Sticky" in right_floor.name):
-			jump_offset = 100
-			walk_offset = 10
+		if ($StickyLeft.get_collider() != null) or ($StickyRight.get_collider() != null):
+			jump_offset = 200
+		else:
+			jump_offset = 0
 		
 		velocity.x = (DRAG_SPEED - walk_offset) * dir * drag_speed_boost
 		$Camera2D.position_smoothing_speed = 4.0
