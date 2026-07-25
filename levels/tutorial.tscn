@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dn8c018o621d7" path="res://levels/level_objects/level_bounds.tscn" id="3_ok11k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwd6l"]
-size = Vector2(1936, 1246)
+size = Vector2(1936, 1154)
 
 [node name="Level1" type="Node2D" unique_id=1177128531]
 
@@ -30,10 +30,9 @@ tile_set = ExtResource("1_jehdt")
 position = Vector2(-459, -12)
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("3_ok11k")]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=1689417908]
-position = Vector2(248, -495)
+position = Vector2(248, -541)
 shape = SubResource("RectangleShape2D_jwd6l")
 
-[connection signal="body_entered" from="TileMapLayer/@Area2D@98283" to="TileMapLayer/@Area2D@98283" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
