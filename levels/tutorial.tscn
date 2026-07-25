@@ -19,7 +19,7 @@ tile_map_data = PackedByteArray("AADn/+T/AAACAAcAAABYANr/BQAGAAAAAAAFAPz/AAAHAAM
 tile_set = ExtResource("1_jehdt")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_ok11k")]
-position = Vector2(173, -153)
+position = Vector2(-459, -12)
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("3_ok11k")]
 visible = false
