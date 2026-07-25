@@ -97,7 +97,7 @@ func _physics_process(delta: float):
 		#Sticky Platform Check
 		var jump_offset : int = 0
 		var walk_offset : int = 0
-		if (left_floor and "Sticky" in left_floor.name) or (right_floor and "Sticky" in right_floor.name):
+		if (left_floor.get_collision_layer_value(8)) or (right_floor.get_collision_layer_value(8)):
 			jump_offset = 100
 			walk_offset = 10
 		

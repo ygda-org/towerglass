@@ -130,5 +130,5 @@ size = 7
 tile = ExtResource("3_ua0w8")
 wait_until_player_touches_to_move = true
 
-[connection signal="body_entered" from="DecorationTileMapLayer/Checkpoint" to="DecorationTileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@437390" to="DecorationTileMapLayer/@Area2D@437390" method="_on_body_entered"]
+[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@75457" to="DecorationTileMapLayer/@Area2D@75457" method="_on_body_entered"]
+[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@75458" to="DecorationTileMapLayer/@Area2D@75458" method="_on_body_entered"]
