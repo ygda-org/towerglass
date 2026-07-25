@@ -34,5 +34,3 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=1689417908]
 position = Vector2(495.5, -495)
 shape = SubResource("RectangleShape2D_jwd6l")
-
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
