@@ -8,7 +8,6 @@ enum SIDE{
 
 # if you change this node"s name it will no longer function in movable platforms
 @export var side: String = "middle"
-@export var time: float 
 
 var crumbling : bool = false
 var queue_reenable: bool = false
@@ -18,9 +17,6 @@ func _ready() -> void:
 	name = "CrumblingTile" + str(hash(self))
 
 func crumble():
-	
-	if time != null:
-		$CrumbleTimer.wait_time = time
 	
 	SFX.play(SFX.Labels.PLATFORMCRUMBLE)
 	side_anim("crumbling")
