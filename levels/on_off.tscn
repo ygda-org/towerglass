@@ -66,7 +66,7 @@ tile_map_data = PackedByteArray("AABJAOL/AAAAAAUAAABNAOL/AAAAAAUAAABTAOb/AAAAAAU
 tile_set = ExtResource("1_2kv7s")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_e7ewd")]
-position = Vector2(2317, -701)
+position = Vector2(20, -69)
 
 [node name="LevelBounds" parent="." unique_id=13786886 instance=ExtResource("1_dqet0")]
 visible = false
@@ -188,5 +188,5 @@ offset_amount = Vector2(0, -128)
 position = Vector2(2482.5, -1202.25)
 shape = SubResource("RectangleShape2D_0es7p")
 
-[connection signal="body_entered" from="TileMapLayer/@Area2D@100958" to="TileMapLayer/@Area2D@100958" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@100997" to="TileMapLayer/@Area2D@100997" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@445125" to="TileMapLayer/@Area2D@445125" method="_on_body_entered"]
