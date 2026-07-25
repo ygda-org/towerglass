@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cgp1wgixbjlfo" path="res://small_danger_cog.tscn" id="8_iak18"]
 [ext_resource type="Texture2D" uid="uid://cib7vmfhrskul" path="res://assets/tiles/GMTK26_Cogspikeset(2).png" id="8_qpy5e"]
 [ext_resource type="Texture2D" uid="uid://cr5erpfv7b7qo" path="res://assets/tiles/GMTK2026Goldcogdecor.png" id="9_trb68"]
+[ext_resource type="PackedScene" uid="uid://b42gjlqkaf2bv" path="res://levels/level_objects/fire.tscn" id="9_wlwvt"]
 [ext_resource type="Texture2D" uid="uid://d3f4if0w8siwm" path="res://assets/tiles/GMTK2026PIPESET.png" id="10_qpy5e"]
 [ext_resource type="Texture2D" uid="uid://byljcp4s303hk" path="res://assets/tiles/repeating pit edit fixed.png" id="11_trb68"]
 [ext_resource type="Texture2D" uid="uid://dl0xf1lygr2hn" path="res://assets/tiles/GMTK2026Silvercogdecor.png" id="12_iak18"]
@@ -333,6 +334,7 @@ scenes/4/scene = ExtResource("4_0hpsc")
 scenes/5/scene = ExtResource("5_k8n7d")
 scenes/6/scene = ExtResource("7_thv03")
 scenes/7/scene = ExtResource("8_iak18")
+scenes/8/scene = ExtResource("9_wlwvt")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18k7h"]
 texture = ExtResource("8_qpy5e")
