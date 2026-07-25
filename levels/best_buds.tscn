@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://gbu541ncbcxj"]
 
+[ext_resource type="PackedScene" uid="uid://bkkk7s66no47" path="res://levels/level_objects/background.tscn" id="1_4xfpt"]
 [ext_resource type="PackedScene" uid="uid://doe7bcjt86hin" path="res://levels/level_objects/level_exit.tscn" id="1_6iy72"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="1_l2fvd"]
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="2_ai7dk"]
@@ -15,6 +16,8 @@ _data = {
 point_count = 2
 
 [node name="BestBuds" type="Node2D" unique_id=1446971564]
+
+[node name="Background" parent="." unique_id=1886125022 instance=ExtResource("1_4xfpt")]
 
 [node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("1_6iy72")]
 position = Vector2(-402, -911)
@@ -81,9 +84,3 @@ position = Vector2(-672, -400)
 size = 9
 tile = ExtResource("6_o4lxu")
 wait_until_player_touches_to_move = true
-
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@56531" to="TileMapLayer/@Area2D@56531" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@56551" to="TileMapLayer/@Area2D@56551" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@56552" to="TileMapLayer/@Area2D@56552" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@56553" to="TileMapLayer/@Area2D@56553" method="_on_body_entered"]
