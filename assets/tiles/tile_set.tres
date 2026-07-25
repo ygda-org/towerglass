@@ -379,6 +379,12 @@ texture = ExtResource("1_vl7tc")
 18:4/0 = 0
 17:4/0 = 0
 0:8/0 = 0
+7:7/0 = 0
+7:8/0 = 0
+7:9/0 = 0
+8:7/0 = 0
+8:8/0 = 0
+8:9/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k8n7d"]
 scenes/1/scene = ExtResource("2_62pk5")
