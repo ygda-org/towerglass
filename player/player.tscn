@@ -75,6 +75,10 @@ region = Rect2(48, 48, 48, 48)
 atlas = ExtResource("4_qjkh3")
 region = Rect2(96, 48, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_art4l"]
+atlas = ExtResource("4_qjkh3")
+region = Rect2(0, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8hi5"]
 atlas = ExtResource("2_g6k8r")
 region = Rect2(0, 0, 48, 48)
@@ -155,7 +159,10 @@ animations = [{
 "name": &"blue_squash",
 "speed": 2.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_art4l")
+}],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
@@ -413,7 +420,6 @@ texture = SubResource("GradientTexture2D_boad6")
 [node name="Sand" type="AnimatedSprite2D" parent="Mask" unique_id=783364992]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_5fofi")
-animation = &"blue_idle"
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=531156807]
 position = Vector2(0, 3)

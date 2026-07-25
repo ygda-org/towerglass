@@ -38,6 +38,8 @@ var right_floor : Object = null
 
 var was_on_floor : bool = false
 
+var is_physics_process : bool = true
+
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
@@ -50,6 +52,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float):
+	
+	if not is_physics_process:
+		return
+	
 	was_on_floor = is_on_floor()
 	
 	if is_on_floor() and velocity.x != 0:
