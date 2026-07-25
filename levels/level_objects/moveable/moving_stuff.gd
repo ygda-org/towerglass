@@ -4,6 +4,7 @@ extends Path2D
 
 @export var time: float = 1.0
 @export var wait_until_player_touches_to_move: bool = false
+@export var reset_moving_after_return: bool = false
 @export var go_back: bool = true
 @export var return_quickly: bool = false
 @export var trans_type: Tween.TransitionType = Tween.TRANS_SINE
