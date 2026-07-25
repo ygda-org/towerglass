@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	
-	if not moving and wait_until_player_touches_to_move:
+	if not moving and wait_until_player_touches_to_move and GameState.player.is_on_floor():
 		if tile_name == "MoveableTile" or tile_name == "MoveableBrick":
 			if GameState.player.left_floor == self or GameState.player.right_floor == self:
 				touched_player.emit()

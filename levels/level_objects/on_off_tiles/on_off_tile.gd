@@ -14,7 +14,7 @@ func _ready():
 
 func _process(_delta):
 	if queue_to_flip:
-		if current_state and GameState.player and GameState.player in $Area2D.get_overlapping_bodies():
+		if current_state and $Area2D.has_overlapping_bodies():
 			return
 		queue_to_flip = false
 		$CollisionShape2D.disabled = not current_state
