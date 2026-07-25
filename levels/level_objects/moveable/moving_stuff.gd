@@ -4,7 +4,6 @@ extends Path2D
 
 @export var time: float = 1.0
 @export var wait_until_player_touches_to_move: bool = false
-@export var reset_moving_after_return: bool = false
 @export var go_back: bool = true
 @export var return_quickly: bool = false
 @export var trans_type: Tween.TransitionType = Tween.TRANS_SINE
@@ -37,6 +36,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint() and not move_in_editor:
 		return
+	if return_quickly and not flip and elapsed_time == time and abs($PathFollow2D.global_position.x - GameState.player.global_position.x) > 128:
+		moving = true
 	if not moving:
 		return
 	var timer_ratio = Tween.interpolate_value(0.0, 1.0, elapsed_time, time, trans_type, ease_type)
@@ -47,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	update_children()
 	elapsed_time += delta * 2
 	if return_quickly and abs($PathFollow2D.global_position.x - GameState.player.global_position.x) > 134:
-		elapsed_time += delta * 2
+		elapsed_time += delta * 6
 	if elapsed_time > time:
 		if go_back or return_quickly and abs($PathFollow2D.global_position.x - GameState.player.global_position.x) > 134:
 			elapsed_time -= time
@@ -60,7 +61,13 @@ func _physics_process(delta: float) -> void:
 						child.moving = false
 		else:
 			elapsed_time = time
-
+			if return_quickly and flip:
+				elapsed_time = 0
+				flip = false
+			moving = false
+			for child in get_children():
+				if child.name == "MoveablePlatform":
+					child.moving = false
 func reset():
 	elapsed_time = 0
 	flip = false
