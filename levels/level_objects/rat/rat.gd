@@ -9,7 +9,7 @@ var biting = false
 var player_visible = false
 
 func _ready() -> void:
-	pass
+	GameState.player.died.connect(respawn)
 
 
 func _physics_process(delta: float) -> void:
@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = velo * dir
 	
-	GameState.player.died.connect(respawn)
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
