@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://didrfctbn84l3" path="res://ui/start_menu.gd" id="1_kw4xl"]
 [ext_resource type="Texture2D" uid="uid://cb380qyv8axnq" path="res://assets/start_menu/YGDA Logo.png" id="2_iuit4"]
-[ext_resource type="Texture2D" uid="uid://dl3p5ekd61j3c" path="res://assets/start_menu/Main screen.png" id="3_loyqk"]
+[ext_resource type="Texture2D" uid="uid://bboy022hhayfi" path="res://assets/start_menu/icon_spritesheet.png" id="3_sdwtg"]
 [ext_resource type="Texture2D" uid="uid://cy5l35yr6jvoy" path="res://assets/start_menu/Play uh.png" id="4_eh4yk"]
+[ext_resource type="Texture2D" uid="uid://concoovfg0elr" path="res://assets/start_menu/hourglass_large.png" id="4_sdwtg"]
 [ext_resource type="Texture2D" uid="uid://dsux4x0tsgv82" path="res://assets/start_menu/Play h.png" id="5_lnpn0"]
 [ext_resource type="Texture2D" uid="uid://kjy4aofypc6" path="res://assets/start_menu/Credits uh.png" id="6_dfrpb"]
 [ext_resource type="Texture2D" uid="uid://7hhbdtpijr8w" path="res://assets/start_menu/Credits h.png" id="7_sdwtg"]
@@ -76,6 +77,20 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_0kfsi"]
+offsets = PackedFloat32Array(0, 0.63004804)
+colors = PackedColorArray(0, 0, 0, 1, 0.27058825, 0.24313726, 0.21960784, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_55d6i"]
+gradient = SubResource("Gradient_0kfsi")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_55d6i"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 3
+particles_anim_loop = false
+
 [node name="StartMenu" type="Control" unique_id=1573647458]
 layout_mode = 3
 anchors_preset = 15
@@ -104,17 +119,48 @@ offset_right = 960.0
 offset_bottom = 540.0
 color = Color(0, 0, 0, 1)
 
+[node name="PlainBackground" type="TextureRect" parent="." unique_id=771016956]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+texture = SubResource("GradientTexture2D_55d6i")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1672635785]
+material = SubResource("CanvasItemMaterial_55d6i")
+position = Vector2(892, -332)
+amount = 15
+texture = ExtResource("3_sdwtg")
+lifetime = 10.0
+preprocess = 100.0
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(160, 0)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 110.0
+angular_velocity_min = -36.47
+angular_velocity_max = 25.78
+anim_offset_max = 1.0
+
+[node name="MainArt" type="TextureRect" parent="." unique_id=1130345692]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 3.0
+offset_right = 857.0
+offset_bottom = 543.0
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(240, 279)
+texture = ExtResource("4_sdwtg")
+
+[node name="Wheel" type="Sprite2D" parent="." unique_id=726183910]
+texture = ExtResource("10_lnpn0")
+
 [node name="MainMenu" type="Control" parent="." unique_id=298026191]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=1130345692]
-z_index = -2
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_loyqk")
 
 [node name="PlayButton" type="TextureButton" parent="MainMenu" unique_id=1568991753]
 layout_mode = 0
@@ -138,10 +184,6 @@ offset_right = 960.0
 offset_bottom = 614.0
 texture_normal = ExtResource("8_0kfsi")
 texture_hover = ExtResource("9_r3a5d")
-
-[node name="Wheel" type="Sprite2D" parent="." unique_id=726183910]
-z_index = -1
-texture = ExtResource("10_lnpn0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=391304930]
 layout_mode = 0
