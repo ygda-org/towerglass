@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://iyrt8itv6b34" path="res://assets/sfx/ambience/SteamAlt.mp3" id="28_7v4tp"]
 [ext_resource type="AudioStream" uid="uid://copf6l50i7l0" path="res://assets/sfx/ui/obstacles/rat/BounceOffOfMouse.mp3" id="29_nwht3"]
 [ext_resource type="AudioStream" uid="uid://cq4h7nkx4u46d" path="res://assets/sfx/ui/obstacles/rat/bite.mp3" id="30_iha62"]
+[ext_resource type="AudioStream" uid="uid://b60pcxhhl31ew" path="res://assets/sfx/ui/windup_sparkle.wav" id="31_7v4tp"]
 
 [sub_resource type="Resource" id="Resource_4s6wt"]
 script = ExtResource("2_x0386")
@@ -265,6 +266,11 @@ volume_variance = 1.5
 pitch_variance = 0.1
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
+[sub_resource type="Resource" id="Resource_mlr2v"]
+script = ExtResource("2_x0386")
+stream = ExtResource("31_7v4tp")
+metadata/_custom_type_script = "uid://c3d63fvkogmx2"
+
 [node name="SfxPlayer" type="Node" unique_id=1790965844]
 process_mode = 3
 script = ExtResource("1_tglcb")
@@ -297,5 +303,6 @@ label_to_setting = Dictionary[int, ExtResource("2_x0386")]({
 25: SubResource("Resource_6xan6"),
 26: SubResource("Resource_r352t"),
 27: SubResource("Resource_rdsd8"),
-28: SubResource("Resource_mkkle")
+28: SubResource("Resource_mkkle"),
+29: SubResource("Resource_mlr2v")
 })
