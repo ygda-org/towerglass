@@ -92,9 +92,10 @@ func _physics_process(delta: float):
 		camera_center_position = global_position + Vector2(0, 15*jump_charge/MAX_JUMP_CHARGE)
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2, 2)+Vector2(0.2,0.2)*jump_charge/MAX_JUMP_CHARGE, delta)
 	else:
+		$Camera2D.position_smoothing_speed = 2
 		camera_center_position = global_position + Vector2(0, -100*velocity.y/MAX_JUMP)
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2, 2)-Vector2(0.2,0.2)*velocity.y/MAX_JUMP,delta*7)
-	$Camera2D.offset = $Camera2D.offset.lerp(camera_offset * camera_offset_follow, delta)
+	$Camera2D.offset = $Camera2D.offset.lerp(camera_offset * camera_offset_follow, delta/3)
 	
 	# swaying
 	if jump_charge == MAX_JUMP_CHARGE:
