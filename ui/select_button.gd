@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	GameState.current_level = number
+	GameState.current_lvl_path = target
 	SFX.play(SFX.Labels.BUTTONCLICK)
 	Music.start(level_song)
 	SceneSwitcher.go_to_scene(target)
