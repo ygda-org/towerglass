@@ -16,11 +16,12 @@ var queue_reenable: bool = false
 func _ready() -> void:
 	side_anim("default")
 	name = "CrumblingTile" + str(hash(self))
+	GameState.player_jumped.connect(accelerate_crumble)
 
 func crumble():
 	
-	if time != null:
-		$CrumbleTimer.wait_time = time
+	#if time != null:
+		#$CrumbleTimer.wait_time = time
 	
 	SFX.play(SFX.Labels.PLATFORMCRUMBLE)
 	side_anim("crumbling")
@@ -50,4 +51,5 @@ func side_anim(anim_name: String) -> void:
 	$AnimatedSprite2D.play(side + "_" + anim_name)
 
 func accelerate_crumble():
-	$CollisionShape2D.disabled = true
+	if crumbling:
+		$CollisionShape2D.disabled = true
