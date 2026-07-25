@@ -31,6 +31,7 @@ enum Labels {
 	STEAMALT,
 	BOUNCEOFFMOUSE,
 	BITE,
+	WINDUPSPARKLE
 }
 
 const print_sounds: bool = false
