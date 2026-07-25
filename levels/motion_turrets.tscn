@@ -64,7 +64,7 @@ tile_set = ExtResource("1_v2qgv")
 position = Vector2(455, -560)
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_jdpjd")]
-position = Vector2(1409, -348)
+position = Vector2(-23, -12)
 platform_on_leave = 2
 
 [node name="Turret" parent="." unique_id=631227605 instance=ExtResource("3_xok05")]
