@@ -81,7 +81,6 @@ func _physics_process(delta: float) -> void:
 			elif child.crumbling:
 				if GameState.player.left_floor == child or GameState.player.right_floor == child:
 					player_on = true
-		return
 		if not player_on and get_child(0).crumbling:
 			for child in get_children():
 				child.accelerate_crumble()
