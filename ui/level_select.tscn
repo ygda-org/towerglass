@@ -167,3 +167,13 @@ offset_right = 480.0
 offset_bottom = 252.0
 number = 11
 target = "res://levels/best_buds.tscn"
+
+[node name="SelectButton15" parent="." unique_id=419798285 instance=ExtResource("1_o7pgs")]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 168.0
+offset_right = 504.0
+offset_bottom = 216.0
+number = 15
+target = "uid://cluv6i5p50m0t"
+level_song = 4
