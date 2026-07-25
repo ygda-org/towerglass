@@ -107,7 +107,7 @@ func _physics_process(delta: float):
 		elif Input.is_action_just_released("jump"):
 			mask_tex.height = 14
 			$Mask.position.y = 0
-			velocity.y = (MAX_JUMP + jump_offset) * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
+			velocity.y = -up_direction.y * (MAX_JUMP + jump_offset) * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 			flip()
 			jump_charge = 0.0
 			GameState.player_jumped.emit()
@@ -117,21 +117,24 @@ func _physics_process(delta: float):
 			velocity.x *= AIR_FRICTION
 		velocity.x = move_toward(velocity.x, MAX_SPEED * dir, AIR_CONTROL * delta * aerial_acceleration_curve.sample(abs(velocity.x/MAX_SPEED)))
 		var grav_mult
-		if velocity.y > 0:
-			grav_mult = gravity_curve_dec.sample(velocity.y/MAX_FALL_SPEED)
+		if -velocity.y*up_direction.y > 0:
+			grav_mult = gravity_curve_dec.sample(abs(velocity.y)/MAX_FALL_SPEED)
 		else:
-			grav_mult = gravity_curve_asc.sample(velocity.y/MAX_JUMP)
-			
+			grav_mult = gravity_curve_asc.sample(abs(velocity.y)/MAX_JUMP)
 		if god_mode:
 			grav_mult = 0.5
-			
-		velocity.y = move_toward(velocity.y, MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
+
+		velocity.y = move_toward(velocity.y, -up_direction.y * MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
+		
 	move_and_slide()
 	
 	if not was_on_floor and is_on_floor():
 		SFX.play(SFX.Labels.HOURGLASSFALL)
 	
 	update_sand(delta)
+
+func set_gravity(dir):
+	up_direction = Vector2(0,-dir)
 
 func update_sand(delta : float):
 	if "flip" in $Anim.animation and $Anim.is_playing():
@@ -200,3 +203,8 @@ func die() -> void:
 func _on_hurtbox_body_entered(body):
 	SFX.play(SFX.Labels.DEATHSPILL)
 	die()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	if not $Down.is_colliding():
+		die()
