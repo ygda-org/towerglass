@@ -5,28 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://doe7bcjt86hin" path="res://levels/level_objects/level_exit.tscn" id="2_0fvvq"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="2_ok11k"]
 [ext_resource type="PackedScene" uid="uid://dn8c018o621d7" path="res://levels/level_objects/level_bounds.tscn" id="3_ok11k"]
-[ext_resource type="Shader" uid="uid://bsjyan0sbiok0" path="res://ui/level_select.gdshader" id="6_aaho8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwd6l"]
 size = Vector2(2431, 1246)
-
-[sub_resource type="Gradient" id="Gradient_c633x"]
-colors = PackedColorArray(0.4647959, 0.2752534, 0.035808243, 1, 0.6314626, 0.46867982, 0.3321622, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gdrka"]
-noise_type = 3
-frequency = 0.0073
-domain_warp_enabled = true
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qable"]
-width = 960
-height = 540
-noise = SubResource("FastNoiseLite_gdrka")
-color_ramp = SubResource("Gradient_c633x")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vvqp3"]
-shader = ExtResource("6_aaho8")
-shader_parameter/noise = SubResource("NoiseTexture2D_qable")
 
 [node name="Level1" type="Node2D" unique_id=1177128531]
 
@@ -53,14 +34,5 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=1689417908]
 position = Vector2(495.5, -495)
 shape = SubResource("RectangleShape2D_jwd6l")
-
-[node name="Background2" type="ColorRect" parent="." unique_id=1414560017]
-material = SubResource("ShaderMaterial_vvqp3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.46139455, 0.3573573, 0.24584167, 1)
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
