@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://b42gjlqkaf2bv"]
+
+[ext_resource type="Texture2D" uid="uid://b32vm3yegiixj" path="res://assets/tiles/GMTK2026Fireanim.png" id="1_rduqa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bov31"]
+atlas = ExtResource("1_rduqa")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn188"]
+atlas = ExtResource("1_rduqa")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wibw0"]
+atlas = ExtResource("1_rduqa")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v1yb"]
+atlas = ExtResource("1_rduqa")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m52i"]
+atlas = ExtResource("1_rduqa")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x626g"]
+atlas = ExtResource("1_rduqa")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bov31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn188")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wibw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v1yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m52i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x626g")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+size = Vector2(11, 13)
+
+[node name="Fire" type="StaticBody2D" unique_id=952057307]
+collision_layer = 8
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2122997239]
+sprite_frames = SubResource("SpriteFrames_0es7p")
+autoplay = "default"
+frame_progress = 0.7123123
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=635135704]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_0es7p")
