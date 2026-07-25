@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://b6dsdg6suhaen"
 GameState="*uid://m81nunoede32"
 SceneSwitcher="*uid://2lelnjjcybvv"
 SFX="*uid://d1mff478o3ug3"
+Music="*uid://chmwk6sakdq8c"
 
 [display]
 

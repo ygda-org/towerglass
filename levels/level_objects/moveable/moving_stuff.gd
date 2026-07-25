@@ -8,6 +8,7 @@ extends Path2D
 @export var return_quickly: bool = false
 @export var trans_type: Tween.TransitionType = Tween.TRANS_SINE
 @export var ease_type: Tween.EaseType = Tween.EASE_IN_OUT
+@export var stupid_hack_please_dont_ask: bool = false
 var progress: float
 var elapsed_time: float = 0
 var flip = false
@@ -86,4 +87,8 @@ func update_children() -> void:
 					child.linear_velocity = $PathFollow2D.global_position - child.global_position
 					child.move_and_slide()
 			else:
-				child.position = $PathFollow2D.position
+				
+				if stupid_hack_please_dont_ask and not child is Path2D:
+					child.position =  $PathFollow2D.position + Vector2(4, 0)
+				else:
+					child.position = $PathFollow2D.position
