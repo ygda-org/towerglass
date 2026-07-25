@@ -11,7 +11,7 @@ var music_volume: float = 0.7
 var sfx_volume: float = 0.4
 var ambience_volume:float = 0.4
 
-var current_level = 15
+var current_level = 0
 var current_lvl_path
 var max_level_beaten = 0
 
