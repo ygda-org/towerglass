@@ -15,7 +15,7 @@ tile_set = ExtResource("1_jehdt")
 
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=1154706289]
 z_index = -1
-tile_map_data = PackedByteArray("AADn/+T/AAACAAcAAABYANr/BQAGAAAAAAAFAPz/AAAHAAMAAAANAPz/AAAHAAMAAAAVAPz/AAAHAAEAAAA=")
+tile_map_data = PackedByteArray("AADn/+T/AAACAAcAAABYANr/BQAGAAAAAAAFAPz/AAAHAAMAAAANAPz/AAAHAAMAAAAVAPz/AAAHAAEAAAANAOv/AAAHAAEAAAA=")
 tile_set = ExtResource("1_jehdt")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_ok11k")]
