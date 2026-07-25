@@ -60,6 +60,8 @@ func _on_settings_button_pressed():
 func _on_credits_button_pressed():
 	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONCLICK)
+		var tween : Tween = get_tree().create_tween()
+		tween.tween_property($Credits, "position", Vector2(240, 178), 2)
 
 func _on_play_button_pressed():
 	if not intro_playing:
@@ -78,3 +80,8 @@ func _on_credits_button_mouse_entered():
 func _on_settings_button_mouse_entered():
 	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONHOVER)
+
+
+func _on_credit_back_pressed() -> void:
+	var tween : Tween = get_tree().create_tween()
+	tween.tween_property($Credits, "position", Vector2(240, 560), 2)
