@@ -42,6 +42,10 @@ var is_physics_process : bool = true
 
 var has_moved: bool = false
 
+var camera_center_position = Vector2(0,0)
+var camera_target_offset = Vector2(0,0)
+var sway_dir = 1
+
 func _ready() -> void:
 	GameState.player = self
 	GameState.last_location = global_position
@@ -85,12 +89,22 @@ func _physics_process(delta: float):
 		die()
 	
 	if $JumpJuice.is_stopped():
-		$Camera2D.global_position = global_position + Vector2(0, 15*jump_charge/MAX_JUMP_CHARGE)
+		camera_center_position = global_position + Vector2(0, 15*jump_charge/MAX_JUMP_CHARGE)
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2, 2)+Vector2(0.2,0.2)*jump_charge/MAX_JUMP_CHARGE, delta)
 	else:
-		$Camera2D.global_position = global_position + Vector2(0, -100*velocity.y/MAX_JUMP)
+		camera_center_position = global_position + Vector2(0, -100*velocity.y/MAX_JUMP)
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2, 2)-Vector2(0.2,0.2)*velocity.y/MAX_JUMP,delta*7)
 	$Camera2D.offset = $Camera2D.offset.lerp(camera_offset * camera_offset_follow, delta)
+	
+	# swaying
+	if jump_charge == MAX_JUMP_CHARGE:
+		$Camera2D.position_smoothing_speed = 5
+		if ($Camera2D.global_position-camera_center_position).distance_to(camera_target_offset) < 2:
+			camera_target_offset = Vector2(randf_range(20,25)*sway_dir, randf_range(-5,5))
+			sway_dir *= -1
+	else:
+		camera_target_offset = Vector2(0,0)
+	$Camera2D.global_position = camera_center_position + camera_target_offset
 	
 	if $CameraOffsetDetection.has_overlapping_areas():
 		camera_offset_follow += delta
