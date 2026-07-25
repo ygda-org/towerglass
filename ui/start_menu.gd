@@ -28,6 +28,7 @@ func _ready():
 	tween_closing.parallel().tween_property(color_rect, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0).set_trans(Tween.TRANS_SINE)
 	await get_tree().create_timer(1.41).timeout 
 	ygda_logo.visible = false
+	Music.start(Music.Labels.TITLE)
 
 func _process(delta):
 	$Wheel.rotation += deg_to_rad(5) * delta
