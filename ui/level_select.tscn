@@ -106,7 +106,7 @@ offset_top = 441.0
 offset_right = 577.0
 offset_bottom = 489.0
 number = 5
-target = "res://levels/challenge_1.tscn"
+target = "res://levels/turrets_level.tscn"
 level_song = 2
 
 [node name="SelectButton6" parent="." unique_id=329849017 instance=ExtResource("1_o7pgs")]
@@ -116,7 +116,7 @@ offset_top = 435.0
 offset_right = 507.0
 offset_bottom = 483.0
 number = 6
-target = "res://levels/motion_turrets.tscn"
+target = "res://levels/touch_and_go.tscn"
 level_song = 2
 
 [node name="SelectButton7" parent="." unique_id=1130250613 instance=ExtResource("1_o7pgs")]
@@ -126,7 +126,7 @@ offset_top = 430.0
 offset_right = 449.0
 offset_bottom = 478.0
 number = 7
-target = "res://levels/turrets_level.tscn"
+target = "res://levels/elevator.tscn"
 level_song = 2
 
 [node name="SelectButton8" parent="." unique_id=1954730422 instance=ExtResource("1_o7pgs")]
@@ -136,7 +136,7 @@ offset_top = 381.0
 offset_right = 437.0
 offset_bottom = 429.0
 number = 8
-target = "res://levels/aww_rats.tscn"
+target = "res://levels/motion_turrets.tscn"
 level_song = 2
 
 [node name="SelectButton9" parent="." unique_id=1790975249 instance=ExtResource("1_o7pgs")]
@@ -146,7 +146,7 @@ offset_top = 366.0
 offset_right = 499.0
 offset_bottom = 414.0
 number = 9
-target = "res://levels/touch_and_go.tscn"
+target = "res://levels/challenge_1.tscn"
 level_song = 3
 
 [node name="SelectButton10" parent="." unique_id=1944389429 instance=ExtResource("1_o7pgs")]
@@ -156,7 +156,7 @@ offset_top = 358.0
 offset_right = 550.0
 offset_bottom = 406.0
 number = 10
-target = "res://levels/elevator.tscn"
+target = "res://levels/aww_rats.tscn"
 level_song = 3
 
 [node name="SelectButton11" parent="." unique_id=1453358548 instance=ExtResource("1_o7pgs")]
@@ -166,7 +166,7 @@ offset_top = 307.0
 offset_right = 472.0
 offset_bottom = 355.0
 number = 11
-target = "res://levels/best_buds.tscn"
+target = "res://levels/limit.tscn"
 level_song = 3
 
 [node name="SelectButton12" parent="." unique_id=416185502 instance=ExtResource("1_o7pgs")]
@@ -176,6 +176,7 @@ offset_top = 282.0
 offset_right = 537.0
 offset_bottom = 330.0
 number = 12
+target = "res://levels/trampoline.tscn"
 level_song = 3
 
 [node name="SelectButton13" parent="." unique_id=1335219038 instance=ExtResource("1_o7pgs")]
@@ -185,6 +186,7 @@ offset_top = 234.0
 offset_right = 471.0
 offset_bottom = 282.0
 number = 13
+target = "res://levels/best_buds.tscn"
 level_song = 4
 
 [node name="SelectButton14" parent="." unique_id=1916954849 instance=ExtResource("1_o7pgs")]

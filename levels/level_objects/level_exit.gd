@@ -31,6 +31,7 @@ func super_cool_exit_animation():
 	var tween2 : Tween = get_tree().create_tween()
 	tween2.tween_property($Clock, "self_modulate", Color(1.0,1.0,1.0,1.0), initial_length)
 	GameState.player.find_child("Camera2D").position = Vector2.ZERO
+	GameState.player.find_child("Camera2D").offset = Vector2.ZERO
 	GameState.player.find_child("Camera2D").align()
 	$Clock.speed_scale = 1/initial_length
 	$Clock.play("clock_spin")
