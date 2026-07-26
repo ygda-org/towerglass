@@ -72,7 +72,9 @@ func shoot():
 	current_direction_index = next_direction_index
 
 func pause():
-	await get_tree().create_timer(pause_time/2).timeout
+	$PauseTime.wait_time = pause_time/2
+	$PauseTime.start()
+	await $PauseTime.timeout
 	var bullet = BULLET.instantiate()
 	bullet.velocity = shot_directions[current_direction_index]
 	bullet.position = $BarrelPivot/BulletSpawn.global_position

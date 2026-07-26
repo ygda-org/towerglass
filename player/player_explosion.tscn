@@ -86,9 +86,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h1sp7")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"spill_blue",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -210,6 +210,6 @@ sprite_frames = SubResource("SpriteFrames_7xtf2")
 [node name="Sand" type="AnimatedSprite2D" parent="." unique_id=526191365]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_in0vb")
-animation = &"default_blue"
+animation = &"spill_blue"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
