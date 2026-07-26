@@ -53,13 +53,13 @@ func _on_settings_button_pressed():
 	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONCLICK)
 		$CanvasLayer/PauseMenu.toggle_pause()
-		$CanvasLayer/PauseMenu/LevelSelectButton.visible = false
+		#$CanvasLayer/PauseMenu/LevelSelectButton.visible = false
 
 func _on_credits_button_pressed():
 	if not intro_playing:
 		SFX.play(SFX.Labels.BUTTONCLICK)
 		var tween : Tween = get_tree().create_tween()
-		tween.tween_property($Credits, "position", Vector2(240, 178), 2)
+		tween.tween_property($Credits, "position", Vector2(190.0, 100.0), 1).set_trans(Tween.TRANS_SINE)
 
 func _on_play_button_pressed():
 	if not intro_playing:
@@ -82,4 +82,4 @@ func _on_settings_button_mouse_entered():
 
 func _on_credit_back_pressed() -> void:
 	var tween : Tween = get_tree().create_tween()
-	tween.tween_property($Credits, "position", Vector2(240, 560), 2)
+	tween.tween_property($Credits, "position", Vector2(190.0, 560), 1).set_trans(Tween.TRANS_SINE)
