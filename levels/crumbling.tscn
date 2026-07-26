@@ -178,20 +178,21 @@ size = 2
 tile = ExtResource("7_gwo7s")
 
 [node name="MoveablePlatform2" parent="Challenge5" unique_id=725506487 instance=ExtResource("8_gwo7s")]
-position = Vector2(1476, 163)
+position = Vector2(1503, 168)
 size = 4
 tile = ExtResource("7_gwo7s")
 
 [node name="MoveablePlatform3" parent="Challenge5" unique_id=502772476 instance=ExtResource("8_gwo7s")]
-position = Vector2(1398, 116)
+position = Vector2(1410, 119)
 size = 2
 tile = ExtResource("7_gwo7s")
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("9_p5yq7")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=723074984]
 position = Vector2(912, 187.5)
 shape = SubResource("RectangleShape2D_0es7p")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@113684" to="TileMapLayer/@Area2D@113684" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@20162" to="TileMapLayer/@Area2D@20162" method="_on_body_entered"]
