@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	$Label.text = "Congrats! Death count: " + str(GameState.player_death_count) + "."
+
 func _on_texture_button_pressed():
 	SFX.play(SFX.Labels.BUTTONCLICK)
 	SceneSwitcher.go_to_scene("res://ui/start_menu.tscn", SceneSwitcher.TYPE.FADE)

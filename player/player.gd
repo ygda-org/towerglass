@@ -248,6 +248,7 @@ func die() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 	if is_dead:
 		return
+	GameState.player_died.emit()
 	is_dead = true
 	var explosion = load("uid://wvgqqqg27y5d").instantiate()
 	explosion.global_position = global_position

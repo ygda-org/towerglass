@@ -28,7 +28,7 @@ func _ready() -> void:
 	target = LEVEL_ORDER[number-1]
 	$Number.text = str(number)
 	if number == 15:
-		$Number.text = "End"
+		$Number.text = ""
 		custom_maximum_size.x += 16
 	if GameState.max_level_beaten + 1 < number:
 		queue_free()

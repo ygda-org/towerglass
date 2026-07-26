@@ -4,9 +4,27 @@
 [ext_resource type="Script" uid="uid://dmbmpyfre7tfj" path="res://main/end_screen.gd" id="1_c5cid"]
 [ext_resource type="Texture2D" uid="uid://cdbu4mre1q4mr" path="res://assets/ui/pause_menu/exit select.png" id="2_nu0cp"]
 [ext_resource type="Texture2D" uid="uid://cuce0gwe3vn0p" path="res://assets/ui/pause_menu/exit_button_hovered.png" id="3_c5cid"]
+[ext_resource type="Texture2D" uid="uid://bfvcrxrgbur1w" path="res://assets/ui/Final clocktower.png" id="5_uyro0"]
+[ext_resource type="FontFile" uid="uid://dkdscd1kuakmt" path="res://assets/ui/clean_font.ttf" id="6_or10m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmecv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uyro0")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 0.0
+}]
 
 [node name="EndScreen" type="Node2D" unique_id=1221861120]
 script = ExtResource("1_c5cid")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=930900567]
+position = Vector2(480, 270)
+sprite_frames = SubResource("SpriteFrames_pmecv")
+autoplay = "default"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=852138925]
 offset_left = 890.0
@@ -15,6 +33,15 @@ offset_bottom = 70.0
 texture_normal = ExtResource("1_0njaf")
 texture_pressed = ExtResource("2_nu0cp")
 texture_hover = ExtResource("3_c5cid")
+
+[node name="Label" type="Label" parent="." unique_id=1338213197]
+offset_left = 242.0
+offset_top = 28.0
+offset_right = 718.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("6_or10m")
+theme_override_font_sizes/font_size = 40
+text = "Congrats! Death count: 15."
 
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

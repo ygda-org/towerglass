@@ -15,9 +15,15 @@ var current_level = 0
 var current_lvl_path
 var max_level_beaten = 0
 
+var player_death_count = 0
+
 func _ready() -> void:
 	for i in range(30):
 		lvl_to_loc.append(Vector2(-1000,-1000))
+	player_died.connect(death_counter_increment)
 
 func update_max_level_beaten():
 	max_level_beaten = max(current_level, max_level_beaten)
+
+func death_counter_increment():
+	player_death_count += 1
