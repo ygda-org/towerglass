@@ -24,7 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://c0818g85mbvyp" path="res://assets/sfx/ambience/boiler_ambience.wav" id="21_ff3dn"]
 [ext_resource type="AudioStream" uid="uid://vi781i3hjkg4" path="res://assets/sfx/ui/player/player_hit.mp3" id="22_y2dut"]
 [ext_resource type="AudioStream" uid="uid://b5n1v6c2vpurd" path="res://assets/sfx/ui/obstacles/rat/squeak.mp3" id="23_3whmg"]
-[ext_resource type="AudioStream" uid="uid://c2iriue0qvyam" path="res://assets/sfx/ui/obstacles/crumbling_platform/platform_crumble.wav" id="24_bvj6r"]
+[ext_resource type="AudioStream" uid="uid://dbaqulg6x46fw" path="res://assets/sfx/ui/obstacles/crumbling_platform/platform_crumble_new.mp3" id="25_il4oj"]
 [ext_resource type="AudioStream" uid="uid://cghlps153f7rv" path="res://assets/sfx/ui/lvl_start.mp3" id="25_u6rw6"]
 [ext_resource type="AudioStream" uid="uid://dxg2fknvw5rd8" path="res://assets/sfx/ui/lvl_transition.mp3" id="26_fp4on"]
 [ext_resource type="AudioStream" uid="uid://bipm56nyse72o" path="res://assets/sfx/ambience/steam.wav" id="27_iha62"]
@@ -215,8 +215,8 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 [sub_resource type="Resource" id="Resource_leiid"]
 script = ExtResource("2_x0386")
 bus = "SFX"
-stream = ExtResource("24_bvj6r")
-volume = -4.0
+stream = ExtResource("25_il4oj")
+volume = 2.0
 volume_variance = 1.5
 pitch_variance = 0.1
 min_delay = 0.5
