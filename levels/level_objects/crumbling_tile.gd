@@ -7,13 +7,14 @@ enum SIDE{
 }
 
 # if you change this node"s name it will no longer function in movable platforms
-@export var side: String = "middle"
+@export var side: String = "single"
 @export var time: float 
 
 var crumbling : bool = false
 var queue_reenable: bool = false
 
 func _ready() -> void:
+	print(side)
 	side_anim("default")
 	name = "CrumblingTile" + str(hash(self))
 	GameState.player_jumped.connect(accelerate_crumble)

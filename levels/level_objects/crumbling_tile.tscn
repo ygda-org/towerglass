@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://db5cychog4x3h" path="res://levels/level_objects/crumbling_tile.gd" id="1_w8fke"]
 [ext_resource type="Texture2D" uid="uid://bio23kga2q6g6" path="res://assets/level_components/crumbling_block/tileable_decay.png" id="2_dce2v"]
 [ext_resource type="Texture2D" uid="uid://bxnxoa5m63x0n" path="res://assets/level_components/crumbling_block/tileable_regenerate.png" id="3_rq570"]
+[ext_resource type="Texture2D" uid="uid://bdfowy7um6me2" path="res://assets/level_components/crumbling_block/single/crumbling_singeton_tileable.png" id="4_rq570"]
+[ext_resource type="Texture2D" uid="uid://cga62dlxb84vp" path="res://assets/level_components/crumbling_block/single/uncrumbling_singeton_tileable.png" id="5_v6bfx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6bfx"]
 atlas = ExtResource("2_dce2v")
@@ -135,6 +137,46 @@ region = Rect2(32, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_o4u86"]
 atlas = ExtResource("3_rq570")
 region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2m77"]
+atlas = ExtResource("4_rq570")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdrtg"]
+atlas = ExtResource("4_rq570")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ihri"]
+atlas = ExtResource("4_rq570")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agvvx"]
+atlas = ExtResource("4_rq570")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdd03"]
+atlas = ExtResource("4_rq570")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8olcy"]
+atlas = ExtResource("4_rq570")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h5dw"]
+atlas = ExtResource("5_v6bfx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwvav"]
+atlas = ExtResource("5_v6bfx")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hanv"]
+atlas = ExtResource("5_v6bfx")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6npbh"]
+atlas = ExtResource("5_v6bfx")
+region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0es7p"]
 animations = [{
@@ -281,6 +323,54 @@ animations = [{
 "loop": 0,
 "name": &"right_regenerate",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2m77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdrtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ihri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agvvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdd03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8olcy")
+}],
+"loop": 0,
+"name": &"single_crumbling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2m77")
+}],
+"loop": 0,
+"name": &"single_default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h5dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwvav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hanv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6npbh")
+}],
+"loop": 0,
+"name": &"single_regenerate",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0u0i"]
@@ -294,7 +384,7 @@ script = ExtResource("1_w8fke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713537414]
 sprite_frames = SubResource("SpriteFrames_0es7p")
-animation = &"right_crumbling"
+animation = &"single_regenerate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205369307]
 position = Vector2(0, 3.5)
