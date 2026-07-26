@@ -193,4 +193,4 @@ position = Vector2(710.5, 182.5)
 shape = SubResource("RectangleShape2D_0es7p")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@27004" to="TileMapLayer/@Area2D@27004" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@20211" to="TileMapLayer/@Area2D@20211" method="_on_body_entered"]
