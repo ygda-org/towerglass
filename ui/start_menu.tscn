@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://didrfctbn84l3" path="res://ui/start_menu.gd" id="1_kw4xl"]
 [ext_resource type="Texture2D" uid="uid://cb380qyv8axnq" path="res://assets/start_menu/YGDA Logo.png" id="2_iuit4"]
+[ext_resource type="VideoStream" uid="uid://bplf48jpmaby" path="res://assets/intro_cutscene/vid_1.ogv" id="3_ayvfx"]
+[ext_resource type="Texture2D" uid="uid://dj4pn25kqyier" path="res://assets/intro_cutscene/part_1_still.png" id="3_lc0y3"]
 [ext_resource type="Texture2D" uid="uid://bboy022hhayfi" path="res://assets/start_menu/icon_spritesheet.png" id="3_sdwtg"]
 [ext_resource type="Texture2D" uid="uid://cy5l35yr6jvoy" path="res://assets/start_menu/Play uh.png" id="4_eh4yk"]
 [ext_resource type="Texture2D" uid="uid://concoovfg0elr" path="res://assets/start_menu/hourglass_large.png" id="4_sdwtg"]
 [ext_resource type="Texture2D" uid="uid://dsux4x0tsgv82" path="res://assets/start_menu/Play h.png" id="5_lnpn0"]
+[ext_resource type="Texture2D" uid="uid://cd12afx3dkrvx" path="res://assets/intro_cutscene/part_2_back.PNG" id="5_vhcxx"]
 [ext_resource type="Texture2D" uid="uid://kjy4aofypc6" path="res://assets/start_menu/Credits uh.png" id="6_dfrpb"]
+[ext_resource type="Texture2D" uid="uid://cifbyefhn254w" path="res://assets/intro_cutscene/part_2_front.PNG" id="6_waplx"]
+[ext_resource type="Texture2D" uid="uid://b51toixq42yut" path="res://assets/intro_cutscene/part_4.png" id="7_duddy"]
 [ext_resource type="Texture2D" uid="uid://7hhbdtpijr8w" path="res://assets/start_menu/Credits h.png" id="7_sdwtg"]
+[ext_resource type="VideoStream" uid="uid://41gn6jgn7njv" path="res://assets/intro_cutscene/vid_3.ogv" id="7_waplx"]
 [ext_resource type="Texture2D" uid="uid://cvkv0v8mxuyex" path="res://assets/start_menu/Settings uh.png" id="8_0kfsi"]
 [ext_resource type="Texture2D" uid="uid://dds5f2sdagt8i" path="res://assets/start_menu/Settings h.png" id="9_r3a5d"]
 [ext_resource type="Texture2D" uid="uid://csxhulpiwhaka" path="res://assets/start_menu/Wheel.png" id="10_lnpn0"]
@@ -105,7 +111,7 @@ script = ExtResource("1_kw4xl")
 
 [node name="YGDALogo" type="Control" parent="." unique_id=1772900175]
 visible = false
-z_index = 1
+z_index = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -121,6 +127,55 @@ layout_mode = 0
 offset_right = 960.0
 offset_bottom = 540.0
 color = Color(0, 0, 0, 1)
+
+[node name="IntroCutscene" type="Control" parent="." unique_id=1176269076]
+z_index = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Still1" type="TextureRect" parent="IntroCutscene" unique_id=77574666]
+custom_maximum_size = Vector2(960, 540)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_lc0y3")
+
+[node name="Vid1" type="VideoStreamPlayer" parent="IntroCutscene" unique_id=1998203014]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+stream = ExtResource("3_ayvfx")
+
+[node name="Back2" type="TextureRect" parent="IntroCutscene" unique_id=1424380996]
+visible = false
+layout_mode = 0
+offset_left = -40.0
+offset_right = 920.0
+offset_bottom = 540.0
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_vhcxx")
+
+[node name="Front2" type="TextureRect" parent="IntroCutscene" unique_id=500749097]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_waplx")
+
+[node name="Vid3" type="VideoStreamPlayer" parent="IntroCutscene" unique_id=687780627]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("7_waplx")
+
+[node name="Sand4" type="TextureRect" parent="IntroCutscene" unique_id=593821407]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("7_duddy")
 
 [node name="PlainBackground" type="TextureRect" parent="." unique_id=771016956]
 layout_mode = 0
@@ -190,8 +245,8 @@ texture_hover = ExtResource("9_r3a5d")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=391304930]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 960.0
+offset_bottom = 539.0
 mouse_filter = 2
 texture = ExtResource("11_dfrpb")
 
