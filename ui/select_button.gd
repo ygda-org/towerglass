@@ -14,7 +14,8 @@ const LEVEL_ORDER = [
 	"res://levels/motion_turrets.tscn",
 	"res://levels/limit.tscn",
 	"res://levels/elevator.tscn",
-	"res://levels/finale.tscn"
+	"res://levels/finale.tscn",
+	"res://main/end_screen.tscn"
 	]
 
 @export var number : int = 0
@@ -26,6 +27,9 @@ var target : String
 func _ready() -> void:
 	target = LEVEL_ORDER[number-1]
 	$Number.text = str(number)
+	if number == 15:
+		$Number.text = "End"
+		custom_maximum_size.x += 16
 	if GameState.max_level_beaten + 1 < number:
 		queue_free()
 

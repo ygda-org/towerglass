@@ -7,13 +7,13 @@
 
 [node name="SelectButton" type="TextureButton" unique_id=1273816794]
 custom_maximum_size = Vector2(48, 48)
+offset_right = 64.0
+offset_bottom = 48.0
 texture_normal = ExtResource("1_5fcav")
 texture_pressed = ExtResource("1_5fcav")
 texture_hover = ExtResource("2_q34ee")
 stretch_mode = 0
 script = ExtResource("3_ld75t")
-number = null
-level_song = null
 
 [node name="Number" type="Label" parent="." unique_id=258695258]
 layout_mode = 1
