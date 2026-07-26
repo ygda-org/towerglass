@@ -20,6 +20,8 @@ const BULLET = preload("uid://d5m3kp8lwgis")
 
 @export var start_delay_addon_time: float = 0.0
 
+@export var bullet_duration: float = 50.0
+
 var current_direction_index = 0
 var iter_dir = 1
 
@@ -82,6 +84,7 @@ func pause():
 	var parent = self
 	for i in range(bullet_parent_amount):
 		parent = parent.get_parent()
+	bullet.time = bullet_duration
 	parent.add_child(bullet)
 	if player_visible == true:
 		SFX.play(SFX.Labels.BULLETSHOOT)
