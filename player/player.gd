@@ -255,6 +255,7 @@ func die() -> void:
 	get_parent().add_child(explosion)
 	visible = false
 	await explosion.exploded
+	SFX.force_clear_audios()
 	SceneSwitcher.go_to_scene(GameState.current_lvl_path)
 	#has_moved = false
 	#if $DeathCooldown.time_left > 0.0:

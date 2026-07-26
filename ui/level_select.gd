@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	SFX.force_clear_audios()
 	Music.start(Music.Labels.SELECT)
 
 
