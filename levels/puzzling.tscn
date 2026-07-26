@@ -65,7 +65,7 @@ position = Vector2(255, -827)
 [node name="MovingStuff" parent="." unique_id=767670818 instance=ExtResource("4_15k4d")]
 position = Vector2(80, -144)
 curve = SubResource("Curve2D_n86lg")
-time = 55.0
+time = 60.0
 wait_until_player_touches_to_move = true
 go_back = false
 trans_type = 0
@@ -159,6 +159,11 @@ position = Vector2(64, -713)
 size = 3
 tile = ExtResource("7_p6uqi")
 
+[node name="MoveablePlatform2" parent="." unique_id=432806287 instance=ExtResource("5_pcbp7")]
+position = Vector2(64, -526)
+size = 3
+tile = ExtResource("7_p6uqi")
+
 [node name="CameraOffset" parent="." unique_id=328047964 instance=ExtResource("7_pcbp7")]
 position = Vector2(132, -468)
 offset_amount = Vector2(0, 256)
@@ -174,7 +179,7 @@ position = Vector2(1064, -327)
 orientation = "north"
 shot_directions = Array[Vector2]([Vector2(-1, 0), Vector2(0, 1), Vector2(1, 0)])
 harmonic = true
-pause_time = 0.0
+pause_time = 0.25
 bullet_duration = 1.0
 
 [node name="Turret2" parent="." unique_id=986591145 instance=ExtResource("9_n86lg")]
@@ -188,7 +193,6 @@ curve = SubResource("Curve2D_m6fwe")
 time = 10.0
 
 [node name="SmallDangerCog" parent="MovingStuff2" unique_id=1725336857 instance=ExtResource("10_m6fwe")]
-position = Vector2(-1600, 192)
 
 [node name="Turret3" parent="." unique_id=1553214556 instance=ExtResource("9_n86lg")]
 position = Vector2(1666, -265)
