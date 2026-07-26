@@ -61,13 +61,14 @@ tile_set = ExtResource("1_lv7of")
 
 [node name="DecorLayer" type="TileMapLayer" parent="." unique_id=298881021]
 z_index = -1
+tile_map_data = PackedByteArray("AAD9//z/AAARAAQAAAD9//3/AAAPAAUAAAD9//7/AAAPAAUAAAD9////AAAPAAUAAAD+//z/AAAPAAQAAAD///z/AAAPAAQAAAAAAPz/AAASAAQAAAAAAP3/AAAQAAQAAAAAAP7/AAAQAAQAAAAAAP//AAAQAAQAAAA=")
 tile_set = ExtResource("1_lv7of")
 
 [node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("7_ico7e")]
 position = Vector2(551, -2624)
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_go423")]
-position = Vector2(31, -12)
+position = Vector2(-16, -12)
 
 [node name="MovingStuff" parent="." unique_id=767670818 instance=ExtResource("3_2wlir")]
 position = Vector2(136, 0)
