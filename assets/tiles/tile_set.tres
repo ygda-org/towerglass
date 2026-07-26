@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dl0xf1lygr2hn" path="res://assets/tiles/GMTK2026Silvercogdecor.png" id="12_iak18"]
 [ext_resource type="Texture2D" uid="uid://by5h34gdig2p0" path="res://assets/programmer_art/mouse (2).png" id="13_qpy5e"]
 [ext_resource type="Texture2D" uid="uid://u83cxbcumbbr" path="res://assets/tiles/crane.png" id="18_un7dp"]
+[ext_resource type="Texture2D" uid="uid://ch8x3l31n78ex" path="res://assets/tiles/GMTK26_Cogspikeset_1.png" id="20_dm7yn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy046"]
 texture = ExtResource("1_vl7tc")
@@ -473,17 +474,17 @@ scenes/11/scene = ExtResource("4_qsip1")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18k7h"]
 texture = ExtResource("8_qpy5e")
 0:0/0 = 0
-0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-3.7550316, -2.1745472, 3.983717, -1.9444866, 4.2941475, 8, -4.1603994, 8)
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
 2:0/0 = 0
-2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-3.7550316, -2.1745472, 3.983717, -1.9444866, 4.2941475, 8, -4.1603994, 8)
+2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
 2:2/0 = 0
-2:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-3.7550316, -2.1745472, 3.983717, -1.9444866, 4.2941475, 8, -4.1603994, 8)
+2:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
 0:2/0 = 0
-0:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-3.7550316, -2.1745472, 3.983717, -1.9444866, 4.2941475, 8, -4.1603994, 8)
+0:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
 4:2/0 = 0
 4:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-3.7550316, -2.1745472, 3.983717, -1.9444866, 4.2941475, 8, -4.1603994, 8)
 4:0/0 = 0
-4:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-3.7550316, -2.1745472, 3.983717, -1.9444866, 4.2941475, 8, -4.1603994, 8)
+4:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wlwvt"]
 texture = ExtResource("9_trb68")
@@ -695,6 +696,27 @@ texture = ExtResource("18_un7dp")
 10:0/0 = 0
 10:1/0 = 0
 7:1/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_at807"]
+texture = ExtResource("20_dm7yn")
+0:0/0 = 0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
+2:0/0 = 0
+2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
+4:0/0 = 0
+4:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
+0:2/0 = 0
+0:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
+2:2/0 = 0
+2:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
+4:2/0 = 0
+4:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 8, -3.963828, 8)
 
 [resource]
 physics_layer_0/collision_layer = 257
@@ -713,3 +735,4 @@ sources/4 = SubResource("TileSetAtlasSource_fprp5")
 sources/6 = SubResource("TileSetAtlasSource_qqwny")
 sources/7 = SubResource("TileSetAtlasSource_iak18")
 sources/8 = SubResource("TileSetAtlasSource_qsip1")
+sources/9 = SubResource("TileSetAtlasSource_at807")
