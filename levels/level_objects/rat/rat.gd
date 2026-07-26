@@ -56,6 +56,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$AnimatedSprite2D.play("bite")
 		SFX.play(SFX.Labels.BITE)
 		SFX.play(SFX.Labels.PLAYERHIT)
+		velo = 0
 		await $AnimatedSprite2D.animation_finished
 	if $Area2D.overlaps_body(body):
 		SFX.play(SFX.Labels.BOUNCEOFFMOUSE)
@@ -65,6 +66,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	GameState.player.velocity.x += (200 * dir)
 	GameState.player_jumped.emit()
 	biting = false
+	velo = 50
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():

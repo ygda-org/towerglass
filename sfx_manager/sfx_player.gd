@@ -38,7 +38,7 @@ enum Labels {
 	STICKYPLATFORMWALK,
 }
 
-const print_sounds: bool = false
+const print_sounds: bool = true
 
 @export var label_to_setting: Dictionary[Labels, SfxSettings]
 
