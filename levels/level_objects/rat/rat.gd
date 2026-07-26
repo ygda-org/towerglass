@@ -62,9 +62,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		SFX.play(SFX.Labels.BOUNCEOFFMOUSE)
 		GameState.player.velocity.y = -250
 		GameState.player.flip()
-	await get_tree().create_timer(0.05).timeout
-	GameState.player.velocity.x = (200 * dir)
-	GameState.player_jumped.emit()
+		await get_tree().create_timer(0.05).timeout
+		GameState.player.velocity.x = (200 * dir)
+		GameState.player_jumped.emit()
 	biting = false
 	velo = 50
 
