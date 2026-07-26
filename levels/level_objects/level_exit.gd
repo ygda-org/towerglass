@@ -29,7 +29,7 @@ func super_cool_exit_animation():
 	$InwardStar.emitting = true
 	SFX.play(SFX.Labels.WINDUPSPARKLE)
 	var tween : Tween = get_tree().create_tween()
-	tween.tween_property(GameState.player, "global_position", global_position + Vector2(0,2), initial_length)
+	tween.tween_property(GameState.player, "global_position", global_position + Vector2(0,2), initial_length).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	var tween2 : Tween = get_tree().create_tween()
 	tween2.tween_property($Clock, "self_modulate", Color(1.0,1.0,1.0,1.0), initial_length)
 	GameState.player.find_child("Camera2D").position = Vector2.ZERO
