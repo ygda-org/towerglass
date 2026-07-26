@@ -16,19 +16,22 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcbp7"]
-size = Vector2(191, 1)
+size = Vector2(239, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3lui"]
-size = Vector2(160, 1)
+size = Vector2(96, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh7nu"]
-size = Vector2(48, 1)
+size = Vector2(96, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gio8"]
-size = Vector2(128, 0.75)
+size = Vector2(80, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1o26"]
 size = Vector2(32, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ldp"]
+size = Vector2(32, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_526j8"]
 size = Vector2(240, 93.5)
@@ -86,26 +89,31 @@ collision_mask = 2
 script = ExtResource("6_15k4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingStuff/Node2D/MoveWithPlayer" unique_id=1210300455]
-position = Vector2(15.5, 64.5)
+position = Vector2(-8.5, 64.5)
 shape = SubResource("RectangleShape2D_pcbp7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MovingStuff/Node2D/MoveWithPlayer" unique_id=107016947]
-position = Vector2(-48, 0.5)
+position = Vector2(-16, 1)
 shape = SubResource("RectangleShape2D_o3lui")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="MovingStuff/Node2D/MoveWithPlayer" unique_id=862762604]
-position = Vector2(-104, -63.3)
+position = Vector2(-80, -63.299988)
 shape = SubResource("RectangleShape2D_hh7nu")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MovingStuff/Node2D/MoveWithPlayer" unique_id=1878783973]
-position = Vector2(16, -63.3)
+position = Vector2(40, -63.5)
 shape = SubResource("RectangleShape2D_2gio8")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="MovingStuff/Node2D/MoveWithPlayer" unique_id=1169619727]
 position = Vector2(80, 0.5)
 shape = SubResource("RectangleShape2D_e1o26")
 
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="MovingStuff/Node2D/MoveWithPlayer" unique_id=1522601509]
+position = Vector2(-112, 0)
+shape = SubResource("RectangleShape2D_80ldp")
+
 [node name="CameraOffset" parent="MovingStuff/Node2D" unique_id=497969490 instance=ExtResource("7_pcbp7")]
+visible = false
 offset_amount = Vector2(256, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingStuff/Node2D/CameraOffset" unique_id=1215593602]
@@ -113,14 +121,17 @@ position = Vector2(-9, -109.25)
 shape = SubResource("RectangleShape2D_526j8")
 
 [node name="CameraOffset2" parent="MovingStuff/Node2D" unique_id=1306769297 instance=ExtResource("7_pcbp7")]
+visible = false
 position = Vector2(-80, 244)
 offset_amount = Vector2(256, -64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingStuff/Node2D/CameraOffset2" unique_id=429697578]
+visible = false
 position = Vector2(72, -204.5)
 shape = SubResource("RectangleShape2D_fki0y")
 
 [node name="CameraOffset3" parent="MovingStuff/Node2D" unique_id=1801858583 instance=ExtResource("7_pcbp7")]
+visible = false
 position = Vector2(-32, -15)
 offset_amount = Vector2(256, 0)
 
