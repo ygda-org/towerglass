@@ -67,136 +67,136 @@ texture = ExtResource("3_qable")
 
 [node name="SelectButton" parent="." unique_id=911375310 instance=ExtResource("1_o7pgs")]
 layout_mode = 1
-offset_left = 351.0
-offset_top = 488.0
-offset_right = 399.0
-offset_bottom = 536.0
+offset_left = 363.0
+offset_top = 490.0
+offset_right = 411.0
+offset_bottom = 538.0
 number = 1
 level_song = 1
 
 [node name="SelectButton2" parent="." unique_id=1273816794 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 488.0
-offset_right = 464.0
-offset_bottom = 536.0
+offset_left = 425.0
+offset_top = 490.0
+offset_right = 473.0
+offset_bottom = 538.0
 number = 2
 level_song = 1
 
 [node name="SelectButton3" parent="." unique_id=572162557 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 478.0
-offset_top = 488.0
-offset_right = 526.0
-offset_bottom = 536.0
+offset_left = 487.0
+offset_top = 490.0
+offset_right = 535.0
+offset_bottom = 538.0
 number = 3
 level_song = 1
 
 [node name="SelectButton4" parent="." unique_id=157797786 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 541.0
-offset_top = 484.0
-offset_right = 589.0
-offset_bottom = 532.0
+offset_left = 549.0
+offset_top = 490.0
+offset_right = 597.0
+offset_bottom = 538.0
 number = 4
 level_song = 1
 
 [node name="SelectButton5" parent="." unique_id=676968990 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 526.0
+offset_left = 511.0
 offset_top = 438.0
-offset_right = 574.0
+offset_right = 559.0
 offset_bottom = 486.0
 number = 5
 level_song = 2
 
 [node name="SelectButton6" parent="." unique_id=329849017 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 459.0
-offset_top = 431.0
-offset_right = 507.0
-offset_bottom = 479.0
+offset_left = 456.0
+offset_top = 429.0
+offset_right = 504.0
+offset_bottom = 477.0
 number = 6
 level_song = 2
 
 [node name="SelectButton7" parent="." unique_id=1130250613 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 397.0
-offset_top = 424.0
-offset_right = 445.0
-offset_bottom = 472.0
+offset_left = 398.0
+offset_top = 421.0
+offset_right = 446.0
+offset_bottom = 469.0
 number = 7
 level_song = 2
 
 [node name="SelectButton8" parent="." unique_id=1954730422 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 390.0
-offset_top = 375.0
-offset_right = 438.0
-offset_bottom = 423.0
+offset_left = 405.0
+offset_top = 366.0
+offset_right = 453.0
+offset_bottom = 414.0
 number = 8
 level_song = 2
 
 [node name="SelectButton9" parent="." unique_id=1790975249 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 443.0
+offset_left = 456.0
 offset_top = 352.0
-offset_right = 491.0
+offset_right = 504.0
 offset_bottom = 400.0
 number = 9
 level_song = 3
 
 [node name="SelectButton10" parent="." unique_id=1944389429 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 324.0
-offset_right = 543.0
-offset_bottom = 372.0
+offset_left = 505.0
+offset_top = 322.0
+offset_right = 553.0
+offset_bottom = 370.0
 number = 10
 level_song = 3
 
 [node name="SelectButton11" parent="." unique_id=1453358548 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 423.0
-offset_top = 290.0
-offset_right = 471.0
-offset_bottom = 338.0
+offset_left = 456.0
+offset_top = 291.0
+offset_right = 504.0
+offset_bottom = 339.0
 number = 11
 level_song = 3
 
 [node name="SelectButton12" parent="." unique_id=416185502 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 481.0
-offset_top = 264.0
-offset_right = 529.0
-offset_bottom = 312.0
+offset_left = 408.0
+offset_top = 273.0
+offset_right = 456.0
+offset_bottom = 321.0
 number = 12
 level_song = 3
 
 [node name="SelectButton13" parent="." unique_id=1335219038 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 421.0
-offset_top = 227.0
-offset_right = 469.0
-offset_bottom = 275.0
+offset_left = 456.0
+offset_top = 239.0
+offset_right = 504.0
+offset_bottom = 287.0
 number = 13
 level_song = 4
 
 [node name="SelectButton14" parent="." unique_id=1916954849 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 489.0
-offset_top = 213.0
-offset_right = 537.0
-offset_bottom = 261.0
+offset_left = 504.0
+offset_top = 214.0
+offset_right = 552.0
+offset_bottom = 262.0
 number = 14
 level_song = 4
 
 [node name="SelectButton15" parent="." unique_id=419798285 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
 offset_left = 456.0
-offset_top = 162.0
+offset_top = 171.0
 offset_right = 504.0
-offset_bottom = 210.0
+offset_bottom = 219.0
 number = 15
 level_song = 4
 
