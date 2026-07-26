@@ -183,7 +183,6 @@ number = 13
 level_song = 4
 
 [node name="SelectButton14" parent="." unique_id=1916954849 instance=ExtResource("1_o7pgs")]
-visible = false
 layout_mode = 0
 offset_left = 490.0
 offset_top = 221.0
