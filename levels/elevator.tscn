@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://7tc7yjex5is7" path="res://levels/level_objects/turret/turret.tscn" id="4_n26lo"]
 [ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="4_p38r5"]
 [ext_resource type="PackedScene" uid="uid://be4u14xv0hk2n" path="res://player/player.tscn" id="5_8l71e"]
-[ext_resource type="PackedScene" uid="uid://bk2hxtq0v4hxc" path="res://levels/level_objects/moveable/moveable_brick.tscn" id="6_hric6"]
 [ext_resource type="TileSet" uid="uid://2861upndp1vw" path="res://assets/tiles/tile_set.tres" id="6_nqwg8"]
+[ext_resource type="PackedScene" uid="uid://cgp1wgixbjlfo" path="res://small_danger_cog.tscn" id="8_nqwg8"]
 [ext_resource type="PackedScene" uid="uid://62t1oc04japv" path="res://levels/level_objects/camera_offset.tscn" id="11_nqwg8"]
 
 [sub_resource type="Curve2D" id="Curve2D_n26lo"]
@@ -106,16 +106,11 @@ wait_until_player_touches_to_move = true
 position = Vector2(27, -60.485107)
 scale = Vector2(1, 1.3148936)
 curve = SubResource("Curve2D_hric6")
-time = 6.0
+time = 10.0
 trans_type = 0
 ease_type = 0
 
-[node name="MoveablePlatform" parent="Piston/MovingStuff" unique_id=2132439178 instance=ExtResource("3_hric6")]
-position = Vector2(-140, -1280)
-collision_layer = 49
-size = 4
-tile = ExtResource("6_hric6")
-wait_until_player_touches_to_move = true
+[node name="SmallDangerCog" parent="Piston/MovingStuff" unique_id=1725336857 instance=ExtResource("8_nqwg8")]
 
 [node name="MovingStuff2" parent="Piston" unique_id=38087827 instance=ExtResource("2_n26lo")]
 position = Vector2(27, -60.485107)
@@ -125,12 +120,9 @@ time = 6.0
 trans_type = 0
 ease_type = 0
 
-[node name="MoveablePlatform" parent="Piston/MovingStuff2" unique_id=1562163498 instance=ExtResource("3_hric6")]
-position = Vector2(-140, -1480)
-collision_layer = 49
-size = 4
-tile = ExtResource("6_hric6")
-wait_until_player_touches_to_move = true
+[node name="SmallDangerCog" parent="Piston/MovingStuff2" unique_id=275890011 instance=ExtResource("8_nqwg8")]
+position = Vector2(-27, 46.000004)
+scale = Vector2(1, 0.76051784)
 
 [node name="MovingStuff4" parent="Piston" unique_id=1766630227 instance=ExtResource("2_n26lo")]
 position = Vector2(27, -60.485107)
@@ -140,12 +132,7 @@ time = 6.0
 trans_type = 0
 ease_type = 0
 
-[node name="MoveablePlatform" parent="Piston/MovingStuff4" unique_id=1814528822 instance=ExtResource("3_hric6")]
-position = Vector2(-140, -1800)
-collision_layer = 49
-size = 4
-tile = ExtResource("6_hric6")
-wait_until_player_touches_to_move = true
+[node name="SmallDangerCog" parent="Piston/MovingStuff4" unique_id=1759722681 instance=ExtResource("8_nqwg8")]
 
 [node name="Rats" type="Node" parent="." unique_id=195402771]
 
@@ -208,4 +195,4 @@ offset_amount = Vector2(0, -64)
 position = Vector2(26.5, -1338.5)
 shape = SubResource("RectangleShape2D_0es7p")
 
-[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@24971" to="DecorationTileMapLayer/@Area2D@24971" method="_on_body_entered"]
+[connection signal="body_entered" from="DecorationTileMapLayer/Checkpoint" to="DecorationTileMapLayer/Checkpoint" method="_on_body_entered"]

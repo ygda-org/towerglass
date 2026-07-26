@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://d5m3kp8lwgis"]
 
 [ext_resource type="Script" uid="uid://c5jfh1b50r2cm" path="res://levels/level_objects/turret/bullet.gd" id="1_pcfic"]
-[ext_resource type="Texture2D" uid="uid://yg2qdls36ka8" path="res://assets/turret/bullet.png" id="2_vllv5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pcfic"]
+load_path = "res://.godot/imported/bullet.png-1e77a411264e1acf0bfe69b47d0da3e0.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55d6i"]
 radius = 3.0
@@ -12,15 +14,16 @@ collision_mask = 2
 script = ExtResource("1_pcfic")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2017460575]
-position = Vector2(-8, -7)
-texture = ExtResource("2_vllv5")
+position = Vector2(-8, -8)
+texture = SubResource("CompressedTexture2D_pcfic")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=257196667]
 shape = SubResource("CircleShape2D_55d6i")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=831059812]
-rect = Rect2(-4, -4, 9, 8)
+position = Vector2(-2, -1)
+rect = Rect2(-4, -4, 12, 10)
 
 [node name="Timer" type="Timer" parent="." unique_id=1799034371]
 one_shot = true
