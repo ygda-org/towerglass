@@ -37,6 +37,7 @@ size = Vector2(16, 16)
 size = Vector2(18, 18)
 
 [node name="OnTile" type="AnimatableBody2D" unique_id=905601576]
+collision_layer = 257
 collision_mask = 0
 script = ExtResource("1_ydero")
 initial_state = true
