@@ -12,7 +12,7 @@ const LEVEL_ORDER = ["res://levels/tutorial.tscn",
 	"res://levels/motion_turrets.tscn",
 	"res://levels/challenge_1.tscn",
 	"res://levels/limit.tscn",
-	"res://levels/puzzling.tscn",
+#	"res://levels/puzzling.tscn",
 	"res://levels/elevator.tscn",
 	"res://levels/finale.tscn"]
 
