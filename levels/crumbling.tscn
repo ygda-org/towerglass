@@ -26,7 +26,7 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_fgeik"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 542, 296, 0, 0, 0, 0, 625, 296, 0, 0, 0, 0, 714, 296)
+"points": PackedVector2Array(0, 0, 0, 0, 556, 296, 0, 0, 0, 0, 625, 296, 0, 0, 0, 0, 714, 296)
 }
 point_count = 3
 
@@ -34,14 +34,14 @@ point_count = 3
 size = Vector2(226, 421)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5yq7"]
-size = Vector2(183, 389)
+size = Vector2(183, 385.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh7nu"]
 size = Vector2(111, 152)
 
 [sub_resource type="Curve2D" id="Curve2D_jscrd"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 83, 263, 0, 0, 0, 0, 448, 263)
+"points": PackedVector2Array(0, 0, 0, 0, 122, 265, 0, 0, 0, 0, 448, 263)
 }
 point_count = 2
 
@@ -112,7 +112,7 @@ wait_until_player_touches_to_move = true
 go_back = false
 
 [node name="MoveablePlatform" parent="Challenge2/MovingStuff2" unique_id=662124419 instance=ExtResource("8_gwo7s")]
-position = Vector2(713, 296)
+position = Vector2(542, 296)
 tile = ExtResource("9_gwo7s")
 wait_until_player_touches_to_move = true
 
@@ -146,7 +146,7 @@ position = Vector2(905, 388)
 offset_amount = Vector2(0, 136)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Challenge3/CameraOffset" unique_id=2036217119]
-position = Vector2(199, -380)
+position = Vector2(199, -381.75)
 shape = SubResource("RectangleShape2D_p5yq7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Challenge3/CameraOffset" unique_id=726378188]
@@ -165,7 +165,7 @@ return_quickly = true
 trans_type = 0
 
 [node name="MoveablePlatform" parent="Challenge4/MovingStuff" unique_id=888793871 instance=ExtResource("8_gwo7s")]
-position = Vector2(425, 263)
+position = Vector2(83, 263)
 size = 3
 tile = ExtResource("9_gwo7s")
 wait_until_player_touches_to_move = true
@@ -195,4 +195,4 @@ position = Vector2(710.5, 182.5)
 shape = SubResource("RectangleShape2D_0es7p")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@75066" to="TileMapLayer/@Area2D@75066" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22309" to="TileMapLayer/@Area2D@22309" method="_on_body_entered"]
