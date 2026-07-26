@@ -135,7 +135,7 @@ offset_top = 366.0
 offset_right = 456.0
 offset_bottom = 414.0
 number = 8
-level_song = 2
+level_song = 3
 
 [node name="SelectButton9" parent="." unique_id=1790975249 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
@@ -144,7 +144,7 @@ offset_top = 352.0
 offset_right = 504.0
 offset_bottom = 400.0
 number = 9
-level_song = 3
+level_song = 2
 
 [node name="SelectButton10" parent="." unique_id=1944389429 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
