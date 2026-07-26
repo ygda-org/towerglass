@@ -103,9 +103,9 @@ level_song = 1
 
 [node name="SelectButton5" parent="." unique_id=676968990 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 511.0
+offset_left = 504.0
 offset_top = 438.0
-offset_right = 559.0
+offset_right = 552.0
 offset_bottom = 486.0
 number = 5
 level_song = 2
@@ -121,18 +121,18 @@ level_song = 2
 
 [node name="SelectButton7" parent="." unique_id=1130250613 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 398.0
+offset_left = 408.0
 offset_top = 421.0
-offset_right = 446.0
+offset_right = 456.0
 offset_bottom = 469.0
 number = 7
 level_song = 2
 
 [node name="SelectButton8" parent="." unique_id=1954730422 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 405.0
+offset_left = 408.0
 offset_top = 366.0
-offset_right = 453.0
+offset_right = 456.0
 offset_bottom = 414.0
 number = 8
 level_song = 2
@@ -148,9 +148,9 @@ level_song = 3
 
 [node name="SelectButton10" parent="." unique_id=1944389429 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 505.0
+offset_left = 504.0
 offset_top = 322.0
-offset_right = 553.0
+offset_right = 552.0
 offset_bottom = 370.0
 number = 10
 level_song = 3
