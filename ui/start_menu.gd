@@ -54,8 +54,6 @@ func _on_settings_button_pressed():
 		SFX.play(SFX.Labels.BUTTONCLICK)
 		$CanvasLayer/PauseMenu.toggle_pause()
 		$CanvasLayer/PauseMenu/LevelSelectButton.visible = false
-		$CanvasLayer/PauseMenu/Cover.visible = true
-
 
 func _on_credits_button_pressed():
 	if not intro_playing:

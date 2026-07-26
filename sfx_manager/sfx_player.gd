@@ -44,9 +44,6 @@ const print_sounds: bool = true
 
 ## play a sound effect, as defined by label. Intended should be SFX.play(SFX.Labels.NAME)
 func play(label: Labels):
-	if print_sounds:
-		print("playing: ", Labels.keys()[label])
-		
 	if has_node(Labels.keys()[label]):
 		return
 	var audio = AudioStreamPlayer.new()
@@ -59,6 +56,8 @@ func play(label: Labels):
 	add_child(audio)
 	audio.finished.connect(audio.queue_free)
 	audio.playing = true
+	if print_sounds:
+		print("playing: ", Labels.keys()[label])
 	if setting.min_delay == 0:
 		return
 	var timer : Timer = Timer.new()
