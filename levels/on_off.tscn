@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4fyx3j4wo0g5" path="res://levels/level_objects/on_off_tiles/off_tile.tscn" id="3_wbeui"]
 [ext_resource type="PackedScene" uid="uid://1vjjsky8w2o8" path="res://levels/level_objects/moveable/moving_stuff.tscn" id="3_wf343"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="4_wbeui"]
+[ext_resource type="PackedScene" uid="uid://cp7kql7qpqvxm" path="res://levels/level_objects/moveable/moveable_tile.tscn" id="5_khffv"]
 [ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="6_n3dx3"]
 [ext_resource type="PackedScene" uid="uid://62t1oc04japv" path="res://levels/level_objects/camera_offset.tscn" id="10_5dyyl"]
 
@@ -92,12 +93,10 @@ wait_until_player_touches_to_move = true
 return_quickly = true
 move_in_editor = null
 
-[node name="Node2D" type="Node2D" parent="Challenge1/MovingStuff" unique_id=1640133118]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Challenge1/MovingStuff/Node2D" unique_id=1999661654]
-position = Vector2(-8, 0)
-tile_map_data = PackedByteArray("AAD9/wAAAQAAAAAABwD+/wAAAQAAAAAABwD//wAAAQAAAAAABwAAAAAAAQAAAAAABwABAAAAAQAAAAAABwACAAAAAQAAAAAABwA=")
-tile_set = ExtResource("1_2kv7s")
+[node name="MoveablePlatform" parent="Challenge1/MovingStuff" unique_id=1189294733 instance=ExtResource("4_wbeui")]
+position = Vector2(-624, 180)
+tile = ExtResource("5_khffv")
+wait_until_player_touches_to_move = true
 
 [node name="Challenge2" type="Node" parent="." unique_id=1796187974]
 
@@ -201,4 +200,4 @@ position = Vector2(2482.5, -1202.25)
 shape = SubResource("RectangleShape2D_0es7p")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@107088" to="TileMapLayer/@Area2D@107088" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@130091" to="TileMapLayer/@Area2D@130091" method="_on_body_entered"]
