@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6xiauef5mkcv" path="res://ui/pause_menu/pause_menu.gd" id="1_b4b0p"]
 [ext_resource type="Theme" uid="uid://b10b8y1i6yf6p" path="res://ui/pause_menu/pause_theme.tres" id="1_f2x4c"]
-[ext_resource type="Texture2D" uid="uid://cynq8rl18a2hq" path="res://assets/ui/pause_menu/full.png" id="3_uraes"]
+[ext_resource type="Texture2D" uid="uid://noxyfvn6f4jb" path="res://assets/background/final_pause_menu.PNG" id="3_le02u"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ihaig"]
 load_path = "res://.godot/imported/exit_button.png-63f00ed285b517f7192013f72821038f.ctex"
@@ -33,7 +33,7 @@ layout_mode = 0
 offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 2
-texture = ExtResource("3_uraes")
+texture = ExtResource("3_le02u")
 stretch_mode = 4
 
 [node name="ExitButton" type="TextureButton" parent="." unique_id=785843862]
