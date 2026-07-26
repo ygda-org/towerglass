@@ -39,8 +39,9 @@ func crumble():
 
 func _physics_process(delta: float) -> void:
 	if not crumbling and (GameState.player.left_floor == self or GameState.player.right_floor == self) and GameState.player.velocity.y >= 0 and GameState.player.is_on_floor():
-		crumbling = true
-		crumble()
+		if GameState.player.velocity == 0:
+			crumbling = true
+			crumble()
 	if queue_reenable and not $Area2D.has_overlapping_bodies():
 		$CollisionShape2D.disabled = false
 		$RatCollision/CollisionShape2D2.disabled = false
