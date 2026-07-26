@@ -108,4 +108,4 @@ var rec_sand_fall_vol
 func _process(_delta):
 	if sand_fall and GameState.player:
 		var player = GameState.player
-		sand_fall.volume_db = rec_sand_fall_vol + 30*(player.sand_in_bottom/player.total_sand)
+		sand_fall.volume_db = rec_sand_fall_vol + 20*(player.sand_in_bottom/player.total_sand)
