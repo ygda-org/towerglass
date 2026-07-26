@@ -2,13 +2,50 @@
 
 [ext_resource type="Texture2D" uid="uid://cibhdujli7tbw" path="res://assets/ui/pause_menu/exit_button.png" id="1_0njaf"]
 [ext_resource type="Script" uid="uid://dmbmpyfre7tfj" path="res://main/end_screen.gd" id="1_c5cid"]
+[ext_resource type="Texture2D" uid="uid://duvx46fbu2csi" path="res://assets/ui/ending/IMG_5789.png" id="2_fii3d"]
 [ext_resource type="Texture2D" uid="uid://cdbu4mre1q4mr" path="res://assets/ui/pause_menu/exit select.png" id="2_nu0cp"]
 [ext_resource type="Texture2D" uid="uid://cuce0gwe3vn0p" path="res://assets/ui/pause_menu/exit_button_hovered.png" id="3_c5cid"]
+[ext_resource type="Texture2D" uid="uid://be2v1efbqh861" path="res://assets/ui/ending/IMG_5790.png" id="3_wcb3e"]
+[ext_resource type="Texture2D" uid="uid://chqeln0y6ati4" path="res://assets/ui/ending/IMG_5791.png" id="4_6a421"]
+[ext_resource type="Texture2D" uid="uid://buaiwxvr6qv1u" path="res://assets/ui/ending/IMG_5792.png" id="5_8hm22"]
 [ext_resource type="Texture2D" uid="uid://bfvcrxrgbur1w" path="res://assets/ui/Final clocktower.png" id="5_uyro0"]
+[ext_resource type="Texture2D" uid="uid://cxanbqgtwl831" path="res://assets/ui/ending/IMG_5793.png" id="6_1yxlu"]
 [ext_resource type="FontFile" uid="uid://dkdscd1kuakmt" path="res://assets/ui/clean_font.ttf" id="6_or10m"]
+[ext_resource type="Texture2D" uid="uid://dlyb8jdg06lwv" path="res://assets/ui/ending/IMG_5794.png" id="7_s8im0"]
+[ext_resource type="Texture2D" uid="uid://bqs0lc2rymg4j" path="res://assets/ui/ending/IMG_5795.png" id="8_3ploe"]
+[ext_resource type="Texture2D" uid="uid://bee52j1a3gj3v" path="res://assets/ui/ending/IMG_5796.png" id="9_7i7s6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pmecv"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fii3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wcb3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6a421")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8hm22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1yxlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s8im0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3ploe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7i7s6")
+}],
+"loop": 0,
+"name": &"animation",
+"speed": 1.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_uyro0")
@@ -24,7 +61,9 @@ script = ExtResource("1_c5cid")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=930900567]
 position = Vector2(480, 270)
 sprite_frames = SubResource("SpriteFrames_pmecv")
+animation = &"animation"
 autoplay = "default"
+frame_progress = 0.89334935
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=852138925]
 offset_left = 890.0
