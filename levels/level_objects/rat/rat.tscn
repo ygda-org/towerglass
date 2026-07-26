@@ -151,7 +151,7 @@ one_way_collision = true
 position = Vector2(-10, -10)
 scale = Vector2(1.25, 1.2499999)
 sprite_frames = SubResource("SpriteFrames_526j8")
-animation = &"youch"
+animation = &"bite"
 centered = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2034564060]
