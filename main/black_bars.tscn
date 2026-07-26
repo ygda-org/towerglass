@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://duedriirvj5k2"]
+
+[node name="BlackBars" type="CanvasLayer" unique_id=828196370]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=372123549]
+offset_left = -457.0
+offset_top = -562.0
+offset_right = 1552.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=831312364]
+offset_left = -514.0
+offset_top = 540.0
+offset_right = 1495.0
+offset_bottom = 1102.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1850112099]
+offset_left = -502.0
+offset_top = -22.0
+offset_bottom = 540.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1414649923]
+offset_left = 960.0
+offset_top = -3.0
+offset_right = 1462.0
+offset_bottom = 559.0
+color = Color(0, 0, 0, 1)
