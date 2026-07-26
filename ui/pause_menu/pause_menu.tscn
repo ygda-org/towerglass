@@ -2,20 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c6xiauef5mkcv" path="res://ui/pause_menu/pause_menu.gd" id="1_b4b0p"]
 [ext_resource type="Theme" uid="uid://b10b8y1i6yf6p" path="res://ui/pause_menu/pause_theme.tres" id="1_f2x4c"]
-[ext_resource type="Texture2D" uid="uid://dwp4ccvk2y3nd" path="res://assets/ui/pause_menu/text.png" id="2_umsyg"]
-[ext_resource type="Texture2D" uid="uid://c05bu50x6ebxm" path="res://assets/background/pause_menu.png" id="4_f2x4c"]
+[ext_resource type="Texture2D" uid="uid://cynq8rl18a2hq" path="res://assets/ui/pause_menu/full.png" id="3_uraes"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ihaig"]
 load_path = "res://.godot/imported/exit_button.png-63f00ed285b517f7192013f72821038f.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_umsyg"]
-load_path = "res://.godot/imported/exit_button_hovered.png-33e31e213143dd969904ab7aaa17920a.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3jo5"]
+load_path = "res://.godot/imported/exit select.png-3581895d3c8fc391cf26cc62a2c7b204.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3qrb2"]
-load_path = "res://.godot/imported/level_select_button.png-36e809ad1a26b890169302075623d590.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_le02u"]
+load_path = "res://.godot/imported/return.png-b46ad67109b9ebaebef7fd6d537a0c8d.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b05md"]
-load_path = "res://.godot/imported/level_select_button_hovered.png-1dda5776e645a52537d79b8e59e40a4d.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b4b0p"]
+load_path = "res://.godot/imported/return select.png-b56054b92d5fa4f8603978d01cb7ff2f.ctex"
 
 [node name="PauseMenu" type="Control" unique_id=1246076756]
 process_mode = 3
@@ -34,7 +33,7 @@ layout_mode = 0
 offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 2
-texture = ExtResource("4_f2x4c")
+texture = ExtResource("3_uraes")
 stretch_mode = 4
 
 [node name="ExitButton" type="TextureButton" parent="." unique_id=785843862]
@@ -44,18 +43,17 @@ offset_top = 23.0
 offset_right = 920.0
 offset_bottom = 63.0
 texture_normal = SubResource("CompressedTexture2D_ihaig")
-texture_hover = SubResource("CompressedTexture2D_umsyg")
+texture_hover = SubResource("CompressedTexture2D_c3jo5")
 ignore_texture_size = true
 
 [node name="LevelSelectButton" type="TextureButton" parent="." unique_id=1972173389]
 layout_mode = 0
-offset_left = 370.0
-offset_top = 423.0
-offset_right = 410.0
-offset_bottom = 463.0
-texture_normal = SubResource("CompressedTexture2D_3qrb2")
-texture_hover = SubResource("CompressedTexture2D_b05md")
+offset_right = 960.0
+offset_bottom = 540.0
+texture_normal = SubResource("CompressedTexture2D_le02u")
+texture_hover = SubResource("CompressedTexture2D_b4b0p")
 ignore_texture_size = true
+stretch_mode = 0
 
 [node name="MasterSlider" type="Control" parent="." unique_id=1743899285]
 anchors_preset = 0
@@ -112,17 +110,6 @@ offset_bottom = 411.0
 max_value = 1.0
 step = 0.05
 value = 0.5
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=989957739]
-z_index = 9
-layout_mode = 0
-offset_left = 427.0
-offset_top = 435.0
-offset_right = 572.0
-offset_bottom = 471.0
-mouse_filter = 2
-texture = ExtResource("2_umsyg")
-expand_mode = 1
 
 [connection signal="mouse_entered" from="ExitButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
