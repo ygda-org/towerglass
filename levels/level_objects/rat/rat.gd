@@ -51,7 +51,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	biting = true
 	if GameState.player.velocity.y > 200:
 		$AnimatedSprite2D.play("youch")
-		GameState.player.velocity.y -= 250
+		GameState.player.velocity.y = -250
 	else:
 		$AnimatedSprite2D.play("bite")
 		SFX.play(SFX.Labels.BITE)
@@ -60,10 +60,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		await $AnimatedSprite2D.animation_finished
 	if $Area2D.overlaps_body(body):
 		SFX.play(SFX.Labels.BOUNCEOFFMOUSE)
-		GameState.player.velocity.y -= 250
+		GameState.player.velocity.y = -250
 		GameState.player.flip()
 	await get_tree().create_timer(0.05).timeout
-	GameState.player.velocity.x += (200 * dir)
+	GameState.player.velocity.x = (200 * dir)
 	GameState.player_jumped.emit()
 	biting = false
 	velo = 50
