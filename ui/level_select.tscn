@@ -72,7 +72,6 @@ offset_top = 490.0
 offset_right = 411.0
 offset_bottom = 538.0
 number = 1
-level_song = 1
 
 [node name="SelectButton2" parent="." unique_id=1273816794 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
@@ -81,7 +80,6 @@ offset_top = 490.0
 offset_right = 473.0
 offset_bottom = 538.0
 number = 2
-level_song = 1
 
 [node name="SelectButton3" parent="." unique_id=572162557 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
@@ -90,7 +88,6 @@ offset_top = 490.0
 offset_right = 535.0
 offset_bottom = 538.0
 number = 3
-level_song = 1
 
 [node name="SelectButton4" parent="." unique_id=157797786 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
@@ -99,7 +96,6 @@ offset_top = 490.0
 offset_right = 597.0
 offset_bottom = 538.0
 number = 4
-level_song = 1
 
 [node name="SelectButton5" parent="." unique_id=676968990 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
@@ -202,6 +198,15 @@ texture_normal = ExtResource("6_inwjl")
 texture_pressed = ExtResource("6_inwjl")
 texture_hover = ExtResource("7_we87s")
 stretch_mode = 5
+
+[node name="EndingButton" parent="." unique_id=648659281 instance=ExtResource("1_o7pgs")]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 3.0
+offset_right = 496.0
+offset_bottom = 51.0
+number = 15
+level_song = 0
 
 [connection signal="mouse_entered" from="Skip" to="." method="_on_skip_mouse_entered"]
 [connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]
