@@ -180,7 +180,6 @@ orientation = "north"
 shot_directions = Array[Vector2]([Vector2(-1, 0), Vector2(0, 1), Vector2(1, 0)])
 harmonic = true
 pause_time = 0.25
-bullet_duration = 1.0
 
 [node name="Turret2" parent="." unique_id=986591145 instance=ExtResource("9_n86lg")]
 position = Vector2(841, -192)
