@@ -4,15 +4,15 @@
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=372123549]
 offset_left = -457.0
-offset_top = -562.0
-offset_right = 1552.0
+offset_top = -787.0
+offset_right = 3245.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=831312364]
 offset_left = -514.0
 offset_top = 540.0
 offset_right = 1495.0
-offset_bottom = 1102.0
+offset_bottom = 1706.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=1850112099]
@@ -24,6 +24,6 @@ color = Color(0, 0, 0, 1)
 [node name="ColorRect4" type="ColorRect" parent="." unique_id=1414649923]
 offset_left = 960.0
 offset_top = -3.0
-offset_right = 1462.0
-offset_bottom = 559.0
+offset_right = 3256.0
+offset_bottom = 1702.0
 color = Color(0, 0, 0, 1)
