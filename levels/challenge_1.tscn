@@ -255,6 +255,7 @@ tile_map_data = PackedByteArray("AAA7AKn/AgACAAAAAAA8AKn/AgACAAIAAAA9AKn/AgACAAA
 tile_set = ExtResource("1_s6tru")
 
 [node name="LevelBounds" parent="." unique_id=277534187 instance=ExtResource("9_4q1gj")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=265562200]
 position = Vector2(464.5, -732)
