@@ -13,14 +13,15 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
+	if biting:
+		return
+		
 	move_and_slide()
 	
 	if player_visible == true:
 		SFX.play(SFX.Labels.SQUEAK)
 		
-	if biting:
-		return
+	
 	
 	if not is_on_floor():
 		$AnimatedSprite2D.play("air")

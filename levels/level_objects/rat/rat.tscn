@@ -85,7 +85,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"bite",
-"speed": 12.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -130,7 +130,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"youch",
-"speed": 12.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syxyi"]
@@ -151,7 +151,7 @@ one_way_collision = true
 position = Vector2(-10, -10)
 scale = Vector2(1.25, 1.2499999)
 sprite_frames = SubResource("SpriteFrames_526j8")
-animation = &"air"
+animation = &"youch"
 centered = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2034564060]
