@@ -162,4 +162,4 @@ position = Vector2(1176, -1337)
 size = 6
 tile = ExtResource("9_wnjpr")
 
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@28934" to="TileMapLayer/@Area2D@28934" method="_on_body_entered"]
