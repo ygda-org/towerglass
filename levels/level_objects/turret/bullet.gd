@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		if get_slide_collision(i).get_collider()==GameState.player:
 			SFX.play(SFX.Labels.PLAYERHIT)
-			GameState.player.damage(0.5)
+			GameState.player.damage(1.5)
 	if get_slide_collision_count() != 0:
 		if player_visible and not played_ding:
 			SFX.play(SFX.Labels.BULLETHITWALL)

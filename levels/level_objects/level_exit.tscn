@@ -86,6 +86,8 @@ particles_anim_loop = false
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="level_exit" type="Area2D" unique_id=1710757709]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_8dynk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387217242]

@@ -18,7 +18,7 @@ point_count = 2
 [node name="BestBuds" type="Node2D" unique_id=1446971564]
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("1_l2fvd")]
-position = Vector2(-304, -480)
+position = Vector2(27, -12)
 
 [node name="Background" parent="." unique_id=1886125022 instance=ExtResource("1_4xfpt")]
 
@@ -86,7 +86,7 @@ tile = ExtResource("6_o4lxu")
 wait_until_player_touches_to_move = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@39905" to="TileMapLayer/@Area2D@39905" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@39925" to="TileMapLayer/@Area2D@39925" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@39926" to="TileMapLayer/@Area2D@39926" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@39927" to="TileMapLayer/@Area2D@39927" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@238747" to="TileMapLayer/@Area2D@238747" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@238767" to="TileMapLayer/@Area2D@238767" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@238768" to="TileMapLayer/@Area2D@238768" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@238769" to="TileMapLayer/@Area2D@238769" method="_on_body_entered"]
