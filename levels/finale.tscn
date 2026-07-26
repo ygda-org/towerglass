@@ -68,10 +68,10 @@ position = Vector2(-36, -12)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1481114020]
 z_index = 4096
-offset_left = 4915.0
-offset_top = -1950.9998
-offset_right = 9457.924
-offset_bottom = 1987.3508
+offset_left = 5422.8584
+offset_top = -2706.1729
+offset_right = 10950.239
+offset_bottom = 1232.1777
 rotation = 2.1628306
 texture = SubResource("GradientTexture2D_5kg8m")
 
@@ -203,6 +203,6 @@ tile_map_data = PackedByteArray("AABFAOv/AAAPAAUAAABFAOz/AAARAAUAAABGAOz/AAAQAAU
 tile_set = ExtResource("1_8rwx0")
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@21974" to="TileMapLayer/@Area2D@21974" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@21984" to="TileMapLayer/@Area2D@21984" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22290" to="TileMapLayer/@Area2D@22290" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22300" to="TileMapLayer/@Area2D@22300" method="_on_body_entered"]
 [connection signal="body_entered" from="Offset/Checkpoint" to="Offset/Checkpoint" method="_on_body_entered"]
