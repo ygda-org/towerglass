@@ -15,12 +15,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
+	if biting:
+		return
 	
 	if player_visible == true:
 		SFX.play(SFX.Labels.SQUEAK)
 		
-	if biting:
-		return
+	
 	
 	if not is_on_floor():
 		$AnimatedSprite2D.play("air")
@@ -49,6 +50,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		return
 	
 	biting = true
+	velo = 0
 	if GameState.player.velocity.y > 200:
 		$AnimatedSprite2D.play("youch")
 		GameState.player.velocity.y = -250
@@ -56,7 +58,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$AnimatedSprite2D.play("bite")
 		SFX.play(SFX.Labels.BITE)
 		SFX.play(SFX.Labels.PLAYERHIT)
-		velo = 0
 		await $AnimatedSprite2D.animation_finished
 	if $Area2D.overlaps_body(body):
 		SFX.play(SFX.Labels.BOUNCEOFFMOUSE)

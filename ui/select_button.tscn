@@ -12,6 +12,8 @@ texture_pressed = ExtResource("1_5fcav")
 texture_hover = ExtResource("2_q34ee")
 stretch_mode = 0
 script = ExtResource("3_ld75t")
+number = null
+level_song = null
 
 [node name="Number" type="Label" parent="." unique_id=258695258]
 layout_mode = 1
