@@ -133,9 +133,6 @@ position = Vector2(1066, -1787)
 [node name="Rat2" parent="TileMapLayer" unique_id=1599368939 instance=ExtResource("3_dcoxu")]
 position = Vector2(941, -2043)
 
-[node name="Rat3" parent="TileMapLayer" unique_id=1003057350 instance=ExtResource("3_dcoxu")]
-position = Vector2(711, -2147)
-
 [node name="Rat4" parent="TileMapLayer" unique_id=1937808738 instance=ExtResource("3_dcoxu")]
 position = Vector2(729.22864, -2369.8918)
 
