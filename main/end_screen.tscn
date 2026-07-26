@@ -62,8 +62,7 @@ script = ExtResource("1_c5cid")
 position = Vector2(480, 270)
 sprite_frames = SubResource("SpriteFrames_pmecv")
 animation = &"animation"
-autoplay = "default"
-frame_progress = 0.89334935
+autoplay = "animation"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=852138925]
 offset_left = 890.0
