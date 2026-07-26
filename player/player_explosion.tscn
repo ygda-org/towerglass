@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://wvgqqqg27y5d"]
+
+[ext_resource type="Script" uid="uid://6xdphxld38eh" path="res://player/player_explosion.gd" id="1_7xtf2"]
+[ext_resource type="Texture2D" uid="uid://c1nph86a75scp" path="res://assets/hourglass/hg_death.png" id="1_gt538"]
+[ext_resource type="Texture2D" uid="uid://535ojd70drt" path="res://assets/hourglass/hg_idlesand.png" id="3_in0vb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xtf2"]
+atlas = ExtResource("1_gt538")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in0vb"]
+atlas = ExtResource("1_gt538")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xtf2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xtf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in0vb")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neryi"]
+atlas = ExtResource("3_in0vb")
+region = Rect2(0, 68, 48, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7e6v"]
+atlas = ExtResource("3_in0vb")
+region = Rect2(0, 20, 48, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7v2t"]
+atlas = ExtResource("3_in0vb")
+region = Rect2(0, 68, 48, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbevl"]
+atlas = ExtResource("3_in0vb")
+region = Rect2(48, 68, 48, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1sp7"]
+atlas = ExtResource("3_in0vb")
+region = Rect2(96, 68, 48, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj7wx"]
+atlas = ExtResource("3_in0vb")
+region = Rect2(0, 20, 48, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogu33"]
+atlas = ExtResource("3_in0vb")
+region = Rect2(48, 20, 48, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk43j"]
+atlas = ExtResource("3_in0vb")
+region = Rect2(96, 20, 48, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_in0vb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neryi")
+}],
+"loop": 0,
+"name": &"default_blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7e6v")
+}],
+"loop": 1,
+"name": &"default_yellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7v2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbevl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1sp7")
+}],
+"loop": 1,
+"name": &"spill_blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj7wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogu33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk43j")
+}],
+"loop": 0,
+"name": &"spill_yellow",
+"speed": 4.0
+}]
+
+[node name="PlayerExplosion" type="Node2D" unique_id=1481698308]
+script = ExtResource("1_7xtf2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1682641298]
+visible = false
+position = Vector2(0, 8)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(64, 24, 16, 8)
+
+[node name="ExplosionPieces" type="Node2D" parent="." unique_id=1364529349]
+visible = false
+
+[node name="Head1" type="Sprite2D" parent="ExplosionPieces" unique_id=1015391393]
+position = Vector2(-4, -8)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(32, 8, 8, 8)
+
+[node name="Head2" type="Sprite2D" parent="ExplosionPieces" unique_id=955402157]
+position = Vector2(0, -8)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(48, 8, 16, 8)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ExplosionPieces" unique_id=926883647]
+position = Vector2(4, -2)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(80, 8, 8, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ExplosionPieces" unique_id=1033798875]
+position = Vector2(-3, -2)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(96, 8, 16, 16)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ExplosionPieces" unique_id=1510561789]
+position = Vector2(1, 1)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(120, 8, 8, 16)
+
+[node name="Sprite2D6" type="Sprite2D" parent="ExplosionPieces" unique_id=587639221]
+position = Vector2(4, 4)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(136, 8, 8, 16)
+
+[node name="Sprite2D7" type="Sprite2D" parent="ExplosionPieces" unique_id=1190702317]
+position = Vector2(-4, 1)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(0, 40, 16, 16)
+
+[node name="Sprite2D8" type="Sprite2D" parent="ExplosionPieces" unique_id=224099667]
+position = Vector2(1, 1)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(16, 40, 16, 16)
+
+[node name="Sprite2D9" type="Sprite2D" parent="ExplosionPieces" unique_id=330517014]
+position = Vector2(-1, -1)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(32, 40, 8, 16)
+
+[node name="Sprite2D10" type="Sprite2D" parent="ExplosionPieces" unique_id=1168464365]
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="Sprite2D11" type="Sprite2D" parent="ExplosionPieces" unique_id=1706484515]
+position = Vector2(2, -3)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(64, 48, 16, 16)
+
+[node name="Sprite2D12" type="Sprite2D" parent="ExplosionPieces" unique_id=2015526131]
+position = Vector2(1, -4)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 16)
+
+[node name="Sprite2D13" type="Sprite2D" parent="ExplosionPieces" unique_id=221749411]
+position = Vector2(-2, -1)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(96, 48, 16, 16)
+
+[node name="Sprite2D14" type="Sprite2D" parent="ExplosionPieces" unique_id=1231829494]
+position = Vector2(0, 3)
+texture = ExtResource("1_gt538")
+region_enabled = true
+region_rect = Rect2(120, 56, 8, 8)
+
+[node name="Timer" type="Timer" parent="." unique_id=903033946]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2000991073]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=917848283]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_7xtf2")
+
+[node name="Sand" type="AnimatedSprite2D" parent="." unique_id=526191365]
+position = Vector2(0, 4)
+sprite_frames = SubResource("SpriteFrames_in0vb")
+animation = &"default_blue"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
