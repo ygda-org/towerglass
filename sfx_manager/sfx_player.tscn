@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bgj24cshjlmbo" path="res://assets/sfx/ui/player/flip.mp3" id="8_uedv3"]
 [ext_resource type="AudioStream" uid="uid://dixtdhirlu2k1" path="res://assets/sfx/ui/player/hourglass_fall.mp3" id="10_a1kgk"]
 [ext_resource type="AudioStream" uid="uid://k56h3wi54uf" path="res://assets/sfx/ui/player/towercrosswhoosh.mp3" id="10_ffh7i"]
-[ext_resource type="AudioStream" uid="uid://bb3is4ecf0yyh" path="res://assets/sfx/ui/player/jump_charge.mp3" id="11_uedv3"]
+[ext_resource type="AudioStream" uid="uid://bbyywib1m0e2c" path="res://assets/sfx/ui/player/chargeup.mp3" id="12_il4oj"]
 [ext_resource type="AudioStream" uid="uid://bbv5vh7v1x5m7" path="res://assets/sfx/ambience/clock.wav" id="12_kfywt"]
 [ext_resource type="AudioStream" uid="uid://cedlwh1wpp8w6" path="res://assets/sfx/ambience/gears.wav" id="13_a1kgk"]
 [ext_resource type="AudioStream" uid="uid://c67lkth71on7w" path="res://assets/sfx/ambience/industry_ambience.wav" id="14_rovoo"]
@@ -114,7 +114,10 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 [sub_resource type="Resource" id="Resource_rovoo"]
 script = ExtResource("2_x0386")
 bus = "SFX"
-stream = ExtResource("11_uedv3")
+stream = ExtResource("12_il4oj")
+volume = -1.0
+volume_variance = 1.5
+pitch_variance = 0.1
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_bblqd"]
