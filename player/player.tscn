@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg1ofmw7qpb2j" path="res://ui/pause_menu/pause_menu.tscn" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://bnmlb7f0wsmxm" path="res://assets/hourglass/hg_flip.png" id="3_yw30f"]
 [ext_resource type="Texture2D" uid="uid://535ojd70drt" path="res://assets/hourglass/hg_idlesand.png" id="4_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://c1nph86a75scp" path="res://assets/hourglass/hg_death.png" id="5_hg6s5"]
 [ext_resource type="Script" uid="uid://bi3gpmkqlfe5x" path="res://player/ambience_player.gd" id="7_boad6"]
 [ext_resource type="Texture2D" uid="uid://5sjhumhccca2" path="res://assets/programmer_art/SandParticle.png" id="8_rgyib"]
 
@@ -218,6 +219,14 @@ region = Rect2(48, 0, 48, 48)
 atlas = ExtResource("2_g1dw6")
 region = Rect2(0, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjxoa"]
+atlas = ExtResource("5_hg6s5")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gswnw"]
+atlas = ExtResource("5_hg6s5")
+region = Rect2(16, 0, 16, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
 atlas = ExtResource("2_g1dw6")
 region = Rect2(0, 0, 48, 48)
@@ -302,6 +311,17 @@ animations = [{
 "loop": 1,
 "name": &"blink",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjxoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gswnw")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -467,6 +487,7 @@ collision_layer = 0
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetDetection" unique_id=1047584152]
+visible = false
 shape = SubResource("RectangleShape2D_0es7p")
 
 [node name="Mask" type="Sprite2D" parent="." unique_id=777311086]
@@ -480,8 +501,12 @@ sprite_frames = SubResource("SpriteFrames_5fofi")
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=531156807]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_55d6i")
+animation = &"death"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1325916624]
+visible = false
 shape = SubResource("CapsuleShape2D_jehdt")
 
 [node name="Placeholder" type="Label" parent="." unique_id=197115182]
@@ -525,6 +550,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="HurtBoxCollision" type="CollisionShape2D" parent="Hurtbox" unique_id=1113504727]
+visible = false
 shape = SubResource("CapsuleShape2D_jwd6l")
 
 [node name="DeathCooldown" type="Timer" parent="." unique_id=1588580545]

@@ -65,9 +65,10 @@ metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 script = ExtResource("2_x0386")
 bus = "SFX"
 stream = ExtResource("6_y3ulh")
-volume = -5.0
+volume = 12.0
 volume_variance = 1.5
 pitch_variance = 0.1
+min_delay = 5.0
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_vel8a"]

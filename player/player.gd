@@ -239,7 +239,7 @@ func flip():
 
 func damage(dmg: float) -> void:
 	total_sand -= dmg
-	sand_in_bottom = min(0, sand_in_bottom-dmg)
+	sand_in_bottom = max(0, sand_in_bottom-dmg)
 	$HitParticle.emitting = true
 	$HitParticle.emitting = false
 	
@@ -248,7 +248,12 @@ func die() -> void:
 	if is_dead:
 		return
 	is_dead = true
+	var explosion = load("uid://wvgqqqg27y5d").instantiate()
+	explosion.global_position = global_position
+	explosion.bottom_name = sand_bottom_col
+	get_parent().add_child(explosion)
 	visible = false
+	await explosion.exploded
 	SceneSwitcher.go_to_scene(GameState.current_lvl_path)
 	#has_moved = false
 	#if $DeathCooldown.time_left > 0.0:
