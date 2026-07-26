@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://csxvxvl2dpibo" path="res://assets/tiles/ground_tiles.png" id="1_vl7tc"]
 [ext_resource type="PackedScene" uid="uid://b7f8rdl578o7p" path="res://levels/level_objects/on_off_tiles/on_tile.tscn" id="2_62pk5"]
 [ext_resource type="PackedScene" uid="uid://c4fyx3j4wo0g5" path="res://levels/level_objects/on_off_tiles/off_tile.tscn" id="3_0hpsc"]
+[ext_resource type="PackedScene" uid="uid://b0qpmuh4rk530" path="res://levels/level_objects/med_cog.tscn" id="3_qqwny"]
 [ext_resource type="PackedScene" uid="uid://bn4m4aljk32wv" path="res://levels/level_objects/crumbling_tile.tscn" id="4_0hpsc"]
 [ext_resource type="PackedScene" uid="uid://ct4f3pu1ikrvo" path="res://levels/level_objects/moveable/moveable_platform.tscn" id="4_18k7h"]
 [ext_resource type="PackedScene" uid="uid://legscceb6kci" path="res://levels/level_objects/checkpoint.tscn" id="5_k8n7d"]
@@ -437,6 +438,7 @@ scenes/6/scene = ExtResource("7_thv03")
 scenes/7/scene = ExtResource("8_iak18")
 scenes/8/scene = ExtResource("9_wlwvt")
 scenes/9/scene = ExtResource("10_fprp5")
+scenes/10/scene = ExtResource("3_qqwny")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18k7h"]
 texture = ExtResource("8_qpy5e")
