@@ -166,38 +166,29 @@ level_song = 3
 
 [node name="SelectButton12" parent="." unique_id=416185502 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 408.0
-offset_top = 273.0
-offset_right = 456.0
-offset_bottom = 321.0
+offset_left = 413.0
+offset_top = 244.0
+offset_right = 461.0
+offset_bottom = 292.0
 number = 12
 level_song = 3
 
 [node name="SelectButton13" parent="." unique_id=1335219038 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 239.0
-offset_right = 504.0
-offset_bottom = 287.0
+offset_left = 492.0
+offset_top = 217.0
+offset_right = 540.0
+offset_bottom = 265.0
 number = 13
 level_song = 4
 
 [node name="SelectButton14" parent="." unique_id=1916954849 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 504.0
-offset_top = 214.0
-offset_right = 552.0
-offset_bottom = 262.0
-number = 14
-level_song = 4
-
-[node name="SelectButton15" parent="." unique_id=419798285 instance=ExtResource("1_o7pgs")]
-layout_mode = 0
 offset_left = 456.0
-offset_top = 171.0
+offset_top = 167.0
 offset_right = 504.0
-offset_bottom = 219.0
-number = 15
+offset_bottom = 215.0
+number = 14
 level_song = 4
 
 [node name="Skip" type="TextureButton" parent="." unique_id=1700961927]

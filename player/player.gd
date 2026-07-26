@@ -48,6 +48,7 @@ var sway_dir = 1
 
 var is_dead : bool = false
 
+
 func _ready() -> void:
 	$CanvasLayer.visible = true
 	GameState.player = self

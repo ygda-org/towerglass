@@ -501,9 +501,7 @@ sprite_frames = SubResource("SpriteFrames_5fofi")
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=531156807]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_55d6i")
-animation = &"death"
-frame = 1
-frame_progress = 1.0
+animation = &"blink"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1325916624]
 visible = false
@@ -651,6 +649,7 @@ target_position = Vector2(0, 1024)
 collision_mask = 25
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=224549612]
+visible = false
 
 [node name="StickyLeft" type="RayCast2D" parent="." unique_id=844388091]
 position = Vector2(-8, 12)

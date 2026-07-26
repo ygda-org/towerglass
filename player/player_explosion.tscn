@@ -203,9 +203,6 @@ region_rect = Rect2(120, 56, 8, 8)
 
 [node name="Timer" type="Timer" parent="." unique_id=903033946]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2000991073]
-zoom = Vector2(2.5, 2.5)
-
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=917848283]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_7xtf2")

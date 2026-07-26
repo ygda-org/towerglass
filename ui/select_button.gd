@@ -6,7 +6,6 @@ const LEVEL_ORDER = [
 	"res://levels/crumbling.tscn",
 	"res://levels/on_off.tscn",
 	"res://levels/turrets_level.tscn",
-	"res://levels/puzzling.tscn",
 	"res://levels/touch_and_go.tscn",
 	"res://levels/aww_rats.tscn",
 	"res://levels/trampoline.tscn",
