@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://csxhulpiwhaka" path="res://assets/start_menu/Wheel.png" id="10_lnpn0"]
 [ext_resource type="Texture2D" uid="uid://bxbs3r27jv22k" path="res://assets/start_menu/Title.PNG" id="11_dfrpb"]
 [ext_resource type="PackedScene" uid="uid://bg1ofmw7qpb2j" path="res://ui/pause_menu/pause_menu.tscn" id="13_0kfsi"]
+[ext_resource type="Texture2D" uid="uid://k75fj7lu7mgf" path="res://assets/ui/dark_box.png" id="14_r3a5d"]
+[ext_resource type="FontFile" uid="uid://dkdscd1kuakmt" path="res://assets/ui/clean_font.ttf" id="15_4wm4l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_loyqk"]
 atlas = ExtResource("2_iuit4")
@@ -198,33 +200,38 @@ texture = ExtResource("11_dfrpb")
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1246076756 instance=ExtResource("13_0kfsi")]
 visible = false
 
-[node name="Credits" type="ColorRect" parent="." unique_id=770214411]
+[node name="Credits" type="NinePatchRect" parent="." unique_id=1700039849]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = 290.0
-offset_right = 293.0
-offset_bottom = 616.75
+offset_left = -255.0
+offset_top = 182.0
+offset_right = 325.0
+offset_bottom = 637.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+texture = ExtResource("14_r3a5d")
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
 
 [node name="Programming" type="Label" parent="Credits" unique_id=1528707908]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = 7.5
-offset_right = -257.0
-offset_bottom = 3.0
+offset_left = 52.0
+offset_top = 49.0
+offset_right = -216.0
+offset_bottom = 44.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("15_4wm4l")
 text = "Programming
 MrPuffyWuff
 Penguinja
@@ -235,16 +242,19 @@ controlmage23
 ckarby
 Vinter_Bie
 drinkmelonwater
+
+
 https://godotengine.org/license/
 "
 
 [node name="Art" type="Label" parent="Credits" unique_id=221590713]
 layout_mode = 0
-offset_left = 175.0
-offset_top = 4.5
-offset_right = 343.0
-offset_bottom = 261.5
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 210.0
+offset_top = 49.0
+offset_right = 378.0
+offset_bottom = 306.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("15_4wm4l")
 text = "Art
 Harbinger_of_entropy
 froqqo
@@ -258,11 +268,12 @@ MrPuffyWuff"
 
 [node name="Music" type="Label" parent="Credits" unique_id=1402256163]
 layout_mode = 0
-offset_left = 370.0
-offset_top = 7.5
-offset_right = 603.0
-offset_bottom = 264.5
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 400.0
+offset_top = 51.0
+offset_right = 633.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("15_4wm4l")
 text = "Sound Design
 fwugneo
 Theophylaktos
@@ -281,11 +292,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -25.0
-offset_top = -31.0
-offset_right = 25.0
+offset_left = -33.0
+offset_top = -75.0
+offset_right = 33.0
+offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_4wm4l")
 text = "BACK"
 
 [connection signal="mouse_entered" from="MainMenu/PlayButton" to="." method="_on_play_button_mouse_entered"]
