@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bpkebayo6u3lk"]
+
+[ext_resource type="Script" uid="uid://b3rps8qbpsx48" path="res://levels/level_objects/large_cog.gd" id="1_vqyxi"]
+[ext_resource type="Texture2D" uid="uid://kax8vv86o2st" path="res://assets/tiles/large_danger_cog.png" id="2_obm84"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqjbv"]
+atlas = ExtResource("2_obm84")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8xv0"]
+atlas = ExtResource("2_obm84")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6hs7"]
+atlas = ExtResource("2_obm84")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dah2g"]
+atlas = ExtResource("2_obm84")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc6bg"]
+atlas = ExtResource("2_obm84")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aodi"]
+atlas = ExtResource("2_obm84")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_obm84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqjbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8xv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6hs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dah2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc6bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aodi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lbho6"]
+radius = 16.03122
+
+[node name="LargeCog" type="StaticBody2D" unique_id=1366074826]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_vqyxi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1343022017]
+sprite_frames = SubResource("SpriteFrames_obm84")
+autoplay = "default"
+frame_progress = 0.146255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1245227960]
+shape = SubResource("CircleShape2D_lbho6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1257330727]
+position = Vector2(-2, -3)
+rect = Rect2(-10, -10, 24, 26)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
