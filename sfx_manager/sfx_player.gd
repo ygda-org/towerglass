@@ -66,6 +66,10 @@ func play(label: Labels, optional_volume: float = 0.0):
 	timer.autostart = true
 	timer.timeout.connect(timer.queue_free)
 	add_child(timer)
+	# hardcode time
+	if label == Labels.SANDFALLING:
+		rec_sand_fall_vol = audio.volume_db
+		sand_fall = audio
 
 ## remove all playing audio nodes
 func force_clear_audios():
@@ -95,3 +99,13 @@ func clear_audio(label : Labels):
 	for node in get_children():
 		if Labels.keys()[label] in node.name:
 			node.queue_free()
+
+
+# hardcoded stuff
+var sand_fall = null
+var rec_sand_fall_vol
+
+func _process(_delta):
+	if sand_fall and GameState.player:
+		var player = GameState.player
+		sand_fall.volume_db = rec_sand_fall_vol + 30*(player.sand_in_bottom/player.total_sand)
