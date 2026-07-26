@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
-size = Vector2(14, 14)
+size = Vector2(10, 10)
 
 [node name="SmallDangerCog" type="StaticBody2D" unique_id=1725336857]
 collision_layer = 8
