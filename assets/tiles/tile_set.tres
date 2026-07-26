@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://byljcp4s303hk" path="res://assets/tiles/repeating pit edit fixed.png" id="11_trb68"]
 [ext_resource type="Texture2D" uid="uid://dl0xf1lygr2hn" path="res://assets/tiles/GMTK2026Silvercogdecor.png" id="12_iak18"]
 [ext_resource type="Texture2D" uid="uid://by5h34gdig2p0" path="res://assets/programmer_art/mouse (2).png" id="13_qpy5e"]
+[ext_resource type="Texture2D" uid="uid://u83cxbcumbbr" path="res://assets/tiles/crane.png" id="18_un7dp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy046"]
 texture = ExtResource("1_vl7tc")
@@ -630,6 +631,42 @@ texture = ExtResource("13_qpy5e")
 2:2/0 = 0
 2:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsip1"]
+texture = ExtResource("18_un7dp")
+4:2/size_in_atlas = Vector2i(4, 4)
+4:2/0 = 0
+4:2/0/texture_origin = Vector2i(-24, -24)
+9:5/0 = 0
+10:5/0 = 0
+10:4/0 = 0
+9:4/0 = 0
+11:3/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+2:4/0 = 0
+1:4/0 = 0
+0:3/0 = 0
+1:6/size_in_atlas = Vector2i(4, 9)
+1:6/0 = 0
+1:6/0/texture_origin = Vector2i(-24, -64)
+7:6/size_in_atlas = Vector2i(4, 9)
+7:6/0 = 0
+7:6/0/texture_origin = Vector2i(-24, -64)
+6:6/0 = 0
+5:6/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+10:1/0 = 0
+7:1/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 257
 physics_layer_0/collision_mask = 257
@@ -646,3 +683,4 @@ sources/3 = SubResource("TileSetAtlasSource_wlwvt")
 sources/4 = SubResource("TileSetAtlasSource_fprp5")
 sources/6 = SubResource("TileSetAtlasSource_qqwny")
 sources/7 = SubResource("TileSetAtlasSource_iak18")
+sources/8 = SubResource("TileSetAtlasSource_qsip1")
