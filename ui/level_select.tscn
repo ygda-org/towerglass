@@ -99,28 +99,28 @@ number = 4
 
 [node name="SelectButton5" parent="." unique_id=676968990 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 504.0
-offset_top = 438.0
-offset_right = 552.0
-offset_bottom = 486.0
+offset_left = 518.0
+offset_top = 440.0
+offset_right = 566.0
+offset_bottom = 488.0
 number = 5
 level_song = 2
 
 [node name="SelectButton6" parent="." unique_id=329849017 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 429.0
-offset_right = 504.0
-offset_bottom = 477.0
+offset_left = 462.0
+offset_top = 424.0
+offset_right = 510.0
+offset_bottom = 472.0
 number = 6
 level_song = 2
 
 [node name="SelectButton7" parent="." unique_id=1130250613 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 408.0
-offset_top = 421.0
-offset_right = 456.0
-offset_bottom = 469.0
+offset_left = 407.0
+offset_top = 418.0
+offset_right = 455.0
+offset_bottom = 466.0
 number = 7
 level_song = 2
 
@@ -153,28 +153,28 @@ level_song = 3
 
 [node name="SelectButton11" parent="." unique_id=1453358548 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 291.0
-offset_right = 504.0
-offset_bottom = 339.0
+offset_left = 455.0
+offset_top = 293.0
+offset_right = 503.0
+offset_bottom = 341.0
 number = 11
 level_song = 4
 
 [node name="SelectButton12" parent="." unique_id=416185502 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 413.0
-offset_top = 244.0
-offset_right = 461.0
-offset_bottom = 292.0
+offset_left = 418.0
+offset_top = 242.0
+offset_right = 466.0
+offset_bottom = 290.0
 number = 12
 level_song = 4
 
 [node name="SelectButton13" parent="." unique_id=1335219038 instance=ExtResource("1_o7pgs")]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 217.0
-offset_right = 540.0
-offset_bottom = 265.0
+offset_left = 487.0
+offset_top = 218.0
+offset_right = 535.0
+offset_bottom = 266.0
 number = 13
 level_song = 4
 
@@ -206,7 +206,7 @@ offset_top = 3.0
 offset_right = 496.0
 offset_bottom = 51.0
 number = 15
-level_song = 0
+level_song = 7
 
 [connection signal="mouse_entered" from="Skip" to="." method="_on_skip_mouse_entered"]
 [connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]
