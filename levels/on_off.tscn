@@ -106,6 +106,10 @@ curve = SubResource("Curve2D_wf343")
 time = 5.0
 move_in_editor = null
 
+[node name="TileMapLayer" type="TileMapLayer" parent="Challenge2/MovingStuff" unique_id=1843630043]
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD+/wAAAAABAAAAAAD//wAAAAACAAAAAAAAAAAAAAADAAAAAAABAAAAAAAEAAAAAADz//j/AAAAAAAAAAD0//j/AAABAAAAAAD1//j/AAACAAAAAAD2//j/AAADAAAAAAD3//j/AAAEAAAAAAD9////AgACAAIAAAD+////AgACAAIAAAD/////AgACAAIAAAAAAP//AgAAAAAAAAABAP//AgACAAAAAADz//f/AgAAAAAAAAD0//f/AgACAAIAAAD1//f/AgACAAAAAAD2//f/AgAAAAAAAAD3//f/AgAAAAAAAAA=")
+tile_set = ExtResource("1_2kv7s")
+
 [node name="MovingStuff2" parent="Challenge2" unique_id=1089932170 instance=ExtResource("3_wf343")]
 position = Vector2(1228, -396)
 curve = SubResource("Curve2D_khffv")
@@ -190,5 +194,5 @@ shape = SubResource("RectangleShape2D_0es7p")
 [node name="WaterDrip" parent="Particles" unique_id=1393815259 instance=ExtResource("12_inlv3")]
 position = Vector2(2372, -761)
 
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@31495" to="TileMapLayer/@Area2D@31495" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@47419" to="TileMapLayer/@Area2D@47419" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@47459" to="TileMapLayer/@Area2D@47459" method="_on_body_entered"]
