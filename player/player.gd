@@ -89,7 +89,7 @@ func _physics_process(delta: float):
 		#SFX.play(SFX.Labels.FLIP)
 		SFX.play(SFX.Labels.FLIPSANDFALL)
 		
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_pressed("jump") and is_on_floor():
 		SFX.play(SFX.Labels.JUMPCHARGE)
 	else:
 		SFX.clear_audio(SFX.Labels.JUMPCHARGE)
