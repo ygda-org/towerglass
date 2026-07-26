@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bh2xegl7jcff8" path="res://assets/music/expert_level_theme.ogg" id="7_03ncj"]
 [ext_resource type="AudioStream" uid="uid://dunktuy225qdp" path="res://assets/music/level_select.ogg" id="8_tlrt4"]
 [ext_resource type="AudioStream" uid="uid://cl58yjf0c43ft" path="res://assets/music/slipping_through_the_cracks.ogg" id="9_rbbvo"]
+[ext_resource type="AudioStream" uid="uid://cig6d1ktdlik1" path="res://assets/music/game_complete.ogg" id="10_rwxnn"]
 
 [sub_resource type="Resource" id="Resource_eeko5"]
 script = ExtResource("2_we102")
@@ -46,6 +47,11 @@ script = ExtResource("2_we102")
 loop_stream = ExtResource("9_rbbvo")
 metadata/_custom_type_script = "uid://sy1ixyycss1j"
 
+[sub_resource type="Resource" id="Resource_5fcav"]
+script = ExtResource("2_we102")
+loop_stream = ExtResource("10_rwxnn")
+metadata/_custom_type_script = "uid://sy1ixyycss1j"
+
 [node name="MusicPlayer" type="Node" unique_id=1900023536]
 process_mode = 3
 script = ExtResource("1_hupx2")
@@ -56,5 +62,6 @@ label_to_settings = Dictionary[int, ExtResource("2_we102")]({
 3: SubResource("Resource_emc4l"),
 4: SubResource("Resource_xqwue"),
 5: SubResource("Resource_jqr4q"),
-6: SubResource("Resource_6cnhx")
+6: SubResource("Resource_6cnhx"),
+7: SubResource("Resource_5fcav")
 })

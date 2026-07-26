@@ -206,7 +206,7 @@ offset_top = 3.0
 offset_right = 496.0
 offset_bottom = 51.0
 number = 15
-level_song = 0
+level_song = 7
 
 [connection signal="mouse_entered" from="Skip" to="." method="_on_skip_mouse_entered"]
 [connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

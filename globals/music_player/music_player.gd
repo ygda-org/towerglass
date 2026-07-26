@@ -14,7 +14,8 @@ enum Labels {
 	INTERMEDIATE2,
 	EXPERT,
 	SELECT,
-	DEATH
+	DEATH,
+	ENDING
 }
 
 ## start track, fadeout is if the current song will decrease in volume before stopping
