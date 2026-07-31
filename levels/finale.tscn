@@ -119,7 +119,6 @@ start_delay_addon_time = 0.3
 curve = SubResource("Curve2D_28grf")
 time = 30.0
 wait_until_player_touches_to_move = true
-go_back = false
 trans_type = 0
 
 [node name="MoveablePlatform" parent="MovingStuff" unique_id=1189294733 instance=ExtResource("5_rhqti")]
@@ -131,7 +130,6 @@ wait_until_player_touches_to_move = true
 curve = SubResource("Curve2D_rhqti")
 time = 30.0
 wait_until_player_touches_to_move = true
-go_back = false
 trans_type = 0
 
 [node name="MoveablePlatform" parent="MovingStuff2" unique_id=1139641899 instance=ExtResource("5_rhqti")]
@@ -202,3 +200,8 @@ tile_set = ExtResource("1_8rwx0")
 z_index = -1
 tile_map_data = PackedByteArray("AABFAOv/AAAPAAUAAABFAOz/AAARAAUAAABGAOz/AAAQAAUAAABHAOz/AAAQAAUAAABIAOz/AAAQAAUAAABKAOz/AAAQAAUAAABLAOz/AAAQAAUAAABMAOz/AAAQAAUAAABNAOz/AAAQAAUAAABOAOz/AAAQAAUAAABPAOz/AAAQAAUAAABQAOz/AAAQAAUAAABRAOz/AAAQAAUAAABSAOz/AAAQAAUAAABTAOz/AAAQAAUAAABUAOz/AAAQAAUAAABVAOz/AAAQAAUAAABWAOz/AAAQAAUAAABXAOz/AAAQAAUAAABYAOz/AAAQAAUAAABZAOz/AAAQAAUAAABaAOz/AAAQAAUAAABbAOz/AAAQAAUAAABcAOz/AAAQAAUAAABdAOz/AAAQAAUAAABeAOz/AAAQAAUAAABfAOz/AAAQAAUAAABgAOz/AAAQAAUAAABhAOz/AAAQAAUAAABiAOz/AAAQAAUAAABjAOz/AAAQAAUAAABkAOz/AAAQAAUAAABlAOz/AAAQAAUAAABmAOz/AAAQAAUAAABnAOz/AAAQAAUAAABoAOz/AAAQAAUAAABpAOz/AAAQAAUAAABqAOz/AAAQAAUAAABrAOz/AAAQAAUAAABsAOz/AAAQAAUAAABtAOz/AAAQAAUAAABuAOz/AAAQAAUAAABvAOz/AAAQAAUAAABwAOz/AAASAAUAAABwAOv/AAAQAAQAAAA=")
 tile_set = ExtResource("1_8rwx0")
+
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@24150" to="TileMapLayer/@Area2D@24150" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@24160" to="TileMapLayer/@Area2D@24160" method="_on_body_entered"]
+[connection signal="body_entered" from="Offset/Checkpoint" to="Offset/Checkpoint" method="_on_body_entered"]
