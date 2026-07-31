@@ -45,7 +45,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
-size = Vector2(3583, 1865)
+size = Vector2(3583, 2085)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3lui"]
 size = Vector2(1061, 111)
@@ -182,7 +182,7 @@ position = Vector2(3350, -1776)
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds" unique_id=458088732]
-position = Vector2(1631.5, -913.5)
+position = Vector2(1631.5, -803.5)
 shape = SubResource("RectangleShape2D_0es7p")
 
 [node name="CameraOffset" parent="." unique_id=497969490 instance=ExtResource("11_vktf1")]
@@ -202,8 +202,3 @@ tile_set = ExtResource("1_8rwx0")
 z_index = -1
 tile_map_data = PackedByteArray("AABFAOv/AAAPAAUAAABFAOz/AAARAAUAAABGAOz/AAAQAAUAAABHAOz/AAAQAAUAAABIAOz/AAAQAAUAAABKAOz/AAAQAAUAAABLAOz/AAAQAAUAAABMAOz/AAAQAAUAAABNAOz/AAAQAAUAAABOAOz/AAAQAAUAAABPAOz/AAAQAAUAAABQAOz/AAAQAAUAAABRAOz/AAAQAAUAAABSAOz/AAAQAAUAAABTAOz/AAAQAAUAAABUAOz/AAAQAAUAAABVAOz/AAAQAAUAAABWAOz/AAAQAAUAAABXAOz/AAAQAAUAAABYAOz/AAAQAAUAAABZAOz/AAAQAAUAAABaAOz/AAAQAAUAAABbAOz/AAAQAAUAAABcAOz/AAAQAAUAAABdAOz/AAAQAAUAAABeAOz/AAAQAAUAAABfAOz/AAAQAAUAAABgAOz/AAAQAAUAAABhAOz/AAAQAAUAAABiAOz/AAAQAAUAAABjAOz/AAAQAAUAAABkAOz/AAAQAAUAAABlAOz/AAAQAAUAAABmAOz/AAAQAAUAAABnAOz/AAAQAAUAAABoAOz/AAAQAAUAAABpAOz/AAAQAAUAAABqAOz/AAAQAAUAAABrAOz/AAAQAAUAAABsAOz/AAAQAAUAAABtAOz/AAAQAAUAAABuAOz/AAAQAAUAAABvAOz/AAAQAAUAAABwAOz/AAASAAUAAABwAOv/AAAQAAQAAAA=")
 tile_set = ExtResource("1_8rwx0")
-
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@44555" to="TileMapLayer/@Area2D@44555" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@44565" to="TileMapLayer/@Area2D@44565" method="_on_body_entered"]
-[connection signal="body_entered" from="Offset/@Area2D@45793" to="Offset/@Area2D@45793" method="_on_body_entered"]
