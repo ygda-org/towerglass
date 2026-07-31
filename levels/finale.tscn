@@ -64,7 +64,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAACAAEAAAD//wEAAAACAAIAAAAAAAAAAAADAAE
 tile_set = ExtResource("1_8rwx0")
 
 [node name="Player" parent="." unique_id=491503936 instance=ExtResource("2_tqto1")]
-position = Vector2(-36, -12)
+position = Vector2(-35, -11)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1481114020]
 z_index = 4096
@@ -205,6 +205,6 @@ tile_set = ExtResource("1_8rwx0")
 position = Vector2(738, -331)
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@37519" to="TileMapLayer/@Area2D@37519" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@37520" to="TileMapLayer/@Area2D@37520" method="_on_body_entered"]
-[connection signal="body_entered" from="Offset/@Area2D@38580" to="Offset/@Area2D@38580" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@20176" to="TileMapLayer/@Area2D@20176" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@20177" to="TileMapLayer/@Area2D@20177" method="_on_body_entered"]
+[connection signal="body_entered" from="Offset/Checkpoint" to="Offset/Checkpoint" method="_on_body_entered"]
