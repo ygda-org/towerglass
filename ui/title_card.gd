@@ -8,14 +8,14 @@ const LEVEL_NAME = [
 	"res://levels/turrets_level.tscn",
 	"Touch And Go",
 	"Aww Rats",
-	"Trampoline",
+	"Momentum",
 	"Best Buds",
 	"The Tower",
 	"res://levels/motion_turrets.tscn",
 	"Limits",
 	"Ascension",
 	"Finale",
-	"res://main/end_screen.tscn"
+	"res://main/end_screen.tscn"#not shown
 	]
 
 # Called when the node enters the scene tree for the first time.
