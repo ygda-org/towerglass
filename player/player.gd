@@ -95,9 +95,10 @@ func _physics_process(delta: float):
 		SFX.clear_audio(SFX.Labels.JUMPCHARGE)
 		
 	if Input.is_action_just_pressed("god_mode"):
-		god_mode = not god_mode
-		print("god mode :", god_mode)
-		sand_in_bottom = 0.0
+		pass
+		#god_mode = not god_mode
+		#print("god mode :", god_mode)
+		#sand_in_bottom = 0.0
 		
 	if Input.is_action_just_pressed("reset"):
 		die()
