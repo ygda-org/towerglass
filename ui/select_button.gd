@@ -34,6 +34,7 @@ func _ready() -> void:
 		queue_free()
 
 func _on_pressed() -> void:
+	GameState.level_select_entry = true
 	GameState.current_level = number
 	GameState.current_lvl_path = target
 	SFX.play(SFX.Labels.BUTTONCLICK)

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bnmlb7f0wsmxm" path="res://assets/hourglass/hg_flip.png" id="3_yw30f"]
 [ext_resource type="Texture2D" uid="uid://535ojd70drt" path="res://assets/hourglass/hg_idlesand.png" id="4_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://c1nph86a75scp" path="res://assets/hourglass/hg_death.png" id="5_hg6s5"]
+[ext_resource type="PackedScene" uid="uid://hrks16n3ods0" path="res://ui/title_card.tscn" id="7_8t03j"]
 [ext_resource type="Script" uid="uid://bi3gpmkqlfe5x" path="res://player/ambience_player.gd" id="7_boad6"]
 [ext_resource type="Texture2D" uid="uid://5sjhumhccca2" path="res://assets/programmer_art/SandParticle.png" id="8_rgyib"]
 
@@ -530,6 +531,8 @@ editor_draw_drag_margin = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=664277679]
 visible = false
+
+[node name="TitleCard" parent="CanvasLayer" unique_id=1926371093 instance=ExtResource("7_8t03j")]
 
 [node name="Vignette" type="Sprite2D" parent="CanvasLayer" unique_id=339412916]
 position = Vector2(480, 270)
