@@ -3,15 +3,15 @@ extends Control
 const LEVEL_NAME = [
 	"Beginnings",
 	"Movement",
-	"res://levels/crumbling.tscn",
-	"res://levels/on_off.tscn",
-	"res://levels/turrets_level.tscn",
+	"Stability",
+	"Flip",
+	"Fire!",
 	"Touch And Go",
 	"Aww Rats",
 	"Momentum",
 	"Best Buds",
 	"The Tower",
-	"res://levels/motion_turrets.tscn",
+	"Whiplash",
 	"Limits",
 	"Ascension",
 	"Finale",
@@ -20,14 +20,9 @@ const LEVEL_NAME = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.modulate.a = 0.0
-	$Title.modulate.a = 0.0
 	if GameState.level_select_entry:
+		GameState.level_select_entry = false
 		$Level.text = "Level " + str(GameState.current_level)
 		$Title.text = LEVEL_NAME[GameState.current_level - 1]
-		var tween : Tween = get_tree().create_tween()
-		tween.tween_property(self, "modulate", Color(1.0,1.0,1.0,1.0), 3)
-		tween.tween_property($Title, "modulate", Color(1.0,1.0,1.0,1.0), 1.5)
-		tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1.5)
-		await tween.finished
-		GameState.level_select_entry = false
+		await get_tree().create_timer(0.3).timeout
+		$AnimationPlayer.play("show_title")
