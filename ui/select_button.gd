@@ -1,21 +1,21 @@
 extends TextureButton
 
 const LEVEL_ORDER = [
-	"res://levels/tutorial.tscn",
+	"res://levels/tutorial.tscn", #1
 	"res://levels/moving.tscn",
 	"res://levels/crumbling.tscn",
 	"res://levels/on_off.tscn",
-	"res://levels/turrets_level.tscn",
+	"res://levels/turrets_level.tscn", #5
 	"res://levels/touch_and_go.tscn",
 	"res://levels/aww_rats.tscn",
 	"res://levels/trampoline.tscn",
 	"res://levels/best_buds.tscn",
-	"res://levels/challenge_1.tscn",
+	"res://levels/challenge_1.tscn", #10
 	"res://levels/motion_turrets.tscn",
 	"res://levels/limit.tscn",
 	"res://levels/elevator.tscn",
 	"res://levels/finale.tscn",
-	"res://main/end_screen.tscn"
+	"res://main/end_screen.tscn" #15
 	]
 
 @export var number : int = 0

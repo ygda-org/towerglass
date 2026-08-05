@@ -65,9 +65,10 @@ animation = &"animation"
 autoplay = "animation"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=852138925]
-offset_left = 890.0
-offset_right = 960.0
-offset_bottom = 70.0
+offset_left = 870.0
+offset_top = 20.0
+offset_right = 940.0
+offset_bottom = 90.0
 texture_normal = ExtResource("1_0njaf")
 texture_pressed = ExtResource("2_nu0cp")
 texture_hover = ExtResource("3_c5cid")

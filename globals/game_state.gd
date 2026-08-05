@@ -19,6 +19,8 @@ var player_death_count = 0
 
 var level_select_entry : bool = false
 
+var reset_level_select_music : bool = true
+
 func _ready() -> void:
 	for i in range(30):
 		lvl_to_loc.append(Vector2(-1000,-1000))

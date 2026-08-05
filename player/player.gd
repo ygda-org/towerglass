@@ -72,8 +72,10 @@ func _physics_process(delta: float):
 	
 	was_on_floor = is_on_floor()
 	
-	if is_on_floor() and velocity.x != 0:
+	if velocity.x > 0 or velocity. y > 0:
 		has_moved = true
+	
+	if is_on_floor() and velocity.x != 0:
 		if ($StickyLeft.get_collider() != null) or ($StickyRight.get_collider() != null):
 			SFX.play(SFX.Labels.STICKYPLATFORMWALK)
 
@@ -101,7 +103,8 @@ func _physics_process(delta: float):
 		#sand_in_bottom = 0.0
 		
 	if Input.is_action_just_pressed("reset"):
-		die()
+		pass
+		#die()
 	
 	if $JumpJuice.is_stopped():
 		camera_center_position = global_position + Vector2(0, 15*jump_charge/MAX_JUMP_CHARGE)
