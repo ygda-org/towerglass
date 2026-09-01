@@ -67,6 +67,8 @@ func _ready():
 	
 	intro_playing = false
 	Music.start(Music.Labels.TITLE)
+	
+	$MainMenu/PlayButton.grab_focus()
 
 func _process(delta):
 	$Wheel.rotation += deg_to_rad(5) * delta

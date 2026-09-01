@@ -224,24 +224,33 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
 texture_normal = ExtResource("4_eh4yk")
 texture_hover = ExtResource("5_lnpn0")
+texture_focused = ExtResource("5_lnpn0")
 
 [node name="CreditsButton" type="TextureButton" parent="MainMenu" unique_id=1649406817]
 layout_mode = 0
 offset_top = 148.0
 offset_right = 960.0
 offset_bottom = 687.0
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_bottom = NodePath("../PlayButton")
 texture_normal = ExtResource("6_dfrpb")
 texture_hover = ExtResource("7_sdwtg")
+texture_focused = ExtResource("7_sdwtg")
 
 [node name="SettingsButton" type="TextureButton" parent="MainMenu" unique_id=1048333229]
 layout_mode = 0
 offset_top = 75.0
 offset_right = 960.0
 offset_bottom = 614.0
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
 texture_normal = ExtResource("8_0kfsi")
 texture_hover = ExtResource("9_r3a5d")
+texture_focused = ExtResource("9_r3a5d")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=391304930]
 layout_mode = 0
