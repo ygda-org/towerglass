@@ -21,6 +21,8 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
+	if Input.is_action_just_pressed("lev_sel"):
+		_on_level_select_button_pressed()
 	if not visible:
 		return
 	SFX.force_pause_audios()

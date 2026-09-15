@@ -6,6 +6,7 @@ func _ready():
 		Music.start(Music.Labels.SELECT)
 	GameState.reset_level_select_music = true
 	$Buttons.get_children()[0].grab_focus()
+		
 
 func _on_skip_pressed():
 	SFX.play(SFX.Labels.BUTTONCLICK)
