@@ -1,3 +1,4 @@
+@icon("res://assets/turret/bullet.png")
 extends CharacterBody2D
 
 
