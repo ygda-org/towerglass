@@ -6,32 +6,39 @@ var collider
 var biting = false
 @onready var spawn:= Vector2 (global_position.x, global_position.y)
 
+## set to -1 or 1 to freeze rat. number is direction
+@export var frozen: int = 0
+
 var player_visible = false
 
 func _ready() -> void:
 	GameState.player.died.connect(respawn)
+	if frozen:
+		dir = frozen
+		$Area2D.scale.x = dir
+		$AnimatedSprite2D.play("walk")
 
 
 func _physics_process(delta: float) -> void:
-	
-	move_and_slide()
+	if not frozen:
+		move_and_slide()
 	if biting:
 		return
 	
 	if player_visible == true:
 		SFX.play(SFX.Labels.SQUEAK)
 		
+	if not frozen:
+		if not is_on_floor():
+			$AnimatedSprite2D.play("air")
+			velocity.y += 250 * delta
+		else:
+			$AnimatedSprite2D.play("walk")
 	
-	
-	if not is_on_floor():
-		$AnimatedSprite2D.play("air")
-		velocity.y += 250 * delta
-	else:
-		$AnimatedSprite2D.play("walk")
-	
-	if is_on_wall() or $Area2D/RayCast2D.get_collider() == null:
-		dir *= -1
-		$Area2D.scale.x *= -1
+	if not frozen:
+		if is_on_wall() or $Area2D/RayCast2D.get_collider() == null:
+			dir *= -1
+			$Area2D.scale.x *= -1
 		
 	
 	if dir == 1:

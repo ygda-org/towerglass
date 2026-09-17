@@ -158,7 +158,7 @@ func _physics_process(delta: float):
 			$Mask.position.y = 0
 			velocity.y = -up_direction.y * (MAX_JUMP + jump_offset) * jump_charge_curve.sample(jump_charge/MAX_JUMP_CHARGE)
 			flip()
-			$JumpJuice.wait_time = jump_charge
+			$JumpJuice.wait_time = jump_charge + 0.01
 			jump_charge = 0.0
 			$JumpJuice.start()
 			GameState.player_jumped.emit()
@@ -174,8 +174,6 @@ func _physics_process(delta: float):
 			grav_mult = gravity_curve_dec.sample(abs(velocity.y)/MAX_FALL_SPEED)
 		else:
 			grav_mult = gravity_curve_asc.sample(abs(velocity.y)/MAX_JUMP)
-		if god_mode:
-			grav_mult = 0.5
 
 		velocity.y = move_toward(velocity.y, -up_direction.y * MAX_FALL_SPEED, delta*GRAVITY*grav_mult)
 		
@@ -280,7 +278,7 @@ func die() -> void:
 	#tween.tween_property($CanvasLayer/Vignette, "self_modulate", Color(1.0,1.0,1.0,(sand_in_bottom / total_sand)**2), 0.5)
 	#died.emit()
 
-func _on_hurtbox_body_entered(body):
+func _on_hurtbox_body_entered(_body):
 	SFX.play(SFX.Labels.DEATHSPILL)
 	die()
 

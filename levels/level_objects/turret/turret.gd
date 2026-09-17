@@ -43,8 +43,8 @@ func _ready():
 	await get_tree().create_timer(0.5 + start_delay_addon_time).timeout
 	shoot()
 
-func rotation_to_frame(rotation : float) -> int:
-	var frame : int = int(round(remap(rotation, 0, 2*PI, 0, 12)))
+func rotation_to_frame(rot : float) -> int:
+	var frame : int = int(round(remap(rot, 0, 2*PI, 0, 12)))
 	if frame < 0:
 		frame += 12
 	return frame

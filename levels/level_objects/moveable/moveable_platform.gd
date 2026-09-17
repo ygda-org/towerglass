@@ -48,7 +48,7 @@ func _ready() -> void:
 		addend.rotation = rotation
 		add_child(addend)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var i: int = 0
 	for child in get_children():
 		child.global_position = global_position + Vector2((i - size / 2.0) * 16, 0)
@@ -73,15 +73,15 @@ func _physics_process(delta: float) -> void:
 							moving = true
 	if tile_name == "CrumblingTile":
 		GameState.player.poll_floor_type()
-		var player_on = false
+		#var player_on = false
 		for child in get_children():
 			if not child.crumbling and (GameState.player.left_floor == child or GameState.player.right_floor == child):
 				for child2 in get_children():
 					child2.crumble()
 					child2.crumbling = true
-			elif child.crumbling:
-				if GameState.player.left_floor == child or GameState.player.right_floor == child:
-					player_on = true
+			#elif child.crumbling:
+				#if GameState.player.left_floor == child or GameState.player.right_floor == child:
+					#player_on = true
 		#for child in get_children():
 			#if not player_on and child.crumbling:
 				#for child2 in get_children():

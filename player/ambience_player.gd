@@ -11,10 +11,6 @@ func _ready():
 	rand_wait(40,60, SFX.Labels.STEAMALT)
 	SFX.play(SFX.Labels.SANDFALLING)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func rand_wait(minimum_seconds, maximum_seconds, audio):
 	SFX.play(audio)
 	var wait = randi_range(minimum_seconds, maximum_seconds)

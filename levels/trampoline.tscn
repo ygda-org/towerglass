@@ -323,3 +323,5 @@ position = Vector2(372, -2343)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=53592590]
 position = Vector2(-105, 57)
 shape = SubResource("RectangleShape2D_skvqh")
+
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

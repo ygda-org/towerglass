@@ -15,7 +15,7 @@ func _ready() -> void:
 	$Timer.wait_time = time
 	$Timer.start()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for i in get_slide_collision_count():
 		if get_slide_collision(i).get_collider()==GameState.player:
 			SFX.play(SFX.Labels.PLAYERHIT)
