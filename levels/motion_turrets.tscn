@@ -175,3 +175,12 @@ pause_time = 2.0
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=385344620]
 z_index = -1
 tile_set = ExtResource("1_v2qgv")
+
+[node name="Turret6" parent="." unique_id=1097355477 instance=ExtResource("3_xok05")]
+position = Vector2(516, -560)
+orientation = "south"
+is_one_direction = true
+shot_directions = Array[Vector2]([Vector2(1, 0)])
+bullet_duration = 1.0
+
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

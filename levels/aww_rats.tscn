@@ -113,6 +113,7 @@ position = Vector2(347, -107)
 
 [node name="Rat3" parent="Rats" unique_id=724362532 instance=ExtResource("2_xec67")]
 position = Vector2(716, -106)
+frozen = 1
 
 [node name="Rat4" parent="Rats" unique_id=460940538 instance=ExtResource("2_xec67")]
 position = Vector2(391, -107)
@@ -134,12 +135,15 @@ position = Vector2(3113, -234)
 
 [node name="Rat11" parent="Rats" unique_id=1564431135 instance=ExtResource("2_xec67")]
 position = Vector2(-112, -10)
+frozen = 1
 
 [node name="Rat12" parent="Rats" unique_id=555794662 instance=ExtResource("2_xec67")]
 position = Vector2(-38, -10)
+frozen = 1
 
 [node name="Rat13" parent="Rats" unique_id=245242576 instance=ExtResource("2_xec67")]
 position = Vector2(-308, -10)
+frozen = 1
 
 [node name="Platform" type="Node" parent="." unique_id=37295342]
 
@@ -179,4 +183,4 @@ amount = 8
 emission_rect_extents = Vector2(4, 0)
 
 [connection signal="body_entered" from="DecorationTileMapLayer/Checkpoint" to="DecorationTileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@49044" to="DecorationTileMapLayer/@Area2D@49044" method="_on_body_entered"]
+[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@22326" to="DecorationTileMapLayer/@Area2D@22326" method="_on_body_entered"]
