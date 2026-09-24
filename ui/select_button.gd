@@ -39,6 +39,7 @@ func _on_pressed() -> void:
 	GameState.current_lvl_path = target
 	SFX.play(SFX.Labels.BUTTONCLICK)
 	Music.start(level_song)
+	Leaderboard.level_started(number-1)
 	SceneSwitcher.go_to_scene(target)
 
 

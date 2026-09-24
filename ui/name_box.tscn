@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ba3h4ilsy52b"]
+
+[ext_resource type="Script" uid="uid://dl3kn8ah03qkx" path="res://ui/name_box.gd" id="1_lfapc"]
+
+[node name="NameBox" type="Panel" unique_id=1668970411]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -73.0
+offset_right = 179.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_lfapc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=201311839]
+layout_mode = 0
+offset_right = 356.0
+offset_bottom = 145.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=365856808]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer" unique_id=748073243]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ConfirmButton" type="Button" parent="VBoxContainer" unique_id=984412713]
+custom_minimum_size = Vector2(150, 50)
+custom_maximum_size = Vector2(150, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Confirm"
+
+[connection signal="pressed" from="VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]

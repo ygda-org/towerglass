@@ -502,7 +502,6 @@ sprite_frames = SubResource("SpriteFrames_5fofi")
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=531156807]
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_55d6i")
-animation = &"left_flip"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Anim" unique_id=224549612]
 position = Vector2(0, -3)

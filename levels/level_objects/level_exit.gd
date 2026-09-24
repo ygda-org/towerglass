@@ -45,4 +45,5 @@ func super_cool_exit_animation():
 	GameState.player.visible = false
 	$Explosion.emitting = true
 	await get_tree().create_timer(1).timeout
+	Leaderboard.level_finished()
 	SceneSwitcher.go_to_scene("res://ui/level_select.tscn")
