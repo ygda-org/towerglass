@@ -24,6 +24,9 @@ func update():
 	visible = true
 	var lindex = focused.number-1
 	var times = Leaderboard.leaderboards[lindex].duplicate()
+	if not times:
+		visible = false
+		return
 	## index 0 is slowest times, 9 is fastest
 	var buckets = []
 	for i in range(BUCKET_AMOUNT):
