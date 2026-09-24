@@ -284,9 +284,9 @@ offset_bottom = 18.0
 
 [node name="Histogram" parent="." unique_id=1675914559 instance=ExtResource("9_kud7b")]
 layout_mode = 1
-offset_left = 292.0
+offset_left = 283.0
 offset_top = -160.0
-offset_right = 292.0
+offset_right = 283.0
 offset_bottom = -160.0
 
 [connection signal="mouse_entered" from="Buttons/Skip" to="." method="_on_skip_mouse_entered"]

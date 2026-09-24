@@ -5,6 +5,7 @@ const BUCKET_AMOUNT = 10
 @onready var GRAPH_HEIGHT = $Panel.size.y
 
 var bars: Array[ColorRect] = []
+var h_labels: Array[Label] = []
 
 const BAR_COLOR = Color(0.194, 0.695, 0.763, 1.0)
 
@@ -42,6 +43,7 @@ func update():
 	var bucket_sizes: Array[int] = []
 	for bucket in buckets:
 		bucket_sizes.append(bucket.size())
+	_set_labels(min_time, bucket_size)
 	_set_bars(bucket_sizes)
 
 func _draw_self():
@@ -56,6 +58,13 @@ func _draw_self():
 		bar.custom_minimum_size.x = GRAPH_WIDTH/BUCKET_AMOUNT
 		bar.custom_minimum_size.y = 0
 		$Panel/HBoxContainer.add_child(bar)
+	for i in range(BUCKET_AMOUNT+1):
+		var label: Label = Label.new()
+		label.label_settings = load("uid://c8xbubd8s6au5")
+		h_labels.append(label)
+		label.custom_maximum_size.x = GRAPH_WIDTH / (2*BUCKET_AMOUNT)
+		label.text = "test "
+		$Panel2/HBoxContainer.add_child(label)
 
 func _set_bars(bucket_sizes):
 	var max_height = bucket_sizes.max()
@@ -63,3 +72,8 @@ func _set_bars(bucket_sizes):
 		var bar_height = GRAPH_HEIGHT * (float(bucket_sizes[i])/float(max_height))
 		bars[i].custom_minimum_size.y = bar_height
 		bars[i].size.y = bar_height
+
+func _set_labels(min_time, bucket_size):
+	$Panel2/Label.text = "%.2f " % (min_time + bucket_size*(BUCKET_AMOUNT+1))
+	for i in range(BUCKET_AMOUNT+1):
+		h_labels[i].text = "%.2f " % (min_time + i*bucket_size)
