@@ -46,4 +46,5 @@ func _on_pressed() -> void:
 
 
 func _on_mouse_entered():
-		SFX.play(SFX.Labels.BUTTONHOVER)
+	grab_focus()
+	SFX.play(SFX.Labels.BUTTONHOVER)

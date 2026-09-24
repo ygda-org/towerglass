@@ -25,4 +25,5 @@ func _on_skip_pressed():
 
 
 func _on_skip_mouse_entered():
+	$Buttons/Skip.grab_focus()
 	SFX.play(SFX.Labels.BUTTONHOVER)
