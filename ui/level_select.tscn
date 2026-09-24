@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://1fq8bjlax4ra" path="res://assets/ui/dark_skip.png" id="6_inwjl"]
 [ext_resource type="Texture2D" uid="uid://dcocu7guclyf1" path="res://assets/ui/light_skip.png" id="7_we87s"]
 [ext_resource type="PackedScene" uid="uid://be4aqcyyimeec" path="res://ui/times_display.tscn" id="8_we87s"]
+[ext_resource type="PackedScene" uid="uid://b7uqvhscw0dy1" path="res://ui/histogram.tscn" id="9_kud7b"]
 
 [sub_resource type="Gradient" id="Gradient_we87s"]
 colors = PackedColorArray(0.4647959, 0.2752534, 0.035808243, 1, 0.6314626, 0.46867982, 0.3321622, 1)
@@ -228,6 +229,13 @@ offset_left = 25.0
 offset_top = 18.0
 offset_right = 25.0
 offset_bottom = 18.0
+
+[node name="Histogram" parent="." unique_id=1675914559 instance=ExtResource("9_kud7b")]
+layout_mode = 1
+offset_left = 292.0
+offset_top = -160.0
+offset_right = 292.0
+offset_bottom = -160.0
 
 [connection signal="mouse_entered" from="Buttons/Skip" to="." method="_on_skip_mouse_entered"]
 [connection signal="pressed" from="Buttons/Skip" to="." method="_on_skip_pressed"]

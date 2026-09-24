@@ -9,13 +9,14 @@ expand_margin_top = 20.0
 expand_margin_right = 25.0
 expand_margin_bottom = 20.0
 
-[sub_resource type="SystemFont" id="SystemFont_0cl02"]
-font_names = PackedStringArray("Bell MT")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i50wy"]
+bg_color = Color(0.5567366, 0.5109793, 0.32529426, 1)
 
 [resource]
-default_font = SubResource("SystemFont_0cl02")
 Button/colors/font_outline_color = Color(0.19562536, 0.3413029, 0.4812736, 1)
 Button/constants/outline_size = 8
+HBoxContainer/constants/separation = 0
 Label/colors/font_outline_color = Color(0, 0.25787482, 0.32445088, 1)
 Label/constants/outline_size = 7
 Panel/styles/panel = SubResource("StyleBoxTexture_w2nrk")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_i50wy")
