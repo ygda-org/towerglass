@@ -1,5 +1,7 @@
 extends TextureButton
 
+class_name SelectButton
+
 const LEVEL_ORDER = [
 	"res://levels/tutorial.tscn", #1
 	"res://levels/moving.tscn",

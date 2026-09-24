@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://0t6rbkinpjcu" path="res://assets/ui/UPDATED_level_select_bottom.PNG" id="4_8r3h1"]
 [ext_resource type="Texture2D" uid="uid://1fq8bjlax4ra" path="res://assets/ui/dark_skip.png" id="6_inwjl"]
 [ext_resource type="Texture2D" uid="uid://dcocu7guclyf1" path="res://assets/ui/light_skip.png" id="7_we87s"]
+[ext_resource type="PackedScene" uid="uid://be4aqcyyimeec" path="res://ui/times_display.tscn" id="8_we87s"]
 
 [sub_resource type="Gradient" id="Gradient_we87s"]
 colors = PackedColorArray(0.4647959, 0.2752534, 0.035808243, 1, 0.6314626, 0.46867982, 0.3321622, 1)
@@ -220,6 +221,13 @@ offset_right = 496.0
 offset_bottom = 51.0
 number = 15
 level_song = 7
+
+[node name="TimesDisplay" parent="." unique_id=102420151 instance=ExtResource("8_we87s")]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 18.0
+offset_right = 25.0
+offset_bottom = 18.0
 
 [connection signal="mouse_entered" from="Buttons/Skip" to="." method="_on_skip_mouse_entered"]
 [connection signal="pressed" from="Buttons/Skip" to="." method="_on_skip_pressed"]

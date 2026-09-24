@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ba3h4ilsy52b"]
 
+[ext_resource type="Theme" uid="uid://bnil1cliinch8" path="res://assets/ui/level_select_theme.tres" id="1_l04p7"]
 [ext_resource type="Script" uid="uid://dl3kn8ah03qkx" path="res://ui/name_box.gd" id="1_lfapc"]
 
 [node name="NameBox" type="Panel" unique_id=1668970411]
@@ -8,22 +9,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -179.0
-offset_top = -73.0
-offset_right = 179.0
-offset_bottom = 121.0
+offset_left = -100.0
+offset_top = -162.5
+offset_right = 100.0
+offset_bottom = 162.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_l04p7")
 script = ExtResource("1_lfapc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=201311839]
-layout_mode = 0
-offset_right = 356.0
-offset_bottom = 145.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -99.0
+offset_right = 178.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=365856808]
+custom_minimum_size = Vector2(150, 90)
+custom_maximum_size = Vector2(150, -1)
 layout_mode = 2
+size_flags_horizontal = 4
+text = "1
+2
+3
+4"
 horizontal_alignment = 1
 
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer" unique_id=748073243]

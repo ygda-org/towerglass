@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://be4aqcyyimeec"]
+
+[ext_resource type="Script" uid="uid://c1i5prq5axd52" path="res://ui/times_display.gd" id="1_ef55q"]
+[ext_resource type="Theme" uid="uid://bnil1cliinch8" path="res://assets/ui/level_select_theme.tres" id="1_i3qj6"]
+
+[node name="TimesDisplay" type="Control" unique_id=102420151]
+layout_mode = 3
+anchors_preset = 0
+focus_behavior_recursive = 1
+theme = ExtResource("1_i3qj6")
+script = ExtResource("1_ef55q")
+
+[node name="Panel" type="Panel" parent="." unique_id=1848722941]
+layout_mode = 0
+offset_right = 308.0
+offset_bottom = 110.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1234365484]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 308.0
+offset_bottom = 35.0
+text = "Awaiting Scores"
+horizontal_alignment = 1
