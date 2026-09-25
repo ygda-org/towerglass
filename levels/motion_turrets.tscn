@@ -72,14 +72,15 @@ platform_on_leave = 2
 [node name="Turret" parent="." unique_id=631227605 instance=ExtResource("3_xok05")]
 position = Vector2(207, -51)
 shot_directions = Array[Vector2]([Vector2(1, 0), Vector2(0, 1)])
-shot_time = 2.0
 pause_time = 0.0
+start_delay_addon_time = 0.5
 bullet_duration = 0.6
 
 [node name="Turret2" parent="." unique_id=1317629272 instance=ExtResource("3_xok05")]
 position = Vector2(165, -81)
 orientation = "north"
 shot_directions = Array[Vector2]([Vector2(1, 0), Vector2(0, 1)])
+pause_time = 0.0
 bullet_duration = 0.6
 
 [node name="MovingStuff" parent="." unique_id=767670818 instance=ExtResource("4_8vr1k")]
@@ -122,11 +123,15 @@ wait_until_player_touches_to_move = true
 position = Vector2(785, -139)
 orientation = "east"
 shot_directions = Array[Vector2]([Vector2(1, 0), Vector2(0, 1)])
+shot_time = 0.5
+pause_time = 0.0
 
 [node name="Turret4" parent="." unique_id=2018841536 instance=ExtResource("3_xok05")]
 position = Vector2(1009, -279)
 orientation = "east"
 shot_directions = Array[Vector2]([Vector2(0, -1), Vector2(-1, 0)])
+shot_time = 0.5
+pause_time = 0.0
 
 [node name="MovingStuff4" parent="." unique_id=1223744679 instance=ExtResource("4_8vr1k")]
 curve = SubResource("Curve2D_wh6vw")

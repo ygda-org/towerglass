@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://uwnvvhiipdny"]
+
+[ext_resource type="Script" uid="uid://dqfnk12giueo7" path="res://levels/level_objects/position_smoothing_trigger.gd" id="1_87njf"]
+
+[node name="PositionSmoothingTrigger" type="Area2D" unique_id=1878191191]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_87njf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

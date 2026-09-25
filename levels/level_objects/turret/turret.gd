@@ -72,7 +72,10 @@ func shoot():
 	current_direction_index = next_direction_index
 
 func pause():
-	$PauseTime.wait_time = pause_time/2
+	if pause_time > 0.05:
+		$PauseTime.wait_time = pause_time/2
+	else:
+		$PauseTime.wait_time = 0.05
 	$PauseTime.start()
 	await $PauseTime.timeout
 	var bullet = BULLET.instantiate()

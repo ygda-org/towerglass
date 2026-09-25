@@ -33,7 +33,7 @@ tile_set = ExtResource("1_tmjk1")
 
 [node name="DecorationTileMapLayer3" type="TileMapLayer" parent="." unique_id=861519820]
 z_index = -2
-tile_map_data = PackedByteArray("AAA0APf/AAACAAcAACDo//j/AAAQAAQAAADo//n/AAAQAAQAAADo//r/AAAQAAQAAADl//j/AAAPAAUAAADl//n/AAAPAAUAAADl//r/AAAPAAUAAADm//f/AAAPAAQAAADn//f/AAAPAAQAAADo//f/AAASAAQAAADl//f/AAARAAQAAAArAPv/AAALAAUAAAAqAPv/CAAGAAEAAAApAPv/CAAFAAEAAAA=")
+tile_map_data = PackedByteArray("AAA0APf/AAACAAcAACDo//j/AAAQAAQAAADo//n/AAAQAAQAAADo//r/AAAQAAQAAADl//j/AAAPAAUAAADl//n/AAAPAAUAAADl//r/AAAPAAUAAADm//f/AAAPAAQAAADn//f/AAAPAAQAAADo//f/AAASAAQAAADl//f/AAARAAQAAAArAPv/AAALAAUAAAAqAPv/CAAGAAEAAAApAPv/CAAFAAEAAADLAPT/AAAGAAIAAADMAPT/AAAHAAMAAAA=")
 tile_set = ExtResource("1_tmjk1")
 
 [node name="level_exit" parent="." unique_id=1710757709 instance=ExtResource("1_ua0w8")]
@@ -112,7 +112,7 @@ position = Vector2(160, -58)
 position = Vector2(347, -107)
 
 [node name="Rat3" parent="Rats" unique_id=724362532 instance=ExtResource("2_xec67")]
-position = Vector2(716, -106)
+position = Vector2(716, -90)
 frozen = 1
 
 [node name="Rat4" parent="Rats" unique_id=460940538 instance=ExtResource("2_xec67")]
@@ -182,5 +182,5 @@ position = Vector2(2, -50)
 amount = 8
 emission_rect_extents = Vector2(4, 0)
 
-[connection signal="body_entered" from="DecorationTileMapLayer/Checkpoint" to="DecorationTileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@22326" to="DecorationTileMapLayer/@Area2D@22326" method="_on_body_entered"]
+[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@35169" to="DecorationTileMapLayer/@Area2D@35169" method="_on_body_entered"]
+[connection signal="body_entered" from="DecorationTileMapLayer/@Area2D@35170" to="DecorationTileMapLayer/@Area2D@35170" method="_on_body_entered"]

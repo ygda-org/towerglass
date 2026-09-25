@@ -45,6 +45,7 @@ var has_moved: bool = false
 var camera_center_position = Vector2(0,0)
 var camera_target_offset = Vector2(0,0)
 var sway_dir = 1
+var camera_smoothing_override = 0
 
 var is_dead : bool = false
 
@@ -186,6 +187,8 @@ func _physics_process(delta: float):
 		$LandParticle.emitting = true
 	
 	update_sand(delta)
+	if camera_smoothing_override:
+		$Camera2D.position_smoothing_speed = camera_smoothing_override
 
 func set_gravity(dir):
 	up_direction = Vector2(0,-dir)

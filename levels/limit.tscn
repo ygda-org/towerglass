@@ -67,14 +67,13 @@ wait_until_player_touches_to_move = true
 position = Vector2(-484, -383)
 is_one_direction = true
 shot_directions = Array[Vector2]([Vector2(1, 0)])
-pause_time = 2.0
+pause_time = 1.5
 
 [node name="Turret2" parent="." unique_id=1558849860 instance=ExtResource("6_vsyqq")]
 position = Vector2(-21, -495)
 orientation = "south"
 is_one_direction = true
 shot_directions = Array[Vector2]([Vector2(-1, 0)])
-pause_time = 1.5
 
 [node name="MoveablePlatform" parent="." unique_id=234850229 instance=ExtResource("4_g4iyd")]
 position = Vector2(280, 7)
