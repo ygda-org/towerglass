@@ -21,7 +21,18 @@ var level_select_entry : bool = false
 
 var reset_level_select_music : bool = true
 
+var arcade_mode: bool = false
+
 func _ready() -> void:
+	if not arcade_mode:
+		if Input.is_joy_known(0) or Input.is_joy_known(1):
+			arcade_mode = true
+			var grad: GradientTexture1D = GradientTexture1D.new()
+			grad.gradient = Gradient.new()
+			grad.gradient.remove_point(0)
+			grad.gradient.set_color(0, Color(1.0, 1.0, 1.0, 0.0))
+			grad.width = 1
+			Input.set_custom_mouse_cursor(grad)
 	for i in range(30):
 		lvl_to_loc.append(Vector2(-1000,-1000))
 	player_died.connect(death_counter_increment)

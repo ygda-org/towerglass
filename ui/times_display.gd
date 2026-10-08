@@ -2,7 +2,7 @@ extends Control
 
 func _process(_delta):
 	var focused = get_viewport().gui_get_focus_owner()
-	if focused is SelectButton:
+	if focused is SelectButton and focused.number < 15:
 		var ret = "Best times:\n"
 		var index = focused.number-1
 		for i in range(Leaderboard.names[index].size()):

@@ -45,9 +45,9 @@ func toggle_pause():
 		SFX.force_play_audios()
 	if get_tree().paused == false:
 		SFX.force_pause_audios()
-		
 	get_tree().paused = not get_tree().paused
 	visible = get_tree().paused
+	$ExitButton.grab_focus()
 
 func _on_master_h_slider_value_changed(value):
 	change_bus_volume("Master", value)

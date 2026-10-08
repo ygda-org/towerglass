@@ -72,6 +72,7 @@ offset_bottom = 90.0
 texture_normal = ExtResource("1_0njaf")
 texture_pressed = ExtResource("2_nu0cp")
 texture_hover = ExtResource("3_c5cid")
+texture_focused = ExtResource("3_c5cid")
 
 [node name="Label" type="Label" parent="." unique_id=1338213197]
 offset_left = 242.0

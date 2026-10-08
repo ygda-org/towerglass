@@ -34,6 +34,7 @@ func _ready() -> void:
 		custom_maximum_size.x += 16
 	if GameState.max_level_beaten + 1 < number:
 		queue_free()
+	#var next_button: TextureButton = get_parent().get_node_or_null("SelectButton" + str(number+1))
 
 func _on_pressed() -> void:
 	GameState.level_select_entry = true

@@ -22,6 +22,9 @@ func update():
 	if focused is not SelectButton:
 		visible = false
 		return
+	if focused.number > 14:
+		visible = false
+		return
 	visible = true
 	var lindex = focused.number-1
 	var times = Leaderboard.leaderboards[lindex].duplicate()

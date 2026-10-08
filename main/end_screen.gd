@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$TextureButton.grab_focus()
 	$Label.text = "Congrats! Death count: " + str(GameState.player_death_count) + "."
 
 func _on_texture_button_pressed():

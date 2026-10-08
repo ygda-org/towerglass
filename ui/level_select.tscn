@@ -72,7 +72,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SelectButton" parent="Buttons" unique_id=911375310 instance=ExtResource("1_o7pgs")]
+[node name="SelectButton1" parent="Buttons" unique_id=911375310 instance=ExtResource("1_o7pgs")]
 layout_mode = 1
 offset_left = 363.0
 offset_top = 490.0
@@ -90,10 +90,10 @@ offset_left = 425.0
 offset_top = 490.0
 offset_right = 473.0
 offset_bottom = 538.0
-focus_neighbor_left = NodePath("../SelectButton")
+focus_neighbor_left = NodePath("../SelectButton1")
 focus_neighbor_top = NodePath("../SelectButton3")
 focus_neighbor_right = NodePath("../SelectButton3")
-focus_neighbor_bottom = NodePath("../SelectButton")
+focus_neighbor_bottom = NodePath("../SelectButton1")
 number = 2
 
 [node name="SelectButton3" parent="Buttons" unique_id=572162557 instance=ExtResource("1_o7pgs")]
@@ -257,9 +257,11 @@ offset_top = 474.99997
 offset_right = 1341.0001
 offset_bottom = 731.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_left = NodePath("../SelectButton1")
 texture_normal = ExtResource("6_inwjl")
 texture_pressed = ExtResource("6_inwjl")
 texture_hover = ExtResource("7_we87s")
+texture_focused = ExtResource("7_we87s")
 stretch_mode = 5
 
 [node name="EndingButton" parent="Buttons" unique_id=648659281 instance=ExtResource("1_o7pgs")]
@@ -269,8 +271,8 @@ offset_top = 3.0
 offset_right = 496.0
 offset_bottom = 51.0
 focus_neighbor_left = NodePath("../SelectButton14")
-focus_neighbor_top = NodePath("../SelectButton")
-focus_neighbor_right = NodePath("../SelectButton")
+focus_neighbor_top = NodePath("../SelectButton1")
+focus_neighbor_right = NodePath("../SelectButton1")
 focus_neighbor_bottom = NodePath("../SelectButton14")
 number = 15
 level_song = 7
